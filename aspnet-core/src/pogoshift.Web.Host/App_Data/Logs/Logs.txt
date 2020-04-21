@@ -1,0 +1,118 @@
+DEBUG 2020-04-21 11:11:54,285 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-04-21 11:11:54,376 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2020-04-21 11:11:54,394 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.Web.Host.Startup.pogoshiftWebHostModule, pogoshift.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:11:54,396 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftWebCoreModule, pogoshift.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:11:54,396 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftApplicationModule, pogoshift.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:11:54,397 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftCoreModule, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:11:54,397 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:11:54,397 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:11:54,397 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:11:54,398 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:11:54,398 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.EntityFrameworkCore.pogoshiftEntityFrameworkModule, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:11:54,399 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:11:54,400 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:11:54,400 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:11:54,400 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:11:54,401 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:11:54,401 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:11:54,404 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2020-04-21 11:11:54,496 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-21 11:11:54,496 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-21 11:11:54,496 [1    ] o.Configuration.LanguageManagementConfig - Converted pogoshift (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-21 11:11:54,496 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-21 11:11:54,879 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: pogoshift.EntityFrameworkCore.pogoshiftDbContext, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:11:55,873 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-04-21 11:11:55,922 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-04-21 11:11:55,935 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-04-21 11:11:55,943 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: pogoshift
+DEBUG 2020-04-21 11:11:55,949 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-04-21 11:11:56,172 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-04-21 11:11:56,325 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[pogoshift.MultiTenancy.Tenant, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[pogoshift.Authorization.Users.User, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2020-04-21 11:11:56,391 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 8 classes define auto mapping attributes
+DEBUG 2020-04-21 11:11:56,391 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2020-04-21 11:11:56,397 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.CreateUserDto
+DEBUG 2020-04-21 11:11:56,398 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.UserDto
+DEBUG 2020-04-21 11:11:56,398 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-04-21 11:11:56,398 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-04-21 11:11:56,398 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Roles.Dto.PermissionDto
+DEBUG 2020-04-21 11:11:56,399 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-04-21 11:11:56,399 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.TenantDto
+DEBUG 2020-04-21 11:13:55,943 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-04-21 11:13:56,022 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2020-04-21 11:13:56,038 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.Web.Host.Startup.pogoshiftWebHostModule, pogoshift.Web.Host, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:13:56,040 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftWebCoreModule, pogoshift.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:13:56,040 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftApplicationModule, pogoshift.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:13:56,041 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftCoreModule, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:13:56,041 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:13:56,041 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:13:56,041 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:13:56,042 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:13:56,042 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.EntityFrameworkCore.pogoshiftEntityFrameworkModule, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:13:56,042 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:13:56,042 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:13:56,043 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:13:56,043 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:13:56,043 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:13:56,043 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:13:56,046 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2020-04-21 11:13:56,125 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-21 11:13:56,125 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-21 11:13:56,125 [1    ] o.Configuration.LanguageManagementConfig - Converted pogoshift (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-21 11:13:56,125 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-04-21 11:13:56,489 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: pogoshift.EntityFrameworkCore.pogoshiftDbContext, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-04-21 11:13:57,478 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-04-21 11:13:57,537 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-04-21 11:13:57,549 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-04-21 11:13:57,555 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: pogoshift
+DEBUG 2020-04-21 11:13:57,561 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-04-21 11:13:57,795 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-04-21 11:13:57,957 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[pogoshift.MultiTenancy.Tenant, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[pogoshift.Authorization.Users.User, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2020-04-21 11:13:58,012 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 8 classes define auto mapping attributes
+DEBUG 2020-04-21 11:13:58,012 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2020-04-21 11:13:58,018 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.CreateUserDto
+DEBUG 2020-04-21 11:13:58,018 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.UserDto
+DEBUG 2020-04-21 11:13:58,019 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-04-21 11:13:58,019 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-04-21 11:13:58,019 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Roles.Dto.PermissionDto
+DEBUG 2020-04-21 11:13:58,019 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-04-21 11:13:58,019 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.TenantDto
+INFO  2020-04-21 11:14:01,898 [1    ] tCore.Builder.RequestLocalizationOptions - Supported Request Localization Cultures: en,es-MX,fr,de,it,nl,pt-BR,tr,ru,ar,ja,zh-Hans
+INFO  2020-04-21 11:14:02,239 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\Joe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2020-04-21 11:14:02,327 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2020-04-21 11:14:02,426 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Web.Host.Controllers.HomeController.Index (pogoshift.Web.Host)'
+INFO  2020-04-21 11:14:05,981 [4    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller pogoshift.Web.Host.Controllers.HomeController (pogoshift.Web.Host).
+INFO  2020-04-21 11:14:07,226 [9    ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to /swagger.
+INFO  2020-04-21 11:14:07,234 [9    ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Web.Host.Controllers.HomeController.Index (pogoshift.Web.Host) in 1247.6416ms
+INFO  2020-04-21 11:14:07,238 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Web.Host.Controllers.HomeController.Index (pogoshift.Web.Host)'
+INFO  2020-04-21 11:14:07,258 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger  
+INFO  2020-04-21 11:14:07,260 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 4934.3056ms 302 
+INFO  2020-04-21 11:14:07,293 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 34.6696ms 301 
+INFO  2020-04-21 11:14:07,295 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/index.html  
+INFO  2020-04-21 11:14:07,447 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 151.1539ms 200 text/html;charset=utf-8
+INFO  2020-04-21 11:14:07,468 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/swagger-ui.css  
+INFO  2020-04-21 11:14:07,470 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/swagger-ui-bundle.js  
+INFO  2020-04-21 11:14:07,473 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/swagger-ui-standalone-preset.js  
+INFO  2020-04-21 11:14:07,475 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/ui/abp.js  
+INFO  2020-04-21 11:14:07,477 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/ui/abp.swagger.js  
+INFO  2020-04-21 11:14:07,502 [11   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Host\wwwroot\swagger\ui\abp.js'
+INFO  2020-04-21 11:14:07,502 [14   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger/ui/abp.swagger.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Host\wwwroot\swagger\ui\abp.swagger.js'
+INFO  2020-04-21 11:14:07,505 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 30.425ms 200 application/javascript
+INFO  2020-04-21 11:14:07,507 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 33.3246ms 200 application/javascript
+INFO  2020-04-21 11:14:07,518 [13   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+INFO  2020-04-21 11:14:07,521 [11   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+INFO  2020-04-21 11:14:07,527 [16   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 59.894ms 200 text/css
+INFO  2020-04-21 11:14:07,529 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 56.5277ms 200 application/javascript
+INFO  2020-04-21 11:14:07,532 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+INFO  2020-04-21 11:14:07,534 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 67.0575ms 200 application/javascript
+INFO  2020-04-21 11:14:07,790 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/AntiForgery/SetCookie  
+INFO  2020-04-21 11:14:07,795 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Web.Host.Controllers.AntiForgeryController.SetCookie (pogoshift.Web.Host)'
+INFO  2020-04-21 11:14:07,809 [4    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "SetCookie", controller = "AntiForgery", area = ""}. Executing controller action with signature Void SetCookie() on controller pogoshift.Web.Host.Controllers.AntiForgeryController (pogoshift.Web.Host).
+INFO  2020-04-21 11:14:07,834 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/v1/swagger.json  
+INFO  2020-04-21 11:14:07,850 [13   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-04-21 11:14:07,890 [13   ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Web.Host.Controllers.AntiForgeryController.SetCookie (pogoshift.Web.Host) in 56.9712ms
+INFO  2020-04-21 11:14:07,892 [13   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Web.Host.Controllers.AntiForgeryController.SetCookie (pogoshift.Web.Host)'
+INFO  2020-04-21 11:14:07,894 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 104.1181ms 200 application/json; charset=utf-8
+INFO  2020-04-21 11:14:07,897 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:21021/swagger/favicon-32x32.png  
+INFO  2020-04-21 11:14:07,901 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+INFO  2020-04-21 11:14:07,905 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 6.1837ms 200 image/png
+INFO  2020-04-21 11:14:08,029 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 194.8191ms 200 application/json;charset=utf-8

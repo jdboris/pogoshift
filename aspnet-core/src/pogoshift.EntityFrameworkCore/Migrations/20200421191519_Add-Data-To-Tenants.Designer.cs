@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using pogoshift.EntityFrameworkCore;
 
 namespace pogoshift.Migrations
 {
     [DbContext(typeof(pogoshiftDbContext))]
-    partial class pogoshiftDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200421191519_Add-Data-To-Tenants")]
+    partial class AddDataToTenants
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

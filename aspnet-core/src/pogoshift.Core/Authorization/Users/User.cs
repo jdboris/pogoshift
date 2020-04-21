@@ -1,13 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using Abp.Authorization.Users;
+﻿using Abp.Authorization.Users;
 using Abp.Extensions;
+using System;
+using System.Collections.Generic;
 
 namespace pogoshift.Authorization.Users
 {
     public class User : AbpUser<User>
     {
         public const string DefaultPassword = "123qwe";
+        public string PostalCode { get; set; }
+        public string AddressLine1 { get; set; }
+        public string AddressLine2 { get; set; }
+        public DateTime BirthDate { get; set; }
+        public string EmployeeNumber { get; set; }
+
 
         public static string CreateRandomPassword()
         {

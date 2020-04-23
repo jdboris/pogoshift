@@ -23,9 +23,14 @@
     <text name="LoginFailed" value="Login failed!" />
     <text name="NameSurname" value="Name surname" />
     <text name="UserName" value="User name" />
+    <text name="PhoneNumber" value="Phone number" />
     <text name="Name" value="Name" />
     <text name="Surname" value="Surname" />
     <text name="EmailAddress" value="Email address" />
+    <text name="AddressLine1" value="Address line 1" />
+    <text name="AddressLine2" value="Address line 2" />
+    <text name="PostalCode" value="Postal code" />
+    <text name="BirthDate" value="Birth date" />
     <text name="Tenants" value="Tenants" />
     <text name="SavedSuccessfully" value="Saved successfully" />
     <text name="CreateNewTenant" value="Create new tenant" />

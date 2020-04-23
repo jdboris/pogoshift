@@ -11,7 +11,7 @@ namespace pogoshift.Authorization.Users
         public string PostalCode { get; set; }
         public string AddressLine1 { get; set; }
         public string AddressLine2 { get; set; }
-        public DateTime BirthDate { get; set; }
+        public DateTime? BirthDate { get; set; }
         public string EmployeeNumber { get; set; }
 
 

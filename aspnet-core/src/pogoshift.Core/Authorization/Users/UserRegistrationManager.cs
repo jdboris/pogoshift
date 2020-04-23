@@ -1,16 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Abp.Authorization.Users;
+﻿using Abp.Authorization.Users;
 using Abp.Domain.Services;
 using Abp.IdentityFramework;
 using Abp.Runtime.Session;
 using Abp.UI;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using pogoshift.Authorization.Roles;
 using pogoshift.MultiTenancy;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace pogoshift.Authorization.Users
 {
@@ -37,7 +37,8 @@ namespace pogoshift.Authorization.Users
             AbpSession = NullAbpSession.Instance;
         }
 
-        public async Task<User> RegisterAsync(string name, string surname, string emailAddress, string userName, string plainPassword, bool isEmailConfirmed)
+        public async Task<User> RegisterAsync(string name, string surname, string emailAddress, string userName, string plainPassword, bool isEmailConfirmed,
+                                              DateTime? birthDate = null, string phoneNumber = null, string addressLine1 = null, string addressLine2 = null, string postalCode = null)
         {
             CheckForTenant();
 
@@ -46,17 +47,22 @@ namespace pogoshift.Authorization.Users
             var user = new User
             {
                 TenantId = tenant.Id,
+                UserName = userName,
                 Name = name,
                 Surname = surname,
+                BirthDate = birthDate,
                 EmailAddress = emailAddress,
+                PhoneNumber = phoneNumber,
+                AddressLine1 = addressLine1,
+                AddressLine2 = addressLine2,
+                PostalCode = postalCode,
                 IsActive = true,
-                UserName = userName,
                 IsEmailConfirmed = isEmailConfirmed,
                 Roles = new List<UserRole>()
             };
 
             user.SetNormalizedNames();
-           
+
             foreach (var defaultRole in await _roleManager.Roles.Where(r => r.IsDefault).ToListAsync())
             {
                 user.Roles.Add(new UserRole(tenant.Id, user.Id, defaultRole.Id));

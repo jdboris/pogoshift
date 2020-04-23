@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Abp;
+﻿using Abp;
 using Abp.AspNetCore.Mvc.Authorization;
 using Abp.Authorization;
 using Abp.Authorization.Users;
@@ -16,12 +8,13 @@ using Abp.Domain.Uow;
 using Abp.Extensions;
 using Abp.MultiTenancy;
 using Abp.Notifications;
-using Abp.Runtime.Session;
 using Abp.Threading;
 using Abp.Timing;
 using Abp.UI;
 using Abp.Web.Models;
 using Abp.Zero.Configuration;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using pogoshift.Authorization;
 using pogoshift.Authorization.Users;
 using pogoshift.Controllers;
@@ -30,6 +23,12 @@ using pogoshift.MultiTenancy;
 using pogoshift.Sessions;
 using pogoshift.Web.Models.Account;
 using pogoshift.Web.Views.Shared.Components.TenantChange;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Security.Claims;
+using System.Threading.Tasks;
 
 namespace pogoshift.Web.Controllers
 {
@@ -186,7 +185,12 @@ namespace pogoshift.Web.Controllers
                     model.EmailAddress,
                     model.UserName,
                     model.Password,
-                    true // Assumed email address is always confirmed. Change this if you want to implement email confirmation.
+                    true, // Assumed email address is always confirmed. Change this if you want to implement email confirmation.
+                    model.BirthDate,
+                    model.PhoneNumber,
+                    model.AddressLine1,
+                    model.AddressLine2,
+                    model.PostalCode
                 );
 
                 // Getting tenant-specific settings

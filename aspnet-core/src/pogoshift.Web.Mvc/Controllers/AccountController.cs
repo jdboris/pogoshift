@@ -155,7 +155,7 @@ namespace pogoshift.Web.Controllers
 
         [HttpPost]
         [UnitOfWork]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public async Task<JsonResult> Register(RegisterViewModel model)
         {
             try
             {
@@ -238,28 +238,44 @@ namespace pogoshift.Web.Controllers
                     if (loginResult.Result == AbpLoginResultType.Success)
                     {
                         await _signInManager.SignInAsync(loginResult.Identity, false);
-                        return Redirect(GetAppHomeUrl());
+
+                        return Json(new AjaxResponse { TargetUrl = GetAppHomeUrl() });
+                        //return Redirect(GetAppHomeUrl());
                     }
 
                     Logger.Warn("New registered user could not be login. This should not be normally. login result: " + loginResult.Result);
                 }
 
-                return View("RegisterResult", new RegisterResultViewModel
+                return Json(new AjaxResponse
                 {
-                    TenancyName = tenant.TenancyName,
-                    NameAndSurname = user.Name + " " + user.Surname,
-                    UserName = user.UserName,
-                    EmailAddress = user.EmailAddress,
-                    IsEmailConfirmed = user.IsEmailConfirmed,
-                    IsActive = user.IsActive,
-                    IsEmailConfirmationRequiredForLogin = isEmailConfirmationRequiredForLogin
+                    Result = new RegisterResultViewModel
+                    {
+                        TenancyName = tenant.TenancyName,
+                        NameAndSurname = user.Name + " " + user.Surname,
+                        UserName = user.UserName,
+                        EmailAddress = user.EmailAddress,
+                        IsEmailConfirmed = user.IsEmailConfirmed,
+                        IsActive = user.IsActive,
+                        IsEmailConfirmationRequiredForLogin = isEmailConfirmationRequiredForLogin
+                    }
                 });
+                //return View("RegisterResult", new RegisterResultViewModel
+                //{
+                //    TenancyName = tenant.TenancyName,
+                //    NameAndSurname = user.Name + " " + user.Surname,
+                //    UserName = user.UserName,
+                //    EmailAddress = user.EmailAddress,
+                //    IsEmailConfirmed = user.IsEmailConfirmed,
+                //    IsActive = user.IsActive,
+                //    IsEmailConfirmationRequiredForLogin = isEmailConfirmationRequiredForLogin
+                //});
             }
             catch (UserFriendlyException ex)
             {
                 ViewBag.ErrorMessage = ex.Message;
 
-                return View("Register", model);
+                return Json(new AjaxResponse());
+                //return View("Register", model);
             }
         }
 

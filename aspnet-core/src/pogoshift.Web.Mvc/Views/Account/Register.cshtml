@@ -70,10 +70,10 @@
         @{
             var birthDateValue = Model.BirthDate.ToString("u") != "0001-01-01 00:00:00Z" ? Model.BirthDate.ToString("u") : "";
         }
-        <input type="text" name="BirthDate" class="form-control" placeholder="@L("BirthDate")" value="@birthDateValue" required maxlength="255">
+        <input type="text" name="BirthDate" class="form-control" placeholder="@L("BirthDate") YYYY/MM/DD" value="@birthDateValue" required maxlength="255">
         <div class="input-group-append">
             <div class="input-group-text">
-                <span class="fas fa-lock"></span>
+                <span class="fas fa-calendar-day"></span>
             </div>
         </div>
     </div>
@@ -82,7 +82,7 @@
         <input type="text" name="PhoneNumber" class="form-control" placeholder="@L("PhoneNumber")" value="@Model.PhoneNumber" required maxlength="255">
         <div class="input-group-append">
             <div class="input-group-text">
-                <span class="fas fa-lock"></span>
+                <span class="fas fa-phone"></span>
             </div>
         </div>
     </div>
@@ -91,7 +91,7 @@
         <input type="text" name="AddressLine1" class="form-control" placeholder="@L("AddressLine1")" value="@Model.AddressLine1" required maxlength="255">
         <div class="input-group-append">
             <div class="input-group-text">
-                <span class="fas fa-lock"></span>
+                <span class="fas fa-home"></span>
             </div>
         </div>
     </div>
@@ -100,7 +100,7 @@
         <input type="text" name="AddressLine2" class="form-control" placeholder="@L("AddressLine2")" value="@Model.AddressLine2" required maxlength="255">
         <div class="input-group-append">
             <div class="input-group-text">
-                <span class="fas fa-lock"></span>
+                <span class="fas fa-arrow-left"></span>
             </div>
         </div>
     </div>
@@ -109,7 +109,7 @@
         <input type="text" name="PostalCode" class="form-control" placeholder="@L("PostalCode")" value="@Model.PostalCode" required maxlength="255">
         <div class="input-group-append">
             <div class="input-group-text">
-                <span class="fas fa-lock"></span>
+                <span class="fas fa-arrow-left"></span>
             </div>
         </div>
     </div>

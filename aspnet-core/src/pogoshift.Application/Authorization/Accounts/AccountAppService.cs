@@ -1,8 +1,8 @@
-using System.Threading.Tasks;
 using Abp.Configuration;
 using Abp.Zero.Configuration;
 using pogoshift.Authorization.Accounts.Dto;
 using pogoshift.Authorization.Users;
+using System.Threading.Tasks;
 
 namespace pogoshift.Authorization.Accounts
 {
@@ -43,7 +43,12 @@ namespace pogoshift.Authorization.Accounts
                 input.EmailAddress,
                 input.UserName,
                 input.Password,
-                true // Assumed email address is always confirmed. Change this if you want to implement email confirmation.
+                true, // Assumed email address is always confirmed. Change this if you want to implement email confirmation.
+                input.BirthDate,
+                input.PhoneNumber,
+                input.AddressLine1,
+                input.AddressLine2,
+                input.PostalCode
             );
 
             var isEmailConfirmationRequiredForLogin = await SettingManager.GetSettingValueAsync<bool>(AbpZeroSettingNames.UserManagement.IsEmailConfirmationRequiredForLogin);

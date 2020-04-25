@@ -48,10 +48,18 @@
         },
         unhighlight: (el) => {
             $(el).removeClass('is-invalid');
+            // Remove leftover custom messages (from server-side validation)
+            let oldError = $(el).parent().next("p.validation-error");
+            oldError.remove();
         },
         errorElement: 'p',
-        errorClass: 'text-danger',
+        errorClass: 'validation-error text-danger',
         errorPlacement: (error, element) => {
+            // Remove leftover custom messages (from server-side validation)
+            let oldError = element.parent().next("p.validation-error");
+            if (oldError.length > 0) {
+                oldError.remove();
+            }
             if (element.parent('.input-group').length) {
                 error.insertAfter(element.parent());
             } else {

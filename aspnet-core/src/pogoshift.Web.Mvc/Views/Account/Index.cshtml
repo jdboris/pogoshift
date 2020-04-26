@@ -1,0 +1,129 @@
+﻿
+@using Abp.Authorization.Users
+@model pogoshift.Web.Models.Account.AccountViewModel
+@using pogoshift.Web.Startup
+@{
+    ViewBag.CurrentPageName = PageNames.Account;
+    ViewBag.Title = L("Account");
+    var user = Model.LoginInformations.User;
+    Layout = "~/Views/Shared/Layout/_Layout.cshtml";
+}
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Views/Users/Account.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Views/Users/Account.min.js" asp-append-version="true"></script>
+    </environment>
+}
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-12">
+                <h1 class="m-0 text-dark">@L("Account")</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="content">
+    <div class="container-fluid">
+        <form id="AccountForm" action="~/Users/UpdateSelf" method="post">
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="alert alert-danger">
+                    <i class="fas fa-warning"></i> @ViewBag.ErrorMessage
+                </div>
+            }
+
+            <div class="input-group mb-3">
+                <input type="text" name="UserName" class="form-control" placeholder="@L("UserName")" value="@user.UserName" required maxlength="@AbpUserBase.MaxUserNameLength">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-user"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="text" name="Name" class="form-control" placeholder="@L("Name")" value="@user.Name" required maxlength="@AbpUserBase.MaxNameLength">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-arrow-left"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" name="Surname" class="form-control" placeholder="@L("Surname")" value="@user.Surname" required maxlength="@AbpUserBase.MaxSurnameLength">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-arrow-left"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group mb-3">
+                <input type="email" name="EmailAddress" class="form-control" placeholder="@L("EmailAddress")" value="@user.EmailAddress" required maxlength="@AbpUserBase.MaxEmailAddressLength">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-envelope"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                @{
+                    var birthDateValue = user.BirthDate.ToString("u") != "0001-01-01 00:00:00Z" ? user.BirthDate.ToString("u") : "";
+                }
+                <input type="text" name="BirthDate" class="form-control" placeholder="@L("BirthDate") YYYY/MM/DD" value="@birthDateValue" required maxlength="255">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-calendar-day"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="text" name="PhoneNumber" class="form-control" placeholder="@L("PhoneNumber")" value="@user.PhoneNumber" required maxlength="255">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-phone"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="text" name="AddressLine1" class="form-control" placeholder="@L("AddressLine1")" value="@user.AddressLine1" required maxlength="255">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-home"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="text" name="AddressLine2" class="form-control" placeholder="@L("AddressLine2")" value="@user.AddressLine2" required maxlength="255">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-arrow-left"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-group mb-3">
+                <input type="text" name="PostalCode" class="form-control" placeholder="@L("PostalCode")" value="@user.PostalCode" required maxlength="255">
+                <div class="input-group-append">
+                    <div class="input-group-text">
+                        <span class="fas fa-arrow-left"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-4">
+                <div class="col">
+                    <button type="submit" id="SaveButton" class="btn btn-primary btn-flat btn-block float-right">@L("Save")</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

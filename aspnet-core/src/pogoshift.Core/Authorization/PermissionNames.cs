@@ -6,6 +6,8 @@
 
         public const string Pages_Users = "Pages.Users";
 
+        public const string Users_UpdateSelf = "Users.UpdateSelf";
+
         public const string Pages_Roles = "Pages.Roles";
     }
 }

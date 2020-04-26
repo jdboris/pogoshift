@@ -2,6 +2,8 @@
 <localizationDictionary culture="en">
   <texts>
     <text name="HomePage" value="Home page" />
+    <text name="Account" value="Account" />
+    <text name="UpdateSelf" value="UpdateSelf" />
     <text name="About" value="About" />
     <text name="WelcomeMessage" value="Welcome to pogoshift!" />
     <text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />

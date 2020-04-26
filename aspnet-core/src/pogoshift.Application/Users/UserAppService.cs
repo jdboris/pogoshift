@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Abp.Application.Services;
+﻿using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using Abp.Authorization;
 using Abp.Domain.Entities;
@@ -13,14 +9,19 @@ using Abp.Linq.Extensions;
 using Abp.Localization;
 using Abp.Runtime.Session;
 using Abp.UI;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using pogoshift.Authorization;
 using pogoshift.Authorization.Accounts;
 using pogoshift.Authorization.Roles;
 using pogoshift.Authorization.Users;
 using pogoshift.Roles.Dto;
+using pogoshift.Sessions;
 using pogoshift.Users.Dto;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 
 namespace pogoshift.Users
 {
@@ -33,6 +34,7 @@ namespace pogoshift.Users
         private readonly IPasswordHasher<User> _passwordHasher;
         private readonly IAbpSession _abpSession;
         private readonly LogInManager _logInManager;
+        private readonly ISessionAppService _sessionAppService;
 
         public UserAppService(
             IRepository<User, long> repository,
@@ -41,7 +43,8 @@ namespace pogoshift.Users
             IRepository<Role> roleRepository,
             IPasswordHasher<User> passwordHasher,
             IAbpSession abpSession,
-            LogInManager logInManager)
+            LogInManager logInManager,
+            ISessionAppService sessionAppService)
             : base(repository)
         {
             _userManager = userManager;
@@ -50,6 +53,7 @@ namespace pogoshift.Users
             _passwordHasher = passwordHasher;
             _abpSession = abpSession;
             _logInManager = logInManager;
+            _sessionAppService = sessionAppService;
         }
 
         public override async Task<UserDto> CreateAsync(CreateUserDto input)
@@ -91,6 +95,29 @@ namespace pogoshift.Users
             }
 
             return await GetAsync(input);
+        }
+
+        [AbpAllowAnonymous]
+        [AbpAuthorize(PermissionNames.Users_UpdateSelf)]
+        public async Task<UserDto> UpdateSelfAsync(UserDto input)
+        {
+            CheckUpdatePermission();
+
+            var loginInfo = await _sessionAppService.GetCurrentLoginInformations();
+            // Set the user ID to avoid spoofing
+            input.Id = loginInfo.User.Id;
+            var user = await _userManager.GetUserByIdAsync(input.Id);
+
+            MapToEntity(input, user);
+
+            CheckErrors(await _userManager.UpdateAsync(user));
+
+            if (input.RoleNames != null)
+            {
+                CheckErrors(await _userManager.SetRolesAsync(user, input.RoleNames));
+            }
+
+            return input;
         }
 
         public override async Task DeleteAsync(EntityDto<long> input)

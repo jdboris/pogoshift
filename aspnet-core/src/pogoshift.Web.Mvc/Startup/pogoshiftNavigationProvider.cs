@@ -23,6 +23,14 @@ namespace pogoshift.Web.Startup
                     )
                 ).AddItem(
                     new MenuItemDefinition(
+                        PageNames.Account,
+                        L("Account"),
+                        url: "Account",
+                        icon: "fas fa-user",
+                        requiresAuthentication: true
+                    )
+                ).AddItem(
+                    new MenuItemDefinition(
                         PageNames.Tenants,
                         L("Tenants"),
                         url: "Tenants",

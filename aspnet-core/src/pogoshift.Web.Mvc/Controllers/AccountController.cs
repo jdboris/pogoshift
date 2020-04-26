@@ -72,6 +72,19 @@ namespace pogoshift.Web.Controllers
             _notificationPublisher = notificationPublisher;
         }
 
+
+        [AbpMvcAuthorize]
+        public async Task<ActionResult> Index()
+        {
+            //var user = await _userAppService.GetAsync(new EntityDto<long>(userId));
+            var model = new AccountViewModel
+            {
+                LoginInformations = await _sessionAppService.GetCurrentLoginInformations()
+            };
+
+            return View(model);
+        }
+
         #region Login / Logout
 
         public ActionResult Login(string userNameOrEmailAddress = "", string returnUrl = "", string successMessage = "")

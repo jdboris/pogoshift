@@ -30,6 +30,11 @@
 <section class="content">
     <div class="container-fluid">
         <form id="AccountForm" action="~/Users/UpdateSelf" method="post">
+            <input type="hidden" name="Id" value="@user.Id" />
+
+            @* NOTE: Assume active because they viewed this page *@
+            <input id="IsActive" type="hidden" name="IsActive" value="true" />
+
             @if (ViewBag.ErrorMessage != null)
             {
                 <div class="alert alert-danger">
@@ -73,7 +78,7 @@
 
             <div class="input-group mb-3">
                 @{
-                    var birthDateValue = user.BirthDate.ToString("u") != "0001-01-01 00:00:00Z" ? user.BirthDate.ToString("u") : "";
+                    var birthDateValue = user.BirthDate.ToString("u") != "0001-01-01 00:00:00Z" ? user.BirthDate.ToShortDateString() : "";
                 }
                 <input type="text" name="BirthDate" class="form-control" placeholder="@L("BirthDate") YYYY/MM/DD" value="@birthDateValue" required maxlength="255">
                 <div class="input-group-append">
@@ -84,7 +89,7 @@
             </div>
 
             <div class="input-group mb-3">
-                <input type="text" name="PhoneNumber" class="form-control" placeholder="@L("PhoneNumber")" value="@user.PhoneNumber" required maxlength="255">
+                <input type="text" name="PhoneNumber" class="form-control" placeholder="@L("PhoneNumber")" value="@user.PhoneNumber" required maxlength="@AbpUserBase.MaxPhoneNumberLength">
                 <div class="input-group-append">
                     <div class="input-group-text">
                         <span class="fas fa-phone"></span>

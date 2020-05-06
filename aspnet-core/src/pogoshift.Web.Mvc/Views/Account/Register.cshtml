@@ -68,7 +68,7 @@
 
     <div class="input-group mb-3">
         @{
-            var birthDateValue = Model.BirthDate.ToString("u") != "0001-01-01 00:00:00Z" ? Model.BirthDate.ToString("u") : "";
+            var birthDateValue = Model.BirthDate.ToString("u") != "0001-01-01 00:00:00Z" ? Model.BirthDate.ToShortDateString() : "";
         }
         <input type="text" name="BirthDate" class="form-control" placeholder="@L("BirthDate") YYYY/MM/DD" value="@birthDateValue" required maxlength="255">
         <div class="input-group-append">

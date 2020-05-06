@@ -57,6 +57,36 @@
                                     <input type="password" class="form-control" name="ConfirmPassword" id="ConfirmPassword" required maxlength="@AbpUserBase.MaxPlainPasswordLength">
                                 </div>
                             </div>
+                            <div class="form-group row required">
+                                <label class="col-md-3 col-form-label">@L("BirthDate")</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="BirthDate" required maxlength="255">
+                                </div>
+                            </div>
+                            <div class="form-group row required">
+                                <label class="col-md-3 col-form-label">@L("PhoneNumber")</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="PhoneNumber" required maxlength="@AbpUserBase.MaxPhoneNumberLength">
+                                </div>
+                            </div>
+                            <div class="form-group row required">
+                                <label class="col-md-3 col-form-label">@L("AddressLine1")</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="AddressLine1" required maxlength="255">
+                                </div>
+                            </div>
+                            <div class="form-group row required">
+                                <label class="col-md-3 col-form-label">@L("AddressLine2")</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="AddressLine2" required maxlength="255">
+                                </div>
+                            </div>
+                            <div class="form-group row required">
+                                <label class="col-md-3 col-form-label">@L("PostalCode")</label>
+                                <div class="col-md-9">
+                                    <input type="text" class="form-control" name="PostalCode" required maxlength="255">
+                                </div>
+                            </div>
                             <div class="form-group row">
                                 <label class="col-md-3 col-form-label" for="CreateUserIsActive">@L("IsActive")</label>
                                 <div class="col-md-9">

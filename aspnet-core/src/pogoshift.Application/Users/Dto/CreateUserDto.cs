@@ -1,9 +1,9 @@
-using System.ComponentModel.DataAnnotations;
 using Abp.Auditing;
 using Abp.Authorization.Users;
 using Abp.AutoMapper;
 using Abp.Runtime.Validation;
 using pogoshift.Authorization.Users;
+using System.ComponentModel.DataAnnotations;
 
 namespace pogoshift.Users.Dto
 {
@@ -26,6 +26,23 @@ namespace pogoshift.Users.Dto
         [EmailAddress]
         [StringLength(AbpUserBase.MaxEmailAddressLength)]
         public string EmailAddress { get; set; }
+
+        [Required]
+        [Phone]
+        [StringLength(AbpUserBase.MaxPhoneNumberLength)]
+        public string PhoneNumber { get; set; }
+
+        [Required]
+        [StringLength(255)]
+        public string AddressLine1 { get; set; }
+
+        [Required]
+        [StringLength(255)]
+        public string AddressLine2 { get; set; }
+
+        [Required]
+        [StringLength(255)]
+        public string PostalCode { get; set; }
 
         public bool IsActive { get; set; }
 

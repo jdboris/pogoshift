@@ -43,6 +43,39 @@
                         <input id="email" type="email" class="form-control" name="EmailAddress" value="@Model.User.EmailAddress" required maxlength="@AbpUserBase.MaxEmailAddressLength">
                     </div>
                 </div>
+                <div class="form-group row required">
+                    @{
+                        var birthDateValue = Model.User.BirthDate.ToString("u") != "0001-01-01 00:00:00Z" ? Model.User.BirthDate.ToShortDateString() : "";
+                    }
+                    <label class="col-md-3 col-form-label" for="email">@L("BirthDate")</label>
+                    <div class="col-md-9">
+                        <input id="email" type="text" class="form-control" name="BirthDate" value="@birthDateValue" required maxlength="255">
+                    </div>
+                </div>
+                <div class="form-group row required">
+                    <label class="col-md-3 col-form-label" for="email">@L("PhoneNumber")</label>
+                    <div class="col-md-9">
+                        <input id="email" type="text" class="form-control" name="PhoneNumber" value="@Model.User.PhoneNumber" required maxlength="@AbpUserBase.MaxPhoneNumberLength">
+                    </div>
+                </div>
+                <div class="form-group row required">
+                    <label class="col-md-3 col-form-label" for="email">@L("AddressLine1")</label>
+                    <div class="col-md-9">
+                        <input id="email" type="text" class="form-control" name="AddressLine1" value="@Model.User.AddressLine1" required maxlength="255">
+                    </div>
+                </div>
+                <div class="form-group row required">
+                    <label class="col-md-3 col-form-label" for="email">@L("AddressLine2")</label>
+                    <div class="col-md-9">
+                        <input id="email" type="text" class="form-control" name="AddressLine2" value="@Model.User.AddressLine2" required maxlength="255">
+                    </div>
+                </div>
+                <div class="form-group row required">
+                    <label class="col-md-3 col-form-label" for="email">@L("PostalCode")</label>
+                    <div class="col-md-9">
+                        <input id="email" type="text" class="form-control" name="PostalCode" value="@Model.User.PostalCode" required maxlength="255">
+                    </div>
+                </div>
                 <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="IsActive">@L("IsActive")</label>
                     <div class="col-md-9">

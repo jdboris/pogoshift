@@ -31,6 +31,14 @@ namespace pogoshift.Web.Startup
                     )
                 ).AddItem(
                     new MenuItemDefinition(
+                        PageNames.Availability,
+                        L("Availability"),
+                        url: "Availability",
+                        icon: "fas fa-calendar-day",
+                        requiresAuthentication: true
+                    )
+                ).AddItem(
+                    new MenuItemDefinition(
                         PageNames.Tenants,
                         L("Tenants"),
                         url: "Tenants",

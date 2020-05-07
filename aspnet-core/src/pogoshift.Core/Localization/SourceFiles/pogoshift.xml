@@ -3,6 +3,7 @@
   <texts>
     <text name="HomePage" value="Home page" />
     <text name="Account" value="Account" />
+    <text name="Availability" value="Availability" />
     <text name="UpdateSelf" value="UpdateSelf" />
     <text name="About" value="About" />
     <text name="WelcomeMessage" value="Welcome to pogoshift!" />

@@ -1,0 +1,33 @@
+﻿@using Abp.Authorization.Users
+@model pogoshift.Web.Models.Availability.AvailabilityViewModel
+@using pogoshift.Web.Startup
+@{
+    ViewBag.CurrentPageName = PageNames.Availability;
+    ViewBag.Title = L("Availability");
+    var user = Model.LoginInformations.User;
+    Layout = "~/Views/Shared/Layout/_Layout.cshtml";
+}
+@section styles {
+    <link href="~/css/calendar.css" rel="stylesheet" type="text/css" />
+}
+
+@section scripts
+{
+    <environment names="Development">
+        <script type="module" src="~/view-resources/Views/Availability/Availability.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script type="module" src="~/view-resources/Views/Availability/Availability.min.js" asp-append-version="true"></script>
+    </environment>
+}
+
+
+<div class="clearfix">
+    <h1 class="display-4 text-center mb-4">Availability</h1>
+    <div id="availability-calendar"></div>
+
+    <div id="availability-data"
+         data-associate="@Model.JsonSerialize(Model.LoginInformations.User)"></div>
+
+</div>

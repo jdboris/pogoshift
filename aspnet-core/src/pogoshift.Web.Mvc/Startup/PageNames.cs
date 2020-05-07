@@ -4,6 +4,7 @@
     {
         public const string Home = "Home";
         public const string Account = "Account";
+        public const string Availability = "Availability";
         public const string About = "About";
         public const string Tenants = "Tenants";
         public const string Users = "Users";

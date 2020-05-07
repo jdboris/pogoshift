@@ -1,0 +1,722 @@
+﻿.calendar {
+    user-select: none;
+}
+
+    .calendar * {
+        box-sizing: border-box;
+    }
+
+    .calendar .calendar-mobile-overlay {
+        display: none;
+    }
+
+    .calendar .time-period-template-card {
+        position: sticky;
+        left: 15px;
+        right: 15px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        bottom: 15px;
+    }
+
+        .calendar .time-period-template-card .card-body {
+            padding: 10px;
+        }
+
+.calendar-header {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+    .calendar-header a {
+        text-decoration: none;
+    }
+
+.calendar-month-previous,
+.calendar-month-next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50%;
+}
+
+    .calendar-month-previous:hover,
+    .calendar-month-next:hover {
+        background-color: rgb(247, 247, 247);
+        cursor: pointer;
+    }
+
+.calendar .month-title {
+    margin: 10px;
+}
+
+.calendar .month-day-list {
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+    background-color: rgb(204, 204, 204);
+    border: 1px solid rgb(204, 204, 204);
+    margin-bottom: 15px;
+}
+
+.calendar .month-day-list,
+.calendar .weekday-headers {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+    .calendar .month-day-list > div,
+    .calendar .weekday-headers > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: auto;
+    }
+
+
+.calendar .month-day {
+    /* Required for error icon positioning */
+    position: relative;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    min-height: 15vh;
+}
+
+.calendar .warning-icon {
+    display: none;
+}
+
+.calendar .error-icon {
+    display: none;
+}
+
+.calendar .month-day .warning-icon {
+    color: #cab900;
+}
+
+.calendar .month-day .error-icon {
+    color: red;
+}
+
+.calendar .month-day .error-icons {
+    position: absolute;
+    top: 7px;
+    right: 5px;
+    font-size: 15px;
+}
+
+
+.calendar .day-list .weekday-headers > div {
+    min-height: 30px;
+}
+
+.calendar .day-list .weekday-headers div {
+    display: flex;
+    font-size: 20px;
+    align-items: flex-end;
+}
+
+.calendar .month-day-list {
+    font-size: 12px;
+}
+
+
+.calendar .month-day {
+    padding: 5px 0px;
+}
+
+.calendar .day-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50% 50%;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.calendar .day-number-wrapper {
+    /* NOTE: To align this item at the top of its flex parent */
+    margin-bottom: auto;
+}
+
+.calendar .time-period-section {
+    width: 100%;
+}
+/*
+.calendar .time-period {
+    min-height: 30px;
+}
+*/
+
+.calendar .closed-month .month-day {
+    background-color: rgb(228, 228, 228);
+}
+
+.calendar .closed-month .time-period {
+    display: none;
+}
+
+.calendar .closed-day {
+    background-color: rgb(228, 228, 228);
+}
+
+    .calendar .closed-day .time-period {
+        display: none;
+    }
+
+.calendar .month-day-filler {
+    background-color: rgb(218, 218, 218);
+}
+
+    .calendar .month-day-filler .day-number {
+        display: none;
+    }
+
+.calendar .time-period-inner {
+    /* NOTE: This compensates for a bug in Chrome that puts mystery space after the time period */
+    justify-content: center;
+    display: grid;
+    /* NOTE: Default to 5 minutes per column */
+    grid-template-columns: repeat( 288, 1fr );
+}
+
+.calendar .time-period-heading {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 3px;
+}
+
+.calendar .time-period-copy,
+.calendar .time-period-delete {
+    cursor: pointer;
+}
+
+
+.calendar .time-period-bar {
+    grid-row: 2;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+    .calendar .time-period-bar i {
+        cursor: ew-resize;
+    }
+
+.calendar .time-period-time {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.calendar .left-handle {
+    padding-right: 0px;
+}
+
+.calendar .right-handle {
+    padding-left: 0px;
+}
+
+
+.calendar .time-period-template .time-period-copy,
+.calendar .time-period-template .time-period-delete {
+    display: none;
+}
+
+.calendar .time-period-template .time-period-heading {
+    font-size: 30px;
+    justify-content: center;
+}
+
+.calendar .time-period-template i {
+    font-size: 30px;
+    padding: 8px;
+    color: white;
+}
+
+.calendar .associate-list-card {
+    position: sticky;
+    left: 15px;
+    right: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 15px;
+}
+
+    .calendar .associate-list-card .card-body i {
+        padding: 10px;
+    }
+
+.calendar .associate-list-item {
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+
+/* **************************************************************************************************************** */
+/* Availability                                                                                                     */
+/* **************************************************************************************************************** */
+
+.availability-calendar .scheduling-bar {
+    display: none;
+}
+
+/* **************************************************************************************************************** */
+/* Scheduling                                                                                                       */
+/* **************************************************************************************************************** */
+
+.scheduling-calendar .time-period-section {
+    position: relative;
+}
+
+.scheduling-calendar [data-available-associate-count='2'] .time-period-section {
+    min-height: calc((36px + 5px) * 2);
+}
+
+.scheduling-calendar [data-available-associate-count='3'] .time-period-section {
+    min-height: calc((36px + 5px) * 3);
+}
+
+.scheduling-calendar [data-available-associate-count='4'] .time-period-section {
+    min-height: calc((36px + 5px) * 4);
+}
+
+.scheduling-calendar [data-available-associate-count='5'] .time-period-section {
+    min-height: calc((36px + 5px) * 5);
+}
+
+.scheduling-calendar [data-available-associate-count='6'] .time-period-section {
+    min-height: calc((36px + 5px) * 6);
+}
+
+.scheduling-calendar [data-available-associate-count='7'] .time-period-section {
+    min-height: calc((36px + 5px) * 7);
+}
+
+.scheduling-calendar [data-available-associate-count='8'] .time-period-section {
+    min-height: calc((36px + 5px) * 8);
+}
+
+.scheduling-calendar [data-available-associate-count='9'] .time-period-section {
+    min-height: calc((36px + 5px) * 9);
+}
+
+.scheduling-calendar [data-available-associate-count='10'] .time-period-section {
+    min-height: calc((36px + 5px) * 10);
+}
+
+.scheduling-calendar .associate-0 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+}
+
+.scheduling-calendar .associate-1 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: calc(36px + 5px);
+}
+
+.scheduling-calendar .associate-2 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: calc((36px + 5px) * 2);
+}
+
+.scheduling-calendar .associate-3 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: calc((36px + 5px) * 3);
+}
+
+.scheduling-calendar .associate-4 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: calc((36px + 5px) * 4);
+}
+
+.scheduling-calendar .associate-5 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: calc((36px + 5px) * 5);
+}
+
+.scheduling-calendar .associate-6 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: calc((36px + 5px) * 6);
+}
+
+.scheduling-calendar .associate-7 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: calc((36px + 5px) * 7);
+}
+
+.scheduling-calendar .associate-8 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: calc((36px + 5px) * 8);
+}
+
+.scheduling-calendar .associate-9 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: calc((36px + 5px) * 9);
+}
+
+.scheduling-calendar .associate-10 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    bottom: calc((36px + 5px) * 10);
+}
+
+.scheduling-calendar .availability-bar {
+    display: none;
+}
+
+.scheduling-calendar .time-period-copy,
+.scheduling-calendar .time-period-delete,
+.scheduling-calendar .left-handle,
+.scheduling-calendar .right-handle {
+    display: none;
+}
+
+.scheduling-calendar .time-period-heading {
+    justify-content: center;
+}
+
+.scheduling-calendar .time-period-bar {
+    min-height: 18px;
+    opacity: 0.5;
+}
+
+    .scheduling-calendar .time-period-bar.scheduled {
+        opacity: 1;
+    }
+
+.scheduling-calendar .month-day-list:not(.closed-month) .month-day:not(.closed-day).manager-minimum-error .warning-icon {
+    display: initial;
+}
+
+.scheduling-calendar .month-day-list:not(.closed-month) .month-day:not(.closed-day).associate-minimum-error .warning-icon {
+    display: none;
+}
+
+.scheduling-calendar .month-day-list:not(.closed-month) .month-day:not(.closed-day).associate-minimum-error .error-icon {
+    display: initial;
+}
+
+
+.scheduling-calendar .error-icons {
+    margin-bottom: auto;
+}
+
+[data-tooltip] {
+    position: relative;
+}
+
+    [data-tooltip]:hover::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        font-family: 'Mukta', sans-serif;
+        font-size: 15px;
+        font-weight: normal;
+        text-align: center;
+        color: white;
+        background: #3d3d3d;
+        border: 1px solid black;
+        border-radius: .25em;
+        bottom: 180%;
+        left: 50%;
+        margin-left: -7em;
+        padding: 1em;
+        width: 14em;
+        z-index: 1000;
+    }
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+
+    .calendar .calendar-mobile-overlay {
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        opacity: 0.5;
+        background-color: #000000;
+        z-index: 1;
+    }
+
+        .calendar .calendar-mobile-overlay:not(.hidden) {
+            display: initial;
+        }
+
+    .calendar .month-day {
+        padding: 0px;
+        padding-bottom: 10px;
+    }
+
+
+    .calendar .month-day-list .time-period {
+        margin-top: 3px;
+        background-color: #FFFFFF;
+    }
+
+    .calendar .month-day-list .left-handle,
+    .calendar .month-day-list .right-handle {
+        display: none;
+    }
+
+    .calendar .month-day-list .time-period .time-period-bar {
+        min-height: 12px;
+    }
+
+    .calendar .month-day-list .time-period .time-period-heading {
+        display: none;
+    }
+
+    .calendar .time-period-template .left-handle {
+        padding-right: 0px;
+    }
+
+    .calendar .time-period-template .right-handle {
+        padding-left: 0px;
+    }
+
+    /*
+    .calendar .month-day-list .time-period.focused .time-period-heading {
+        position: absolute;
+        width: 100%;
+        left: 0px;
+        margin-top: -40px;
+        font-size: 30px;
+    }
+
+    .calendar .month-day-list .time-period.focused .time-period {
+        display: flex;
+        position: absolute;
+        left: 0px;
+    }
+    */
+
+    .calendar .month-day-list .time-period .time-period-inner {
+        /* Used to animated the height of the element */
+        font-size: 8px;
+        transition: all 0.2s;
+        z-index: 100;
+    }
+
+
+    .calendar .month-day-list .time-period.focused {
+        background-color: #dbdbdb;
+        min-height: 12px;
+        /*box-shadow: 0px 0px 1px 1px #CCC;*/
+        /* NOTE: This must not be moved to another selector or it'll look weird when it transitions back to white */
+        transition: background-color 0.3s;
+    }
+
+        .calendar .month-day-list .time-period.focused .time-period-inner {
+            position: fixed;
+            left: 0px;
+            bottom: 155px;
+            font-size: 30px;
+            margin-left: 15px;
+            margin-right: 15px;
+            width: calc(100% - 30px);
+            background-color: #FFFFFF;
+            padding: 10px;
+            border-radius: 0.25rem;
+            border: 1px solid rgba(0, 0, 0, 0.125);
+        }
+
+        .calendar .month-day-list .time-period.focused .left-handle {
+            display: inline-block;
+        }
+
+        .calendar .month-day-list .time-period.focused .right-handle {
+            display: inline-block;
+        }
+
+        .calendar .month-day-list .time-period.focused .time-period-time {
+            display: initial;
+        }
+
+        .calendar .month-day-list .time-period.focused .time-period-heading {
+            display: flex;
+        }
+
+
+
+    .scheduling-calendar [data-available-associate-count='2'] .time-period-section {
+        min-height: calc((13px + 2px) * 2);
+    }
+
+    .scheduling-calendar [data-available-associate-count='3'] .time-period-section {
+        min-height: calc((13px + 2px) * 3);
+    }
+
+    .scheduling-calendar [data-available-associate-count='4'] .time-period-section {
+        min-height: calc((13px + 2px) * 4);
+    }
+
+    .scheduling-calendar [data-available-associate-count='5'] .time-period-section {
+        min-height: calc((13px + 2px) * 5);
+    }
+
+    .scheduling-calendar [data-available-associate-count='6'] .time-period-section {
+        min-height: calc((13px + 2px) * 6);
+    }
+
+    .scheduling-calendar [data-available-associate-count='7'] .time-period-section {
+        min-height: calc((13px + 2px) * 7);
+    }
+
+    .scheduling-calendar [data-available-associate-count='8'] .time-period-section {
+        min-height: calc((13px + 2px) * 8);
+    }
+
+    .scheduling-calendar [data-available-associate-count='9'] .time-period-section {
+        min-height: calc((13px + 2px) * 9);
+    }
+
+    .scheduling-calendar [data-available-associate-count='10'] .time-period-section {
+        min-height: calc((13px + 2px) * 10);
+    }
+
+    .scheduling-calendar .associate-0 {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+    }
+
+    .scheduling-calendar .associate-1 {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: calc(13px + 2px);
+    }
+
+    .scheduling-calendar .associate-2 {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: calc((13px + 2px) * 2);
+    }
+
+    .scheduling-calendar .associate-3 {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: calc((13px + 2px) * 3);
+    }
+
+    .scheduling-calendar .associate-4 {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: calc((13px + 2px) * 4);
+    }
+
+    .scheduling-calendar .associate-5 {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: calc((13px + 2px) * 5);
+    }
+
+    .scheduling-calendar .associate-6 {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: calc((13px + 2px) * 6);
+    }
+
+    .scheduling-calendar .associate-7 {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: calc((13px + 2px) * 7);
+    }
+
+    .scheduling-calendar .associate-8 {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: calc((13px + 2px) * 8);
+    }
+
+    .scheduling-calendar .associate-9 {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: calc((13px + 2px) * 9);
+    }
+
+    .scheduling-calendar .associate-10 {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        bottom: calc((13px + 2px) * 10);
+    }
+
+    .scheduling-calendar .month-day .error-icons {
+        position: initial;
+        margin-bottom: auto;
+    }
+
+    .scheduling-calendar[data-is-manager='1'] .month-day-list:not(.closed-month) .month-day:not(.closed-day).associate-minimum-error .day-number-wrapper,
+    .scheduling-calendar[data-is-manager='1'] .month-day-list:not(.closed-month) .month-day:not(.closed-day).manager-minimum-error .day-number-wrapper {
+        margin-bottom: initial;
+    }
+
+    [data-tooltip]:hover::after {
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        margin-left: auto;
+        margin-right: auto;
+        top: 15vh;
+        bottom: auto;
+    }
+}
+
+/* **************************************************************************************************************** */
+/* Non-managers                                                                                                     */
+/* **************************************************************************************************************** */
+
+
+.scheduling-calendar[data-is-manager='0'] .error-icons {
+    display: none;
+}
+
+.scheduling-calendar[data-is-manager='0'] .time-period:not([data-shift-id]) {
+    display: none;
+}

@@ -11,31 +11,18 @@ export function updateAvailability(associate, timePeriod, calendar) {
     if (endTime.split(":")[0] == 24) endTime = "23:59:59";
     endTime = `${calendar.date.getFullYear()}-${calendar.date.getMonth() + 1}-${dayNumberElement.innerHTML}T${endTime}Z`;
 
-    return fetch("Update", {
-        method: "PUT",
-        body: JSON.stringify(new Availability({
-            id: timePeriod.dataset.availabilityId,
-            userId: associate.id,
-            user: associate,
-            beginning: startTime,
-            ending: endTime,
-        })),
-        headers: {
-            'Accept': 'application/json',
-            'Content-type': 'application/json'
-        },
-    })
-        .then(function (response) {
-            if (!response.ok) {
-                throw new Error('Availability/Update responded with ' + response.status);
-            }
-            return response.json();
-        })
-        .then(function (response) {
-            if (response.status == "AUTHENTICATION_FAILED") {
-                location.href = "/Profile/SignIn";
-            }
-        });
+    let availability = new Availability({
+        id: timePeriod.dataset.availabilityId,
+        tenantId: associate.tenantId,
+        userId: associate.id,
+        user: associate,
+        beginning: startTime,
+        ending: endTime,
+    });
+
+    return availability.save().then((availability) => {
+        return availability;
+    });
 }
 
 export function deleteTimePeriod(timePeriodId) {

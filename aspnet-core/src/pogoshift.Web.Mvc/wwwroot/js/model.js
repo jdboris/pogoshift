@@ -23,7 +23,7 @@ export class Model {
         if (this.id == 0) {
             return myFetch(`/api/services/app/${this.constructor.name}/Create`, "POST", this);
         } else {
-            return myFetch(`/api/services/app/${this.constructor.name}/Update`, "POST", this);
+            return myFetch(`/api/services/app/${this.constructor.name}/Update`, "PUT", this);
         }
 
     }

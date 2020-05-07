@@ -211,6 +211,8 @@
 }
 
     .calendar .time-period-bar i {
+        font-size: 16px;
+        padding: 4px;
         cursor: ew-resize;
     }
 

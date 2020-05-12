@@ -22,7 +22,6 @@
     <ProjectReference Include="..\pogoshift.EntityFrameworkCore\pogoshift.EntityFrameworkCore.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="EntityFramework.DynamicFilters" Version="3.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.0.0-rc4" />
     <PackageReference Include="Abp.AspNetCore" Version="5.4.0" />

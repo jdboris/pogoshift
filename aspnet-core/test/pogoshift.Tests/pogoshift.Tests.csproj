@@ -15,7 +15,6 @@
     <ProjectReference Include="..\..\src\pogoshift.EntityFrameworkCore\pogoshift.EntityFrameworkCore.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="EntityFramework.DynamicFilters" Version="3.1.1" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
     <PackageReference Include="NSubstitute" Version="4.2.1" />
     <PackageReference Include="Shouldly" Version="3.0.2" />

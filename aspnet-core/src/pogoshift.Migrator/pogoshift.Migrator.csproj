@@ -16,6 +16,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Abp.Castle.Log4Net" Version="5.4.0" />
+    <PackageReference Include="EntityFramework.DynamicFilters" Version="3.1.1" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\pogoshift.Core\pogoshift.Core.csproj" />

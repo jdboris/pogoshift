@@ -27,6 +27,15 @@ export function updateAvailability(associate, timePeriod, calendar) {
 
 export function deleteTimePeriod(timePeriodId) {
 
+    let availability = new Availability({
+        id: timePeriod.dataset.availabilityId
+    });
+
+    return availability.delete().then((data) => {
+        console.log("data: ", data);
+        return data;
+    });
+
     return fetch("Delete", {
         method: "DELETE",
         body: JSON.stringify({

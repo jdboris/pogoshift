@@ -19,5 +19,14 @@ namespace pogoshift.EntityFrameworkCore
             : base(options)
         {
         }
+
+        /*
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Filter("UserFilter", (IHasUser entity, int personId) => entity.PersonId == personId, 0);
+        }
+        */
     }
 }

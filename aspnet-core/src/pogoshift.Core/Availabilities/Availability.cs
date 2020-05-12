@@ -1,11 +1,12 @@
 ﻿using Abp.Domain.Entities;
 using pogoshift.Authorization.Users;
+using pogoshift.Filters;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace pogoshift.Availabilities
 {
-    public class Availability : Entity<int>, IMustHaveTenant
+    public class Availability : Entity<int>, IMustHaveTenant, IHasUser
     {
         public int TenantId { get; set; }
         public DateTime Beginning { get; set; }

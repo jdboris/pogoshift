@@ -30,6 +30,6 @@ export class Model {
 
     delete() {
 
-        return myFetch(`/api/services/app/${this.constructor.name}/Delete`, "DELETE", this);
+        return myFetch(`/api/services/app/${this.constructor.name}/Delete?Id=${this.id}`, "DELETE");
     }
 }

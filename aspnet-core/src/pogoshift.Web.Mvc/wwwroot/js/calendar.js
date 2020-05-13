@@ -1,6 +1,6 @@
 ﻿import { CustomElement, TimePeriod } from "./dom-elements.js";
 import { MONTH_NAMES, formatTime, stringToDate, getDateFromQueryString, nameToColor, Event } from "./utilities.js";
-import { deleteTimePeriod, createShift } from "./database.js";
+import { createShift } from "./database.js";
 import { Availability } from "./models/Availability.js";
 import { User } from "./models/User.js";
 
@@ -468,7 +468,11 @@ export class SchedulingCalendar extends Calendar {
 
         } else {
             if (this.associate.isManager == 1) {
-                deleteTimePeriod(timePeriod.dataset.shiftId).then(() => {
+
+                new Availability({
+                    id: timePeriod.dataset.shiftId,
+                    userId: timePeriod.dataset.associateId
+                }).delete().then((data) => {
                     timePeriodBar.classList.remove("scheduled");
                     this.removeAssociateFromDay(monthDay, associate);
 

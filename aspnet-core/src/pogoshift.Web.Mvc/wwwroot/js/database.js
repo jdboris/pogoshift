@@ -1,30 +1,5 @@
 ﻿import { Availability } from "./models/Availability.js";
 
-export function updateAvailability(associate, timePeriod, calendar) {
-
-    let monthDay = timePeriod.closest(".month-day");
-    let dayNumberElement = monthDay.getElementsByClassName("day-number")[0];
-    let startTime = timePeriod.getElementsByClassName("time-start")[0].innerHTML + ":00";
-    startTime = `${calendar.date.getFullYear()}-${calendar.date.getMonth() + 1}-${dayNumberElement.innerHTML}T${startTime}Z`;
-    let endTime = timePeriod.getElementsByClassName("time-end")[0].innerHTML + ":00";
-    // NOTE: 24:00 is not a valid time
-    if (endTime.split(":")[0] == 24) endTime = "23:59:59";
-    endTime = `${calendar.date.getFullYear()}-${calendar.date.getMonth() + 1}-${dayNumberElement.innerHTML}T${endTime}Z`;
-
-    let availability = new Availability({
-        id: timePeriod.dataset.availabilityId,
-        tenantId: associate.tenantId,
-        userId: associate.id,
-        user: associate,
-        beginning: startTime,
-        ending: endTime,
-    });
-
-    return availability.save().then((availability) => {
-        return availability;
-    });
-}
-
 export function deleteTimePeriod(timePeriodId) {
 
     let availability = new Availability({

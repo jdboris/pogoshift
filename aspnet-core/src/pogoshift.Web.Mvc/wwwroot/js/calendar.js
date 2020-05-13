@@ -1,7 +1,7 @@
 ﻿import { CustomElement, TimePeriod } from "./dom-elements.js";
 import { MONTH_NAMES, formatTime, stringToDate, getDateFromQueryString, nameToColor, Event } from "./utilities.js";
-import { updateAvailability, deleteTimePeriod, createShift } from "./database.js";
-import { UpdateAvailabilityDto } from "./models/UpdateAvailabilityDto.js";
+import { deleteTimePeriod, createShift } from "./database.js";
+import { Availability } from "./models/Availability.js";
 import { User } from "./models/User.js";
 
 
@@ -256,6 +256,24 @@ export class Calendar {
         this.hoursPerDay = (this.dayEndTime.getTime() - this.dayStartTime.getTime()) / 1000 / 60 / 60;
     }
 
+    getStartTimeFromTimePeriod(timePeriod) {
+        let monthDay = timePeriod.closest(".month-day");
+        let dayNumberElement = monthDay.getElementsByClassName("day-number")[0];
+        let startTime = timePeriod.getElementsByClassName("time-start")[0].innerHTML + ":00";
+        startTime = `${this.date.getFullYear()}-${this.date.getMonth() + 1}-${dayNumberElement.innerHTML}T${startTime}Z`;
+        return startTime;
+    }
+
+    getEndTimeFromTimePeriod(timePeriod) {
+        let monthDay = timePeriod.closest(".month-day");
+        let dayNumberElement = monthDay.getElementsByClassName("day-number")[0];
+        let endTime = timePeriod.getElementsByClassName("time-end")[0].innerHTML + ":00";
+        // NOTE: 24:00 is not a valid time
+        if (endTime.split(":")[0] == 24) endTime = "23:59:59";
+        endTime = `${this.date.getFullYear()}-${this.date.getMonth() + 1}-${dayNumberElement.innerHTML}T${endTime}Z`;
+        return endTime;
+    }
+
     addMonthDays(count, classes) {
         let html = "";
 
@@ -323,13 +341,11 @@ export class AvailabilityCalendar extends Calendar {
                     if (endTime.split(":")[0] == 24) endTime = "23:59:59";
                     endTime = `${year}-${month}-${day}T${endTime}Z`;
 
-                    let availability = new UpdateAvailabilityDto({
+                    new Availability({
                         userId: associate.id,
                         beginning: startTime,
                         ending: endTime,
-                    });
-
-                    return availability.save().then((availability) => {
+                    }).save().then((availability) => {
                         let timePeriod = new TimePeriod(this, { start: stringToDate(startTime), end: stringToDate(endTime) }, associate);
                         timePeriod.dataset.availabilityId = availability.id;
                         element.querySelector(".time-period-section").prepend(timePeriod);
@@ -344,15 +360,29 @@ export class AvailabilityCalendar extends Calendar {
         let handler = new Event.PointerHandler((event) => {
 
             if (this.timePeriodResizal != null) {
-                if (this.timePeriodResizal.timePeriod != this.timePeriodTemplate) {
-                    updateAvailability(associate, this.timePeriodResizal.timePeriod, this);
+                let timePeriod = this.timePeriodResizal.timePeriod;
+
+                if (timePeriod != this.timePeriodTemplate) {
+
+                    new Availability({
+                        id: timePeriod.dataset.availabilityId,
+                        beginning: this.getStartTimeFromTimePeriod(timePeriod),
+                        ending: this.getEndTimeFromTimePeriod(timePeriod),
+                    }).save();
                 }
                 this.timePeriodResizal.stop(event);
                 this.timePeriodResizal = null;
             }
             if (this.timePeriodMovement != null) {
-                if (this.timePeriodMovement.timePeriod != this.timePeriodTemplate) {
-                    updateAvailability(associate, this.timePeriodMovement.timePeriod, this);
+                let timePeriod = this.timePeriodMovement.timePeriod;
+
+                if (timePeriod != this.timePeriodTemplate) {
+
+                    new Availability({
+                        id: timePeriod.dataset.availabilityId,
+                        beginning: this.getStartTimeFromTimePeriod(timePeriod),
+                        ending: this.getEndTimeFromTimePeriod(timePeriod),
+                    }).save();
                 }
                 this.timePeriodMovement.stop(event);
                 this.timePeriodMovement = null;

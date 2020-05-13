@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Hosting;
 using pogoshift.Authorization.Users;
 using pogoshift.Availabilities;
-using pogoshift.Availabilities.Dto;
 using pogoshift.Shifts;
 using System;
 using System.IO;
@@ -63,7 +62,6 @@ namespace pogoshift.Web.Startup
             // Generate new JavaScript Models
             BuildJavaScriptModel(new User());
             BuildJavaScriptModel(new Availability());
-            BuildJavaScriptModel(new UpdateAvailabilityDto());
             BuildJavaScriptModel(new Shift());
 
 

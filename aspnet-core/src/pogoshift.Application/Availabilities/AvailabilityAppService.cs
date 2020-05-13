@@ -38,7 +38,7 @@ namespace pogoshift.Availabilities
 
         public ListResultDto<AvailabilityDto> GetAllByDate(int month, int year)
         {
-            var availabilities = Repository.GetAllList().Where(p => p.Beginning.Month == month && p.Ending.Year == year);
+            var availabilities = Repository.GetAllIncluding(p => p.User).Where(p => p.Beginning.Month == month && p.Ending.Year == year);
 
             return new ListResultDto<AvailabilityDto>(ObjectMapper.Map<List<AvailabilityDto>>(availabilities));
         }

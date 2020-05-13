@@ -1,42 +1,4 @@
-﻿import { Availability } from "./models/Availability.js";
-
-export function deleteTimePeriod(timePeriodId) {
-
-    let availability = new Availability({
-        id: timePeriod.dataset.availabilityId
-    });
-
-    return availability.delete().then((data) => {
-        console.log("data: ", data);
-        return data;
-    });
-
-    return fetch("Delete", {
-        method: "DELETE",
-        body: JSON.stringify({
-            id: timePeriodId
-        }),
-        headers: {
-            'Accept': 'application/json',
-            'Content-type': 'application/json'
-        },
-    })
-        .then(function (response) {
-            if (!response.ok) {
-                throw new Error('/Delete responded with ' + response.status);
-            }
-            return response.json();
-        })
-        .then(function (response) {
-            if (response.status == "AUTHENTICATION_FAILED") {
-                location.href = "/Profile/SignIn";
-            }
-        });
-}
-
-
-
-
+﻿
 export function createShift(associate, timePeriod, monthDay, calendar) {
 
     let dayNumberElement = monthDay.getElementsByClassName("day-number")[0];

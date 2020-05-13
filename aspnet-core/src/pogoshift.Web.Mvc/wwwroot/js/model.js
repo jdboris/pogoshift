@@ -1,4 +1,4 @@
-﻿import { getCookie, myFetch } from "./utilities.js";
+﻿import { myFetch } from "./utilities.js";
 
 export class Model {
 
@@ -10,8 +10,16 @@ export class Model {
         }
     }
 
-    static async getAll(options) {
+    static async getAll() {
         return myFetch(`/api/services/app/${this.name}/GetAll`, "GET").then((result) => {
+            return result.items.map((availability) => {
+                return new this(availability);
+            });
+        });
+    }
+
+    static async getAllByDate(month, year) {
+        return myFetch(`/api/services/app/${this.name}/GetAllByDate?month=${month}&year=${year}`, "GET").then((result) => {
             return result.items.map((availability) => {
                 return new this(availability);
             });

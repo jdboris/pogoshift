@@ -1,7 +1,7 @@
 ﻿import { CustomElement, TimePeriod } from "./dom-elements.js";
 import { MONTH_NAMES, formatTime, stringToDate, getDateFromQueryString, nameToColor, Event } from "./utilities.js";
 import { updateAvailability, deleteTimePeriod, createShift } from "./database.js";
-import { Availability } from "./models/Availability.js";
+import { UpdateAvailabilityDto } from "./models/UpdateAvailabilityDto.js";
 import { User } from "./models/User.js";
 
 
@@ -323,7 +323,7 @@ export class AvailabilityCalendar extends Calendar {
                     if (endTime.split(":")[0] == 24) endTime = "23:59:59";
                     endTime = `${year}-${month}-${day}T${endTime}Z`;
 
-                    let availability = new Availability({
+                    let availability = new UpdateAvailabilityDto({
                         userId: associate.id,
                         beginning: startTime,
                         ending: endTime,

@@ -12,7 +12,7 @@ using System.Linq;
 namespace pogoshift.Availabilities
 {
     [AbpAuthorize]
-    public class AvailabilityAppService : CrudAppService<Availability, AvailabilityDto>
+    public class AvailabilityAppService : CrudAppService<Availability, AvailabilityDto, int, AvailabilityDto, AvailabilityDto, UpdateAvailabilityDto>
     {
         private readonly IUnitOfWorkManager _unitOfWorkManager;
         public AvailabilityAppService(IRepository<Availability, int> repository, IUnitOfWorkManager unitOfWorkManager) : base(repository)
@@ -20,7 +20,7 @@ namespace pogoshift.Availabilities
             _unitOfWorkManager = unitOfWorkManager;
         }
 
-        protected override IQueryable<Availability> CreateFilteredQuery(PagedAndSortedResultRequestDto input)
+        protected override IQueryable<Availability> CreateFilteredQuery(AvailabilityDto input)
         {
             return Repository.GetAllIncluding(p => p.User);
         }

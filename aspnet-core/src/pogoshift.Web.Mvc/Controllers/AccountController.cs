@@ -287,7 +287,12 @@ namespace pogoshift.Web.Controllers
             {
                 ViewBag.ErrorMessage = ex.Message;
 
-                return Json(new AjaxResponse());
+                return Json(new AjaxResponse
+                {
+                    Success = false,
+                    Error = new ErrorInfo(ex.Message)
+
+                });
                 //return View("Register", model);
             }
         }

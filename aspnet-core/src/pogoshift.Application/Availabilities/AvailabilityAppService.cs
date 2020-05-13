@@ -3,7 +3,8 @@ using Abp.Application.Services.Dto;
 using Abp.Authorization;
 using Abp.Domain.Entities;
 using Abp.Domain.Repositories;
-using Abp.Runtime.Session;
+using Abp.Domain.Uow;
+using pogoshift.Authorization;
 using pogoshift.Availabilities.Dto;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,10 +14,10 @@ namespace pogoshift.Availabilities
     [AbpAuthorize]
     public class AvailabilityAppService : CrudAppService<Availability, AvailabilityDto>
     {
-        private readonly IAbpSession _abpSession;
-        public AvailabilityAppService(IRepository<Availability, int> repository, IAbpSession abpSession) : base(repository)
+        private readonly IUnitOfWorkManager _unitOfWorkManager;
+        public AvailabilityAppService(IRepository<Availability, int> repository, IUnitOfWorkManager unitOfWorkManager) : base(repository)
         {
-            _abpSession = abpSession;
+            _unitOfWorkManager = unitOfWorkManager;
         }
 
         protected override IQueryable<Availability> CreateFilteredQuery(PagedAndSortedResultRequestDto input)
@@ -34,11 +35,23 @@ namespace pogoshift.Availabilities
 
             return entity;
         }
-        public ListResultDto<AvailabilityDto> GetAllByDateAndUser(int month, int year)
+
+        public ListResultDto<AvailabilityDto> GetAllByDate(int month, int year)
         {
-            var availabilities = Repository.GetAllList().Where(p => p.UserId == _abpSession.UserId && p.Beginning.Month == month && p.Ending.Year == year);
+            var availabilities = Repository.GetAllList().Where(p => p.Beginning.Month == month && p.Ending.Year == year);
 
             return new ListResultDto<AvailabilityDto>(ObjectMapper.Map<List<AvailabilityDto>>(availabilities));
+        }
+
+        [AbpAuthorize(PermissionNames.HasUser_CrudAll)]
+        public ListResultDto<AvailabilityDto> GetAllOfAllUsersByDate(int month, int year)
+        {
+            using (_unitOfWorkManager.Current.DisableFilter("HasUser"))
+            {
+                var availabilities = Repository.GetAllList().Where(p => p.Beginning.Month == month && p.Ending.Year == year);
+
+                return new ListResultDto<AvailabilityDto>(ObjectMapper.Map<List<AvailabilityDto>>(availabilities));
+            }
         }
     }
 }

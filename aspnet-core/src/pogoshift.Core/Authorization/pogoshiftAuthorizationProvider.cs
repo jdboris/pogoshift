@@ -11,7 +11,8 @@ namespace pogoshift.Authorization
             context.CreatePermission(PermissionNames.Pages_Users, L("Users"));
             context.CreatePermission(PermissionNames.Pages_Roles, L("Roles"));
             context.CreatePermission(PermissionNames.Pages_Tenants, L("Tenants"), multiTenancySides: MultiTenancySides.Host);
-            context.CreatePermission(PermissionNames.Users_UpdateSelf, L("UpdateSelf"));
+            context.CreatePermission(PermissionNames.Users_UpdateSelf, L("Update Self"));
+            context.CreatePermission(PermissionNames.HasUser_CrudAll, L("CRUD All Entities with Users"));
         }
 
         private static ILocalizableString L(string name)

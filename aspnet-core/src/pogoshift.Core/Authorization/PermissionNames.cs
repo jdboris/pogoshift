@@ -9,5 +9,7 @@
         public const string Users_UpdateSelf = "Users.UpdateSelf";
 
         public const string Pages_Roles = "Pages.Roles";
+
+        public const string HasUser_CrudAll = "HasUser.CrudAll";
     }
 }

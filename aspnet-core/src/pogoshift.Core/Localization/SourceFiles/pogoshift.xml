@@ -89,6 +89,8 @@
     <text name="ClearOthers">Clear others</text>
     <text name="LabelOptions">Label options</text>
     <text name="Permissions">Permissions</text>
+    <text name="Update Self">Update Self</text>
+    <text name="CRUD All Entities with Users">CRUD All Entities with Users</text>
     <text name="RoleDescription">Role description</text>
     <text name="Refresh">Refresh</text>
     <text name="Create">Create</text>

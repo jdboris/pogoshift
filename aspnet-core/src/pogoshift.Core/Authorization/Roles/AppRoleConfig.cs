@@ -12,7 +12,7 @@ namespace pogoshift.Authorization.Roles
             roleManagementConfig.StaticRoles.Add(
                 new StaticRoleDefinition(
                     StaticRoleNames.Host.Admin,
-                    MultiTenancySides.Host
+                    MultiTenancySides.Host, true
                 )
             );
 
@@ -21,7 +21,7 @@ namespace pogoshift.Authorization.Roles
             roleManagementConfig.StaticRoles.Add(
                 new StaticRoleDefinition(
                     StaticRoleNames.Tenants.Admin,
-                    MultiTenancySides.Tenant
+                    MultiTenancySides.Tenant, true
                 )
             );
         }

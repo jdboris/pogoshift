@@ -6,13 +6,16 @@ using pogoshift.Authorization;
 namespace pogoshift
 {
     [DependsOn(
-        typeof(pogoshiftCoreModule), 
+        typeof(pogoshiftCoreModule),
         typeof(AbpAutoMapperModule))]
     public class pogoshiftApplicationModule : AbpModule
     {
         public override void PreInitialize()
         {
             Configuration.Authorization.Providers.Add<pogoshiftAuthorizationProvider>();
+
+            // FILTERS:
+            Configuration.UnitOfWork.RegisterFilter("HasUser", true);
         }
 
         public override void Initialize()

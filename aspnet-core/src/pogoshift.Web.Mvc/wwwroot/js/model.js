@@ -10,6 +10,13 @@ export class Model {
         }
     }
 
+    static async get(id) {
+        return myFetch(`/api/services/app/${this.name}/Get?Id=${id}`, "GET").then((result) => {
+            console.log("result: ", result);
+            return new this(result);
+        });
+    }
+
     static async getAll() {
         return myFetch(`/api/services/app/${this.name}/GetAll`, "GET").then((result) => {
             return result.items.map((availability) => {

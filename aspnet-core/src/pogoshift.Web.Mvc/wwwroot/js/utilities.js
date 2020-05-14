@@ -132,7 +132,7 @@ export function getCookie(name) {
     if (parts.length == 2) return parts.pop().split(";").shift();
 }
 
-export function myFetch(url, method, body = null) {
+export function myFetch(url, method = "GET", body = null) {
 
     let options = {
         method: method,

@@ -14,19 +14,19 @@
 @section scripts
 {
     <environment names="Development">
-        <script type="module" src="~/view-resources/Views/Availability/Availability.js" asp-append-version="true"></script>
+        <script type="module" src="~/view-resources/Views/Availability/Schedule.js" asp-append-version="true"></script>
     </environment>
 
     <environment names="Staging,Production">
-        <script type="module" src="~/view-resources/Views/Availability/Availability.min.js" asp-append-version="true"></script>
+        <script type="module" src="~/view-resources/Views/Availability/Schedule.min.js" asp-append-version="true"></script>
     </environment>
 }
 
 
 <div class="clearfix">
-    <h1 class="display-4 text-center mb-4">Availability</h1>
-    <div id="availability-calendar"></div>
+    <h1 class="display-4 text-center mb-4">Schedule</h1>
+    <div id="schedule-calendar"></div>
 
-    <div id="availability-data" data-associate-id="@Model.LoginInformations.User.Id"></div>
+    <div id="schedule-data" data-associate-id="@Model.LoginInformations.User.Id"></div>
 
 </div>

@@ -13,8 +13,6 @@ myFetch(`/api/services/app/Session/GetCurrentLoginInformations`).then((loginData
             availabilities: availabilities,
         };
 
-        console.log(data);
-
         let workingHoursStart = "17:00";
         let workingHoursEnd = "24:00";
         let closedWeekdays = ["Saturday", "Sunday"];

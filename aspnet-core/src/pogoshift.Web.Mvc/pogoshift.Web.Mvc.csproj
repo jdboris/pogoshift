@@ -46,7 +46,6 @@
   <ItemGroup>
     <Folder Include="wwwroot\js\models\" />
     <Folder Include="wwwroot\libs\" />
-    <Folder Include="wwwroot\view-resources\Views\Schedule\" />
     <Folder Include="wwwroot\view-resources\Views\_Bundles\" />
   </ItemGroup>
 </Project>

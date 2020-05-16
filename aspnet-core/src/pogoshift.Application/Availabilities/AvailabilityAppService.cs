@@ -12,7 +12,7 @@ using System.Linq;
 namespace pogoshift.Availabilities
 {
     [AbpAuthorize]
-    public class AvailabilityAppService : CrudAppService<Availability, AvailabilityDto, int, AvailabilityDto, AvailabilityDto, UpdateAvailabilityDto, AvailabilityDto, DeleteAvailabilityDto>
+    public class AvailabilityAppService : CrudAppService<Availability, AvailabilityDto, int, AvailabilityDto, AvailabilityDto, UpdateAvailabilityDto>
     {
         private readonly IUnitOfWorkManager _unitOfWorkManager;
         public AvailabilityAppService(IRepository<Availability, int> repository, IUnitOfWorkManager unitOfWorkManager) : base(repository)

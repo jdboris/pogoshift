@@ -3,10 +3,10 @@ import { Availability } from "./models/Availability.js";
 
 class TimePeriodResizal {
     // NOTE: This class assumes event is a mouse event targeting the handle elment inside a time period
-    constructor(calendar, timePeriodBar, event = null) {
+    constructor(calendar, timePeriod, event = null) {
         this.calendar = calendar;
-        this.bar = timePeriodBar;
-        this.timePeriod = this.bar.closest(".time-period");
+        this.timePeriod = timePeriod;
+        this.bar = timePeriod.element.getElementsByClassName("time-period-bar")[0];
         this.leftHandle = this.bar.getElementsByClassName("left-handle")[0];
         this.rightHandle = this.bar.getElementsByClassName("right-handle")[0];
         if (event != null) {
@@ -68,10 +68,10 @@ class TimePeriodResizal {
 class TimePeriodMovement {
     // NOTE: This class assumes the events are mouse events targeting a time period element
 
-    constructor(calendar, timePeriodBar, event = null) {
+    constructor(calendar, timePeriod, event = null) {
         this.calendar = calendar;
-        this.bar = timePeriodBar;
-        this.timePeriod = this.bar.closest(".time-period");
+        this.timePeriod = timePeriod;
+        this.bar = timePeriod.element.getElementsByClassName("availability-bar")[0];
         if (event != null) {
             this.start(event);
         }
@@ -133,153 +133,176 @@ export function CustomElement(html) {
     return template.content.firstChild;
 }
 
-export function TimePeriod(calendar, timeBuffer = { start: null, end: null }, associate = null) {
+export class TimePeriod {
 
-    let time = { start: timeBuffer.start, end: timeBuffer.end };
-    if (time.start != null && time.end == null) throw "Error: you must provide a start AND end time (or neither) to create a TimePeriod.";
+    constructor(calendar, isInEditMode = true, timeBuffer = { start: null, end: null }, associate = null) {
 
-    let columnStart = 1;
-    let columnEnd = calendar.columnsPerDay + 1;
+        let time = { start: timeBuffer.start, end: timeBuffer.end };
+        if (time.start != null && time.end == null) throw "Error: you must provide a start AND end time (or neither) to create a TimePeriod.";
 
-    if (time.start == null && time.end == null) {
-        // If there's no time period template
-        if (calendar.timePeriodTemplate == null) {
-            time.start = formatTime(calendar.dayStartTime);
-            time.end = formatTime(calendar.dayEndTime);
+        let columnStart = 1;
+        let columnEnd = calendar.columnsPerDay + 1;
+
+        if (time.start == null && time.end == null) {
+            // If there's no time period template
+            if (calendar.timePeriodTemplate == null) {
+                time.start = formatTime(calendar.dayStartTime);
+                time.end = formatTime(calendar.dayEndTime);
+            } else {
+                columnStart = calendar.timePeriodTemplate.getElementsByClassName("time-period-bar")[0].style.gridColumnStart;
+                columnEnd = calendar.timePeriodTemplate.getElementsByClassName("time-period-bar")[0].style.gridColumnEnd;
+                time.start = calendar.timePeriodTemplate.getElementsByClassName("time-start")[0].innerHTML;
+                time.end = calendar.timePeriodTemplate.getElementsByClassName("time-end")[0].innerHTML;
+            }
         } else {
-            columnStart = calendar.timePeriodTemplate.getElementsByClassName("time-period-bar")[0].style.gridColumnStart;
-            columnEnd = calendar.timePeriodTemplate.getElementsByClassName("time-period-bar")[0].style.gridColumnEnd;
-            time.start = calendar.timePeriodTemplate.getElementsByClassName("time-start")[0].innerHTML;
-            time.end = calendar.timePeriodTemplate.getElementsByClassName("time-end")[0].innerHTML;
+            columnStart = calendar.timeToColumns(time.start);
+            columnEnd = calendar.timeToColumns(time.end);
+            time.start = formatTime(time.start);
+            time.end = formatTime(time.end);
         }
-    } else {
-        columnStart = calendar.timeToColumns(time.start);
-        columnEnd = calendar.timeToColumns(time.end);
-        time.start = formatTime(time.start);
-        time.end = formatTime(time.end);
-    }
 
 
-    // NOTE: Must use inline CSS for the grid-column property in order for resizing to work
-    // NOTE: Must use appendChild instead of innerHTML in order for the time periods to retain their click handlers 
-    // NOTE: The order of the time period bars matters
-    let timePeriod = new CustomElement(`
-    <div class="time-period">
-        <div class="time-period-inner" style="grid-template-columns: repeat( ${calendar.columnsPerDay}, 1fr );">
-            <div class="time-period-heading">
+        // NOTE: Must use inline CSS for the grid-column property in order for resizing to work
+        // NOTE: Must use appendChild instead of innerHTML in order for the time periods to retain their click handlers 
+        // NOTE: The order of the time period bars matters
+        let element = new CustomElement(`
+        <div class="time-period">
+            <div class="time-period-inner" style="grid-template-columns: repeat( ${calendar.columnsPerDay}, 1fr );">
+                <div class="time-period-heading">
 
-                <span class="time-period-copy">
-                    <i class="far fa-copy"></i>
-                </span>
+                    <span class="time-period-copy">
+                        <i class="far fa-copy"></i>
+                    </span>
 
-                <span class="time-period-time">
-                    <span class="time-start">${time.start}</span> - <span class="time-end">${time.end}</span>
-                </span>
+                    <span class="time-period-time">
+                        <span class="time-start">${time.start}</span> - <span class="time-end">${time.end}</span>
+                    </span>
 
-                <span class="time-period-delete">
-                    <i class="fas fa-trash-alt"></i>
-                </span>
+                    <span class="time-period-delete">
+                        <i class="fas fa-trash-alt"></i>
+                    </span>
 
-            </div>
-            <div class="time-period-bar availability-bar bg-primary text-light" style="grid-column: ${columnStart} / ${columnEnd};">
-                <i class="fas fa-grip-lines-vertical left-handle"></i>
-                <i class="fas fa-grip-lines-vertical right-handle"></i>
-            </div>
-            <div class="time-period-bar scheduling-bar bg-primary text-light" style="grid-column: ${columnStart} / ${columnEnd};">
-                <i class="fas fa-grip-lines-vertical left-handle"></i>
-                <i class="fas fa-grip-lines-vertical right-handle"></i>
+                </div>
+
+                <div class="time-period-bar bg-primary text-light" style="grid-column: ${columnStart} / ${columnEnd};">
+                    <i class="fas fa-grip-lines-vertical left-handle"></i>
+                    <i class="fas fa-grip-lines-vertical right-handle"></i>
+                </div>
             </div>
         </div>
-    </div>
-    `);
+        `);
 
-    let left = timePeriod.getElementsByClassName("left-handle")[0];
-    let right = timePeriod.getElementsByClassName("right-handle")[0];
-    let schedulingBar = timePeriod.getElementsByClassName("scheduling-bar")[0];
-    let availabilityBar = timePeriod.getElementsByClassName("availability-bar")[0];
-    let heading = timePeriod.getElementsByClassName("time-period-heading")[0];
-    let copyButton = timePeriod.getElementsByClassName("time-period-copy")[0];
-    let deleteButton = timePeriod.getElementsByClassName("time-period-delete")[0];
-
-    if (associate != null) {
-        timePeriod.dataset.associateId = associate.id;
-        schedulingBar.style.backgroundColor = associate.color;
-        availabilityBar.style.backgroundColor = associate.color;
-    } else if (Object.keys(calendar.associates).length > 0) {
-        let id = Object.keys(calendar.associates)[0];
-        schedulingBar.style.backgroundColor = calendar.associates[id].color;
-        availabilityBar.style.backgroundColor = calendar.associates[id].color;
-    }
-
-    let handler = new Event.PointerHandler((event) => {
-
-        // If the time is visible   
-        if (getComputedStyle(heading).display != "none") {
-            calendar.timePeriodMovement = new TimePeriodMovement(calendar, availabilityBar, event);
+        if (isInEditMode) {
+            element.classList.add("edit-mode");
         }
-    });
 
-    availabilityBar.ontouchstart = handler;
-    availabilityBar.onmousedown = handler;
+        let left = element.getElementsByClassName("left-handle")[0];
+        let right = element.getElementsByClassName("right-handle")[0];
+        let heading = element.getElementsByClassName("time-period-heading")[0];
+        let copyButton = element.getElementsByClassName("time-period-copy")[0];
+        let deleteButton = element.getElementsByClassName("time-period-delete")[0];
 
-    handler = new Event.PointerHandler((event) => {
 
-        if (timePeriod.classList.contains("time-period-template") == false) {
-            if (calendar.focusedTimePeriod != null) calendar.focusedTimePeriod.classList.remove("focused");
-            calendar.focusedTimePeriod = timePeriod;
-            timePeriod.classList.add("focused");
-            timePeriod.prepend(calendar.mobileOverlay);
-            calendar.mobileOverlay.classList.remove("hidden");
+        // To prevent adding a new time period when clicking this time period
+        // NOTE: onclick will be simulated on mobile browsers
+        element.onclick = (event) => {
+            event.stopPropagation();
         }
-    });
 
-    availabilityBar.onclick = handler;
-
-
-    handler = new Event.PointerHandler((event) => {
-
-        calendar.toggleScheduled(schedulingBar, associate);
-    });
-
-    schedulingBar.onclick = handler;
-
-    // To prevent adding a new time period when clicking this time period
-    // NOTE: onclick will be simulated on mobile browsers
-    timePeriod.onclick = (event) => {
-        event.stopPropagation();
-    }
-
-    handler = new Event.PointerHandler((event) => {
-        calendar.timePeriodResizal = new TimePeriodResizal(calendar, availabilityBar, event);
-    });
-
-    left.ontouchstart = handler;
-    left.onmousedown = handler;
-
-    right.ontouchstart = handler;
-    right.onmousedown = handler;
-
-    handler = new Event.PointerHandler((event) => {
-        let resizal = new TimePeriodResizal(calendar, calendar.timePeriodTemplate.getElementsByClassName("time-period-bar")[0]);
-        resizal.setColumn(availabilityBar.style.gridColumnStart, "Start");
-        resizal.setColumn(availabilityBar.style.gridColumnEnd, "End");
-    });
-
-    // NOTE: onclick will be simulated on mobile browsers
-    copyButton.onclick = handler;
-
-    handler = new Event.PointerHandler((event) => {
-
-        new Availability({
-            id: timePeriod.dataset.availabilityId,
-            userId: timePeriod.dataset.associateId
-        }).delete().then((data) => {
-            timePeriod.parentElement.removeChild(timePeriod);
+        let handler = new Event.PointerHandler((event) => {
+            calendar.timePeriodResizal = new TimePeriodResizal(calendar, this, event);
         });
-    });
 
-    // NOTE: onclick will be simulated on mobile browsers
-    deleteButton.onclick = handler;
+        left.ontouchstart = handler;
+        left.onmousedown = handler;
 
-    return timePeriod;
+        right.ontouchstart = handler;
+        right.onmousedown = handler;
+
+        handler = new Event.PointerHandler((event) => {
+            let resizal = new TimePeriodResizal(calendar, calendar.timePeriodTemplate );
+            resizal.setColumn(availabilityBar.style.gridColumnStart, "Start");
+            resizal.setColumn(availabilityBar.style.gridColumnEnd, "End");
+        });
+
+        // NOTE: onclick will be simulated on mobile browsers
+        copyButton.onclick = handler;
+
+        handler = new Event.PointerHandler((event) => {
+
+            new Availability({
+                id: this.availabilityId,
+                userId: this.associateId
+            }).delete().then((data) => {
+                element.parentElement.removeChild(element);
+            });
+        });
+
+        // NOTE: onclick will be simulated on mobile browsers
+        deleteButton.onclick = handler;
+
+        this.element = element;
+    }
+
+}
+
+export class AvailabilityPeriod extends TimePeriod {
+    constructor(calendar, isInEditMode = true, timeBuffer = { start: null, end: null }, associate = null) {
+        super(calendar, isInEditMode, timeBuffer, associate);
+
+        let element = this.element;
+        let availabilityBar = element.getElementsByClassName("time-period-bar")[0];
+        availabilityBar.classList.add("availability-bar");
+
+        let handler = new Event.PointerHandler((event) => {
+
+            // If the time period is editable 
+            if (element.classList.contains("edit-mode")) {
+                calendar.timePeriodMovement = new TimePeriodMovement(calendar, this, event);
+            }
+        });
+
+        availabilityBar.ontouchstart = handler;
+        availabilityBar.onmousedown = handler;
+
+        handler = new Event.PointerHandler((event) => {
+
+            if (element.classList.contains("time-period-template") == false) {
+                if (calendar.focusedTimePeriod != null) calendar.focusedTimePeriod.classList.remove("focused");
+                calendar.focusedTimePeriod = element;
+                element.classList.add("focused");
+                element.prepend(calendar.mobileOverlay);
+                calendar.mobileOverlay.classList.remove("hidden");
+            }
+        });
+
+        availabilityBar.onclick = handler;
+    }
+}
+
+export class ShiftPeriod extends TimePeriod {
+    constructor(calendar, isInEditMode = true, timeBuffer = { start: null, end: null }, associate = null) {
+        super(calendar, isInEditMode, timeBuffer, associate);
+
+        let element = this.element;
+        let schedulingBar = element.getElementsByClassName("time-period-bar")[0];
+        schedulingBar.classList.add("scheduling-bar");
+
+        if (associate != null) {
+            this.associateId = associate.id;
+            schedulingBar.style.backgroundColor = associate.color;
+            availabilityBar.style.backgroundColor = associate.color;
+        } else if (Object.keys(calendar.associates).length > 0) {
+            let id = Object.keys(calendar.associates)[0];
+            schedulingBar.style.backgroundColor = calendar.associates[id].color;
+            availabilityBar.style.backgroundColor = calendar.associates[id].color;
+        }
+
+        let handler = new Event.PointerHandler((event) => {
+
+            calendar.toggleScheduled(schedulingBar, associate);
+        });
+
+        schedulingBar.onclick = handler;
+    }
 }

@@ -187,18 +187,23 @@
 }
 
 .calendar .time-period-heading {
+    /* Hidden unless in edit mode */
+    display: none;
     grid-column: 1 / -1;
     grid-row: 1;
     font-weight: bold;
-    display: flex;
     justify-content: space-between;
     padding: 0px 3px;
 }
 
-.calendar .time-period-copy,
-.calendar .time-period-delete {
-    cursor: pointer;
-}
+    .calendar .time-period.edit-mode .time-period-heading {
+        display: flex;
+    }
+
+    .calendar .time-period-copy,
+    .calendar .time-period-delete {
+        cursor: pointer;
+    }
 
 
 .calendar .time-period-bar {
@@ -208,6 +213,7 @@
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
+    min-height: 18px;
 }
 
     .calendar .time-period-bar i {
@@ -222,13 +228,21 @@
 }
 
 .calendar .left-handle {
+    /* Hidden unless in edit mode */
+    display: none;
     padding-right: 0px;
 }
 
 .calendar .right-handle {
+    /* Hidden unless in edit mode */
+    display: none;
     padding-left: 0px;
 }
 
+.calendar .time-period.edit-mode .left-handle,
+.calendar .time-period.edit-mode .right-handle {
+    display: initial;
+}
 
 .calendar .time-period-template .time-period-copy,
 .calendar .time-period-template .time-period-delete {
@@ -238,6 +252,10 @@
 .calendar .time-period-template .time-period-heading {
     font-size: 30px;
     justify-content: center;
+}
+
+.calendar .time-period-template .time-period-bar {
+    min-height: 30px;
 }
 
 .calendar .time-period-template i {
@@ -400,9 +418,7 @@
 }
 
 .scheduling-calendar .time-period-copy,
-.scheduling-calendar .time-period-delete,
-.scheduling-calendar .left-handle,
-.scheduling-calendar .right-handle {
+.scheduling-calendar .time-period-delete {
     display: none;
 }
 
@@ -411,7 +427,6 @@
 }
 
 .scheduling-calendar .time-period-bar {
-    min-height: 18px;
     opacity: 0.5;
 }
 

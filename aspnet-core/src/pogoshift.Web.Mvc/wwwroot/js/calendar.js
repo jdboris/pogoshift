@@ -1,6 +1,5 @@
-﻿import { CustomElement, TimePeriod } from "./dom-elements.js";
+﻿import { CustomElement, AvailabilityPeriod, ShiftPeriod } from "./dom-elements.js";
 import { MONTH_NAMES, formatTime, stringToDate, getDateFromQueryString, nameToColor, Event } from "./utilities.js";
-import { createShift } from "./database.js";
 import { Availability } from "./models/Availability.js";
 import { User } from "./models/User.js";
 
@@ -173,16 +172,13 @@ export class Calendar {
                 associate = this.associates[timePeriod.userId];
             }
 
-            console.log("this.associates: ", this.associates);
-            console.log("associate: ", associate);
+            timePeriod = new AvailabilityPeriod(this, true, time, associate);
+            timePeriod.element.classList.add("associate-" + associate.id);
 
-            let timePeriodElement = new TimePeriod(this, time, associate);
-            timePeriodElement.classList.add("associate-" + associate.id);
-
-            timePeriodElement.dataset.availabilityId = id;
+            timePeriod.availabilityId = id;
             let monthDay = this.element.querySelector(`[data-month-day='${time.start.getDate()}']`);
             monthDay.dataset.availableAssociateCount = parseInt(monthDay.dataset.availableAssociateCount) + 1;
-            monthDay.querySelector(`.time-period-section`).prepend(timePeriodElement);
+            monthDay.querySelector(`.time-period-section`).prepend(timePeriod.element);
         }
 
 
@@ -313,10 +309,10 @@ export class AvailabilityCalendar extends Calendar {
         let card = new CustomElement(`<div class="card time-period-template-card"><div class="card-body"></div></div>`);
         let cardBody = card.getElementsByClassName("card-body")[0];
 
-        this.timePeriodTemplate = new TimePeriod(this, { start: null, end: null }, associate);
-        this.timePeriodTemplate.classList.add("time-period-template");
+        this.timePeriodTemplate = new AvailabilityPeriod(this, true, { start: null, end: null }, associate);
+        this.timePeriodTemplate.element.classList.add("time-period-template");
 
-        cardBody.appendChild(this.timePeriodTemplate);
+        cardBody.appendChild(this.timePeriodTemplate.element);
         this.element.append(card);
 
         let monthDayElements = this.element.getElementsByClassName("month-day");
@@ -331,11 +327,11 @@ export class AvailabilityCalendar extends Calendar {
                     let month = `${this.date.getMonth() + 1}`.padStart(2, "0");
                     let year = this.date.getFullYear();
 
-                    let templateStartTime = this.timePeriodTemplate.getElementsByClassName("time-start")[0].innerHTML;
+                    let templateStartTime = this.timePeriodTemplate.element.getElementsByClassName("time-start")[0].innerHTML;
                     let startTime = templateStartTime + ":00";
                     startTime = `${year}-${month}-${day}T${startTime}Z`;
 
-                    let templateEndTime = this.timePeriodTemplate.getElementsByClassName("time-end")[0].innerHTML;
+                    let templateEndTime = this.timePeriodTemplate.element.getElementsByClassName("time-end")[0].innerHTML;
                     let endTime = templateEndTime + ":00";
                     // NOTE: 24:00 is not a valid time
                     if (endTime.split(":")[0] == 24) endTime = "23:59:59";
@@ -346,9 +342,9 @@ export class AvailabilityCalendar extends Calendar {
                         beginning: startTime,
                         ending: endTime,
                     }).save().then((availability) => {
-                        let timePeriod = new TimePeriod(this, { start: stringToDate(startTime), end: stringToDate(endTime) }, associate);
-                        timePeriod.dataset.availabilityId = availability.id;
-                        element.querySelector(".time-period-section").prepend(timePeriod);
+                        let timePeriod = new AvailabilityPeriod(this, true, { start: stringToDate(startTime), end: stringToDate(endTime) }, associate);
+                        timePeriod.availabilityId = availability.id;
+                        element.querySelector(".time-period-section").prepend(timePeriod.element);
                     });
                 }
             });
@@ -365,9 +361,9 @@ export class AvailabilityCalendar extends Calendar {
                 if (timePeriod != this.timePeriodTemplate) {
 
                     new Availability({
-                        id: timePeriod.dataset.availabilityId,
-                        beginning: this.getStartTimeFromTimePeriod(timePeriod),
-                        ending: this.getEndTimeFromTimePeriod(timePeriod),
+                        id: timePeriod.availabilityId,
+                        beginning: this.getStartTimeFromTimePeriod(timePeriod.element),
+                        ending: this.getEndTimeFromTimePeriod(timePeriod.element),
                     }).save();
                 }
                 this.timePeriodResizal.stop(event);
@@ -379,9 +375,9 @@ export class AvailabilityCalendar extends Calendar {
                 if (timePeriod != this.timePeriodTemplate) {
 
                     new Availability({
-                        id: timePeriod.dataset.availabilityId,
-                        beginning: this.getStartTimeFromTimePeriod(timePeriod),
-                        ending: this.getEndTimeFromTimePeriod(timePeriod),
+                        id: timePeriod.availabilityId,
+                        beginning: this.getStartTimeFromTimePeriod(timePeriod.element),
+                        ending: this.getEndTimeFromTimePeriod(timePeriod.element),
                     }).save();
                 }
                 this.timePeriodMovement.stop(event);
@@ -407,115 +403,3 @@ export class AvailabilityCalendar extends Calendar {
     }
 }
 
-export class SchedulingCalendar extends Calendar {
-    constructor(associate = null, storeId = 0, associateMinimum = 1, managerMinimum = 1, shifts = [], availabilities = [], closedWeekdays = [], dayStartTime = "9:00", dayEndTime = "17:00", minutesPerColumn = 15) {
-        super(associate, availabilities, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn);
-        this.storeId = storeId;
-
-        this.element.classList.add("scheduling-calendar");
-
-        this.associateMinimum = associateMinimum;
-        this.managerMinimum = managerMinimum;
-
-
-        // Load existing shifts on the calendar
-        for (let shift of shifts) {
-            let schedulingBar = this.dayListElement.querySelector(`.time-period[data-availability-id='${shift.availabilityID}'] .scheduling-bar`);
-            let associate = this.associates[shift.userId];
-
-            this.toggleScheduled(schedulingBar, associate, shift);
-        }
-
-        // Show list of available associates
-        let card = new CustomElement(`<div class="card associate-list-card"><div class="card-body"></div></div>`);
-        let cardBody = card.getElementsByClassName("card-body")[0];
-
-        for (let id in this.associates) {
-            let associate = this.associates[id];
-
-            let associateElement = new CustomElement(`
-                <span class="associate-list-item"><i class="fas fa-circle" style="color: ${associate.color}"></i><span>${associate.name}</span></span>
-            `);
-            cardBody.appendChild(associateElement);
-        }
-
-        this.element.append(card);
-
-        for (let monthDay of this.monthDays) {
-            this.checkSchedulingErrors(monthDay);
-        }
-    }
-
-    toggleScheduled(timePeriodBar, associate, shift = null) {
-
-        let monthDay = timePeriodBar.closest(".month-day");
-        let timePeriod = timePeriodBar.closest(".time-period");
-
-        if (timePeriodBar.classList.contains("scheduled") == false) {
-
-            if (shift == null) {
-                if (this.associate.isManager == 1) {
-                    createShift(associate, timePeriod, monthDay, this).then(() => {
-                        timePeriodBar.classList.add("scheduled");
-                        this.addAssociateToDay(monthDay, associate);
-                    });
-                }
-            } else {
-                timePeriodBar.classList.add("scheduled");
-                this.addAssociateToDay(monthDay, associate);
-                timePeriod.dataset.shiftId = shift.id;
-            }
-
-        } else {
-            if (this.associate.isManager == 1) {
-
-                new Availability({
-                    id: timePeriod.dataset.shiftId,
-                    userId: timePeriod.dataset.associateId
-                }).delete().then((data) => {
-                    timePeriodBar.classList.remove("scheduled");
-                    this.removeAssociateFromDay(monthDay, associate);
-
-                    delete timePeriod.dataset.shiftId;
-                });
-            }
-        }
-    }
-
-
-    addAssociateToDay(monthDay, associate) {
-        let associateCount = parseInt(monthDay.dataset.associateCount) + 1;
-        monthDay.dataset.associateCount = associateCount;
-
-        if (associate.isManager == true) {
-            let managerCount = parseInt(monthDay.dataset.managerCount) + 1;
-            monthDay.dataset.managerCount = managerCount;
-        }
-        this.checkSchedulingErrors(monthDay);
-    }
-
-    removeAssociateFromDay(monthDay, associate) {
-        let associateCount = parseInt(monthDay.dataset.associateCount) - 1;
-        monthDay.dataset.associateCount = associateCount;
-
-        if (associate.isManager == true) {
-            let managerCount = parseInt(monthDay.dataset.managerCount) - 1;
-            monthDay.dataset.managerCount = managerCount;
-        }
-        this.checkSchedulingErrors(monthDay);
-    }
-
-    checkSchedulingErrors(monthDay) {
-        if (monthDay.dataset.associateCount < this.associateMinimum) {
-            monthDay.classList.add("associate-minimum-error");
-        } else {
-            monthDay.classList.remove("associate-minimum-error");
-        }
-
-        if (monthDay.dataset.managerCount < this.managerMinimum) {
-            monthDay.classList.add("manager-minimum-error");
-        } else {
-            monthDay.classList.remove("manager-minimum-error");
-        }
-    }
-}

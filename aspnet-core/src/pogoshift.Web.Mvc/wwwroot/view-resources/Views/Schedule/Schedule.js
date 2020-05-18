@@ -27,7 +27,7 @@ Promise.all([
     let managerMinimum = 1;
 
     let container = document.getElementById("schedule-calendar");
-    let calendar = new ScheduleCalendar(loginData.user, loginData.tenant.id, associateMinimum, managerMinimum, shifts, availabilities, closedWeekdays, workingHoursStart, workingHoursEnd, 15);
+    let calendar = new ScheduleCalendar(loginData.user, loginData.tenant.id, associateMinimum, managerMinimum, availabilities, shifts, closedWeekdays, workingHoursStart, workingHoursEnd, 15);
     calendar.appendTo(container);
 
 });

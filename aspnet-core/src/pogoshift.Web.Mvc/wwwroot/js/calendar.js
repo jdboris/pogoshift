@@ -9,7 +9,7 @@ const WEEKDAY_INDEXES = { Sunday: 0, Monday: 1, Tuesday: 2, Wednesday: 3, Thursd
 export class Calendar {
 
     // Strings in format "HH:MM"
-    constructor(associate, timePeriods, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn) {
+    constructor(associate, availabilities, shifts, editModeDefault, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn) {
 
         // Require mouseup and mousedown to target the same element in order for click events to fire
         Event.preventFalseClicks();
@@ -133,11 +133,11 @@ export class Calendar {
 
 
         this.associates = {};
-        this.timePeriods = [];
+        this.availabilities = [];
 
-        if (timePeriods != [] && timePeriods != null) {
+        if (availabilities != [] && availabilities != null) {
             // Convert the array into an object with the IDs as keys
-            this.timePeriods = timePeriods.reduce((object, timePeriod) => {
+            this.availabilities = availabilities.reduce((object, timePeriod) => {
 
                 if ("userId" in timePeriod && !(timePeriod.userId in this.associates)) {
 
@@ -158,8 +158,8 @@ export class Calendar {
 
 
         // Load existing time periods onto the calendar
-        for (let id in this.timePeriods) {
-            let timePeriod = this.timePeriods[id];
+        for (let id in this.availabilities) {
+            let timePeriod = this.availabilities[id];
 
             let time = {
                 start: stringToDate(timePeriod.beginning),
@@ -172,13 +172,24 @@ export class Calendar {
                 associate = this.associates[timePeriod.userId];
             }
 
-            timePeriod = new AvailabilityPeriod(this, true, time, associate);
-            timePeriod.element.classList.add("associate-" + associate.id);
+            let userId = associate.id;
+
+            timePeriod = new AvailabilityPeriod(this, editModeDefault, time, associate);
+            timePeriod.element.classList.add("associate-" + (Object.keys(this.associates).indexOf(userId.toString())));
 
             timePeriod.availabilityId = id;
             let monthDay = this.element.querySelector(`[data-month-day='${time.start.getDate()}']`);
             monthDay.dataset.availableAssociateCount = parseInt(monthDay.dataset.availableAssociateCount) + 1;
             monthDay.querySelector(`.time-period-section`).prepend(timePeriod.element);
+        }
+
+
+        // Load existing shifts on the calendar
+        for (let shift of shifts) {
+            let schedulingBar = this.dayListElement.querySelector(`.time-period[data-availability-id='${shift.availabilityID}'] .scheduling-bar`);
+            let associate = this.associates[shift.userId];
+
+            this.toggleScheduled(schedulingBar, associate, shift);
         }
 
 
@@ -189,6 +200,54 @@ export class Calendar {
         });
 
         this.mobileOverlay.onclick = handler;
+
+        handler = new Event.PointerHandler((event) => {
+
+            if (this.timePeriodResizal != null) {
+                let timePeriod = this.timePeriodResizal.timePeriod;
+
+                if (timePeriod != this.timePeriodTemplate) {
+
+                    new Availability({
+                        id: timePeriod.availabilityId,
+                        beginning: this.getStartTimeFromTimePeriod(timePeriod.element),
+                        ending: this.getEndTimeFromTimePeriod(timePeriod.element),
+                    }).save();
+                }
+                this.timePeriodResizal.stop(event);
+                this.timePeriodResizal = null;
+            }
+            if (this.timePeriodMovement != null) {
+                let timePeriod = this.timePeriodMovement.timePeriod;
+
+                if (timePeriod != this.timePeriodTemplate) {
+
+                    new Availability({
+                        id: timePeriod.availabilityId,
+                        beginning: this.getStartTimeFromTimePeriod(timePeriod.element),
+                        ending: this.getEndTimeFromTimePeriod(timePeriod.element),
+                    }).save();
+                }
+                this.timePeriodMovement.stop(event);
+                this.timePeriodMovement = null;
+            }
+        }, true); // Allow default to allow the click event to fire on mobile
+
+        // Add this to the body in case the user's mouse leaves the calendar
+        document.body.addEventListener("touchend", handler);
+        document.body.addEventListener("mouseup", handler);
+
+        handler = new Event.PointerHandler((event) => {
+            if (this.timePeriodResizal != null) {
+                this.timePeriodResizal.resize(event);
+            }
+            else if (this.timePeriodMovement != null) {
+                this.timePeriodMovement.move(event);
+            }
+        });
+
+        this.element.ontouchmove = handler;
+        this.element.onmousemove = handler;
     }
 
     get dayStartColumn() {
@@ -296,7 +355,7 @@ export class Calendar {
 
 export class AvailabilityCalendar extends Calendar {
     constructor(availabilities = [], associate = { id: 0 }, closedWeekdays = [], dayStartTime = "9:00", dayEndTime = "17:00", minutesPerColumn = 15) {
-        super(associate, availabilities, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn);
+        super(associate, availabilities, [], true, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn);
 
         this.element.classList.add("availability-calendar");
         // NOTE: This is required to allow making new time period templates
@@ -316,6 +375,7 @@ export class AvailabilityCalendar extends Calendar {
         this.element.append(card);
 
         let monthDayElements = this.element.getElementsByClassName("month-day");
+
         for (let element of monthDayElements) {
 
             let handler = new Event.PointerHandler((event) => {
@@ -352,54 +412,6 @@ export class AvailabilityCalendar extends Calendar {
             // NOTE: onclick will be simulated on mobile browsers
             element.onclick = handler;
         }
-
-        let handler = new Event.PointerHandler((event) => {
-
-            if (this.timePeriodResizal != null) {
-                let timePeriod = this.timePeriodResizal.timePeriod;
-
-                if (timePeriod != this.timePeriodTemplate) {
-
-                    new Availability({
-                        id: timePeriod.availabilityId,
-                        beginning: this.getStartTimeFromTimePeriod(timePeriod.element),
-                        ending: this.getEndTimeFromTimePeriod(timePeriod.element),
-                    }).save();
-                }
-                this.timePeriodResizal.stop(event);
-                this.timePeriodResizal = null;
-            }
-            if (this.timePeriodMovement != null) {
-                let timePeriod = this.timePeriodMovement.timePeriod;
-
-                if (timePeriod != this.timePeriodTemplate) {
-
-                    new Availability({
-                        id: timePeriod.availabilityId,
-                        beginning: this.getStartTimeFromTimePeriod(timePeriod.element),
-                        ending: this.getEndTimeFromTimePeriod(timePeriod.element),
-                    }).save();
-                }
-                this.timePeriodMovement.stop(event);
-                this.timePeriodMovement = null;
-            }
-        }, true); // Allow default to allow the click event to fire on mobile
-
-        // Add this to the body in case the user's mouse leaves the calendar
-        document.body.addEventListener("touchend", handler);
-        document.body.addEventListener("mouseup", handler);
-
-        handler = new Event.PointerHandler((event) => {
-            if (this.timePeriodResizal != null) {
-                this.timePeriodResizal.resize(event);
-            }
-            else if (this.timePeriodMovement != null) {
-                this.timePeriodMovement.move(event);
-            }
-        });
-
-        this.element.ontouchmove = handler;
-        this.element.onmousemove = handler;
     }
 }
 

@@ -288,9 +288,7 @@
 /* Availability                                                                                                     */
 /* **************************************************************************************************************** */
 
-.availability-calendar .scheduling-bar {
-    display: none;
-}
+
 
 /* **************************************************************************************************************** */
 /* Scheduling                                                                                                       */
@@ -411,10 +409,6 @@
     left: 0px;
     right: 0px;
     bottom: calc((36px + 5px) * 10);
-}
-
-.scheduling-calendar .availability-bar {
-    display: none;
 }
 
 .scheduling-calendar .time-period-copy,

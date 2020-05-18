@@ -1,11 +1,11 @@
 ﻿import { CustomElement } from "./dom-elements.js";
-import { Availability } from "./models/Availability.js";
+import { Shift } from "./models/Shift.js";
 import { createShift } from "./database.js";
 import { Calendar } from "./calendar.js";
 
 export class ScheduleCalendar extends Calendar {
-    constructor(associate = null, storeId = 0, associateMinimum = 1, managerMinimum = 1, shifts = [], availabilities = [], closedWeekdays = [], dayStartTime = "9:00", dayEndTime = "17:00", minutesPerColumn = 15) {
-        super(associate, availabilities, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn);
+    constructor(associate = null, storeId = 0, associateMinimum = 1, managerMinimum = 1, availabilities = [], shifts = [], closedWeekdays = [], dayStartTime = "9:00", dayEndTime = "17:00", minutesPerColumn = 15) {
+        super(associate, availabilities, shifts, false, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn);
         this.storeId = storeId;
 
         this.element.classList.add("scheduling-calendar");
@@ -13,14 +13,6 @@ export class ScheduleCalendar extends Calendar {
         this.associateMinimum = associateMinimum;
         this.managerMinimum = managerMinimum;
 
-
-        // Load existing shifts on the calendar
-        for (let shift of shifts) {
-            let schedulingBar = this.dayListElement.querySelector(`.time-period[data-availability-id='${shift.availabilityID}'] .scheduling-bar`);
-            let associate = this.associates[shift.userId];
-
-            this.toggleScheduled(schedulingBar, associate, shift);
-        }
 
         // Show list of available associates
         let card = new CustomElement(`<div class="card associate-list-card"><div class="card-body"></div></div>`);
@@ -65,7 +57,7 @@ export class ScheduleCalendar extends Calendar {
         } else {
             if (this.associate.isManager == 1) {
 
-                new Availability({
+                new Shift({
                     id: timePeriod.shiftId,
                     userId: timePeriod.associateId
                 }).delete().then((data) => {

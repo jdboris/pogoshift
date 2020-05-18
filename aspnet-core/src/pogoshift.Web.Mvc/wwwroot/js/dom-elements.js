@@ -2,7 +2,7 @@
 import { Availability } from "./models/Availability.js";
 
 class TimePeriodResizal {
-    // NOTE: This class assumes event is a mouse event targeting the handle elment inside a time period
+    // NOTE: This class assumes event is a mouse event targeting the handle element inside a time period
     constructor(calendar, timePeriod, event = null) {
         this.calendar = calendar;
         this.timePeriod = timePeriod;
@@ -135,7 +135,7 @@ export function CustomElement(html) {
 
 export class TimePeriod {
 
-    constructor(calendar, isInEditMode = true, timeBuffer = { start: null, end: null }, associate = null) {
+    constructor(calendar, isInEditMode = true, timeBuffer = { start: null, end: null }) {
 
         let time = { start: timeBuffer.start, end: timeBuffer.end };
         if (time.start != null && time.end == null) throw "Error: you must provide a start AND end time (or neither) to create a TimePeriod.";
@@ -198,7 +198,6 @@ export class TimePeriod {
 
         let left = element.getElementsByClassName("left-handle")[0];
         let right = element.getElementsByClassName("right-handle")[0];
-        let heading = element.getElementsByClassName("time-period-heading")[0];
         let copyButton = element.getElementsByClassName("time-period-copy")[0];
         let deleteButton = element.getElementsByClassName("time-period-delete")[0];
 
@@ -221,8 +220,8 @@ export class TimePeriod {
 
         handler = new Event.PointerHandler((event) => {
             let resizal = new TimePeriodResizal(calendar, calendar.timePeriodTemplate );
-            resizal.setColumn(availabilityBar.style.gridColumnStart, "Start");
-            resizal.setColumn(availabilityBar.style.gridColumnEnd, "End");
+            resizal.setColumn(bar.style.gridColumnStart, "Start");
+            resizal.setColumn(bar.style.gridColumnEnd, "End");
         });
 
         // NOTE: onclick will be simulated on mobile browsers
@@ -248,11 +247,10 @@ export class TimePeriod {
 
 export class AvailabilityPeriod extends TimePeriod {
     constructor(calendar, isInEditMode = true, timeBuffer = { start: null, end: null }, associate = null) {
-        super(calendar, isInEditMode, timeBuffer, associate);
+        super(calendar, isInEditMode, timeBuffer);
 
         let element = this.element;
-        let availabilityBar = element.getElementsByClassName("time-period-bar")[0];
-        availabilityBar.classList.add("availability-bar");
+        let bar = element.getElementsByClassName("time-period-bar")[0];
 
         let handler = new Event.PointerHandler((event) => {
 
@@ -262,8 +260,8 @@ export class AvailabilityPeriod extends TimePeriod {
             }
         });
 
-        availabilityBar.ontouchstart = handler;
-        availabilityBar.onmousedown = handler;
+        bar.ontouchstart = handler;
+        bar.onmousedown = handler;
 
         handler = new Event.PointerHandler((event) => {
 
@@ -276,33 +274,32 @@ export class AvailabilityPeriod extends TimePeriod {
             }
         });
 
-        availabilityBar.onclick = handler;
+        bar.onclick = handler;
     }
 }
 
 export class ShiftPeriod extends TimePeriod {
     constructor(calendar, isInEditMode = true, timeBuffer = { start: null, end: null }, associate = null) {
-        super(calendar, isInEditMode, timeBuffer, associate);
+        super(calendar, isInEditMode, timeBuffer);
 
         let element = this.element;
-        let schedulingBar = element.getElementsByClassName("time-period-bar")[0];
-        schedulingBar.classList.add("scheduling-bar");
+        let bar = element.getElementsByClassName("time-period-bar")[0];
 
         if (associate != null) {
             this.associateId = associate.id;
-            schedulingBar.style.backgroundColor = associate.color;
-            availabilityBar.style.backgroundColor = associate.color;
+            bar.style.backgroundColor = associate.color;
+            bar.style.backgroundColor = associate.color;
         } else if (Object.keys(calendar.associates).length > 0) {
             let id = Object.keys(calendar.associates)[0];
-            schedulingBar.style.backgroundColor = calendar.associates[id].color;
-            availabilityBar.style.backgroundColor = calendar.associates[id].color;
+            bar.style.backgroundColor = calendar.associates[id].color;
+            bar.style.backgroundColor = calendar.associates[id].color;
         }
 
         let handler = new Event.PointerHandler((event) => {
 
-            calendar.toggleScheduled(schedulingBar, associate);
+            calendar.toggleScheduled(bar, associate);
         });
 
-        schedulingBar.onclick = handler;
+        bar.onclick = handler;
     }
 }

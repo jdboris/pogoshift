@@ -1,9 +1,9 @@
 ﻿@using Abp.Authorization.Users
-@model pogoshift.Web.Models.Availability.AvailabilityViewModel
+@model pogoshift.Web.Models.Schedule.ScheduleViewModel
 @using pogoshift.Web.Startup
 @{
-    ViewBag.CurrentPageName = PageNames.Availability;
-    ViewBag.Title = L("Availability");
+    ViewBag.CurrentPageName = PageNames.Schedule;
+    ViewBag.Title = L("Schedule");
     var user = Model.LoginInformations.User;
     Layout = "~/Views/Shared/Layout/_Layout.cshtml";
 }
@@ -14,11 +14,11 @@
 @section scripts
 {
     <environment names="Development">
-        <script type="module" src="~/view-resources/Views/Availability/Schedule.js" asp-append-version="true"></script>
+        <script type="module" src="~/view-resources/Views/Schedule/Schedule.js" asp-append-version="true"></script>
     </environment>
 
     <environment names="Staging,Production">
-        <script type="module" src="~/view-resources/Views/Availability/Schedule.min.js" asp-append-version="true"></script>
+        <script type="module" src="~/view-resources/Views/Schedule/Schedule.min.js" asp-append-version="true"></script>
     </environment>
 }
 

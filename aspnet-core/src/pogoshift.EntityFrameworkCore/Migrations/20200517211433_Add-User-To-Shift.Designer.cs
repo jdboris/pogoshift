@@ -10,8 +10,8 @@ using pogoshift.EntityFrameworkCore;
 namespace pogoshift.Migrations
 {
     [DbContext(typeof(pogoshiftDbContext))]
-    [Migration("20200516180939_Add-User-to-Shift")]
-    partial class AddUsertoShift
+    [Migration("20200517211433_Add-User-To-Shift")]
+    partial class AddUserToShift
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -1641,40 +1641,6 @@ namespace pogoshift.Migrations
                     b.ToTable("AbpTenants");
                 });
 
-            modelBuilder.Entity("pogoshift.Shifts.Shift", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("AvailabilityId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("Beginning")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("Ending")
-                        .HasColumnType("datetime2");
-
-                    b.Property<int>("TenantId")
-                        .HasColumnType("int");
-
-                    b.Property<long>("UserId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AvailabilityId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Shifts");
-                });
-
             modelBuilder.Entity("pogoshift.StoreHours.StoreHours", b =>
                 {
                     b.Property<int>("Id")
@@ -1918,21 +1884,6 @@ namespace pogoshift.Migrations
                     b.HasOne("pogoshift.Authorization.Users.User", "LastModifierUser")
                         .WithMany()
                         .HasForeignKey("LastModifierUserId");
-                });
-
-            modelBuilder.Entity("pogoshift.Shifts.Shift", b =>
-                {
-                    b.HasOne("pogoshift.Availabilities.Availability", "Availability")
-                        .WithMany()
-                        .HasForeignKey("AvailabilityId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("pogoshift.Authorization.Users.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("Abp.Application.Features.EditionFeatureSetting", b =>

@@ -11,5 +11,7 @@
         public const string Pages_Roles = "Pages.Roles";
 
         public const string HasUser_CrudAll = "HasUser.CrudAll";
+
+        public const string Shifts_ReadAll = "Shifts.ReadAll";
     }
 }

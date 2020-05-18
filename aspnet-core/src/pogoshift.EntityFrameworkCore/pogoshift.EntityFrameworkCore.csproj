@@ -11,6 +11,14 @@
     <Compile Remove="Migrations\20180726102624_Upgrade_ABP_380.cs" />
     <Compile Remove="Migrations\20180927062408_test.cs" />
     <Compile Remove="Migrations\20190111071724_Upgraded_To_Abp_v4_1_0.cs" />
+    <Compile Remove="Migrations\20200516180939_Add-User-to-Shift.cs" />
+    <Compile Remove="Migrations\20200516180939_Add-User-to-Shift.Designer.cs" />
+    <Compile Remove="Migrations\20200517165445_Remove-Availability-From-Shift.cs" />
+    <Compile Remove="Migrations\20200517165445_Remove-Availability-From-Shift.Designer.cs" />
+    <Compile Remove="Migrations\20200517200121_Remove-Shifts.cs" />
+    <Compile Remove="Migrations\20200517200121_Remove-Shifts.Designer.cs" />
+    <Compile Remove="Migrations\20200517205526_Remove-User-From-Shifts.cs" />
+    <Compile Remove="Migrations\20200517205526_Remove-User-From-Shifts.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />

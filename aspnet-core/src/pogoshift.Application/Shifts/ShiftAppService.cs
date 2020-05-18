@@ -43,7 +43,7 @@ namespace pogoshift.Shifts
             return new ListResultDto<ShiftDto>(ObjectMapper.Map<List<ShiftDto>>(shifts));
         }
 
-        [AbpAuthorize(PermissionNames.HasUser_CrudAll)]
+        [AbpAuthorize(PermissionNames.Shifts_ReadAll)]
         public ListResultDto<ShiftDto> GetAllOfAllUsersByDate(int month, int year)
         {
             using (_unitOfWorkManager.Current.DisableFilter("HasUser"))

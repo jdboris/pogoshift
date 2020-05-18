@@ -3,6 +3,7 @@
   <texts>
     <text name="HomePage" value="Home page" />
     <text name="Account" value="Account" />
+    <text name="Schedule" value="Schedule" />
     <text name="Availability" value="Availability" />
     <text name="UpdateSelf" value="UpdateSelf" />
     <text name="About" value="About" />
@@ -91,6 +92,7 @@
     <text name="Permissions">Permissions</text>
     <text name="Update Self">Update Self</text>
     <text name="CRUD All Entities with Users">CRUD All Entities with Users</text>
+    <text name="Read All Shifts">Read All Shifts</text>
     <text name="RoleDescription">Role description</text>
     <text name="Refresh">Refresh</text>
     <text name="Create">Create</text>

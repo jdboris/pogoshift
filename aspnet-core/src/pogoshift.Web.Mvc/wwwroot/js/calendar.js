@@ -144,7 +144,7 @@ export class Calendar {
 
                     this.associates[timePeriod.userId] = new User(timePeriod.user);
 
-                    this.associates[timePeriod.userId].name = `${timePeriod.user.firstName} ${timePeriod.user.lastName}`;
+                    this.associates[timePeriod.userId].name = `${timePeriod.user.name} ${timePeriod.user.surname}`;
 
                     this.associates[timePeriod.userId].color = nameToColor(timePeriod.userId, this.associates[timePeriod.userId].name);
 
@@ -307,7 +307,7 @@ export class AvailabilityCalendar extends Calendar {
         this.timePeriodTemplate = null;
 
         if (associate.id > 0) {
-            associate.color = nameToColor(associate.id, `${associate.firstName} ${associate.lastName}`);
+            associate.color = nameToColor(associate.id, `${associate.name} ${associate.surname}`);
         }
 
         let card = new CustomElement(`<div class="card time-period-template-card"><div class="card-body"></div></div>`);

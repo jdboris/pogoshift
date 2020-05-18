@@ -5,33 +5,29 @@ import { getDateFromQueryString, myFetch } from "/js/utilities.js";
 
 let date = getDateFromQueryString();
 
-myFetch(`/api/services/app/Session/GetCurrentLoginInformations`).then((loginData) => {
+let loginDataPromise = myFetch(`/api/services/app/Session/GetCurrentLoginInformations`);
+let shiftsPromise = Shift.getAllByDate(date.getMonth() + 1, date.getFullYear());
 
-    console.log("abp:",abp);
-    console.log(loginData);
+Promise.all([loginDataPromise, shiftsPromise]).then(async data => {
+    const loginData = data[0];
+    const shifts = data[1];
 
-    Availability.getAllByDate(date.getMonth() + 1, date.getFullYear()).then((availabilities) => {
+    let availabilities = [];
 
-        Shift.getAllByDate(date.getMonth() + 1, date.getFullYear()).then((shifts) => {
+    if ("HasUser.CrudAll" in abp.auth.grantedPermissions) {
+        availabilities = await Availability.getAllByDate(date.getMonth() + 1, date.getFullYear());
+    }
 
-            const data = {
-                associate: loginData,
-                availabilities: availabilities,
-                shifts: shifts,
-                storeId: loginData.tenant.id,
-            };
+    let workingHoursStart = "17:00";
+    let workingHoursEnd = "24:00";
+    let closedWeekdays = ["Saturday", "Sunday"];
 
-            let workingHoursStart = "17:00";
-            let workingHoursEnd = "24:00";
-            let closedWeekdays = ["Saturday", "Sunday"];
+    let associateMinimum = 2;
+    let managerMinimum = 1;
 
-            let associateMinimum = 2;
-            let managerMinimum = 1;
-
-            let container = document.getElementById("schedule-calendar");
-            let calendar = new SchedulingCalendar(data.associate, data.storeId, associateMinimum, managerMinimum, data.shifts, data.availabilities, closedWeekdays, workingHoursStart, workingHoursEnd, 15);
-            calendar.appendTo(container);
-        });
-    });
+    let container = document.getElementById("schedule-calendar");
+    let calendar = new SchedulingCalendar(loginData.user, loginData.tenant.id, associateMinimum, managerMinimum, shifts, availabilities, closedWeekdays, workingHoursStart, workingHoursEnd, 15);
+    calendar.appendTo(container);
 
 });
+

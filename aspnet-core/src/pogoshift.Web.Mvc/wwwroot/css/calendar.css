@@ -188,17 +188,13 @@
 
 .calendar .time-period-heading {
     /* Hidden unless in edit mode */
-    display: none;
+    display: flex;
     grid-column: 1 / -1;
     grid-row: 1;
     font-weight: bold;
     justify-content: space-between;
     padding: 0px 3px;
 }
-
-    .calendar .time-period.edit-mode .time-period-heading {
-        display: flex;
-    }
 
     .calendar .time-period-copy,
     .calendar .time-period-delete {
@@ -213,7 +209,7 @@
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
-    min-height: 18px;
+    min-height: 24px;
 }
 
     .calendar .time-period-bar i {
@@ -420,11 +416,12 @@
     justify-content: center;
 }
 
-.scheduling-calendar .time-period-bar {
+.scheduling-calendar .time-period {
     opacity: 0.5;
 }
 
-    .scheduling-calendar .time-period-bar.scheduled {
+    .scheduling-calendar .time-period.shift,
+    .scheduling-calendar .time-period.scheduled {
         opacity: 1;
     }
 

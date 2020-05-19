@@ -171,6 +171,38 @@ export class Calendar {
         }
 
 
+        // NOTE: Shifts must be loaded before availabilities
+        // Load existing shifts on the calendar
+        for (let id in this.shifts) {
+            //let schedulingBar = this.dayListElement.querySelector(`.time-period[data-availability-id='${shift.availabilityID}'] .scheduling-bar`);
+            //let associate = this.associates[shift.userId];
+
+            //this.toggleScheduled(schedulingBar, associate, shift);
+
+            let timePeriod = this.shifts[id];
+
+            let time = {
+                start: stringToDate(timePeriod.beginning),
+                end: stringToDate(timePeriod.ending)
+            };
+
+            let associate = null;
+
+            if ("userId" in timePeriod) {
+                associate = this.associates[timePeriod.userId];
+            }
+
+            let userId = associate.id;
+
+            timePeriod = new ShiftPeriod(this, true, time, associate);
+            timePeriod.element.classList.add("associate-" + (Object.keys(this.associates).indexOf(userId.toString())));
+
+            timePeriod.availabilityId = id;
+            let monthDay = this.element.querySelector(`[data-month-day='${time.start.getDate()}']`);
+            monthDay.dataset.availableAssociateCount = parseInt(monthDay.dataset.availableAssociateCount) + 1;
+            monthDay.querySelector(`.time-period-section`).prepend(timePeriod.element);
+        }
+
         // Load existing availabilities onto the calendar
         for (let id in this.availabilities) {
             let timePeriod = this.availabilities[id];
@@ -198,37 +230,6 @@ export class Calendar {
         }
 
 
-        // Load existing shifts on the calendar
-        for (let id in this.shifts) {
-            //let schedulingBar = this.dayListElement.querySelector(`.time-period[data-availability-id='${shift.availabilityID}'] .scheduling-bar`);
-            //let associate = this.associates[shift.userId];
-
-            //this.toggleScheduled(schedulingBar, associate, shift);
-
-            let timePeriod = this.shifts[id];
-
-            let time = {
-                start: stringToDate(timePeriod.beginning),
-                end: stringToDate(timePeriod.ending)
-            };
-
-            let associate = null;
-
-            if ("userId" in timePeriod) {
-                associate = this.associates[timePeriod.userId];
-            }
-
-            let userId = associate.id;
-
-            timePeriod = new ShiftPeriod(this, editModeDefault, time, associate);
-            timePeriod.element.classList.add("associate-" + (Object.keys(this.associates).indexOf(userId.toString())));
-
-            timePeriod.availabilityId = id;
-            let monthDay = this.element.querySelector(`[data-month-day='${time.start.getDate()}']`);
-            monthDay.dataset.availableAssociateCount = parseInt(monthDay.dataset.availableAssociateCount) + 1;
-            monthDay.querySelector(`.time-period-section`).prepend(timePeriod.element);
-        }
-
 
         let handler = new Event.PointerHandler((event) => {
             this.mobileOverlay.classList.add("hidden");
@@ -247,8 +248,8 @@ export class Calendar {
 
                     new Availability({
                         id: timePeriod.availabilityId,
-                        beginning: this.getStartTimeFromTimePeriod(timePeriod.element),
-                        ending: this.getEndTimeFromTimePeriod(timePeriod.element),
+                        beginning: timePeriod.getStartTime( ),
+                        ending: timePeriod.getEndTime(),
                     }).save();
                 }
                 this.timePeriodResizal.stop(event);
@@ -261,8 +262,8 @@ export class Calendar {
 
                     new Availability({
                         id: timePeriod.availabilityId,
-                        beginning: this.getStartTimeFromTimePeriod(timePeriod.element),
-                        ending: this.getEndTimeFromTimePeriod(timePeriod.element),
+                        beginning: timePeriod.getStartTime(),
+                        ending: timePeriod.getEndTime(),
                     }).save();
                 }
                 this.timePeriodMovement.stop(event);
@@ -346,24 +347,6 @@ export class Calendar {
             this.dayEndTime.setHours(hours, minutes, 0, 0);
 
         this.hoursPerDay = (this.dayEndTime.getTime() - this.dayStartTime.getTime()) / 1000 / 60 / 60;
-    }
-
-    getStartTimeFromTimePeriod(timePeriod) {
-        let monthDay = timePeriod.closest(".month-day");
-        let dayNumberElement = monthDay.getElementsByClassName("day-number")[0];
-        let startTime = timePeriod.getElementsByClassName("time-start")[0].innerHTML + ":00";
-        startTime = `${this.date.getFullYear()}-${this.date.getMonth() + 1}-${dayNumberElement.innerHTML}T${startTime}Z`;
-        return startTime;
-    }
-
-    getEndTimeFromTimePeriod(timePeriod) {
-        let monthDay = timePeriod.closest(".month-day");
-        let dayNumberElement = monthDay.getElementsByClassName("day-number")[0];
-        let endTime = timePeriod.getElementsByClassName("time-end")[0].innerHTML + ":00";
-        // NOTE: 24:00 is not a valid time
-        if (endTime.split(":")[0] == 24) endTime = "23:59:59";
-        endTime = `${this.date.getFullYear()}-${this.date.getMonth() + 1}-${dayNumberElement.innerHTML}T${endTime}Z`;
-        return endTime;
     }
 
     addMonthDays(count, classes) {

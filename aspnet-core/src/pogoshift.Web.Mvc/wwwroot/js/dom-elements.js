@@ -137,6 +137,7 @@ export class TimePeriod {
 
     constructor(calendar, isInEditMode = true, timeBuffer = { start: null, end: null }) {
 
+        this.calendar = calendar;
         let time = { start: timeBuffer.start, end: timeBuffer.end };
         if (time.start != null && time.end == null) throw "Error: you must provide a start AND end time (or neither) to create a TimePeriod.";
 
@@ -243,6 +244,23 @@ export class TimePeriod {
         this.element = element;
     }
 
+    getStartTime() {
+        let monthDay = this.element.closest(".month-day");
+        let dayNumberElement = monthDay.getElementsByClassName("day-number")[0];
+        let startTime = this.element.getElementsByClassName("time-start")[0].innerHTML + ":00";
+        startTime = `${this.calendar.date.getFullYear()}-${this.calendar.date.getMonth() + 1}-${dayNumberElement.innerHTML}T${startTime}Z`;
+        return startTime;
+    }
+
+    getEndTime() {
+        let monthDay = this.element.closest(".month-day");
+        let dayNumberElement = monthDay.getElementsByClassName("day-number")[0];
+        let endTime = this.element.getElementsByClassName("time-end")[0].innerHTML + ":00";
+        // NOTE: 24:00 is not a valid time
+        if (endTime.split(":")[0] == 24) endTime = "23:59:59";
+        endTime = `${this.calendar.date.getFullYear()}-${this.calendar.date.getMonth() + 1}-${dayNumberElement.innerHTML}T${endTime}Z`;
+        return endTime;
+    }
 }
 
 export class AvailabilityPeriod extends TimePeriod {
@@ -250,6 +268,7 @@ export class AvailabilityPeriod extends TimePeriod {
         super(calendar, isInEditMode, timeBuffer);
 
         let element = this.element;
+        element.classList.add("availability");
         let bar = element.getElementsByClassName("time-period-bar")[0];
 
         let handler = new Event.PointerHandler((event) => {
@@ -283,6 +302,7 @@ export class ShiftPeriod extends TimePeriod {
         super(calendar, isInEditMode, timeBuffer);
 
         let element = this.element;
+        element.classList.add("shift");
         let bar = element.getElementsByClassName("time-period-bar")[0];
 
         if (associate != null) {

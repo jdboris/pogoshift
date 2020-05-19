@@ -1,5 +1,6 @@
 ﻿import { formatTime, Event } from "./utilities.js";
 import { Availability } from "./models/Availability.js";
+import { Shift } from "./models/Shift.js";
 
 class TimePeriodResizal {
     // NOTE: This class assumes event is a mouse event targeting the handle element inside a time period
@@ -201,6 +202,7 @@ export class TimePeriod {
         let right = element.getElementsByClassName("right-handle")[0];
         let copyButton = element.getElementsByClassName("time-period-copy")[0];
         let deleteButton = element.getElementsByClassName("time-period-delete")[0];
+        let bar = element.getElementsByClassName("time-period-bar")[0];
 
 
         // To prevent adding a new time period when clicking this time period
@@ -210,6 +212,17 @@ export class TimePeriod {
         }
 
         let handler = new Event.PointerHandler((event) => {
+
+            // If the time period is editable 
+            if (element.classList.contains("edit-mode")) {
+                calendar.timePeriodMovement = new TimePeriodMovement(calendar, this, event);
+            }
+        });
+
+        bar.ontouchstart = handler;
+        bar.onmousedown = handler;
+
+        handler = new Event.PointerHandler((event) => {
             calendar.timePeriodResizal = new TimePeriodResizal(calendar, this, event);
         });
 
@@ -273,17 +286,6 @@ export class AvailabilityPeriod extends TimePeriod {
 
         let handler = new Event.PointerHandler((event) => {
 
-            // If the time period is editable 
-            if (element.classList.contains("edit-mode")) {
-                calendar.timePeriodMovement = new TimePeriodMovement(calendar, this, event);
-            }
-        });
-
-        bar.ontouchstart = handler;
-        bar.onmousedown = handler;
-
-        handler = new Event.PointerHandler((event) => {
-
             if (element.classList.contains("time-period-template") == false) {
                 if (calendar.focusedTimePeriod != null) calendar.focusedTimePeriod.classList.remove("focused");
                 calendar.focusedTimePeriod = element;
@@ -294,6 +296,14 @@ export class AvailabilityPeriod extends TimePeriod {
         });
 
         bar.onclick = handler;
+    }
+
+    save() {
+        new Availability({
+            id: this.availabilityId,
+            beginning: this.getStartTime(),
+            ending: this.getEndTime(),
+        }).save();
     }
 }
 
@@ -321,5 +331,13 @@ export class ShiftPeriod extends TimePeriod {
         });
 
         bar.onclick = handler;
+    }
+
+    save() {
+        new Shift({
+            id: this.shiftId,
+            beginning: this.getStartTime(),
+            ending: this.getEndTime(),
+        }).save();
     }
 }

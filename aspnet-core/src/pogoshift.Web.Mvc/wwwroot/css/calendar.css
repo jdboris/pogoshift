@@ -194,6 +194,7 @@
     font-weight: bold;
     justify-content: space-between;
     padding: 0px 3px;
+    background: #EEE;
 }
 
     .calendar .time-period-copy,

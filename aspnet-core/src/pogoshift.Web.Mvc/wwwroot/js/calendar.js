@@ -197,7 +197,7 @@ export class Calendar {
             timePeriod = new ShiftPeriod(this, true, time, associate);
             timePeriod.element.classList.add("associate-" + (Object.keys(this.associates).indexOf(userId.toString())));
 
-            timePeriod.availabilityId = id;
+            timePeriod.shiftId = id;
             let monthDay = this.element.querySelector(`[data-month-day='${time.start.getDate()}']`);
             monthDay.dataset.availableAssociateCount = parseInt(monthDay.dataset.availableAssociateCount) + 1;
             monthDay.querySelector(`.time-period-section`).prepend(timePeriod.element);
@@ -246,11 +246,7 @@ export class Calendar {
 
                 if (timePeriod != this.timePeriodTemplate) {
 
-                    new Availability({
-                        id: timePeriod.availabilityId,
-                        beginning: timePeriod.getStartTime( ),
-                        ending: timePeriod.getEndTime(),
-                    }).save();
+                    timePeriod.save();
                 }
                 this.timePeriodResizal.stop(event);
                 this.timePeriodResizal = null;
@@ -260,11 +256,7 @@ export class Calendar {
 
                 if (timePeriod != this.timePeriodTemplate) {
 
-                    new Availability({
-                        id: timePeriod.availabilityId,
-                        beginning: timePeriod.getStartTime(),
-                        ending: timePeriod.getEndTime(),
-                    }).save();
+                    timePeriod.save();
                 }
                 this.timePeriodMovement.stop(event);
                 this.timePeriodMovement = null;

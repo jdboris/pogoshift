@@ -21,11 +21,19 @@
         <script type="module" src="~/view-resources/Views/Availability/Availability.min.js" asp-append-version="true"></script>
     </environment>
 }
-
-<div class="clearfix">
-    <h1 class="display-4 text-center mb-4">Availability</h1>
-    <div id="availability-calendar"></div>
-
-    <div id="availability-data" data-associate-id="@Model.LoginInformations.User.Id"></div>
-
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-12">
+                <h1 class="m-0 text-dark">@L("Availability")</h1>
+            </div>
+        </div>
+    </div>
 </div>
+<section class="content">
+    <div class="container-fluid">
+        <div class="clearfix">
+            <div id="availability-calendar"></div>
+        </div>
+    </div>
+</section>

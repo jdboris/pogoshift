@@ -294,7 +294,7 @@ export class Calendar {
         for (let i = 1; i <= count; i++) {
 
             monthDays[i] = new MonthDay(this, i);
-            monthDays[i].className += " " + classes;
+            monthDays[i].element.className += " " + classes;
             this.dayListElement.appendChild(monthDays[i].element);
         }
 

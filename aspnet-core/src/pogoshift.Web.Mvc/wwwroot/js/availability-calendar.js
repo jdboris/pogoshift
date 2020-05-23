@@ -1,5 +1,5 @@
 ﻿import { CustomElement, AvailabilityPeriod } from "./dom-elements.js";
-import { stringToDate, Event } from "./utilities.js";
+import { Event } from "./utilities.js";
 import { Availability } from "./models/Availability.js";
 import { Calendar } from "./calendar.js";
 
@@ -20,14 +20,15 @@ export class AvailabilityCalendar extends Calendar {
         cardBody.appendChild(this.timePeriodTemplate.element);
         this.element.append(card);
 
-        let monthDayElements = this.element.getElementsByClassName("month-day");
-
-        for (let element of monthDayElements) {
+        for (let dayNumber in this.monthDays) {
+            let monthDay = this.monthDays[dayNumber];
+            let element = monthDay.element;
 
             let handler = new Event.PointerHandler((event) => {
 
                 // If the click originated directly on this element
-                if (this.timePeriodResizal == null && this.timePeriodMovement == null) {
+                if ((this.timePeriodResizal == null && this.timePeriodMovement == null) &&
+                    element.dataset.availabilityCount == 0 ) {
 
                     let day = element.getElementsByClassName("day-number")[0].innerHTML.padStart(2, "0");
                     let month = `${this.date.getMonth() + 1}`.padStart(2, "0");

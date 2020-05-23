@@ -1,4 +1,4 @@
-﻿import { formatTime, Event, stringToDate } from "./utilities.js";
+﻿import { formatTime, Event, stringToDate, nameToColor } from "./utilities.js";
 import { Availability } from "./models/Availability.js";
 import { Shift } from "./models/Shift.js";
 
@@ -143,8 +143,10 @@ class TimePeriod {
         if (time.beginning != null && time.ending == null) throw "Error: you must provide a start AND end time to create a TimePeriod.";
         time = { start: stringToDate(time.beginning), end: stringToDate( time.ending ) };
 
-        // TODO: Set bar color based on user
-        // nameToColor(user.id, `${user.name} ${user.surname}`);
+        if (this.user) {
+            // TODO: Set bar color based on user
+            this.user.color = nameToColor(this.user.id, `${this.user.name} ${this.user.surname}`);
+        }
 
         let columnStart = 1;
         let columnEnd = calendar.columnsPerDay + 1;
@@ -190,7 +192,7 @@ class TimePeriod {
 
                 </div>
 
-                <div class="time-period-bar bg-primary text-light" style="grid-column: ${columnStart} / ${columnEnd};">
+                <div class="time-period-bar text-light" style="grid-column: ${columnStart} / ${columnEnd};">
                     <i class="fas fa-grip-lines-vertical left-handle"></i>
                     <i class="fas fa-grip-lines-vertical right-handle"></i>
                 </div>
@@ -302,6 +304,16 @@ export class AvailabilityPeriod extends TimePeriod {
         let element = this.element;
         element.dataset.availabilityId = availability.id;
         element.classList.add("availability");
+
+        let bar = element.getElementsByClassName("time-period-bar")[0];
+
+        if (availability.user != null) {
+            this.associateId = availability.user.id;
+            bar.style.backgroundColor = availability.user.color;
+        } else {
+            let id = Object.keys(calendar.associates)[0];
+            bar.style.backgroundColor = calendar.associates[id].color;
+        }
     }
 
     save() {
@@ -327,16 +339,15 @@ export class ShiftPeriod extends TimePeriod {
         this.shift = shift;
 
         let element = this.element;
-        element.classList.add("shift");
         element.dataset.shiftId = shift.id;
+        element.classList.add("shift");
         let bar = element.getElementsByClassName("time-period-bar")[0];
 
         if (shift.user != null) {
             this.associateId = shift.user.id;
             bar.style.backgroundColor = shift.user.color;
-        } else if (Object.keys(calendar.associates).length > 0) {
-            let id = Object.keys(calendar.associates)[0];
-            bar.style.backgroundColor = calendar.associates[id].color;
+        } else {
+            bar.classList.add("bg-primary");
         }
     }
 

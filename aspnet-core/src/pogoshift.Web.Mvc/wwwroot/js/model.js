@@ -27,8 +27,16 @@ export class Model {
 
     static async getAllByDate(month, year) {
         return myFetch(`/api/services/app/${this.name}/GetAllByDate?month=${month}&year=${year}`, "GET").then((result) => {
-            return result.items.map((availability) => {
-                return new this(availability);
+            return result.items.map((item) => {
+                return new this(item);
+            });
+        });
+    }
+
+    static async getAllOfAllUsersByDate(month, year) {
+        return myFetch(`/api/services/app/${this.name}/GetAllOfAllUsersByDate?month=${month}&year=${year}`, "GET").then((result) => {
+            return result.items.map((item) => {
+                return new this(item);
             });
         });
     }
@@ -44,7 +52,6 @@ export class Model {
     }
 
     delete() {
-
         return myFetch(`/api/services/app/${this.constructor.name}/Delete?Id=${this.id}`, "DELETE");
     }
 }

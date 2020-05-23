@@ -1,12 +1,12 @@
 ﻿import { CustomElement } from "./dom-elements.js";
 import { Shift } from "./models/Shift.js";
-import { createShift } from "./database.js";
 import { Calendar } from "./calendar.js";
 
+
 export class ScheduleCalendar extends Calendar {
-    constructor(associate = null, storeId = 0, associateMinimum = 1, managerMinimum = 1, availabilities = [], shifts = [], closedWeekdays = [], dayStartTime = "9:00", dayEndTime = "17:00", minutesPerColumn = 15) {
-        super(associate, availabilities, shifts, false, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn);
-        this.storeId = storeId;
+    constructor(associateMinimum = 1, managerMinimum = 1, availabilities = [], shifts = [], closedWeekdays = [], dayStartTime = "9:00", dayEndTime = "17:00", minutesPerColumn = 15) {
+        super(availabilities, shifts, false, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn, createShiftFromAvailability);
+        this.storeId = abp.session.tenantId;
 
         this.element.classList.add("scheduling-calendar");
 
@@ -29,72 +29,14 @@ export class ScheduleCalendar extends Calendar {
 
         this.element.append(card);
 
-        for (let monthDay of this.monthDays) {
-            this.checkSchedulingErrors(monthDay);
+        for (let dayNumber in this.monthDays) {
+            this.checkSchedulingErrors(this.monthDays[dayNumber]);
         }
-    }
-
-    toggleScheduled(timePeriodBar, associate, shift = null) {
-
-        let monthDay = timePeriodBar.closest(".month-day");
-        let timePeriod = timePeriodBar.closest(".time-period");
-
-        if (timePeriodBar.classList.contains("scheduled") == false) {
-
-            if (shift == null) {
-                if (this.associate.isManager == 1) {
-                    createShift(associate, timePeriod, monthDay, this).then(() => {
-                        timePeriodBar.classList.add("scheduled");
-                        this.addAssociateToDay(monthDay, associate);
-                    });
-                }
-            } else {
-                timePeriodBar.classList.add("scheduled");
-                this.addAssociateToDay(monthDay, associate);
-                timePeriod.shiftId = shift.id;
-            }
-
-        } else {
-            if (this.associate.isManager == 1) {
-
-                new Shift({
-                    id: timePeriod.shiftId,
-                    userId: timePeriod.associateId
-                }).delete().then((data) => {
-                    timePeriodBar.classList.remove("scheduled");
-                    this.removeAssociateFromDay(monthDay, associate);
-
-                    timePeriod.shiftId = null;
-                });
-            }
-        }
-    }
-
-
-    addAssociateToDay(monthDay, associate) {
-        let associateCount = parseInt(monthDay.dataset.associateCount) + 1;
-        monthDay.dataset.associateCount = associateCount;
-
-        if (associate.isManager == true) {
-            let managerCount = parseInt(monthDay.dataset.managerCount) + 1;
-            monthDay.dataset.managerCount = managerCount;
-        }
-        this.checkSchedulingErrors(monthDay);
-    }
-
-    removeAssociateFromDay(monthDay, associate) {
-        let associateCount = parseInt(monthDay.dataset.associateCount) - 1;
-        monthDay.dataset.associateCount = associateCount;
-
-        if (associate.isManager == true) {
-            let managerCount = parseInt(monthDay.dataset.managerCount) - 1;
-            monthDay.dataset.managerCount = managerCount;
-        }
-        this.checkSchedulingErrors(monthDay);
     }
 
     checkSchedulingErrors(monthDay) {
-        if (monthDay.dataset.associateCount < this.associateMinimum) {
+        monthDay = monthDay.element;
+        if (monthDay.dataset.shiftCount < this.associateMinimum) {
             monthDay.classList.add("associate-minimum-error");
         } else {
             monthDay.classList.remove("associate-minimum-error");
@@ -105,5 +47,25 @@ export class ScheduleCalendar extends Calendar {
         } else {
             monthDay.classList.remove("manager-minimum-error");
         }
+    }
+}
+
+
+function createShiftFromAvailability(calendar, availabilityPeriod) {
+    if ("HasUser.CrudAll" in abp.auth.grantedPermissions) {
+        new Shift({
+            userId: availabilityPeriod.user.id,
+            date: availabilityPeriod.getStartTime(),
+            beginning: availabilityPeriod.getStartTime(),
+            ending: availabilityPeriod.getEndTime(),
+        }).save().then((shift) => {
+            if (!(shift.userId in calendar.associates)) {
+                console.error("Error: Shift User is not listed on this Calendar.");
+            } else {
+                calendar.addShift(shift);
+
+                //availabilityPeriod.element.parentNode.insertBefore(shiftPeriod.element, availabilityPeriod.element.nextSibling);
+            }
+        });
     }
 }

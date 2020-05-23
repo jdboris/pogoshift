@@ -92,7 +92,9 @@
     <text name="Permissions">Permissions</text>
     <text name="Update Self">Update Self</text>
     <text name="CRUD All Entities with Users">CRUD All Entities with Users</text>
+    <text name="CRUD All Shifts">CRUD All Shifts</text>
     <text name="Read All Shifts">Read All Shifts</text>
+    <text name="CRUD Admins">CRUD Admins</text>
     <text name="RoleDescription">Role description</text>
     <text name="Refresh">Refresh</text>
     <text name="Create">Create</text>

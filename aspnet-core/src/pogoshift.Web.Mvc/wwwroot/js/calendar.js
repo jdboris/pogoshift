@@ -1,23 +1,22 @@
-﻿import { CustomElement, AvailabilityPeriod, ShiftPeriod } from "./dom-elements.js";
+﻿import { AvailabilityPeriod, ShiftPeriod, MonthDay } from "./dom-elements.js";
 import { MONTH_NAMES, formatTime, stringToDate, getDateFromQueryString, nameToColor, Event } from "./utilities.js";
-import { Availability } from "./models/Availability.js";
 import { User } from "./models/User.js";
-
 
 const WEEKDAY_INDEXES = { Sunday: 0, Monday: 1, Tuesday: 2, Wednesday: 3, Thursday: 4, Friday: 5, Saturday: 6 };
 
 export class Calendar {
 
     // Strings in format "HH:MM"
-    constructor(associate, availabilities, shifts, editModeDefault, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn) {
+    constructor(availabilities, shifts, editModeDefault, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn, availabilityClick = () => { }) {
 
         // Require mouseup and mousedown to target the same element in order for click events to fire
         Event.preventFalseClicks();
+        this.availabilityClick = availabilityClick;
         //Event.registerTouchEvent();
 
-        this.associate = associate;
         this.twentyFourHourMode = true;
         this.minutesPerColumn = minutesPerColumn;
+        this.editModeDefault = editModeDefault;
 
         this.dayStartTime = new Date();
         this.dayEndTime = new Date();
@@ -32,16 +31,11 @@ export class Calendar {
 
         this.element = document.createElement("div");
         this.date = getDateFromQueryString();
-        this.dayElements = null;
-        this.dayList = null;
 
         // Used for viewing time period details
         this.focusedTimePeriod = null;
 
         this.currentDate = new Date();
-
-        // TODO: Address isManager
-        this.element.dataset.isManager = this.associate.isManager;
 
         // Objects that represent an instance of resizing or movement
         this.timePeriodResizal = null;
@@ -94,14 +88,15 @@ export class Calendar {
         dateBuffer.setDate(0);
         let daysAfterMonth = 6 - dateBuffer.getDay();
 
+        this.monthDays = {};
         this.addMonthDays(daysBeforeMonth, "month-day-filler");
-        this.addMonthDays(daysInMonth, "month-day");
+        this.monthDays = this.addMonthDays(daysInMonth, "month-day");
         this.addMonthDays(daysAfterMonth, "month-day-filler");
 
         let today = daysBeforeMonth + this.currentDate.getDate();
 
         if (this.date.getMonth() == this.currentDate.getMonth() && this.date.getFullYear() == this.currentDate.getFullYear()) {
-            let todayElement = this.dayListElement.querySelector(".month-day:nth-child(" + today + ") .day-number");
+            let todayElement = this.monthDays[today].element.querySelector( ".day-number" );
             todayElement.classList.add("bg-primary");
             todayElement.classList.add("text-light");
         }
@@ -119,15 +114,13 @@ export class Calendar {
 
 
         // Mark past days as "closed"
-        this.monthDays = this.dayListElement.getElementsByClassName("month-day");
-
         if (this.date.getFullYear() < this.currentDate.getFullYear() ||
             (this.date.getFullYear() == this.currentDate.getFullYear() && this.date.getMonth() < this.currentDate.getMonth())) {
             this.dayListElement.classList.add("closed-month");
         } else if (this.date.getMonth() == this.currentDate.getMonth() && this.date.getFullYear() == this.currentDate.getFullYear()) {
 
-            for (let i = 0; i < this.currentDate.getDate() - 1; i++) {
-                this.monthDays[i].classList.add("closed-day");
+            for (let i = 1; i < this.currentDate.getDate(); i++) {
+                this.monthDays[i].element.classList.add("closed-day");
             }
         }
 
@@ -139,11 +132,10 @@ export class Calendar {
         if (availabilities != [] && availabilities != null) {
             // Convert the array into an object with the IDs as keys
             this.availabilities = availabilities.reduce((object, timePeriod) => {
-
-                if ("userId" in timePeriod && !(timePeriod.userId in this.associates)) {
-                    this.associates[timePeriod.userId] = new User(timePeriod.user);
-                    this.associates[timePeriod.userId].name = `${timePeriod.user.name} ${timePeriod.user.surname}`;
-                    this.associates[timePeriod.userId].color = nameToColor(timePeriod.userId, this.associates[timePeriod.userId].name);
+                if ("user" in timePeriod && !(timePeriod.user.id in this.associates)) {
+                    this.associates[timePeriod.user.id] = new User(timePeriod.user);
+                    this.associates[timePeriod.user.id].name = `${timePeriod.user.name} ${timePeriod.user.surname}`;
+                    this.associates[timePeriod.user.id].color = nameToColor(timePeriod.user.id, this.associates[timePeriod.user.id].name);
                 }
 
                 object[timePeriod.id] = timePeriod;
@@ -157,10 +149,10 @@ export class Calendar {
             // Convert the array into an object with the IDs as keys
             this.shifts = shifts.reduce((object, timePeriod) => {
 
-                if ("userId" in timePeriod && !(timePeriod.userId in this.associates)) {
-                    this.associates[timePeriod.userId] = new User(timePeriod.user);
-                    this.associates[timePeriod.userId].name = `${timePeriod.user.name} ${timePeriod.user.surname}`;
-                    this.associates[timePeriod.userId].color = nameToColor(timePeriod.userId, this.associates[timePeriod.userId].name);
+                if ("user" in timePeriod && !(timePeriod.user.id in this.associates)) {
+                    this.associates[timePeriod.user.id] = new User(timePeriod.user);
+                    this.associates[timePeriod.user.id].name = `${timePeriod.user.name} ${timePeriod.user.surname}`;
+                    this.associates[timePeriod.user.id].color = nameToColor(timePeriod.user.id, this.associates[timePeriod.user.id].name);
                 }
 
                 object[timePeriod.id] = timePeriod;
@@ -174,59 +166,13 @@ export class Calendar {
         // NOTE: Shifts must be loaded before availabilities
         // Load existing shifts on the calendar
         for (let id in this.shifts) {
-            //let schedulingBar = this.dayListElement.querySelector(`.time-period[data-availability-id='${shift.availabilityID}'] .scheduling-bar`);
-            //let associate = this.associates[shift.userId];
 
-            //this.toggleScheduled(schedulingBar, associate, shift);
-
-            let timePeriod = this.shifts[id];
-
-            let time = {
-                start: stringToDate(timePeriod.beginning),
-                end: stringToDate(timePeriod.ending)
-            };
-
-            let associate = null;
-
-            if ("userId" in timePeriod) {
-                associate = this.associates[timePeriod.userId];
-            }
-
-            let userId = associate.id;
-
-            timePeriod = new ShiftPeriod(this, true, time, associate);
-            timePeriod.element.classList.add("associate-" + (Object.keys(this.associates).indexOf(userId.toString())));
-
-            timePeriod.shiftId = id;
-            let monthDay = this.element.querySelector(`[data-month-day='${time.start.getDate()}']`);
-            monthDay.dataset.availableAssociateCount = parseInt(monthDay.dataset.availableAssociateCount) + 1;
-            monthDay.querySelector(`.time-period-section`).prepend(timePeriod.element);
+            this.addShift(this.shifts[id]);
         }
 
         // Load existing availabilities onto the calendar
         for (let id in this.availabilities) {
-            let timePeriod = this.availabilities[id];
-
-            let time = {
-                start: stringToDate(timePeriod.beginning),
-                end: stringToDate(timePeriod.ending)
-            };
-
-            let associate = null;
-
-            if ("userId" in timePeriod) {
-                associate = this.associates[timePeriod.userId];
-            }
-
-            let userId = associate.id;
-
-            timePeriod = new AvailabilityPeriod(this, editModeDefault, time, associate);
-            timePeriod.element.classList.add("associate-" + (Object.keys(this.associates).indexOf(userId.toString())));
-
-            timePeriod.availabilityId = id;
-            let monthDay = this.element.querySelector(`[data-month-day='${time.start.getDate()}']`);
-            monthDay.dataset.availableAssociateCount = parseInt(monthDay.dataset.availableAssociateCount) + 1;
-            monthDay.querySelector(`.time-period-section`).prepend(timePeriod.element);
+            this.addAvailability(this.availabilities[id]);
         }
 
 
@@ -342,88 +288,97 @@ export class Calendar {
     }
 
     addMonthDays(count, classes) {
-        let html = "";
+
+        let monthDays = {};
 
         for (let i = 1; i <= count; i++) {
-            html += `
-            <div class="${classes}" data-month-day="${i}" data-available-associate-count="0" data-associate-count="0" data-manager-count="0">
-                <div class="day-number-wrapper"><span class="day-number">${i}</span></div>
-                <span class="error-icons">
-                    <i class="fas fa-exclamation-triangle warning-icon" data-tooltip="Not enough managers."></i>
-                    <i class="fas fa-exclamation-circle error-icon" data-tooltip="Not enough associates."></i>
-                </span>
-                <div class="time-period-section"></div>
-            </div>
-            `;
+
+            monthDays[i] = new MonthDay(this, i);
+            monthDays[i].className += " " + classes;
+            this.dayListElement.appendChild(monthDays[i].element);
         }
 
-        this.dayListElement.innerHTML += html;
+        return monthDays;
+    }
+
+    addShift(shift) {
+
+        let monthDay = this.monthDays[stringToDate(shift.beginning).getDate()];
+        let element = monthDay.element;
+
+        // TODO: Make the back-end return the whole User object when you create a Shift, then remove this work-around
+        if (!shift.user) {
+            shift.user = this.associates[shift.userId];
+        }
+
+        let timePeriod = new ShiftPeriod(this, ("Shifts.CrudAll" in abp.auth.grantedPermissions), shift);
+
+        timePeriod.shiftId = shift.id;
+
+        element.querySelector(`.time-period-section`).append(timePeriod.element);
+
+        element.dataset.shiftCount = parseInt(element.dataset.shiftCount) + 1;
+
+        monthDay.users[shift.user.id] = shift.user;
+        element.dataset.userCount = Object.keys(monthDay.users).length;
+
+        if (shift.user.roleNames.includes("MANAGER")) {
+            element.dataset.managerCount = parseInt(element.dataset.managerCount) + 1;
+        }
+        this.checkSchedulingErrors(monthDay);
+    }
+
+    addAvailability(availability) {
+
+        let timePeriod = new AvailabilityPeriod(this, this.editModeDefault, availability);
+        let bar = timePeriod.element.getElementsByClassName("time-period-bar")[0];
+        bar.addEventListener("click", () => { this.availabilityClick(this, timePeriod) });
+
+        timePeriod.availabilityId = availability.id;
+
+        // TODO: Make the back-end return the whole User object when you create a Shift, then remove this work-around
+        if (!availability.user) {
+            availability.user = this.associates[availability.userId];
+        }
+
+        let monthDay = this.monthDays[stringToDate(availability.beginning).getDate()];
+        let element = monthDay.element;
+
+        element.querySelector(`.time-period-section`).prepend(timePeriod.element);
+
+        element.dataset.availabilityCount = parseInt(element.dataset.availabilityCount) + 1;
+
+        monthDay.users[availability.user.id] = availability.user;
+        element.dataset.userCount = Object.keys(monthDay.users).length;
+    }
+
+    removeShift(shift) {
+        let monthDay = this.monthDays[stringToDate(shift.beginning).getDate()];
+        let element = monthDay.element;
+
+        let timePeriod = element.querySelector(`[data-shift-id='${shift.id}']`);
+        element.querySelector(`.time-period-section`).removeChild(timePeriod);
+
+        element.dataset.shiftCount = parseInt(element.dataset.shiftCount) - 1;
+
+        if (shift.user.roleNames.includes("MANAGER")) {
+            element.dataset.managerCount = parseInt(element.dataset.managerCount) - 1;
+        }
+        this.checkSchedulingErrors(monthDay);
+    }
+
+    removeAvailability(availability) {
+        let monthDay = this.monthDays[stringToDate(availability.beginning).getDate()];
+        let element = monthDay.element;
+
+        let timePeriod = element.querySelector(`[data-availability-id='${availability.id}']`);
+        element.querySelector(`.time-period-section`).removeChild(timePeriod);
+
+        element.dataset.availabilityCount = parseInt(element.dataset.availabilityCount) - 1;
     }
 
     appendTo(parent) {
         parent.appendChild(this.element);
-    }
-}
-
-export class AvailabilityCalendar extends Calendar {
-    constructor(availabilities = [], associate = { id: 0 }, closedWeekdays = [], dayStartTime = "9:00", dayEndTime = "17:00", minutesPerColumn = 15) {
-        super(associate, availabilities, [], true, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn);
-
-        this.element.classList.add("availability-calendar");
-        // NOTE: This is required to allow making new time period templates
-        this.timePeriodTemplate = null;
-
-        if (associate.id > 0) {
-            associate.color = nameToColor(associate.id, `${associate.name} ${associate.surname}`);
-        }
-
-        let card = new CustomElement(`<div class="card time-period-template-card"><div class="card-body"></div></div>`);
-        let cardBody = card.getElementsByClassName("card-body")[0];
-
-        this.timePeriodTemplate = new AvailabilityPeriod(this, true, { start: null, end: null }, associate);
-        this.timePeriodTemplate.element.classList.add("time-period-template");
-
-        cardBody.appendChild(this.timePeriodTemplate.element);
-        this.element.append(card);
-
-        let monthDayElements = this.element.getElementsByClassName("month-day");
-
-        for (let element of monthDayElements) {
-
-            let handler = new Event.PointerHandler((event) => {
-
-                // If the click originated directly on this element
-                if (this.timePeriodResizal == null && this.timePeriodMovement == null) {
-
-                    let day = element.getElementsByClassName("day-number")[0].innerHTML.padStart(2, "0");
-                    let month = `${this.date.getMonth() + 1}`.padStart(2, "0");
-                    let year = this.date.getFullYear();
-
-                    let templateStartTime = this.timePeriodTemplate.element.getElementsByClassName("time-start")[0].innerHTML;
-                    let startTime = templateStartTime + ":00";
-                    startTime = `${year}-${month}-${day}T${startTime}Z`;
-
-                    let templateEndTime = this.timePeriodTemplate.element.getElementsByClassName("time-end")[0].innerHTML;
-                    let endTime = templateEndTime + ":00";
-                    // NOTE: 24:00 is not a valid time
-                    if (endTime.split(":")[0] == 24) endTime = "23:59:59";
-                    endTime = `${year}-${month}-${day}T${endTime}Z`;
-
-                    new Availability({
-                        userId: associate.id,
-                        beginning: startTime,
-                        ending: endTime,
-                    }).save().then((availability) => {
-                        let timePeriod = new AvailabilityPeriod(this, true, { start: stringToDate(startTime), end: stringToDate(endTime) }, associate);
-                        timePeriod.availabilityId = availability.id;
-                        element.querySelector(".time-period-section").prepend(timePeriod.element);
-                    });
-                }
-            });
-
-            // NOTE: onclick will be simulated on mobile browsers
-            element.onclick = handler;
-        }
     }
 }
 

@@ -1,4 +1,4 @@
-﻿import { formatTime, Event } from "./utilities.js";
+﻿import { formatTime, Event, stringToDate } from "./utilities.js";
 import { Availability } from "./models/Availability.js";
 import { Shift } from "./models/Shift.js";
 
@@ -134,13 +134,17 @@ export function CustomElement(html) {
     return template.content.firstChild;
 }
 
-export class TimePeriod {
+class TimePeriod {
 
-    constructor(calendar, isInEditMode = true, timeBuffer = { start: null, end: null }) {
+    constructor(calendar, isInEditMode = true, time = { beginning: null, ending: null, user: null }) {
 
+        this.user = time.user;
         this.calendar = calendar;
-        let time = { start: timeBuffer.start, end: timeBuffer.end };
-        if (time.start != null && time.end == null) throw "Error: you must provide a start AND end time (or neither) to create a TimePeriod.";
+        if (time.beginning != null && time.ending == null) throw "Error: you must provide a start AND end time to create a TimePeriod.";
+        time = { start: stringToDate(time.beginning), end: stringToDate( time.ending ) };
+
+        // TODO: Set bar color based on user
+        // nameToColor(user.id, `${user.name} ${user.surname}`);
 
         let columnStart = 1;
         let columnEnd = calendar.columnsPerDay + 1;
@@ -198,10 +202,14 @@ export class TimePeriod {
             element.classList.add("edit-mode");
         }
 
+        if (this.user) {
+            element.classList.add("associate-" + (Object.keys(calendar.associates).indexOf(this.user.id.toString())));
+        }
+
         let left = element.getElementsByClassName("left-handle")[0];
         let right = element.getElementsByClassName("right-handle")[0];
-        let copyButton = element.getElementsByClassName("time-period-copy")[0];
-        let deleteButton = element.getElementsByClassName("time-period-delete")[0];
+        let copyButton = element.querySelector(".time-period-copy i");
+        let deleteButton = element.querySelector(".time-period-delete i");
         let bar = element.getElementsByClassName("time-period-bar")[0];
 
 
@@ -243,16 +251,26 @@ export class TimePeriod {
 
         handler = new Event.PointerHandler((event) => {
 
-            new Availability({
-                id: this.availabilityId,
-                userId: this.associateId
-            }).delete().then((data) => {
-                element.parentElement.removeChild(element);
-            });
+            this.delete();
+
         });
 
         // NOTE: onclick will be simulated on mobile browsers
         deleteButton.onclick = handler;
+
+        handler = new Event.PointerHandler((event) => {
+
+            if (element.classList.contains("time-period-template") == false &&
+                element.classList.contains("edit-mode") == true) {
+                if (calendar.focusedTimePeriod != null) calendar.focusedTimePeriod.classList.remove("focused");
+                calendar.focusedTimePeriod = element;
+                element.classList.add("focused");
+                element.prepend(calendar.mobileOverlay);
+                calendar.mobileOverlay.classList.remove("hidden");
+            }
+        });
+
+        bar.onclick = handler;
 
         this.element = element;
     }
@@ -277,25 +295,13 @@ export class TimePeriod {
 }
 
 export class AvailabilityPeriod extends TimePeriod {
-    constructor(calendar, isInEditMode = true, timeBuffer = { start: null, end: null }, associate = null) {
-        super(calendar, isInEditMode, timeBuffer);
+    constructor(calendar, isInEditMode = true, availability = { beginning: null, ending: null, user: null }) {
+        super(calendar, isInEditMode, availability);
+        this.availability = availability;
 
         let element = this.element;
+        element.dataset.availabilityId = availability.id;
         element.classList.add("availability");
-        let bar = element.getElementsByClassName("time-period-bar")[0];
-
-        let handler = new Event.PointerHandler((event) => {
-
-            if (element.classList.contains("time-period-template") == false) {
-                if (calendar.focusedTimePeriod != null) calendar.focusedTimePeriod.classList.remove("focused");
-                calendar.focusedTimePeriod = element;
-                element.classList.add("focused");
-                element.prepend(calendar.mobileOverlay);
-                calendar.mobileOverlay.classList.remove("hidden");
-            }
-        });
-
-        bar.onclick = handler;
     }
 
     save() {
@@ -305,32 +311,33 @@ export class AvailabilityPeriod extends TimePeriod {
             ending: this.getEndTime(),
         }).save();
     }
+
+    delete() {
+        new Availability({
+            id: this.availabilityId
+        }).delete().then((data) => {
+            this.calendar.removeAvailability(this.availability);
+        });
+    }
 }
 
 export class ShiftPeriod extends TimePeriod {
-    constructor(calendar, isInEditMode = true, timeBuffer = { start: null, end: null }, associate = null) {
-        super(calendar, isInEditMode, timeBuffer);
+    constructor(calendar, isInEditMode = true, shift = { beginning: null, ending: null, user: null }) {
+        super(calendar, isInEditMode, shift );
+        this.shift = shift;
 
         let element = this.element;
         element.classList.add("shift");
+        element.dataset.shiftId = shift.id;
         let bar = element.getElementsByClassName("time-period-bar")[0];
 
-        if (associate != null) {
-            this.associateId = associate.id;
-            bar.style.backgroundColor = associate.color;
-            bar.style.backgroundColor = associate.color;
+        if (shift.user != null) {
+            this.associateId = shift.user.id;
+            bar.style.backgroundColor = shift.user.color;
         } else if (Object.keys(calendar.associates).length > 0) {
             let id = Object.keys(calendar.associates)[0];
             bar.style.backgroundColor = calendar.associates[id].color;
-            bar.style.backgroundColor = calendar.associates[id].color;
         }
-
-        let handler = new Event.PointerHandler((event) => {
-
-            calendar.toggleScheduled(bar, associate);
-        });
-
-        bar.onclick = handler;
     }
 
     save() {
@@ -339,5 +346,58 @@ export class ShiftPeriod extends TimePeriod {
             beginning: this.getStartTime(),
             ending: this.getEndTime(),
         }).save();
+    }
+
+    delete() {
+        if ("HasUser.CrudAll" in abp.auth.grantedPermissions) {
+
+            new Shift({
+                id: this.shiftId
+            }).delete().then((data) => {
+                this.calendar.removeShift(this.shift);
+            });
+        }
+    }
+}
+
+
+export class MonthDay {
+
+    constructor(calendar, day) {
+
+        this.calendar = calendar;
+        this.users = {};
+        
+        let element = new CustomElement(`
+        <div class="month-day" data-month-day="${day}" data-user-count="0" data-availability-count="0" data-shift-count="0" data-manager-count="0">
+            <div class="day-number-wrapper"><span class="day-number">${day}</span></div>
+            <span class="error-icons">
+                <i class="fas fa-exclamation-triangle warning-icon" data-tooltip="Not enough managers."></i>
+                <i class="fas fa-exclamation-circle error-icon" data-tooltip="Not enough associates."></i>
+            </span>
+            <div class="time-period-section"></div>
+        </div>
+        `);
+
+
+        this.element = element;
+    }
+
+    getStartTime() {
+        let monthDay = this.element.closest(".month-day");
+        let dayNumberElement = monthDay.getElementsByClassName("day-number")[0];
+        let startTime = this.element.getElementsByClassName("time-start")[0].innerHTML + ":00";
+        startTime = `${this.calendar.date.getFullYear()}-${this.calendar.date.getMonth() + 1}-${dayNumberElement.innerHTML}T${startTime}Z`;
+        return startTime;
+    }
+
+    getEndTime() {
+        let monthDay = this.element.closest(".month-day");
+        let dayNumberElement = monthDay.getElementsByClassName("day-number")[0];
+        let endTime = this.element.getElementsByClassName("time-end")[0].innerHTML + ":00";
+        // NOTE: 24:00 is not a valid time
+        if (endTime.split(":")[0] == 24) endTime = "23:59:59";
+        endTime = `${this.calendar.date.getFullYear()}-${this.calendar.date.getMonth() + 1}-${dayNumberElement.innerHTML}T${endTime}Z`;
+        return endTime;
     }
 }

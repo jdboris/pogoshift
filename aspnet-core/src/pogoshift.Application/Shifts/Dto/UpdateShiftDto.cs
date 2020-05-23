@@ -8,6 +8,7 @@ namespace pogoshift.Shifts.Dto
     [AutoMapTo(typeof(Shift))]
     public class UpdateShiftDto : EntityDto<int>
     {
+        public DateTime Date { get; set; }
         public DateTime Beginning { get; set; }
         public DateTime Ending { get; set; }
     }

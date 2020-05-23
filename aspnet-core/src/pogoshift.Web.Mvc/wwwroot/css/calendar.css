@@ -197,11 +197,20 @@
     background: #EEE;
 }
 
-    .calendar .time-period-copy,
-    .calendar .time-period-delete {
+    .calendar .time-period-copy i,
+    .calendar .time-period-delete i {
         cursor: pointer;
     }
 
+.calendar .time-period-copy i,
+.calendar .time-period-delete i {
+    display: none;
+}
+
+.calendar .time-period.edit-mode .time-period-copy i,
+.calendar .time-period.edit-mode .time-period-delete i {
+    display: initial;
+}
 
 .calendar .time-period-bar {
     grid-row: 2;
@@ -295,40 +304,44 @@
     position: relative;
 }
 
-.scheduling-calendar [data-available-associate-count='2'] .time-period-section {
-    min-height: calc((36px + 5px) * 2);
+.scheduling-calendar [data-user-count='1'] .time-period-section {
+    min-height: calc((36px + 6px) * 1 );
 }
 
-.scheduling-calendar [data-available-associate-count='3'] .time-period-section {
-    min-height: calc((36px + 5px) * 3);
+.scheduling-calendar [data-user-count='2'] .time-period-section {
+    min-height: calc((36px + 6px) * 2);
 }
 
-.scheduling-calendar [data-available-associate-count='4'] .time-period-section {
-    min-height: calc((36px + 5px) * 4);
+.scheduling-calendar [data-user-count='3'] .time-period-section {
+    min-height: calc((36px + 6px) * 3);
 }
 
-.scheduling-calendar [data-available-associate-count='5'] .time-period-section {
-    min-height: calc((36px + 5px) * 5);
+.scheduling-calendar [data-user-count='4'] .time-period-section {
+    min-height: calc((36px + 6px) * 4);
 }
 
-.scheduling-calendar [data-available-associate-count='6'] .time-period-section {
-    min-height: calc((36px + 5px) * 6);
+.scheduling-calendar [data-user-count='5'] .time-period-section {
+    min-height: calc((36px + 6px) * 5);
 }
 
-.scheduling-calendar [data-available-associate-count='7'] .time-period-section {
-    min-height: calc((36px + 5px) * 7);
+.scheduling-calendar [data-user-count='6'] .time-period-section {
+    min-height: calc((36px + 6px) * 6);
 }
 
-.scheduling-calendar [data-available-associate-count='8'] .time-period-section {
-    min-height: calc((36px + 5px) * 8);
+.scheduling-calendar [data-user-count='7'] .time-period-section {
+    min-height: calc((36px + 6px) * 7);
 }
 
-.scheduling-calendar [data-available-associate-count='9'] .time-period-section {
-    min-height: calc((36px + 5px) * 9);
+.scheduling-calendar [data-user-count='8'] .time-period-section {
+    min-height: calc((36px + 6px) * 8);
 }
 
-.scheduling-calendar [data-available-associate-count='10'] .time-period-section {
-    min-height: calc((36px + 5px) * 10);
+.scheduling-calendar [data-user-count='9'] .time-period-section {
+    min-height: calc((36px + 6px) * 9);
+}
+
+.scheduling-calendar [data-user-count='10'] .time-period-section {
+    min-height: calc((36px + 6px) * 10);
 }
 
 .scheduling-calendar .associate-0 {
@@ -342,80 +355,80 @@
     position: absolute;
     left: 0px;
     right: 0px;
-    bottom: calc(36px + 5px);
+    bottom: calc(36px + 6px);
 }
 
 .scheduling-calendar .associate-2 {
     position: absolute;
     left: 0px;
     right: 0px;
-    bottom: calc((36px + 5px) * 2);
+    bottom: calc((36px + 6px) * 2);
 }
 
 .scheduling-calendar .associate-3 {
     position: absolute;
     left: 0px;
     right: 0px;
-    bottom: calc((36px + 5px) * 3);
+    bottom: calc((36px + 6px) * 3);
 }
 
 .scheduling-calendar .associate-4 {
     position: absolute;
     left: 0px;
     right: 0px;
-    bottom: calc((36px + 5px) * 4);
+    bottom: calc((36px + 6px) * 4);
 }
 
 .scheduling-calendar .associate-5 {
     position: absolute;
     left: 0px;
     right: 0px;
-    bottom: calc((36px + 5px) * 5);
+    bottom: calc((36px + 6px) * 5);
 }
 
 .scheduling-calendar .associate-6 {
     position: absolute;
     left: 0px;
     right: 0px;
-    bottom: calc((36px + 5px) * 6);
+    bottom: calc((36px + 6px) * 6);
 }
 
 .scheduling-calendar .associate-7 {
     position: absolute;
     left: 0px;
     right: 0px;
-    bottom: calc((36px + 5px) * 7);
+    bottom: calc((36px + 6px) * 7);
 }
 
 .scheduling-calendar .associate-8 {
     position: absolute;
     left: 0px;
     right: 0px;
-    bottom: calc((36px + 5px) * 8);
+    bottom: calc((36px + 6px) * 8);
 }
 
 .scheduling-calendar .associate-9 {
     position: absolute;
     left: 0px;
     right: 0px;
-    bottom: calc((36px + 5px) * 9);
+    bottom: calc((36px + 6px) * 9);
 }
 
 .scheduling-calendar .associate-10 {
     position: absolute;
     left: 0px;
     right: 0px;
-    bottom: calc((36px + 5px) * 10);
+    bottom: calc((36px + 6px) * 10);
 }
 
 .scheduling-calendar .time-period-copy,
 .scheduling-calendar .time-period-delete {
-    display: none;
+    width: 1em;
 }
 
-.scheduling-calendar .time-period-heading {
-    justify-content: center;
-}
+    .scheduling-calendar .time-period-copy i {
+        display: none !important;
+    }
 
 .scheduling-calendar .time-period {
     opacity: 0.5;
@@ -483,9 +496,10 @@
         z-index: 1;
     }
 
-        .calendar .calendar-mobile-overlay:not(.hidden) {
-            display: initial;
-        }
+    .calendar .shift .calendar-mobile-overlay:not(.hidden),
+    .availability-calendar .availability .calendar-mobile-overlay:not(.hidden) {
+        display: initial;
+    }
 
     .calendar .month-day {
         padding: 0px;
@@ -498,8 +512,8 @@
         background-color: #FFFFFF;
     }
 
-    .calendar .month-day-list .left-handle,
-    .calendar .month-day-list .right-handle {
+    .calendar .month-day-list .edit-mode .left-handle,
+    .calendar .month-day-list .edit-mode .right-handle {
         display: none;
     }
 
@@ -543,15 +557,18 @@
     }
 
 
-    .calendar .month-day-list .time-period.focused {
+    .calendar .month-day-list .shift.focused,
+    .availability-calendar .month-day-list .availability.focused {
         background-color: #dbdbdb;
         min-height: 12px;
         /*box-shadow: 0px 0px 1px 1px #CCC;*/
         /* NOTE: This must not be moved to another selector or it'll look weird when it transitions back to white */
         transition: background-color 0.3s;
+        opacity: 1;
     }
 
-        .calendar .month-day-list .time-period.focused .time-period-inner {
+        .calendar .month-day-list .shift.focused .time-period-inner,
+        .availability-calendar .month-day-list .availability.focused .time-period-inner {
             position: fixed;
             left: 0px;
             bottom: 155px;
@@ -565,57 +582,65 @@
             border: 1px solid rgba(0, 0, 0, 0.125);
         }
 
-        .calendar .month-day-list .time-period.focused .left-handle {
+        .calendar .month-day-list .shift.focused .left-handle,
+        .availability-calendar .month-day-list .availability.focused .left-handle {
             display: inline-block;
         }
 
-        .calendar .month-day-list .time-period.focused .right-handle {
+        .calendar .month-day-list .shift.focused .right-handle,
+        .availability-calendar .month-day-list .availability.focused .right-handle {
             display: inline-block;
         }
 
-        .calendar .month-day-list .time-period.focused .time-period-time {
+        .calendar .month-day-list .shift.focused .time-period-time,
+        .availability-calendar .month-day-list .availability.focused .time-period-time {
             display: initial;
         }
 
-        .calendar .month-day-list .time-period.focused .time-period-heading {
+        .calendar .month-day-list .shift.focused .time-period-heading,
+        .availability-calendar .month-day-list .availability.focused .time-period-heading {
             display: flex;
         }
 
 
 
-    .scheduling-calendar [data-available-associate-count='2'] .time-period-section {
+    .scheduling-calendar [data-user-count='1'] .time-period-section {
+        min-height: calc((13px + 2px) * 1);
+    }
+
+    .scheduling-calendar [data-user-count='2'] .time-period-section {
         min-height: calc((13px + 2px) * 2);
     }
 
-    .scheduling-calendar [data-available-associate-count='3'] .time-period-section {
+    .scheduling-calendar [data-user-count='3'] .time-period-section {
         min-height: calc((13px + 2px) * 3);
     }
 
-    .scheduling-calendar [data-available-associate-count='4'] .time-period-section {
+    .scheduling-calendar [data-user-count='4'] .time-period-section {
         min-height: calc((13px + 2px) * 4);
     }
 
-    .scheduling-calendar [data-available-associate-count='5'] .time-period-section {
+    .scheduling-calendar [data-user-count='5'] .time-period-section {
         min-height: calc((13px + 2px) * 5);
     }
 
-    .scheduling-calendar [data-available-associate-count='6'] .time-period-section {
+    .scheduling-calendar [data-user-count='6'] .time-period-section {
         min-height: calc((13px + 2px) * 6);
     }
 
-    .scheduling-calendar [data-available-associate-count='7'] .time-period-section {
+    .scheduling-calendar [data-user-count='7'] .time-period-section {
         min-height: calc((13px + 2px) * 7);
     }
 
-    .scheduling-calendar [data-available-associate-count='8'] .time-period-section {
+    .scheduling-calendar [data-user-count='8'] .time-period-section {
         min-height: calc((13px + 2px) * 8);
     }
 
-    .scheduling-calendar [data-available-associate-count='9'] .time-period-section {
+    .scheduling-calendar [data-user-count='9'] .time-period-section {
         min-height: calc((13px + 2px) * 9);
     }
 
-    .scheduling-calendar [data-available-associate-count='10'] .time-period-section {
+    .scheduling-calendar [data-user-count='10'] .time-period-section {
         min-height: calc((13px + 2px) * 10);
     }
 
@@ -701,8 +726,8 @@
         margin-bottom: auto;
     }
 
-    .scheduling-calendar[data-is-manager='1'] .month-day-list:not(.closed-month) .month-day:not(.closed-day).associate-minimum-error .day-number-wrapper,
-    .scheduling-calendar[data-is-manager='1'] .month-day-list:not(.closed-month) .month-day:not(.closed-day).manager-minimum-error .day-number-wrapper {
+    .scheduling-calendar .month-day-list:not(.closed-month) .month-day:not(.closed-day).associate-minimum-error .day-number-wrapper,
+    .scheduling-calendar .month-day-list:not(.closed-month) .month-day:not(.closed-day).manager-minimum-error .day-number-wrapper {
         margin-bottom: initial;
     }
 
@@ -715,17 +740,4 @@
         top: 15vh;
         bottom: auto;
     }
-}
-
-/* **************************************************************************************************************** */
-/* Non-managers                                                                                                     */
-/* **************************************************************************************************************** */
-
-
-.scheduling-calendar[data-is-manager='0'] .error-icons {
-    display: none;
-}
-
-.scheduling-calendar[data-is-manager='0'] .time-period:not([data-shift-id]) {
-    display: none;
 }

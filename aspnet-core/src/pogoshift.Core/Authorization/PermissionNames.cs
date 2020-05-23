@@ -12,6 +12,12 @@
 
         public const string HasUser_CrudAll = "HasUser.CrudAll";
 
+        public const string Shifts_CrudAll = "Shifts.CrudAll";
+
         public const string Shifts_ReadAll = "Shifts.ReadAll";
+
+        public const string Users_CrudAdmins = "Users.CrudAdmins";
+
+
     }
 }

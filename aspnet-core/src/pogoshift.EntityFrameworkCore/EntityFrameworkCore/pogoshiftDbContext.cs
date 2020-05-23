@@ -45,7 +45,7 @@ namespace pogoshift.EntityFrameworkCore
             if (typeof(IHasUser).IsAssignableFrom(typeof(TEntity)))
             {
                 Expression<Func<TEntity, bool>> hasUserFilter = e =>
-                    IsHasUserFilterEnabled && ((IHasUser)e).UserId == AbpSession.UserId;
+                    !IsHasUserFilterEnabled || ((IHasUser)e).UserId == AbpSession.UserId;
 
                 expression = expression == null ? hasUserFilter : CombineExpressions(expression, hasUserFilter);
             }

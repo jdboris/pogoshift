@@ -1,4 +1,5 @@
-﻿using Abp.Application.Services;
+﻿using Abp;
+using Abp.Application.Services;
 using Abp.Application.Services.Dto;
 using Abp.Authorization;
 using Abp.Domain.Entities;
@@ -85,6 +86,15 @@ namespace pogoshift.Users
 
             var user = await _userManager.GetUserByIdAsync(input.Id);
 
+            /*
+            // If the target User is an Admin AND the current User can't CRUD Admins
+            if (PermissionChecker.IsGranted(new UserIdentifier(user.TenantId, user.Id), PermissionNames.Users_CrudAdmins) &&
+                !PermissionChecker.IsGranted(PermissionNames.Users_CrudAdmins))
+            {
+                throw new UserFriendlyException("Error: Permission denied.");
+            }
+            */
+
             MapToEntity(input, user);
 
             CheckErrors(await _userManager.UpdateAsync(user));
@@ -123,6 +133,16 @@ namespace pogoshift.Users
         public override async Task DeleteAsync(EntityDto<long> input)
         {
             var user = await _userManager.GetUserByIdAsync(input.Id);
+
+            /*
+            // If the target User is an Admin AND the current User can't CRUD Admins
+            if (PermissionChecker.IsGranted(new UserIdentifier(user.TenantId, user.Id), PermissionNames.Users_CrudAdmins) &&
+                !PermissionChecker.IsGranted(PermissionNames.Users_CrudAdmins))
+            {
+                throw new UserFriendlyException("Error: Permission denied.");
+            }
+            */
+
             await _userManager.DeleteAsync(user);
         }
 
@@ -162,20 +182,21 @@ namespace pogoshift.Users
 
             var userDto = base.MapToEntityDto(user);
             userDto.RoleNames = roles.ToArray();
+            //userDto.PermissionNames = user.Permissions.Select(x => x.Name).ToArray();
 
             return userDto;
         }
 
         protected override IQueryable<User> CreateFilteredQuery(PagedUserResultRequestDto input)
         {
-            return Repository.GetAllIncluding(x => x.Roles)
+            return Repository.GetAllIncluding(x => x.Roles, x => x.Permissions)
                 .WhereIf(!input.Keyword.IsNullOrWhiteSpace(), x => x.UserName.Contains(input.Keyword) || x.Name.Contains(input.Keyword) || x.EmailAddress.Contains(input.Keyword))
                 .WhereIf(input.IsActive.HasValue, x => x.IsActive == input.IsActive);
         }
 
         protected override async Task<User> GetEntityByIdAsync(long id)
         {
-            var user = await Repository.GetAllIncluding(x => x.Roles).FirstOrDefaultAsync(x => x.Id == id);
+            var user = await Repository.GetAllIncluding(x => x.Roles, x => x.Permissions).FirstOrDefaultAsync(x => x.Id == id);
 
             if (user == null)
             {

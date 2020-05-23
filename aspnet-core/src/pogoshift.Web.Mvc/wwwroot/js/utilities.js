@@ -33,11 +33,26 @@ export function formatTime(datetime) {
     return hours + ":" + timeBuffer.getMinutes().toString().padStart(2, "0");
 }
 
-// Expected format: "YYYY-MM-DDTHH:MM:SS"
+// Expected formats:
+// "YYYY-MM-DDTHH:MM:SS"
+// "HH:MM"
 export function stringToDate(string) {
     let buffer = string.split("Z")[0].split("T");
-    let dateParts = buffer[0].split("-");
+
+    if (buffer.length == 1) {
+        let timeParts = buffer[0].split(":");
+
+        if (timeParts[0] == "24") {
+            timeParts[0] = "23";
+            timeParts[1] = "59";
+            timeParts[2] = "59";
+        }
+
+        return new Date(1971, 0, 1, timeParts[0], timeParts[1], timeParts[2] || 0);
+    }
+
     let timeParts = buffer[1].split(":");
+    let dateParts = buffer[0].split("-");
 
     return new Date(dateParts[0], dateParts[1], dateParts[2], timeParts[0], timeParts[1], timeParts[2]);
 }

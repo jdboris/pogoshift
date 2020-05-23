@@ -12,5 +12,6 @@
   </PropertyGroup>
   <ItemGroup>
     <ProjectReference Include="..\pogoshift.Core\pogoshift.Core.csproj" />
+    <ProjectReference Include="..\pogoshift.EntityFrameworkCore\pogoshift.EntityFrameworkCore.csproj" />
   </ItemGroup>
 </Project>

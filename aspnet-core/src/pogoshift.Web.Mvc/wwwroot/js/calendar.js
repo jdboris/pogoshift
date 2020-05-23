@@ -1,6 +1,5 @@
 ﻿import { AvailabilityPeriod, ShiftPeriod, MonthDay } from "./dom-elements.js";
-import { MONTH_NAMES, formatTime, stringToDate, getDateFromQueryString, nameToColor, Event } from "./utilities.js";
-import { User } from "./models/User.js";
+import { MONTH_NAMES, formatTime, stringToDate, getDateFromQueryString, Event } from "./utilities.js";
 
 const WEEKDAY_INDEXES = { Sunday: 0, Monday: 1, Tuesday: 2, Wednesday: 3, Thursday: 4, Friday: 5, Saturday: 6 };
 
@@ -133,9 +132,7 @@ export class Calendar {
             // Convert the array into an object with the IDs as keys
             this.availabilities = availabilities.reduce((object, timePeriod) => {
                 if ("user" in timePeriod && !(timePeriod.user.id in this.associates)) {
-                    this.associates[timePeriod.user.id] = new User(timePeriod.user);
-                    this.associates[timePeriod.user.id].name = `${timePeriod.user.name} ${timePeriod.user.surname}`;
-                    this.associates[timePeriod.user.id].color = nameToColor(timePeriod.user.id, this.associates[timePeriod.user.id].name);
+                    this.associates[timePeriod.user.id] = timePeriod.user;
                 }
 
                 object[timePeriod.id] = timePeriod;
@@ -150,9 +147,7 @@ export class Calendar {
             this.shifts = shifts.reduce((object, timePeriod) => {
 
                 if ("user" in timePeriod && !(timePeriod.user.id in this.associates)) {
-                    this.associates[timePeriod.user.id] = new User(timePeriod.user);
-                    this.associates[timePeriod.user.id].name = `${timePeriod.user.name} ${timePeriod.user.surname}`;
-                    this.associates[timePeriod.user.id].color = nameToColor(timePeriod.user.id, this.associates[timePeriod.user.id].name);
+                    this.associates[timePeriod.user.id] = timePeriod.user;
                 }
 
                 object[timePeriod.id] = timePeriod;
@@ -166,7 +161,6 @@ export class Calendar {
         // NOTE: Shifts must be loaded before availabilities
         // Load existing shifts on the calendar
         for (let id in this.shifts) {
-
             this.addShift(this.shifts[id]);
         }
 

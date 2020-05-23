@@ -5,8 +5,15 @@ export const MONTH_NAMES = ["January", "February", "March", "April", "May", "Jun
 
 // Source: https://stackoverflow.com/questions/3426404/create-a-hexadecimal-colour-based-on-a-string-with-javascript
 // This converts a given string to a color (hexidecimal format) that's unique to that string
-export function nameToColor(id, name) {
+export function getUserColor(user) {
 
+    // TODO: Store the color in the database
+
+    if (user.color)
+        return user.color;
+
+    let id = user.id;
+    let name = user.fullName;
     let str = name.slice(0, name.length / 2) + id + name.slice(name.length / 2);
     var hash = 0;
     for (var i = 0; i < str.length; i++) {
@@ -17,6 +24,7 @@ export function nameToColor(id, name) {
         var value = (hash >> (i * 8)) & 0xFF;
         color += ("00" + value.toString(16)).substr(-2);
     }
+    user.color = color;
     return color;
 }
 

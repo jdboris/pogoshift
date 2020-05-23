@@ -1,4 +1,5 @@
-﻿import { CustomElement } from "./dom-elements.js";
+﻿import { getUserColor } from "./utilities.js";
+import { CustomElement } from "./dom-elements.js";
 import { Shift } from "./models/Shift.js";
 import { Calendar } from "./calendar.js";
 
@@ -22,7 +23,7 @@ export class ScheduleCalendar extends Calendar {
             let associate = this.associates[id];
 
             let associateElement = new CustomElement(`
-                <span class="associate-list-item"><i class="fas fa-circle" style="color: ${associate.color}"></i><span>${associate.name}</span></span>
+                <span class="associate-list-item"><i class="fas fa-circle" style="color: ${getUserColor(associate)}"></i><span>${associate.name}</span></span>
             `);
             cardBody.appendChild(associateElement);
         }

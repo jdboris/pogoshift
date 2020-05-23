@@ -1,4 +1,4 @@
-﻿import { formatTime, Event, stringToDate, nameToColor } from "./utilities.js";
+﻿import { formatTime, Event, stringToDate, getUserColor } from "./utilities.js";
 import { Availability } from "./models/Availability.js";
 import { Shift } from "./models/Shift.js";
 
@@ -142,11 +142,6 @@ class TimePeriod {
         this.calendar = calendar;
         if (time.beginning != null && time.ending == null) throw "Error: you must provide a start AND end time to create a TimePeriod.";
         time = { start: stringToDate(time.beginning), end: stringToDate( time.ending ) };
-
-        if (this.user) {
-            // TODO: Set bar color based on user
-            this.user.color = nameToColor(this.user.id, `${this.user.name} ${this.user.surname}`);
-        }
 
         let columnStart = 1;
         let columnEnd = calendar.columnsPerDay + 1;
@@ -309,10 +304,10 @@ export class AvailabilityPeriod extends TimePeriod {
 
         if (availability.user != null) {
             this.associateId = availability.user.id;
-            bar.style.backgroundColor = availability.user.color;
+            bar.style.backgroundColor = getUserColor( availability.user );
         } else {
             let id = Object.keys(calendar.associates)[0];
-            bar.style.backgroundColor = calendar.associates[id].color;
+            bar.style.backgroundColor = getUserColor( calendar.associates[id] );
         }
     }
 
@@ -345,7 +340,7 @@ export class ShiftPeriod extends TimePeriod {
 
         if (shift.user != null) {
             this.associateId = shift.user.id;
-            bar.style.backgroundColor = shift.user.color;
+            bar.style.backgroundColor = getUserColor( shift.user );
         } else {
             bar.classList.add("bg-primary");
         }

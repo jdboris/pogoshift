@@ -4,8 +4,8 @@ import { Availability } from "./models/Availability.js";
 import { Calendar } from "./calendar.js";
 
 export class AvailabilityCalendar extends Calendar {
-    constructor(availabilities = [], closedWeekdays = [], dayStartTime = "9:00", dayEndTime = "17:00", minutesPerColumn = 15) {
-        super(availabilities, [], true, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn);
+    constructor(date, availabilities = [], closedWeekdays = [], dayStartTime = "9:00", dayEndTime = "17:00", minutesPerColumn = 15) {
+        super(date, availabilities, [], true, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn);
 
         this.associates[abp.session.user.id] = abp.session.user;
 

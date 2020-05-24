@@ -5,8 +5,8 @@ import { Calendar } from "./calendar.js";
 
 
 export class ScheduleCalendar extends Calendar {
-    constructor(associateMinimum = 1, managerMinimum = 1, availabilities = [], shifts = [], closedWeekdays = [], dayStartTime = "9:00", dayEndTime = "17:00", minutesPerColumn = 15) {
-        super(availabilities, shifts, false, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn, createShiftFromAvailability);
+    constructor(date, associateMinimum = 1, managerMinimum = 1, availabilities = [], shifts = [], closedWeekdays = [], dayStartTime = "9:00", dayEndTime = "17:00", minutesPerColumn = 15) {
+        super(date, availabilities, shifts, false, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn, createShiftFromAvailability);
         this.storeId = abp.session.tenantId;
 
         this.element.classList.add("scheduling-calendar");

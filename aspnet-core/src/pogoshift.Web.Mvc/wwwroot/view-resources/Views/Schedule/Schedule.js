@@ -22,7 +22,7 @@ Shift.getAllOfAllUsersByDate(date.getMonth() + 1, date.getFullYear()).then(async
 
 
     let container = document.getElementById("schedule-calendar");
-    let calendar = new ScheduleCalendar(associateMinimum, managerMinimum, availabilities, shifts, closedWeekdays, workingHoursStart, workingHoursEnd, 15);
+    let calendar = new ScheduleCalendar(date, associateMinimum, managerMinimum, availabilities, shifts, closedWeekdays, workingHoursStart, workingHoursEnd, 15);
     calendar.appendTo(container);
 });
 

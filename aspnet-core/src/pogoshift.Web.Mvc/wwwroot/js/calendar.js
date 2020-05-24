@@ -6,7 +6,7 @@ const WEEKDAY_INDEXES = { Sunday: 0, Monday: 1, Tuesday: 2, Wednesday: 3, Thursd
 export class Calendar {
 
     // Strings in format "HH:MM"
-    constructor(availabilities, shifts, editModeDefault, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn, availabilityClick = () => { }) {
+    constructor(date, availabilities, shifts, editModeDefault, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn, availabilityClick = () => { }) {
 
         // Require mouseup and mousedown to target the same element in order for click events to fire
         Event.preventFalseClicks();
@@ -29,7 +29,7 @@ export class Calendar {
         // this.dayEndColumn
 
         this.element = document.createElement("div");
-        this.date = getDateFromQueryString();
+        this.date = date;
 
         // Used for viewing time period details
         this.focusedTimePeriod = null;
@@ -319,6 +319,8 @@ export class Calendar {
         if (shift.user.roleNames.includes("MANAGER")) {
             element.dataset.managerCount = parseInt(element.dataset.managerCount) + 1;
         }
+
+        element.dataset.thisWeekUserCount = monthDay.getThisWeekUserCount();
         this.checkSchedulingErrors(monthDay);
     }
 
@@ -344,6 +346,8 @@ export class Calendar {
 
         monthDay.users[availability.user.id] = availability.user;
         element.dataset.userCount = Object.keys(monthDay.users).length;
+
+        element.dataset.thisWeekUserCount = monthDay.getThisWeekUserCount();
     }
 
     removeShift(shift) {
@@ -358,6 +362,10 @@ export class Calendar {
         if (shift.user.roleNames.includes("MANAGER")) {
             element.dataset.managerCount = parseInt(element.dataset.managerCount) - 1;
         }
+
+        delete monthDay.users[shift.userId];
+
+        element.dataset.thisWeekUserCount = monthDay.getThisWeekUserCount();
         this.checkSchedulingErrors(monthDay);
     }
 
@@ -369,6 +377,10 @@ export class Calendar {
         element.querySelector(`.time-period-section`).removeChild(timePeriod);
 
         element.dataset.availabilityCount = parseInt(element.dataset.availabilityCount) - 1;
+
+        delete monthDay.users[availability.userId];
+
+        element.dataset.thisWeekUserCount = monthDay.getThisWeekUserCount();
     }
 
     appendTo(parent) {

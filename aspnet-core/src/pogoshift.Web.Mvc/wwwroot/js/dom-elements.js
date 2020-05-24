@@ -373,9 +373,12 @@ export class MonthDay {
 
         this.calendar = calendar;
         this.users = {};
+        this.day = day;
         
         let element = new CustomElement(`
-        <div class="month-day" data-month-day="${day}" data-user-count="0" data-availability-count="0" data-shift-count="0" data-manager-count="0">
+        <div class="month-day" data-month-day="${day}" data-user-count="0"
+            data-availability-count="0" data-shift-count="0" data-manager-count="0"
+            data-this-week-user-count="0">
             <div class="day-number-wrapper"><span class="day-number">${day}</span></div>
             <span class="error-icons">
                 <i class="fas fa-exclamation-triangle warning-icon" data-tooltip="Not enough managers."></i>
@@ -405,5 +408,10 @@ export class MonthDay {
         if (endTime.split(":")[0] == 24) endTime = "23:59:59";
         endTime = `${this.calendar.date.getFullYear()}-${this.calendar.date.getMonth() + 1}-${dayNumberElement.innerHTML}T${endTime}Z`;
         return endTime;
+    }
+
+    getThisWeekUserCount() {
+
+        return Object.keys(this.calendar.associates).length;
     }
 }

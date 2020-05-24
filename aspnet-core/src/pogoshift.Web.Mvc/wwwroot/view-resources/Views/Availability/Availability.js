@@ -1,10 +1,17 @@
 ﻿import { AvailabilityCalendar } from "/js/availability-calendar.js";
 import { Availability } from "/js/models/Availability.js";
-import { getDateFromQueryString, myFetch } from "/js/utilities.js";
+import { getDateFromQueryString } from "/js/utilities.js";
 
 let date = getDateFromQueryString();
 
-Availability.getAllByDate(date.getMonth() + 1, date.getFullYear()).then((availabilities) => {
+Availability.getAllByDate(date.getMonth() + 1, date.getFullYear()).then(async (availabilities) => {
+
+    let loginInfo = await abp.services.app.session.getCurrentLoginInformations();
+
+    abp.session = {
+        ...abp.session, 
+        ...loginInfo
+    };
 
     let workingHoursStart = "17:00";
     let workingHoursEnd = "24:00";

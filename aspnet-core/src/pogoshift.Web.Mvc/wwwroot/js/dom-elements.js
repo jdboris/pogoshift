@@ -302,7 +302,7 @@ export class AvailabilityPeriod extends TimePeriod {
 
         let bar = element.getElementsByClassName("time-period-bar")[0];
 
-        if (availability.user != null) {
+        if (availability.user) {
             this.associateId = availability.user.id;
             bar.style.backgroundColor = getUserColor( availability.user );
         } else {

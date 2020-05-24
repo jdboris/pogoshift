@@ -13,7 +13,7 @@ export function getUserColor(user) {
         return user.color;
 
     let id = user.id;
-    let name = user.fullName;
+    let name = user.name + " " + user.surname;
     let str = name.slice(0, name.length / 2) + id + name.slice(name.length / 2);
     var hash = 0;
     for (var i = 0; i < str.length; i++) {

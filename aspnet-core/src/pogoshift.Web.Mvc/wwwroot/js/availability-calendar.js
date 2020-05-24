@@ -7,6 +7,8 @@ export class AvailabilityCalendar extends Calendar {
     constructor(availabilities = [], closedWeekdays = [], dayStartTime = "9:00", dayEndTime = "17:00", minutesPerColumn = 15) {
         super(availabilities, [], true, closedWeekdays, dayStartTime, dayEndTime, minutesPerColumn);
 
+        this.associates[abp.session.user.id] = abp.session.user;
+
         this.element.classList.add("availability-calendar");
         // NOTE: This is required to allow making new time period templates
         this.timePeriodTemplate = null;

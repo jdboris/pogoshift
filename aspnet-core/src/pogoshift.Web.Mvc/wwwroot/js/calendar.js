@@ -92,10 +92,11 @@ export class Calendar {
         this.monthDays = this.addMonthDays(daysInMonth, "month-day");
         this.addMonthDays(daysAfterMonth, "month-day-filler");
 
-        let today = daysBeforeMonth + this.currentDate.getDate();
+        //let today = daysBeforeMonth + this.currentDate.getDate();
+        let today = this.currentDate.getDate();
 
         if (this.date.getMonth() == this.currentDate.getMonth() && this.date.getFullYear() == this.currentDate.getFullYear()) {
-            let todayElement = this.monthDays[today].element.querySelector( ".day-number" );
+            let todayElement = this.monthDays[today].element.querySelector(".day-number");
             todayElement.classList.add("bg-primary");
             todayElement.classList.add("text-light");
         }

@@ -224,7 +224,8 @@ namespace pogoshift.Users
             }
             long userId = _abpSession.UserId.Value;
             var user = await _userManager.GetUserByIdAsync(userId);
-            var loginAsync = await _logInManager.LoginAsync(user.UserName, input.CurrentPassword, shouldLockout: false);
+            var tenant = await _sessionAppService.GetCurrentLoginInformations();
+            var loginAsync = await _logInManager.LoginAsync(user.UserName, input.CurrentPassword, tenant.Tenant.TenancyName, shouldLockout: false);
             if (loginAsync.Result != AbpLoginResultType.Success)
             {
                 throw new UserFriendlyException("Your 'Existing Password' did not match the one on record.  Please try again or contact an administrator for assistance in resetting your password.");

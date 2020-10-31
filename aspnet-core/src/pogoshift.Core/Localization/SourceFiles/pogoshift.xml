@@ -29,7 +29,7 @@
     <text name="UserName" value="User name" />
     <text name="PhoneNumber" value="Phone number" />
     <text name="Name" value="Name" />
-    <text name="Surname" value="Surname" />
+    <text name="Surname" value="Family Name" />
     <text name="EmailAddress" value="Email address" />
     <text name="AddressLine1" value="Address line 1" />
     <text name="AddressLine2" value="Address line 2" />
@@ -62,6 +62,7 @@
     <text name="Optional" value="Optional" />
     <text name="LeaveEmptyToSwitchToHost">Leave empty to switch to the host</text>
     <text name="CurrentTenant">Current tenant</text>
+    <text name="Restaurant">Restaurant</text>
     <text name="NotSelected">Not selected</text>
     <text name="Change">Change</text>
     <text name="ChangeTenant">Change tenant</text>

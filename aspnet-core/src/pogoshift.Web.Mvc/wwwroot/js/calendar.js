@@ -1,5 +1,5 @@
 ﻿import { AvailabilityPeriod, ShiftPeriod, MonthDay } from "./dom-elements.js";
-import { MONTH_NAMES, formatTime, stringToDate, getDateFromQueryString, Event } from "./utilities.js";
+import { MONTH_NAMES, formatTime, stringToDate, Event } from "./utilities.js";
 
 const WEEKDAY_INDEXES = { Sunday: 0, Monday: 1, Tuesday: 2, Wednesday: 3, Thursday: 4, Friday: 5, Saturday: 6 };
 
@@ -44,10 +44,10 @@ export class Calendar {
         this.element.innerHTML += `
         <div class="calendar-mobile-overlay hidden"></div>
         <div class="calendar-header">
-            <a href="?m=${this.date.getMonth()}&d=${this.date.getDate()}&y=${this.date.getFullYear()}" class="calendar-month-previous"><i class="fas fa-chevron-left"></i></a>
-            <a href="?m=${this.date.getMonth() + 2}&d=${this.date.getDate()}&y=${this.date.getFullYear()}" class="calendar-month-next"><i class="fas fa-chevron-right"></i></a>
+            <a href="?m=${this.date.getMonth()}&y=${this.date.getFullYear()}" class="calendar-month-previous"><i class="fas fa-chevron-left"></i></a>
+            <a href="?m=${this.date.getMonth() + 2}&y=${this.date.getFullYear()}" class="calendar-month-next"><i class="fas fa-chevron-right"></i></a>
             <span class="month-title h4 text-dark">${MONTH_NAMES[this.date.getMonth()]} ${this.date.getFullYear()}</span>
-            <a href="?m=${this.currentDate.getMonth() + 1}&d=${this.currentDate.getDate()}&y=${this.currentDate.getFullYear()}" class="btn btn-primary">Today</a>
+            <a href="?m=${this.currentDate.getMonth() + 1}&y=${this.currentDate.getFullYear()}" class="btn btn-primary">Today</a>
         </div>
         `;
 
@@ -77,14 +77,11 @@ export class Calendar {
 
         // Count days of this month
         dateBuffer = new Date(this.date);
+        // NOTE: Must set to day 1 before incrementing month, since the day is carried over
+        dateBuffer.setDate(1);
         dateBuffer.setMonth(dateBuffer.getMonth() + 1);
         dateBuffer.setDate(0);
         let daysInMonth = dateBuffer.getDate();
-
-        // Count weekdays from the last day of this month, to the next Saturday
-        dateBuffer = new Date(this.date);
-        dateBuffer.setMonth(dateBuffer.getMonth() + 1);
-        dateBuffer.setDate(0);
         let daysAfterMonth = 6 - dateBuffer.getDay();
 
         this.monthDays = {};

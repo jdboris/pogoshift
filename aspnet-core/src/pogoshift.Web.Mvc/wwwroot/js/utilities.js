@@ -69,14 +69,8 @@ export function getDateFromQueryString() {
     let requestData = new URLSearchParams(location.search);
     let date = null;
 
-    if (requestData.has("m") && requestData.has("d") && requestData.has("y")) {
-        date = new Date(requestData.get("y"), requestData.get("m") - 1, requestData.get("d"));
-    } else {
-        date = new Date();
-
-        history.replaceState(null, '', `?m=${date.getMonth() + 1}&d=${date.getDate()}&y=${date.getFullYear()}`);
-
-        requestData = new URLSearchParams(location.search);
+    if (requestData.has("m") && requestData.has("y")) {
+        date = new Date(requestData.get("y"), requestData.get("m") - 1, 1);
     }
 
     return date;

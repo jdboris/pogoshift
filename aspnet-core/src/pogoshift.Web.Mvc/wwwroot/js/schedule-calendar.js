@@ -23,7 +23,7 @@ export class ScheduleCalendar extends Calendar {
             let associate = this.associates[id];
 
             let associateElement = new CustomElement(`
-                <span class="associate-list-item"><i class="fas fa-circle" style="color: ${getUserColor(associate)}"></i><span>${associate.name}</span></span>
+                <span class="associate-list-item"><i class="fas fa-circle" style="color: ${getUserColor(associate)}"></i><span>${associate.surname} ${associate.name}</span></span>
             `);
             cardBody.appendChild(associateElement);
         }

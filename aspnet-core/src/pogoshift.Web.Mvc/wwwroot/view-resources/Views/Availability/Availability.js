@@ -23,7 +23,7 @@ Availability.getAllByDate(date.getMonth() + 1, date.getFullYear()).then(async (a
 
     let workingHoursStart = "17:00";
     let workingHoursEnd = "24:00";
-    let closedWeekdays = ["Saturday", "Sunday"];
+    let closedWeekdays = [];
 
     let container = document.getElementById("availability-calendar");
     let calendar = new AvailabilityCalendar(date, availabilities, closedWeekdays, workingHoursStart, workingHoursEnd, 15);

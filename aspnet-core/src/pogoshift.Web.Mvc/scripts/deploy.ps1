@@ -27,5 +27,5 @@ az webapp deployment source config-zip --src ".\dist\Mvc.zip" -n $appService -g 
 
 az webapp config appsettings set -g $resourceGroup -n $appService --settings ConnectionStrings__Default=$connectionString
 
-$url = "https://pogoshift.azurewebsites.net/"
+$url = "https://www.pogoshift.com"
 az webapp config appsettings set -g $resourceGroup -n $appService --settings App__ServerRootAddress=$url App__ClientRootAddress=$url App_CorsOrigins=$url

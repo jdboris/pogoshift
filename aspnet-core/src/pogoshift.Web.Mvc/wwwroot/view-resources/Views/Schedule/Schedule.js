@@ -23,7 +23,7 @@ Shift.getAllOfAllUsersByDate(date.getMonth() + 1, date.getFullYear()).then(async
 
     let workingHoursStart = "17:00";
     let workingHoursEnd = "24:00";
-    let closedWeekdays = ["Saturday", "Sunday"];
+    let closedWeekdays = [];
 
     let associateMinimum = 2;
     let managerMinimum = 1;

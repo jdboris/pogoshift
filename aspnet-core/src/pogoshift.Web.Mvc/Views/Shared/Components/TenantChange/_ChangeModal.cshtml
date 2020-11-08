@@ -5,13 +5,13 @@
 @{
     Layout = null;
 }
-@await Html.PartialAsync("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("ChangeTenant")))
+@await Html.PartialAsync("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("ChangeRestaurant")))
 
 <form name="TenantChangeForm" role="form" novalidate class="form-horizontal">
     <div class="modal-body">
         <div class="form-group row">
-            <label class="col-md-3 col-form-label" for="TenancyName">@L("TenancyName")</label>
-            <div class="col-md-9">
+            <label class="col-md-4 col-form-label" for="TenancyName">@L("RestaurantName")</label>
+            <div class="col-md">
                 <input id="TenancyName" name="TenancyName" class="form-control" type="text" maxlength="@AbpTenantBase.MaxTenancyNameLength.ToString()" value="@Model.TenancyName">
             </div>
         </div>

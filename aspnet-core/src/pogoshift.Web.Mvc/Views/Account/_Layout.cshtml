@@ -11,7 +11,7 @@
     AbpAntiForgeryManager.SetCookie(Context);
 
     var pageTitle = !string.IsNullOrWhiteSpace(ViewBag.Title) ? ViewBag.Title + " / " : "";
-    pageTitle += "pogoshift";
+    pageTitle += "Pogoshift";
 }
 <!DOCTYPE html>
 <html lang="@LanguageManager.CurrentLanguage.Name">
@@ -28,7 +28,7 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="/"><b>pogoshift</b></a>
+            <a href="/" style="font-weight:bold">Pogoshift</a>
         </div>
         <div class="card">
             @if (MultiTenancyConfig.IsEnabled)

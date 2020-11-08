@@ -6,7 +6,7 @@
         //Desktop notification
         Push.create("pogoshift", {
             body: userNotification.notification.data.message,
-            icon: abp.appPath + 'img/logo.png',
+            icon: abp.appPath + 'img/logo.svg',
             timeout: 6000,
             onClick: function () {
                 window.focus();

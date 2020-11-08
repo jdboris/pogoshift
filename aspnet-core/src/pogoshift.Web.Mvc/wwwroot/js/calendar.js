@@ -11,7 +11,7 @@ export class Calendar {
         // Require mouseup and mousedown to target the same element in order for click events to fire
         Event.preventFalseClicks();
         this.availabilityClick = availabilityClick;
-        //Event.registerTouchEvent();
+        //Event.registerTouchEvent(); 
 
         this.twentyFourHourMode = true;
         this.minutesPerColumn = minutesPerColumn;

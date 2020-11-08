@@ -30,7 +30,7 @@ export class AvailabilityCalendar extends Calendar {
 
                 // If the click originated directly on this element
                 if ((this.timePeriodResizal == null && this.timePeriodMovement == null) &&
-                    element.dataset.availabilityCount == 0 ) {
+                    element.dataset.availabilityCount == 0) {
 
                     let day = element.getElementsByClassName("day-number")[0].innerHTML.padStart(2, "0");
                     let month = `${this.date.getMonth() + 1}`.padStart(2, "0");

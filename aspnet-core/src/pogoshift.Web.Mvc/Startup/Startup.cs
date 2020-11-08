@@ -1,23 +1,24 @@
-﻿using System;
+﻿using Abp.AspNetCore;
+using Abp.AspNetCore.Mvc.Antiforgery;
+using Abp.AspNetCore.SignalR.Hubs;
+using Abp.Castle.Logging.Log4Net;
+using Abp.Dependency;
+using Abp.Json;
+using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Castle.Facilities.Logging;
-using Abp.AspNetCore;
-using Abp.AspNetCore.Mvc.Antiforgery;
-using Abp.Castle.Logging.Log4Net;
+using Newtonsoft.Json.Serialization;
 using pogoshift.Authentication.JwtBearer;
 using pogoshift.Configuration;
 using pogoshift.Identity;
 using pogoshift.Web.Resources;
-using Abp.AspNetCore.SignalR.Hubs;
-using Abp.Dependency;
-using Abp.Json;
-using Microsoft.Extensions.Hosting;
-using Newtonsoft.Json.Serialization;
+using System;
 
 
 namespace pogoshift.Web.Startup
@@ -94,6 +95,14 @@ namespace pogoshift.Web.Startup
                 endpoints.MapHub<AbpCommonHub>("/signalr");
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute("defaultWithArea", "{area}/{controller=Home}/{action=Index}/{id?}");
+            });
+
+            FileExtensionContentTypeProvider provider = new FileExtensionContentTypeProvider();
+            provider.Mappings[".webmanifest"] = "application/manifest+json";
+
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                ContentTypeProvider = provider
             });
         }
     }

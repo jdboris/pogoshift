@@ -48,4 +48,9 @@
     <Folder Include="wwwroot\libs\" />
     <Folder Include="wwwroot\view-resources\Views\_Bundles\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Update="wwwroot\site.webmanifest">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>

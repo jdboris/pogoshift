@@ -1,23 +1,23 @@
-﻿using System;
-using System.Linq;
-using System.Reflection;
+﻿using Abp.AspNetCore;
+using Abp.AspNetCore.Mvc.Antiforgery;
+using Abp.AspNetCore.SignalR.Hubs;
+using Abp.Castle.Logging.Log4Net;
+using Abp.Dependency;
+using Abp.Extensions;
+using Abp.Json;
+using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Castle.Facilities.Logging;
-using Abp.AspNetCore;
-using Abp.AspNetCore.Mvc.Antiforgery;
-using Abp.Castle.Logging.Log4Net;
-using Abp.Extensions;
-using pogoshift.Configuration;
-using pogoshift.Identity;
-using Abp.AspNetCore.SignalR.Hubs;
-using Abp.Dependency;
-using Abp.Json;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
+using pogoshift.Configuration;
+using pogoshift.Identity;
+using System;
+using System.Linq;
+using System.Reflection;
 
 namespace pogoshift.Web.Host.Startup
 {
@@ -98,7 +98,7 @@ namespace pogoshift.Web.Host.Startup
             );
         }
 
-        public void Configure(IApplicationBuilder app,  ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
             app.UseAbp(options => { options.UseAbpRequestLocalization = false; }); // Initializes ABP framework.
 
@@ -112,14 +112,14 @@ namespace pogoshift.Web.Host.Startup
 
             app.UseAbpRequestLocalization();
 
-          
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapHub<AbpCommonHub>("/signalr");
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute("defaultWithArea", "{area}/{controller=Home}/{action=Index}/{id?}");
             });
-          
+
             // Enable middleware to serve generated Swagger as a JSON endpoint
             app.UseSwagger();
             // Enable middleware to serve swagger-ui assets (HTML, JS, CSS etc.)

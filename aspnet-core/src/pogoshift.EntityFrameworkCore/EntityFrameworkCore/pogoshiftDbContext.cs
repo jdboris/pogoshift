@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using pogoshift.Authorization.Roles;
 using pogoshift.Authorization.Users;
 using pogoshift.Availabilities;
+using pogoshift.Breaks;
 using pogoshift.Filters;
 using pogoshift.MultiTenancy;
 using pogoshift.Shifts;
@@ -18,6 +19,7 @@ namespace pogoshift.EntityFrameworkCore
         /* Define a DbSet for each entity of the application */
         public DbSet<Availability> Availabilities { get; set; }
         public DbSet<Shift> Shifts { get; set; }
+        public DbSet<Break> Breaks { get; set; }
         public DbSet<StoreHours.StoreHours> StoreHours { get; set; }
 
         public IPermissionChecker PermissionChecker { get; set; }

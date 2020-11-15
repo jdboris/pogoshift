@@ -21,7 +21,7 @@ Availability.getAllByDate(date.getMonth() + 1, date.getFullYear()).then(async (a
         ...loginInfo
     };
 
-    let workingHoursStart = "17:00";
+    let workingHoursStart = "8:00";
     let workingHoursEnd = "24:00";
     let closedWeekdays = [];
 

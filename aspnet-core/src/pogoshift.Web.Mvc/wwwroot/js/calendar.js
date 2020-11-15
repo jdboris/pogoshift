@@ -1,5 +1,6 @@
 ﻿import { AvailabilityPeriod, ShiftPeriod, MonthDay } from "./dom-elements.js";
 import { MONTH_NAMES, formatTime, stringToDate, Event } from "./utilities.js";
+import { E } from "./dom-elements.js";
 
 const WEEKDAY_INDEXES = { Sunday: 0, Monday: 1, Tuesday: 2, Wednesday: 3, Thursday: 4, Friday: 5, Saturday: 6 };
 
@@ -22,6 +23,7 @@ export class Calendar {
         this.hoursPerDay = 24;
         this.setDayStartTime(dayStartTime);
         this.setDayEndTime(dayEndTime);
+        this.header = null;
 
         // See getters/setters below
         // this.columnsPerDay
@@ -41,31 +43,38 @@ export class Calendar {
         this.timePeriodMovement = null;
 
         this.element.classList.add("calendar");
-        this.element.innerHTML += `
-        <div class="calendar-mobile-overlay hidden"></div>
-        <div class="calendar-header">
-            <a href="?m=${this.date.getMonth()}&y=${this.date.getFullYear()}" class="calendar-month-previous"><i class="fas fa-chevron-left"></i></a>
-            <a href="?m=${this.date.getMonth() + 2}&y=${this.date.getFullYear()}" class="calendar-month-next"><i class="fas fa-chevron-right"></i></a>
-            <span class="month-title h4 text-dark">${MONTH_NAMES[this.date.getMonth()]} ${this.date.getFullYear()}</span>
-            <a href="?m=${this.currentDate.getMonth() + 1}&y=${this.currentDate.getFullYear()}" class="btn btn-primary">Today</a>
-        </div>
-        `;
+        this.element.append(E( `
+            <div class="calendar-mobile-overlay hidden"></div>
+        `));
 
-        this.element.innerHTML += `
-        <div class="day-list">
-            <div class="weekday-headers">
-                <div>S</div>
-                <div>M</div>
-                <div>T</div>
-                <div>W</div>
-                <div>T</div>
-                <div>F</div>
-                <div>S</div>
+        this.header = E(`
+            <div class="calendar-header">
+                <div>
+                    <a href="?m=${this.date.getMonth()}&y=${this.date.getFullYear()}" class="calendar-month-previous"><i class="fas fa-chevron-left"></i></a>
+                    <a href="?m=${this.date.getMonth() + 2}&y=${this.date.getFullYear()}" class="calendar-month-next"><i class="fas fa-chevron-right"></i></a>
+                    <span class="month-title h4 text-dark">${MONTH_NAMES[this.date.getMonth()]} ${this.date.getFullYear()}</span>
+                    <a href="?m=${this.currentDate.getMonth() + 1}&y=${this.currentDate.getFullYear()}" class="btn btn-primary">Today</a>
+                <div>
             </div>
-            <div class="month-day-list">
+        `);
+        this.element.append(this.header);
+
+
+        this.element.append(E(`
+            <div class="day-list">
+                <div class="weekday-headers">
+                    <div>S</div>
+                    <div>M</div>
+                    <div>T</div>
+                    <div>W</div>
+                    <div>T</div>
+                    <div>F</div>
+                    <div>S</div>
+                </div>
+                <div class="month-day-list">
+                </div>
             </div>
-        </div>
-        `;
+        `));
 
         this.dayListElement = this.element.getElementsByClassName("month-day-list")[0];
         this.mobileOverlay = this.element.getElementsByClassName("calendar-mobile-overlay")[0];

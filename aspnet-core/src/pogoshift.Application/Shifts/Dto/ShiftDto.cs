@@ -1,7 +1,9 @@
 ﻿using Abp.Application.Services.Dto;
 using Abp.AutoMapper;
+using pogoshift.Breaks;
 using pogoshift.Users.Dto;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace pogoshift.Shifts.Dto
@@ -17,5 +19,7 @@ namespace pogoshift.Shifts.Dto
         [ForeignKey(nameof(UserId))]
         public UserDto User { get; set; }
         public long UserId { get; set; }
+
+        public List<Break> Breaks { get; set; }
     }
 }

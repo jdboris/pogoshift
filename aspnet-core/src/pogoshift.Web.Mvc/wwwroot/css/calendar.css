@@ -1,4 +1,17 @@
-﻿.calendar {
+﻿.calendar input[type=number]::-webkit-inner-spin-button,
+.calendar input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.calendar input[type=number] {
+    font-family: monospace;
+    font-weight: bold;
+    width: 50px;
+    text-align: center;
+}
+
+.calendar {
     user-select: none;
 }
 
@@ -27,8 +40,14 @@
 .calendar-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     margin-top: 20px;
     margin-bottom: 20px;
+}
+
+.calendar-header > * {
+    display: flex;
+    align-items: center;
 }
 
     .calendar-header a {
@@ -309,6 +328,10 @@
 /* **************************************************************************************************************** */
 /* Scheduling                                                                                                       */
 /* **************************************************************************************************************** */
+
+.scheduling-calendar .break-controls select {
+    width: 160px;
+}
 
 .scheduling-calendar .time-period-section {
     position: relative;

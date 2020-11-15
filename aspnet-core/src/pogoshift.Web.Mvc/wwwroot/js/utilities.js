@@ -185,3 +185,12 @@ export function myFetch(url, method = "GET", body = null) {
             }
         });
 }
+
+// Triggers the given element's "reflow" to restart its CSS animations/transitions
+export function restartAnimations(element) {
+    element.style.animation = "none";
+    element.style.transition = "none";
+    element.offsetHeight; /* trigger reflow */
+    element.style.animation = null;
+    element.style.transition = null;
+}

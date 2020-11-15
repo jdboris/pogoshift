@@ -1,5 +1,5 @@
-﻿import { getUserColor } from "./utilities.js";
-import { CustomElement } from "./dom-elements.js";
+﻿import { getUserColor, restartAnimations } from "./utilities.js";
+import { E, Input } from "./dom-elements.js";
 import { Shift } from "./models/Shift.js";
 import { Calendar } from "./calendar.js";
 
@@ -14,15 +14,14 @@ export class ScheduleCalendar extends Calendar {
         this.associateMinimum = associateMinimum;
         this.managerMinimum = managerMinimum;
 
-
         // Show list of available associates
-        let card = new CustomElement(`<div class="card associate-list-card"><div class="card-body"></div></div>`);
+        let card = E(`<div class="card associate-list-card"><div class="card-body"></div></div>`);
         let cardBody = card.getElementsByClassName("card-body")[0];
 
         for (let id in this.associates) {
             let associate = this.associates[id];
 
-            let associateElement = new CustomElement(`
+            let associateElement = E(`
                 <span class="associate-list-item"><i class="fas fa-circle" style="color: ${getUserColor(associate)}"></i><span>${associate.surname} ${associate.name}</span></span>
             `);
             cardBody.appendChild(associateElement);
@@ -32,6 +31,12 @@ export class ScheduleCalendar extends Calendar {
 
         for (let dayNumber in this.monthDays) {
             this.checkSchedulingErrors(this.monthDays[dayNumber]);
+        }
+
+        
+
+        if ("HasUser.CrudAll" in abp.auth.grantedPermissions) {
+            this.header.append(BreakControls());
         }
     }
 
@@ -51,6 +56,83 @@ export class ScheduleCalendar extends Calendar {
     }
 }
 
+
+function BreakControls() {
+
+    let element = E(`<div class="break-controls">Breaks: </div>`);
+    let state = {
+        breaks: [],
+        newBreakHours: null,
+        newBreakMinutes: 15,
+        breakHours: null,
+        breakMinutes: null,
+        selectedBreak: null
+    };
+
+    let ddl;
+
+    render();
+
+    function render() {
+        element.innerHTML = "";
+
+        element.append(
+            "Breaks: ",
+
+            Input(`<input type="number" name="newBreakHours" class="form-control" placeholder="HH" min="0" max="24" />`, {}, state),
+            E(`<span class="input-combinator">:</span>`),
+            Input(`<input type="number" name="newBreakMinutes" class="form-control" placeholder="MM" min="0" max="60" />`, {}, state),
+        
+            E(`<button class="btn btn-primary"><i class="fas fa-minus"></i></button>`, {
+                onclick: () => {
+                    breaks.pop();
+                    render();
+                }
+            }),
+
+            E(`<input type="number" class="form-control" value="${state.breaks.length}" disabled/>`),
+
+            E(`<button class="btn btn-primary"><i class="fas fa-plus"></i></button>`, {
+                onclick: () => {
+                    state.breaks.push({
+                        hours: Number(state.newBreakHours),
+                        minutes: Number(state.newBreakMinutes),
+                        hourString: function() {
+                            return String(this.hours).padStart(2, "0");
+                        },
+                        minuteString: function () {
+                            return String(this.minutes).padStart(2, "0");
+                        }
+                    });
+                    render();
+                }
+            }),
+
+            ddl = Input(`<select name="selectedBreak" class="custom-select" ${state.breaks.length ? "" : "disabled"}></select>`, {
+                children: state.breaks.map((b, index) => {
+                    return E(`<option value="${index}">Break ${index + 1} (${b.hourString()}:${b.minuteString()})</option>`);
+                }),
+                onchange: (e) => {
+                    state.breakHours = state.breaks[e.target.selectedIndex].hourString();
+                    state.breakMinutes = state.breaks[e.target.selectedIndex].minuteString();
+                    render();
+                }
+            }, state),
+
+            Input(`
+                <input type="number" name="breakHours" class="form-control" placeholder="HH" min="0" max="24" ${state.breaks.length ? "" : "disabled"} />
+            `, {}, state),
+            E(`<span class="input-combinator">:</span>`),
+            Input(`
+                <input type="number" name="breakMinutes" class="form-control" placeholder="MM" min="0" max="60" ${state.breaks.length ? "" : "disabled"} />
+            `, {}, state),
+        );
+
+        //ddl.append(E(`<option value="7">Break 7 (5:5)</option>`));
+    }
+
+    return element;
+}
 
 function createShiftFromAvailability(calendar, availabilityPeriod) {
     if ("HasUser.CrudAll" in abp.auth.grantedPermissions) {

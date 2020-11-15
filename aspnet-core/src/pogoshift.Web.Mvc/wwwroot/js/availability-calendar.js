@@ -1,4 +1,4 @@
-﻿import { CustomElement, AvailabilityPeriod } from "./dom-elements.js";
+﻿import { E, AvailabilityPeriod } from "./dom-elements.js";
 import { Event } from "./utilities.js";
 import { Availability } from "./models/Availability.js";
 import { Calendar } from "./calendar.js";
@@ -13,7 +13,7 @@ export class AvailabilityCalendar extends Calendar {
         // NOTE: This is required to allow making new time period templates
         this.timePeriodTemplate = null;
 
-        let card = new CustomElement(`<div class="card time-period-template-card"><div class="card-body"></div></div>`);
+        let card = new E(`<div class="card time-period-template-card"><div class="card-body"></div></div>`);
         let cardBody = card.getElementsByClassName("card-body")[0];
 
         this.timePeriodTemplate = new AvailabilityPeriod(this, true, { beginning: dayStartTime, ending: dayEndTime, user: abp.session.user });
@@ -36,11 +36,11 @@ export class AvailabilityCalendar extends Calendar {
                     let month = `${this.date.getMonth() + 1}`.padStart(2, "0");
                     let year = this.date.getFullYear();
 
-                    let templateStartTime = this.timePeriodTemplate.element.getElementsByClassName("time-start")[0].innerHTML;
+                    let templateStartTime = this.timePeriodTemplate.element.getElementsByClassName("time-start")[0].innerHTML.padStart(5, "0");
                     let startTime = templateStartTime + ":00";
                     startTime = `${year}-${month}-${day}T${startTime}Z`;
 
-                    let templateEndTime = this.timePeriodTemplate.element.getElementsByClassName("time-end")[0].innerHTML;
+                    let templateEndTime = this.timePeriodTemplate.element.getElementsByClassName("time-end")[0].innerHTML.padStart(5, "0");
                     let endTime = templateEndTime + ":00";
                     // NOTE: 24:00 is not a valid time
                     if (endTime.split(":")[0] == 24) endTime = "23:59:59";

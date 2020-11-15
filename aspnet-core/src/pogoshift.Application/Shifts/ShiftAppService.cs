@@ -37,12 +37,12 @@ namespace pogoshift.Shifts
 
         protected override IQueryable<Shift> CreateFilteredQuery(ShiftDto input)
         {
-            return Repository.GetAllIncluding(p => p.User);
+            return Repository.GetAllIncluding(p => p.User, p => p.Breaks);
         }
 
         protected override Shift GetEntityById(int id)
         {
-            var entity = Repository.GetAllIncluding(p => p.User).FirstOrDefault(p => p.Id == id);
+            var entity = Repository.GetAllIncluding(p => p.User, p => p.Breaks).FirstOrDefault(p => p.Id == id);
             if (entity == null)
             {
                 throw new EntityNotFoundException(typeof(Shift), id);
@@ -72,6 +72,7 @@ namespace pogoshift.Shifts
         public ListResultDto<ShiftDto> GetAllByDate(int month, int year)
         {
             var shifts = _ctx.Shifts
+                .Include(s => s.Breaks)
                 .Include(s => s.User)
                     .ThenInclude(u => u.Roles)
                 .Where(s => s.Beginning.Month == month && s.Ending.Year == year)

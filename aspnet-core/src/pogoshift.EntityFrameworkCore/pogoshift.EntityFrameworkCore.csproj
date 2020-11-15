@@ -19,6 +19,10 @@
     <Compile Remove="Migrations\20200517200121_Remove-Shifts.Designer.cs" />
     <Compile Remove="Migrations\20200517205526_Remove-User-From-Shifts.cs" />
     <Compile Remove="Migrations\20200517205526_Remove-User-From-Shifts.Designer.cs" />
+    <Compile Remove="Migrations\20201109062127_Add-Breaks.cs" />
+    <Compile Remove="Migrations\20201109062127_Add-Breaks.Designer.cs" />
+    <Compile Remove="Migrations\20201109145236_Add-Breaks.cs" />
+    <Compile Remove="Migrations\20201109145236_Add-Breaks.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />

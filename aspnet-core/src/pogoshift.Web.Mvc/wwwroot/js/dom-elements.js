@@ -1,4 +1,4 @@
-﻿import { formatTime, Event, stringToDate, getUserColor } from "./utilities.js";
+﻿import { formatTime, Event, stringToDate, getUserColor, restartAnimations } from "./utilities.js";
 import { Availability } from "./models/Availability.js";
 import { Shift } from "./models/Shift.js";
 
@@ -125,13 +125,107 @@ class TimePeriodMovement {
     }
 }
 
-
-export function CustomElement(html) {
+export function E(html, properties = {}) {
     let template = document.createElement("template");
     // Prevent returning a text node of whitespace as the result
     html = html.trim();
     template.innerHTML = html;
-    return template.content.firstChild;
+    let element = template.content.firstChild;
+    if ("children" in properties) {
+        if (Array.isArray(properties.children)) {
+            for (let child of properties.children) {
+                element.appendChild(child);
+            }
+        } else {
+            element.appendChild(properties.children);
+        }
+        delete properties.children;
+    }
+
+    Object.assign(element, properties);
+    return element;
+}
+
+export function Input(html, properties = {}, data = {}) {
+    let input = E(html, properties);
+    let value = "";
+
+    // "Bind" the input to the data property with the same name as the "name" attribute
+    if (input.name && input.name in data) {
+        value = data[input.name];
+
+        if (input.tagName == "SELECT") {
+
+            let observer = new MutationObserver(tryToInitialize);
+            observer.observe(input, {
+                attributes: true,
+                childList: true,
+                characterData: true
+            });
+
+            tryToInitialize();
+
+            function tryToInitialize() {
+                console.log("value: ", value);
+                for (let option of input.children) {
+                    console.log("option.value: ", option.value);
+                    if (option.value == value) {
+                        option.selected = true;
+                        observer.disconnect();
+                        console.log("FOUND IT");
+                        break;
+                    }
+                }
+            }
+            
+            input.addEventListener("change", () => {
+                value = input.value;
+                data[input.name] = value;
+                observer.disconnect();
+                console.log(data[input.name]);
+            });
+
+        } else if (input.type == "checkbox" || input.type == "radio") {
+            input.checked = value;
+            input.addEventListener("change", () => {
+                value = input.checked;
+                data[input.name] = value;
+            });
+        } else {
+            input.value = value;
+            input.addEventListener("input", () => {
+                value = input.checked;
+                data[input.name] = value;
+            });
+        }
+
+    }
+
+    if (input.type == "number") {
+        input.oninput = () => {
+            if (input.value.length > input.max.length) {
+                if (+input.value == 0) {
+                    input.value = "0".repeat(input.max.length);
+                } else {
+                    input.value = input.value.replace(/^0+/, "");
+                }
+            }
+
+            if (input.value.length < input.max.length) {
+                input.value = input.value.padStart(2, "0");
+            }
+
+            if (input.checkValidity() == false) {
+                input.classList.add("invalid-flash");
+                restartAnimations(input);
+                input.value = value;
+            } else {
+                value = input.value;
+            }
+        }
+    }
+
+    return input;
 }
 
 class TimePeriod {
@@ -168,7 +262,7 @@ class TimePeriod {
         // NOTE: Must use inline CSS for the grid-column property in order for resizing to work
         // NOTE: Must use appendChild instead of innerHTML in order for the time periods to retain their click handlers 
         // NOTE: The order of the time period bars matters
-        let element = new CustomElement(`
+        let element = new E(`
         <div class="time-period">
             <div class="time-period-inner" style="grid-template-columns: repeat( ${calendar.columnsPerDay}, 1fr );">
                 <div class="time-period-heading">
@@ -375,7 +469,7 @@ export class MonthDay {
         this.users = {};
         this.day = day;
         
-        let element = new CustomElement(`
+        let element = new E(`
         <div class="month-day" data-month-day="${day}" data-user-count="0"
             data-availability-count="0" data-shift-count="0" data-manager-count="0"
             data-this-week-user-count="0">

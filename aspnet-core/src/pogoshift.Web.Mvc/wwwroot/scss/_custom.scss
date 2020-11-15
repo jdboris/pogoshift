@@ -42,6 +42,8 @@
     font-weight: 300;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap');
+
 /* prevent the drop down icon going onto a new line for the top bar language link */
 .top-bar-language-nav-link {
     min-width: 65px;
@@ -53,7 +55,28 @@ html {
 }
 
 body {
-    font-family: "Prompt"
+    font-family: "Prompt";
+}
+
+.invalid-flash {
+    animation: invalid-flash;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
+
+.input-combinator {
+    margin-left: -0.75ch;
+    margin-right: -0.75ch;
+    width: 1ch;
+    pointer-events: none;
+    text-align: center;
+    z-index: 1;
+}
+
+.input-combinator + input {
+    border-left: 0;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 /* main sidebar not under model */
@@ -94,7 +117,7 @@ body {
 
 .brand-link .brand-image {
     float: initial;
-    margin-top: -7px;
+    margin-top: -4px;
 }
 
 body:not(.sidebar-collapse) .main-sidebar .brand-image[src$="logo.svg"] {
@@ -113,5 +136,16 @@ body.sidebar-collapse .main-sidebar .brand-image[src$="logo-plain.svg"] {
     .sidebar-mini.sidebar-collapse .main-sidebar.sidebar-focused .brand-image[src$="logo-plain.svg"],
     .sidebar-mini.sidebar-collapse .main-sidebar:hover .brand-image[src$="logo-plain.svg"] {
         display: initial;
+    }
+}
+
+@keyframes invalid-flash {
+
+    1% {
+        color: rgb(255, 126, 126);
+    }
+
+    2% {
+        color: red;
     }
 }

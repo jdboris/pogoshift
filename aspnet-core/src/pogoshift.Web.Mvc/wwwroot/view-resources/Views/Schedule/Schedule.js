@@ -21,11 +21,11 @@ Shift.getAllOfAllUsersByDate(date.getMonth() + 1, date.getFullYear()).then(async
         availabilities = await Availability.getAllOfAllUsersByDate(date.getMonth() + 1, date.getFullYear());
     }
 
-    let workingHoursStart = "17:00";
+    let workingHoursStart = "8:00";
     let workingHoursEnd = "24:00";
     let closedWeekdays = [];
 
-    let associateMinimum = 2;
+    let associateMinimum = 5;
     let managerMinimum = 1;
 
 

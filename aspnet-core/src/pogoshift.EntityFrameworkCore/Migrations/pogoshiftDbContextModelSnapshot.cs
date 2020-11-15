@@ -1555,6 +1555,32 @@ namespace pogoshift.Migrations
                     b.ToTable("Availabilities");
                 });
 
+            modelBuilder.Entity("pogoshift.Breaks.Break", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Beginning")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("Ending")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ShiftId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("TenantId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ShiftId");
+
+                    b.ToTable("Breaks");
+                });
+
             modelBuilder.Entity("pogoshift.MultiTenancy.Tenant", b =>
                 {
                     b.Property<int>("Id")
@@ -1890,6 +1916,15 @@ namespace pogoshift.Migrations
                     b.HasOne("pogoshift.Authorization.Users.User", "User")
                         .WithMany()
                         .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("pogoshift.Breaks.Break", b =>
+                {
+                    b.HasOne("pogoshift.Shifts.Shift", null)
+                        .WithMany("Breaks")
+                        .HasForeignKey("ShiftId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

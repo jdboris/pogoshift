@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <AssemblyName>pogoshift.Web.Mvc</AssemblyName>
     <OutputType>Exe</OutputType>
@@ -49,6 +49,9 @@
     <Folder Include="wwwroot\view-resources\Views\_Bundles\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Update="wwwroot\js\web.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Update="wwwroot\site.webmanifest">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </Content>

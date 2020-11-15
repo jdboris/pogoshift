@@ -12,7 +12,7 @@ Copy-Item .\aspnet-core\src\pogoshift.Migrator\log4net.config .\dist\Migrator
 
 # Run Migrator
 Push-Location
-Set-Location .\aspnet-core\dist\Migrator
+Set-Location .\dist\Migrator
 $env:ConnectionStrings__Default = $connectionString
 .\pogoshift.Migrator.exe - q
 Pop-Location

@@ -54,6 +54,8 @@ namespace pogoshift.Web.Controllers
 
         [AbpMvcAuthorize(PermissionNames.Users_UpdateSelf)]
         [HttpPost]
+        [HttpPut]
+        [HttpGet]
         public async Task<ActionResult> UpdateSelf(UserDto user)
         {
             user = await _userAppService.UpdateSelfAsync(user);

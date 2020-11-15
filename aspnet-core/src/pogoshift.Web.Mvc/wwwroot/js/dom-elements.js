@@ -369,7 +369,7 @@ class TimePeriod {
     getStartTime() {
         let monthDay = this.element.closest(".month-day");
         let dayNumberElement = monthDay.getElementsByClassName("day-number")[0];
-        let startTime = this.element.getElementsByClassName("time-start")[0].innerHTML + ":00";
+        let startTime = this.element.getElementsByClassName("time-start")[0].innerHTML.padStart(5, "0") + ":00";
         startTime = `${this.calendar.date.getFullYear()}-${this.calendar.date.getMonth() + 1}-${dayNumberElement.innerHTML}T${startTime}Z`;
         return startTime;
     }
@@ -377,7 +377,7 @@ class TimePeriod {
     getEndTime() {
         let monthDay = this.element.closest(".month-day");
         let dayNumberElement = monthDay.getElementsByClassName("day-number")[0];
-        let endTime = this.element.getElementsByClassName("time-end")[0].innerHTML + ":00";
+        let endTime = this.element.getElementsByClassName("time-end")[0].innerHTML.padStart(5, "0") + ":00";
         // NOTE: 24:00 is not a valid time
         if (endTime.split(":")[0] == 24) endTime = "23:59:59";
         endTime = `${this.calendar.date.getFullYear()}-${this.calendar.date.getMonth() + 1}-${dayNumberElement.innerHTML}T${endTime}Z`;
@@ -489,7 +489,7 @@ export class MonthDay {
     getStartTime() {
         let monthDay = this.element.closest(".month-day");
         let dayNumberElement = monthDay.getElementsByClassName("day-number")[0];
-        let startTime = this.element.getElementsByClassName("time-start")[0].innerHTML + ":00";
+        let startTime = this.element.getElementsByClassName("time-start")[0].innerHTML.padStart(5, "0") + ":00";
         startTime = `${this.calendar.date.getFullYear()}-${this.calendar.date.getMonth() + 1}-${dayNumberElement.innerHTML}T${startTime}Z`;
         return startTime;
     }
@@ -497,7 +497,7 @@ export class MonthDay {
     getEndTime() {
         let monthDay = this.element.closest(".month-day");
         let dayNumberElement = monthDay.getElementsByClassName("day-number")[0];
-        let endTime = this.element.getElementsByClassName("time-end")[0].innerHTML + ":00";
+        let endTime = this.element.getElementsByClassName("time-end")[0].innerHTML.padStart(5, "0") + ":00";
         // NOTE: 24:00 is not a valid time
         if (endTime.split(":")[0] == 24) endTime = "23:59:59";
         endTime = `${this.calendar.date.getFullYear()}-${this.calendar.date.getMonth() + 1}-${dayNumberElement.innerHTML}T${endTime}Z`;

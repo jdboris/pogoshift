@@ -377,6 +377,86 @@
     min-height: calc((36px + 6px) * 10);
 }
 
+.scheduling-calendar [data-this-week-user-count='11'] .time-period-section {
+    min-height: calc((36px + 6px) * 11);
+}
+
+.scheduling-calendar [data-this-week-user-count='12'] .time-period-section {
+    min-height: calc((36px + 6px) * 12);
+}
+
+.scheduling-calendar [data-this-week-user-count='13'] .time-period-section {
+    min-height: calc((36px + 6px) * 13);
+}
+
+.scheduling-calendar [data-this-week-user-count='14'] .time-period-section {
+    min-height: calc((36px + 6px) * 14);
+}
+
+.scheduling-calendar [data-this-week-user-count='15'] .time-period-section {
+    min-height: calc((36px + 6px) * 15);
+}
+
+.scheduling-calendar [data-this-week-user-count='16'] .time-period-section {
+    min-height: calc((36px + 6px) * 16);
+}
+
+.scheduling-calendar [data-this-week-user-count='17'] .time-period-section {
+    min-height: calc((36px + 6px) * 17);
+}
+
+.scheduling-calendar [data-this-week-user-count='18'] .time-period-section {
+    min-height: calc((36px + 6px) * 18);
+}
+
+.scheduling-calendar [data-this-week-user-count='19'] .time-period-section {
+    min-height: calc((36px + 6px) * 19);
+}
+
+.scheduling-calendar [data-this-week-user-count='20'] .time-period-section {
+    min-height: calc((36px + 6px) * 20);
+}
+
+.scheduling-calendar [data-this-week-user-count='21'] .time-period-section {
+    min-height: calc((36px + 6px) * 21);
+}
+
+.scheduling-calendar [data-this-week-user-count='22'] .time-period-section {
+    min-height: calc((36px + 6px) * 22);
+}
+
+.scheduling-calendar [data-this-week-user-count='23'] .time-period-section {
+    min-height: calc((36px + 6px) * 23);
+}
+
+.scheduling-calendar [data-this-week-user-count='24'] .time-period-section {
+    min-height: calc((36px + 6px) * 24);
+}
+
+.scheduling-calendar [data-this-week-user-count='25'] .time-period-section {
+    min-height: calc((36px + 6px) * 25);
+}
+
+.scheduling-calendar [data-this-week-user-count='26'] .time-period-section {
+    min-height: calc((36px + 6px) * 26);
+}
+
+.scheduling-calendar [data-this-week-user-count='27'] .time-period-section {
+    min-height: calc((36px + 6px) * 27);
+}
+
+.scheduling-calendar [data-this-week-user-count='28'] .time-period-section {
+    min-height: calc((36px + 6px) * 28);
+}
+
+.scheduling-calendar [data-this-week-user-count='29'] .time-period-section {
+    min-height: calc((36px + 6px) * 29);
+}
+
+.scheduling-calendar [data-this-week-user-count='30'] .time-period-section {
+    min-height: calc((36px + 6px) * 30);
+}
+
 .scheduling-calendar .associate-0 {
     position: absolute;
     left: 0px;
@@ -675,6 +755,86 @@
 
     .scheduling-calendar [data-this-week-user-count='10'] .time-period-section {
         min-height: calc((13px + 2px) * 10);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='11'] .time-period-section {
+        min-height: calc((13px + 2px) * 11);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='12'] .time-period-section {
+        min-height: calc((13px + 2px) * 12);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='13'] .time-period-section {
+        min-height: calc((13px + 2px) * 13);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='14'] .time-period-section {
+        min-height: calc((13px + 2px) * 14);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='15'] .time-period-section {
+        min-height: calc((13px + 2px) * 15);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='16'] .time-period-section {
+        min-height: calc((13px + 2px) * 16);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='17'] .time-period-section {
+        min-height: calc((13px + 2px) * 17);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='18'] .time-period-section {
+        min-height: calc((13px + 2px) * 18);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='19'] .time-period-section {
+        min-height: calc((13px + 2px) * 19);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='20'] .time-period-section {
+        min-height: calc((13px + 2px) * 20);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='21'] .time-period-section {
+        min-height: calc((13px + 2px) * 21);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='22'] .time-period-section {
+        min-height: calc((13px + 2px) * 22);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='23'] .time-period-section {
+        min-height: calc((13px + 2px) * 23);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='24'] .time-period-section {
+        min-height: calc((13px + 2px) * 24);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='25'] .time-period-section {
+        min-height: calc((13px + 2px) * 25);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='26'] .time-period-section {
+        min-height: calc((13px + 2px) * 26);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='27'] .time-period-section {
+        min-height: calc((13px + 2px) * 27);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='28'] .time-period-section {
+        min-height: calc((13px + 2px) * 28);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='29'] .time-period-section {
+        min-height: calc((13px + 2px) * 29);
+    }
+
+    .scheduling-calendar [data-this-week-user-count='30'] .time-period-section {
+        min-height: calc((13px + 2px) * 30);
     }
 
     .scheduling-calendar .associate-0 {

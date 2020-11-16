@@ -1,9 +1,0 @@
-﻿
-Short-Term:
--don't add shifts from the past onto the calendar
--don't add associates' names to the name list if they only have shifts from the past this month
--allow clicking on an associate name on the list to show only their schedule/availabilities
--make the colors more unique somehow
--fix the authorization loop when trying to update account/password
-
-Long-Term:

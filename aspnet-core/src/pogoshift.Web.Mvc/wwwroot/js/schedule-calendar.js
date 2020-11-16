@@ -1,4 +1,4 @@
-﻿import { getUserColor } from "./utilities.js";
+﻿import { getUserColor, restartAnimations } from "./utilities.js";
 import { E, Input } from "./dom-elements.js";
 import { Shift } from "./models/Shift.js";
 import { Calendar } from "./calendar.js";

@@ -1,4 +1,9 @@
-﻿.calendar input[type=number]::-webkit-inner-spin-button,
+﻿.calendar * {
+    -webkit-print-color-adjust: exact !important; /* Chrome, Safari */
+    color-adjust: exact !important; /*Firefox*/
+}
+
+.calendar input[type=number]::-webkit-inner-spin-button,
 .calendar input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
     margin: 0;
@@ -752,7 +757,7 @@
         z-index: 1000;
     }
 
-@media only screen and (max-width: 768px) {
+@media (max-width: 768px) {
 
     .calendar .calendar-mobile-overlay {
         position: fixed;
@@ -1088,5 +1093,36 @@
         margin-right: auto;
         top: 15vh;
         bottom: auto;
+    }
+}
+
+@media only print {
+
+    .calendar-header > * > :not(.month-title) {
+        display: none !important;
+    }
+
+    /* To fix Chrome not showing the gaps */
+    .month-day-list {
+        grid-column-gap: 2px !important;
+        grid-row-gap: 2px !important;
+        border-bottom: 2px solid rgb(204, 204, 204) !important;
+    }
+
+    .left-handle,
+    .right-handle,
+    .time-period-copy,
+    .time-period-delete,
+    [data-availability-id] {
+        opacity: 0 !important;
+    }
+
+    .day-number {
+        color: inherit !important;
+        background-color: initial !important;
+    }
+
+    .associate-list-card {
+        border-width: 2px !important;
     }
 }

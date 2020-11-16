@@ -340,7 +340,8 @@
 
 .calendar .associate-list-item {
     margin-right: 10px;
-    white-space: nowrap;
+    /* NOTE: required instead of white-space: nowrap to prevent wrapping, but not mess up printing styles */
+    display: inline-block;
     cursor: pointer;
 }
 
@@ -1125,5 +1126,7 @@
 
     .associate-list-card {
         border-width: 2px !important;
+        position: initial !important;
+        max-width: initial !important;
     }
 }

@@ -710,6 +710,7 @@
 
 .scheduling-calendar .time-period {
     opacity: 0.4;
+    background-color: #FFFFFF;
 }
 
     .scheduling-calendar .time-period.shift,

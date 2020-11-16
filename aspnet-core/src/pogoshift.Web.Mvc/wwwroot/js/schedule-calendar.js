@@ -1,4 +1,4 @@
-﻿import { getUserColor } from "./utilities.js";
+﻿import { getUserColor, Event } from "./utilities.js";
 import { E, Input } from "./dom-elements.js";
 import { Shift } from "./models/Shift.js";
 import { Calendar } from "./calendar.js";
@@ -22,8 +22,26 @@ export class ScheduleCalendar extends Calendar {
             let associate = this.associates[id];
 
             let associateElement = E(`
-                <span class="associate-list-item"><i class="fas fa-circle" style="color: ${getUserColor(associate)}"></i><span>${associate.surname} ${associate.name}</span></span>
+                <span class="associate-list-item" data-associate-id="${id}"><i class="fas fa-circle" style="color: ${getUserColor(associate)}"></i><span>${associate.surname} ${associate.name}</span></span>
             `);
+
+            let handler = new Event.PointerHandler((event) => {
+                let url = new URL(location);
+                let params = new URLSearchParams(url.search.slice(1));
+                let userIds = params.get("f");
+                userIds = userIds ? userIds.split(",") : [];
+                if (!userIds.includes(id)) {
+                    userIds.push(id);
+                } else {
+                    userIds.splice(userIds.indexOf(id),1);
+                }
+                params.set("f", userIds);
+                history.replaceState(null, '', "?" + params);
+                this.highlightFromFilter();
+            });
+
+            associateElement.onclick = handler;
+
             cardBody.appendChild(associateElement);
         }
 
@@ -38,6 +56,10 @@ export class ScheduleCalendar extends Calendar {
         if ("HasUser.CrudAll" in abp.auth.grantedPermissions) {
             //this.header.append(BreakControls());
         }
+
+
+        // Highlight the users whose IDs appear in the query string
+        this.highlightFromFilter();
     }
 
     checkSchedulingErrors(monthDay) {

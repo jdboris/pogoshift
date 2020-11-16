@@ -263,7 +263,7 @@ class TimePeriod {
         // NOTE: Must use appendChild instead of innerHTML in order for the time periods to retain their click handlers 
         // NOTE: The order of the time period bars matters
         let element = new E(`
-        <div class="time-period">
+        <div class="time-period" data-associate-id="${this.user.id}">
             <div class="time-period-inner" style="grid-template-columns: repeat( ${calendar.columnsPerDay}, 1fr );">
                 <div class="time-period-heading">
                     

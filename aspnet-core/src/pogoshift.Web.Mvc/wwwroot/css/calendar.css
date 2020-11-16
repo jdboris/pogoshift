@@ -324,19 +324,19 @@
 .calendar .associate-list-item {
     margin-right: 10px;
     white-space: nowrap;
+    cursor: pointer;
 }
 
+.calendar .highlighted-list-item {
+    text-shadow: 0px 0px 3px black;
+}
 
 /* **************************************************************************************************************** */
 /* Availability                                                                                                     */
 /* **************************************************************************************************************** */
-
-
-
 /* **************************************************************************************************************** */
 /* Scheduling                                                                                                       */
 /* **************************************************************************************************************** */
-
 .scheduling-calendar .break-controls select {
     width: 160px;
 }
@@ -642,30 +642,33 @@
         min-height: 12px;
     }
 
-    .calendar .month-day-list .time-period:not(.focused) .time-period-heading {
+    .calendar:not(.highlighted) .month-day-list .time-period:not(.focused) .time-period-heading,
+    .calendar .month-day-list .time-period:not(.focused).highlighted-period .time-period-heading {
         position: absolute;
         background: rgba(0,0,0,0);
         pointer-events: none;
         padding: 0px;
     }
-    .calendar .month-day-list .time-period.focused .time-period-user {
-        display: initial;
+
+    .calendar.highlighted .time-period:not(.highlighted-period) .time-period-bar {
+        opacity: 0.5;
     }
-    .calendar .month-day-list .time-period:not(.focused) .time-period-time {
+
+    .calendar.highlighted .month-day-list .time-period:not(.focused):not(.highlighted-period) .time-period-heading {
+        display: none;
+    } .calendar .month-day-list .time-period:not(.focused) .time-period-time {
         text-shadow: 0px 0px 3px #FFFFFF;
         width: 100%;
-    }
-    .calendar .month-day-list .time-period:not(.focused) .time-period-copy {
+    } .calendar .month-day-list .time-period:not(.focused) .time-period-copy {
         display: none;
-    }
-    .calendar .month-day-list .time-period:not(.focused) .time-period-delete {
+    } .calendar .month-day-list .time-period:not(.focused) .time-period-delete {
         display: none;
-    } 
-    .calendar .time-period-template .left-handle {
+    } .calendar .time-period-template .left-handle {
         padding-right: 0px;
-    } 
-    .calendar .time-period-template .right-handle {
+    } .calendar .time-period-template .right-handle {
         padding-left: 0px;
+    } .calendar .month-day-list .time-period.focused .time-period-user {
+        display: initial;
     }
     /*
     .calendar .month-day-list .time-period.focused .time-period-heading {

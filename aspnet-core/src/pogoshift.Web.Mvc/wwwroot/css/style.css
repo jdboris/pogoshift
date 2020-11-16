@@ -1,13 +1,33 @@
-﻿
+﻿@import url("https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap");
+@font-face {
+  font-family: 'Eras Bold ITC';
+  src: url(../fonts/ERASBD.ttf); }
+
+@font-face {
+  font-family: 'Eras Demi ITC';
+  src: url(../fonts/ERASDEMI.ttf); }
+
+@font-face {
+  font-family: 'Eras Light ITC';
+  src: url(../fonts/ERASLIGHT.ttf); }
+
+@font-face {
+  font-family: 'Eras Medium ITC';
+  src: url(../fonts/ERASMD.ttf); }
+
+@font-face {
+  font-family: 'Sonsie One';
+  src: url(../fonts/SonsieOne-Regular.ttf); }
+
 @font-face {
   font-family: 'Prompt';
   src: url(../fonts/Prompt-Bold.ttf);
   font-weight: 700; }
 
-/*@font-face {
+@font-face {
   font-family: 'Prompt';
   src: url(../fonts/Prompt-Black.ttf);
-  font-weight: 900; }*/
+  font-weight: 900; }
 
 @font-face {
   font-family: 'Prompt';

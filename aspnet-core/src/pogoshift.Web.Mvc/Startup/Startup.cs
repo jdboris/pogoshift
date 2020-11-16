@@ -8,6 +8,7 @@ using Castle.Facilities.Logging;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -18,7 +19,7 @@ using pogoshift.Configuration;
 using pogoshift.Identity;
 using pogoshift.Web.Resources;
 using System;
-using System.IO;
+
 
 namespace pogoshift.Web.Startup
 {
@@ -68,29 +69,6 @@ namespace pogoshift.Web.Startup
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
-            // NOTE: Must put this BEFORE UseAbp for it to catch all static files
-            app.UseStaticFiles(new StaticFileOptions()
-            {
-                OnPrepareResponse = (context) =>
-                {
-                    var filePath = context.File.PhysicalPath;
-                    var slash = Path.DirectorySeparatorChar;
-                    //// Disable caching for all static files.
-                    //context.Context.Response.Headers["Cache-Control"] = _appConfiguration["StaticFiles:Headers:Cache-Control"];
-                    //context.Context.Response.Headers["Pragma"] = _appConfiguration["StaticFiles:Headers:Pragma"];
-                    //context.Context.Response.Headers["Expires"] = _appConfiguration["StaticFiles:Headers:Expires"];
-
-                    if (filePath.Contains($"wwwroot{slash}js{slash}") ||
-                        filePath.Contains($"wwwroot{slash}css{slash}") ||
-                        filePath.Contains($"wwwroot{slash}view-resources{slash}"))
-                    {
-                        // Expire every 10 minutes
-                        context.Context.Response.Headers["Cache-Control"] = "max-age=600, must-revalidate";
-                        context.Context.Response.Headers["Expires"] = "600";
-                    }
-                }
-            });
-
             app.UseAbp(); // Initializes ABP framework.
 
             if (env.IsDevelopment())
@@ -101,6 +79,8 @@ namespace pogoshift.Web.Startup
             {
                 app.UseExceptionHandler("/Error");
             }
+
+            app.UseStaticFiles();
 
             app.UseRouting();
 
@@ -117,9 +97,13 @@ namespace pogoshift.Web.Startup
                 endpoints.MapControllerRoute("defaultWithArea", "{area}/{controller=Home}/{action=Index}/{id?}");
             });
 
+            FileExtensionContentTypeProvider provider = new FileExtensionContentTypeProvider();
+            provider.Mappings[".webmanifest"] = "application/manifest+json";
 
-
-
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                ContentTypeProvider = provider
+            });
         }
     }
 }

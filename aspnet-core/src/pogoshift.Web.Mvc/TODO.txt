@@ -5,6 +5,7 @@ Short-Term:
 -allow clicking on an associate name on the list to show only their schedule/availabilities
 -make the colors more unique somehow
 -fix the authorization loop when trying to update account/password
+-make filtered out shifts un-editable on large screens
 
 
 Long-Term:

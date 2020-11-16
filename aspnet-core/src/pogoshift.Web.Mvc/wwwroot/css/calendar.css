@@ -270,6 +270,18 @@
     display: none;
 }
 
+/*.calendar.highlighted .time-period:not(.highlighted-period) .left-handle,
+.calendar.highlighted .time-period:not(.highlighted-period) .right-handle,
+.calendar.highlighted .time-period:not(.highlighted-period) .time-period-heading {
+    display: none;
+}*/
+.calendar.highlighted .time-period:not(.highlighted-period)[data-availability-id] {
+    opacity: 0;
+}
+.calendar.highlighted .time-period:not(.highlighted-period) {
+    opacity: 0.5;
+}
+
 .calendar .left-handle {
     /* Hidden unless in edit mode */
     display: none;
@@ -740,10 +752,6 @@
         z-index: 1000;
     }
 
-
-
-
-
 @media only screen and (max-width: 768px) {
 
     .calendar .calendar-mobile-overlay {
@@ -782,16 +790,11 @@
         min-height: 12px;
     }
 
-    .calendar:not(.highlighted) .month-day-list .time-period:not(.focused) .time-period-heading,
-    .calendar .month-day-list .time-period:not(.focused).highlighted-period .time-period-heading {
+    .calendar .month-day-list .time-period:not(.focused) .time-period-heading {
         position: absolute;
         background: rgba(0,0,0,0);
         pointer-events: none;
         padding: 0px;
-    }
-
-    .calendar.highlighted .time-period:not(.highlighted-period) .time-period-bar {
-        opacity: 0.5;
     }
 
     .calendar.highlighted .month-day-list .time-period:not(.focused):not(.highlighted-period) .time-period-heading {

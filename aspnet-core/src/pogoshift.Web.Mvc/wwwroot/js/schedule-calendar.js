@@ -36,7 +36,7 @@ export class ScheduleCalendar extends Calendar {
         
 
         if ("HasUser.CrudAll" in abp.auth.grantedPermissions) {
-            this.header.append(BreakControls());
+            //this.header.append(BreakControls());
         }
     }
 

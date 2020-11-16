@@ -138,11 +138,14 @@ export class Calendar {
         if (availabilities != [] && availabilities != null) {
             // Convert the array into an object with the IDs as keys
             this.availabilities = availabilities.reduce((object, timePeriod) => {
-                if ("user" in timePeriod && !(timePeriod.user.id in this.associates)) {
-                    this.associates[timePeriod.user.id] = timePeriod.user;
-                }
+                // Only add the availability and its associate if the date is in the future
+                if (new Date(timePeriod.beginning) >= new Date()) {
+                    if ("user" in timePeriod && !(timePeriod.user.id in this.associates)) {
+                        this.associates[timePeriod.user.id] = timePeriod.user;
+                    }
 
-                object[timePeriod.id] = timePeriod;
+                    object[timePeriod.id] = timePeriod;
+                }
                 return object;
 
                 // Start as empty object
@@ -152,13 +155,15 @@ export class Calendar {
         if (shifts != [] && shifts != null) {
             // Convert the array into an object with the IDs as keys
             this.shifts = shifts.reduce((object, timePeriod) => {
+                // Only add the shift and its associate if the date is in the future
+                if (new Date(timePeriod.beginning) >= new Date()) {
+                    // If this timePeriod has a user and the user is not in the list of associates yet
+                    if ("user" in timePeriod && !(timePeriod.user.id in this.associates)) {
+                        this.associates[timePeriod.user.id] = timePeriod.user;
+                    }
 
-                // If this timePeriod has a user and the user is not in the list of associates yet
-                if ("user" in timePeriod && !(timePeriod.user.id in this.associates)) {
-                    this.associates[timePeriod.user.id] = timePeriod.user;
+                    object[timePeriod.id] = timePeriod;
                 }
-
-                object[timePeriod.id] = timePeriod;
                 return object;
 
                 // Start as empty object
@@ -224,8 +229,21 @@ export class Calendar {
             }
         });
 
-        this.element.ontouchmove = handler;
         this.element.onmousemove = handler;
+
+        handler = new Event.PointerHandler((event) => {
+            // Only drag if the shift is focused
+            if (event.target.classList.contains("time-period-bar") && event.target.closest(".time-period").classList.contains("focused")) {
+                if (this.timePeriodResizal != null) {
+                    this.timePeriodResizal.resize(event);
+                }
+                else if (this.timePeriodMovement != null) {
+                    this.timePeriodMovement.move(event);
+                }
+            }
+        });
+
+        this.element.ontouchmove = handler;
     }
 
     get dayStartColumn() {

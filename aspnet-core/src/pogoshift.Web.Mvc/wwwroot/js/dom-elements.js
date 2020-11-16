@@ -266,13 +266,17 @@ class TimePeriod {
         <div class="time-period">
             <div class="time-period-inner" style="grid-template-columns: repeat( ${calendar.columnsPerDay}, 1fr );">
                 <div class="time-period-heading">
+                    
+                    <div class="time-period-user">
+                        ${this.user.surname} ${this.user.name}
+                    </div>
 
                     <span class="time-period-copy">
                         <i class="far fa-copy"></i>
                     </span>
 
                     <span class="time-period-time">
-                        <span class="time-start">${time.start}</span> - <span class="time-end">${time.end}</span>
+                        <span class="time-start">${time.start}</span>-<span class="time-end">${time.end}</span>
                     </span>
 
                     <span class="time-period-delete">

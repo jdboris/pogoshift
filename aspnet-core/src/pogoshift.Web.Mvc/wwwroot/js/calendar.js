@@ -233,7 +233,8 @@ export class Calendar {
 
         handler = new Event.PointerHandler((event) => {
             // Only drag if the shift is focused
-            if (event.target.classList.contains("time-period-bar") && event.target.closest(".time-period").classList.contains("focused")) {
+            if (( event.target.classList.contains("time-period-bar") || event.target.parentElement.classList.contains("time-period-bar") )
+                && event.target.closest(".time-period").classList.contains("focused")) {
                 if (this.timePeriodResizal != null) {
                     this.timePeriodResizal.resize(event);
                 }

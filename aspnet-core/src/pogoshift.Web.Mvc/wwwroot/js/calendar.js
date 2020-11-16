@@ -409,38 +409,6 @@ export class Calendar {
         element.dataset.thisWeekUserCount = monthDay.getThisWeekUserCount();
     }
 
-    highlightFromFilter() {
-        let url = new URL(location);
-        let params = new URLSearchParams(url.search.slice(1));
-        let userIds = params.get("f");
-        userIds = userIds ? userIds.split(",") : [];
-
-        let timePeriods = this.element.querySelectorAll(`.time-period.highlighted-period`);
-        for (let timePeriod of timePeriods) {
-            timePeriod.classList.remove("highlighted-period");
-        }
-        let listItems = this.element.querySelectorAll(`.associate-list-item.highlighted-list-item`);
-        for (let listItem of listItems) {
-            listItem.classList.remove("highlighted-list-item");
-        }
-
-        if (userIds.length > 0) {
-            this.element.classList.add("highlighted");
-            for (let id of userIds) {
-                let timePeriods = this.element.querySelectorAll(`.time-period[data-associate-id="${id}"]`);
-                for (let timePeriod of timePeriods) {
-                    timePeriod.classList.add("highlighted-period");
-                }
-                let listItems = this.element.querySelectorAll(`.associate-list-item[data-associate-id="${id}"]`);
-                for (let listItem of listItems) {
-                    listItem.classList.add("highlighted-list-item");
-                }
-            }
-
-        } else {
-            this.element.classList.remove("highlighted");
-        }
-    }
 
     appendTo(parent) {
         parent.appendChild(this.element);

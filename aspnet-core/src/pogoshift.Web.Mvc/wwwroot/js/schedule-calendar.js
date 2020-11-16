@@ -26,18 +26,7 @@ export class ScheduleCalendar extends Calendar {
             `);
 
             let handler = new Event.PointerHandler((event) => {
-                let url = new URL(location);
-                let params = new URLSearchParams(url.search.slice(1));
-                let userIds = params.get("f");
-                userIds = userIds ? userIds.split(",") : [];
-                if (!userIds.includes(id)) {
-                    userIds.push(id);
-                } else {
-                    userIds.splice(userIds.indexOf(id),1);
-                }
-                params.set("f", userIds);
-                history.replaceState(null, '', "?" + params);
-                this.highlightFromFilter();
+                this.toggleUserFilter(id);
             });
 
             associateElement.onclick = handler;
@@ -52,14 +41,11 @@ export class ScheduleCalendar extends Calendar {
         }
 
         
-
         if ("HasUser.CrudAll" in abp.auth.grantedPermissions) {
             //this.header.append(BreakControls());
         }
 
-
-        // Highlight the users whose IDs appear in the query string
-        this.highlightFromFilter();
+        this.addUserFilter(abp.session.userId);
     }
 
     checkSchedulingErrors(monthDay) {
@@ -76,6 +62,89 @@ export class ScheduleCalendar extends Calendar {
             monthDay.classList.remove("manager-minimum-error");
         }
     }
+
+    toggleUserFilter(id) {
+        id = Number(id);
+        let url = new URL(location);
+        let params = new URLSearchParams(url.search.slice(1));
+        let userIds = params.get("f");
+        userIds = userIds ? userIds.split(",") : [];
+        userIds = userIds.map((value) => { return Number(value); });
+
+        if (userIds.indexOf(id) == -1) {
+            userIds.push(id);
+        } else {
+            userIds.splice(userIds.indexOf(id), 1);
+        }
+
+        params.set("f", userIds);
+        history.replaceState(null, "", "?" + params);
+        this.highlightAllFromFilter();
+    }
+
+    addUserFilter(id) {
+        id = Number(id);
+        let url = new URL(location);
+        let params = new URLSearchParams(url.search.slice(1));
+        let userIds = params.get("f");
+        userIds = userIds ? userIds.split(",") : [];
+        userIds = userIds.map((value) => { return Number(value); });
+
+        if (userIds.indexOf(id) == -1) {
+            userIds.push(id);
+        }
+
+        params.set("f", userIds);
+        history.replaceState(null, "", "?" + params);
+        this.highlightAllFromFilter();
+    }
+
+    // Highlight the users whose IDs appear in the query string
+    highlightAllFromFilter() {
+        let url = new URL(location);
+        let params = new URLSearchParams(url.search.slice(1));
+        let userIds = params.get("f");
+        userIds = userIds ? userIds.split(",") : [];
+        userIds = userIds.map((value) => { return Number(value); });
+        let newUserIds = [];
+
+        let timePeriods = this.element.querySelectorAll(`.time-period.highlighted-period`);
+        for (let timePeriod of timePeriods) {
+            timePeriod.classList.remove("highlighted-period");
+        }
+        let listItems = this.element.querySelectorAll(`.associate-list-item.highlighted-list-item`);
+        for (let listItem of listItems) {
+            listItem.classList.remove("highlighted-list-item");
+        }
+
+        if (userIds.length > 0) {
+            for (let id of userIds) {
+                if (id in this.associates) {
+                    newUserIds.push(id);
+
+                    let timePeriods = this.element.querySelectorAll(`.time-period[data-associate-id="${id}"]`);
+                    for (let timePeriod of timePeriods) {
+                        timePeriod.classList.add("highlighted-period");
+                    }
+                    let listItems = this.element.querySelectorAll(`.associate-list-item[data-associate-id="${id}"]`);
+                    for (let listItem of listItems) {
+                        listItem.classList.add("highlighted-list-item");
+                    }
+                }
+            }
+        }
+
+        if (newUserIds.length > 0) {
+            this.element.classList.add("highlighted");
+        } else {
+            this.element.classList.remove("highlighted");
+        }
+
+        // Update query string
+        params.set("f", newUserIds);
+        history.replaceState(null, '', "?" + params);
+    }
+    
 }
 
 

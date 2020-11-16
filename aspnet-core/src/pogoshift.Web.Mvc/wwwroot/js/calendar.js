@@ -153,7 +153,6 @@ export class Calendar {
             // Convert the array into an object with the IDs as keys
             this.shifts = shifts.reduce((object, timePeriod) => {
 
-                // If this timePeriod has a user and the user is not in the list of associates yet
                 if ("user" in timePeriod && !(timePeriod.user.id in this.associates)) {
                     this.associates[timePeriod.user.id] = timePeriod.user;
                 }

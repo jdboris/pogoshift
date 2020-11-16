@@ -1,7 +1,4 @@
-﻿.calendar * {
-    -webkit-print-color-adjust: exact !important; /* Chrome, Safari */
-    color-adjust: exact !important; /*Firefox*/
-}
+﻿
 
 .calendar input[type=number]::-webkit-inner-spin-button,
 .calendar input[type=number]::-webkit-outer-spin-button {
@@ -1099,6 +1096,12 @@
 }
 
 @media only print {
+
+    /* Prevent browser from hiding background colors when printing */
+    .calendar * {
+        -webkit-print-color-adjust: exact !important; /* Chrome, Safari */
+        color-adjust: exact !important; /*Firefox*/
+    }
 
     .calendar-header > * > :not(.month-title) {
         display: none !important;

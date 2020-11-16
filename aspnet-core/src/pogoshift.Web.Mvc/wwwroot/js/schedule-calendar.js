@@ -44,6 +44,14 @@ export class ScheduleCalendar extends Calendar {
         if ("HasUser.CrudAll" in abp.auth.grantedPermissions) {
             //this.header.append(BreakControls());
         }
+        
+        this.header.append(E(`
+            <button class="btn btn-link">Print&nbsp;<i class="fas fa-print"></i></button>
+        `, {
+            onclick: () => {
+                print();
+            }
+        }));
 
         this.addUserFilter(abp.session.userId);
     }

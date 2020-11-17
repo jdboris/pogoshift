@@ -31,7 +31,7 @@ export class ScheduleCalendar extends Calendar {
 
             associateElement.onclick = handler;
 
-            cardBody.appendChild(associateElement);
+            cardBody.prepend(associateElement);
         }
 
         this.element.append(card);

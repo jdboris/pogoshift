@@ -229,7 +229,6 @@
     background: #EEE;
     width: 100%;
     text-align: center;
-    height: 18px;
 }
 
     .calendar .time-period-copy i,
@@ -438,6 +437,7 @@
     background: rgba(0,0,0,0);
     pointer-events: none;
     padding: 0px;
+    height: 18px;
 }
 
 .calendar.highlighted .month-day-list .time-period:not(.focused):not(.highlighted-period) .time-period-heading {

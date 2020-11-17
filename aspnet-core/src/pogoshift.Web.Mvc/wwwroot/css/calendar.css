@@ -185,8 +185,7 @@
   padding: 0px 3px;
   background: #EEE;
   width: 100%;
-  text-align: center;
-  height: 18px; }
+  text-align: center; }
 
 .calendar .time-period-copy i,
 .calendar .time-period-delete i {
@@ -626,7 +625,8 @@
   position: absolute;
   background: transparent;
   pointer-events: none;
-  padding: 0px; }
+  padding: 0px;
+  height: 18px; }
 
 .calendar.highlighted .month-day-list .time-period:not(.focused):not(.highlighted-period) .time-period-heading {
   display: none; }

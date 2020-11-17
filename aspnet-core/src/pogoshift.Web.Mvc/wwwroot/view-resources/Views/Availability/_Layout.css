@@ -1,7 +1,7 @@
-﻿.content-wrapper > .content {
-  padding-left: 0px;
-  padding-right: 0px; }
-
-.container-fluid {
-  padding-left: 0px;
-  padding-right: 0px; }
+﻿@media (max-width: 768px) {
+  .content-wrapper > .content {
+    padding-left: 0px;
+    padding-right: 0px; }
+  .container-fluid {
+    padding-left: 0px;
+    padding-right: 0px; } }

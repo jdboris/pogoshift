@@ -253,11 +253,10 @@
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
-    min-height: 24px;
+    min-height: 18px;
 }
 
     .calendar .time-period-bar i {
-        font-size: 16px;
         padding: 4px;
         cursor: ew-resize;
     }
@@ -362,14 +361,14 @@
 
 @for $i from 0 through 30 {
     .scheduling-calendar [data-this-week-user-count="#{$i}"] .time-period-section {
-        min-height: calc((36px + 6px + 5px) * #{$i} );
+        min-height: calc((18px + 3px) * #{$i} );
     }
 
     .scheduling-calendar .associate-#{$i} {
         position: absolute;
         left: 0px;
         right: 0px;
-        bottom: calc((36px + 6px + 5px) * #{$i});
+        bottom: calc((18px + 3px) * #{$i});
     }
 }
 
@@ -432,67 +431,142 @@
         z-index: 1000;
     }
 
+
+.calendar .month-day-list .time-period:not(.focused) .time-period-heading {
+    position: absolute;
+    background: rgba(0,0,0,0);
+    pointer-events: none;
+    padding: 0px;
+}
+
+.calendar.highlighted .month-day-list .time-period:not(.focused):not(.highlighted-period) .time-period-heading {
+    display: none;
+}
+
+.calendar .month-day-list .time-period:not(.focused) .time-period-time {
+    text-shadow: 0px 0px 2px #FFFFFF;
+    width: 100%;
+}
+
+.calendar .month-day-list .time-period:not(.focused) .time-period-copy {
+    display: none;
+}
+
+.calendar .month-day-list .time-period:not(.focused) .time-period-delete {
+    display: none;
+}
+
+.calendar .month-day-list .edit-mode .left-handle,
+.calendar .month-day-list .edit-mode .right-handle {
+    display: none;
+}
+
+.calendar .month-day-list .time-period .time-period-inner {
+    /* Used to animated the height of the element */
+    transition: all 0.2s;
+    z-index: 100;
+}
+
+.calendar .month-day-list .shift.focused, .availability-calendar .month-day-list .availability.focused {
+    background-color: #dbdbdb;
+    min-height: 18px;
+    /*box-shadow: 0px 0px 1px 1px #CCC;*/
+    /* NOTE: This must not be moved to another selector or it'll look weird when it transitions back to white */
+    transition: background-color 0.3s;
+    opacity: 1;
+}
+
+.calendar .month-day-list .shift.focused .time-period-inner, .availability-calendar .month-day-list .availability.focused .time-period-inner {
+    position: fixed;
+    left: 0px;
+    bottom: 50px;
+    font-size: 30px;
+    width: 800px;
+    background-color: #FFFFFF;
+    padding: 10px;
+    border-radius: 0.25rem;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.calendar .month-day-list .shift.focused .left-handle, .availability-calendar .month-day-list .availability.focused .left-handle {
+    display: inline-block;
+}
+
+.calendar .month-day-list .shift.focused .right-handle, .availability-calendar .month-day-list .availability.focused .right-handle {
+    display: inline-block;
+}
+
+.calendar .month-day-list .shift.focused .time-period-time, .availability-calendar .month-day-list .availability.focused .time-period-time {
+    display: initial;
+}
+
+.calendar .month-day-list .shift.focused .time-period-heading, .availability-calendar .month-day-list .availability.focused .time-period-heading {
+    display: flex;
+}
+
+.calendar .calendar-mobile-overlay {
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    opacity: 0.5;
+    background-color: #000000;
+    z-index: 1;
+}
+
+.calendar .shift .calendar-mobile-overlay:not(.hidden),
+.availability-calendar .availability .calendar-mobile-overlay:not(.hidden) {
+    display: initial;
+}
+
+.calendar .month-day-list .time-period.focused .time-period-user {
+    display: initial;
+}
+
 @media (max-width: 768px) {
 
-    .calendar .calendar-mobile-overlay {
-        position: fixed;
-        left: 0px;
-        right: 0px;
-        top: 0px;
-        bottom: 0px;
-        opacity: 0.5;
-        background-color: #000000;
-        z-index: 1;
-    }
-
-    .calendar .shift .calendar-mobile-overlay:not(.hidden),
-    .availability-calendar .availability .calendar-mobile-overlay:not(.hidden) {
-        display: initial;
-    }
 
     .calendar .month-day {
         padding: 0px;
         padding-bottom: 10px;
     }
 
+    .calendar .month-day-list .shift.focused .time-period-inner,
+    .availability-calendar .month-day-list .availability.focused .time-period-inner {
+        left: 0px;
+        bottom: 155px;
+        margin-left: 15px;
+        margin-right: 15px;
+        width: calc(100% - 30px);
+        transform: none;
+    }
+
+    .calendar .month-day-list .shift.focused, .availability-calendar .month-day-list .availability.focused {
+        min-height: 12px;
+    }
+
+    .calendar .month-day-list .time-period .time-period-inner {
+        /* NOTE: Used to animated the height of the element */
+        font-size: 8px;
+    }
 
     .calendar .month-day-list .time-period {
         margin-top: 3px;
         background-color: #FFFFFF;
     }
 
-    .calendar .month-day-list .edit-mode .left-handle,
-    .calendar .month-day-list .edit-mode .right-handle {
-        display: none;
-    }
-
     .calendar .month-day-list .time-period .time-period-bar {
         min-height: 12px;
     }
 
-    .calendar .month-day-list .time-period:not(.focused) .time-period-heading {
-        position: absolute;
-        background: rgba(0,0,0,0);
-        pointer-events: none;
-        padding: 0px;
-    }
-
-    .calendar.highlighted .month-day-list .time-period:not(.focused):not(.highlighted-period) .time-period-heading {
-        display: none;
-    } .calendar .month-day-list .time-period:not(.focused) .time-period-time {
-        text-shadow: 0px 0px 3px #FFFFFF;
-        width: 100%;
-    } .calendar .month-day-list .time-period:not(.focused) .time-period-copy {
-        display: none;
-    } .calendar .month-day-list .time-period:not(.focused) .time-period-delete {
-        display: none;
-    } .calendar .time-period-template .left-handle {
+     .calendar .time-period-template .left-handle {
         padding-right: 0px;
     } .calendar .time-period-template .right-handle {
         padding-left: 0px;
-    } .calendar .month-day-list .time-period.focused .time-period-user {
-        display: initial;
-    }
+    } 
     /*
     .calendar .month-day-list .time-period.focused .time-period-heading {
         position: absolute;
@@ -508,39 +582,7 @@
         left: 0px;
     }
     */
-    .calendar .month-day-list .time-period .time-period-inner {
-        /* Used to animated the height of the element */
-        font-size: 8px;
-        transition: all 0.2s;
-        z-index: 100;
-    } .calendar .month-day-list .shift.focused, .availability-calendar .month-day-list .availability.focused {
-        background-color: #dbdbdb;
-        min-height: 12px;
-        /*box-shadow: 0px 0px 1px 1px #CCC;*/
-        /* NOTE: This must not be moved to another selector or it'll look weird when it transitions back to white */
-        transition: background-color 0.3s;
-        opacity: 1;
-    } .calendar .month-day-list .shift.focused .time-period-inner, .availability-calendar .month-day-list .availability.focused .time-period-inner {
-            position: fixed;
-            left: 0px;
-            bottom: 155px;
-            font-size: 30px;
-            margin-left: 15px;
-            margin-right: 15px;
-            width: calc(100% - 30px);
-            background-color: #FFFFFF;
-            padding: 10px;
-            border-radius: 0.25rem;
-            border: 1px solid rgba(0, 0, 0, 0.125);
-        } .calendar .month-day-list .shift.focused .left-handle, .availability-calendar .month-day-list .availability.focused .left-handle {
-            display: inline-block;
-        } .calendar .month-day-list .shift.focused .right-handle, .availability-calendar .month-day-list .availability.focused .right-handle {
-            display: inline-block;
-        } .calendar .month-day-list .shift.focused .time-period-time, .availability-calendar .month-day-list .availability.focused .time-period-time {
-            display: initial;
-        } .calendar .month-day-list .shift.focused .time-period-heading, .availability-calendar .month-day-list .availability.focused .time-period-heading {
-            display: flex;
-        }
+    
 
     @for $i from 0 through 30 {
         .scheduling-calendar [data-this-week-user-count='#{$i}'] .time-period-section {
@@ -573,6 +615,9 @@
 }
 
 @media only print {
+    /*@page {
+        size: landscape;
+    }*/
 
     /* Prevent browser from hiding background colors when printing */
     .calendar * {
@@ -611,5 +656,13 @@
         border-width: 2px !important;
         position: initial !important;
         max-width: initial !important;
+    }
+
+    .month-day {
+        min-height: initial !important;
+    }
+
+    .main-footer {
+        display: none !important;
     }
 }

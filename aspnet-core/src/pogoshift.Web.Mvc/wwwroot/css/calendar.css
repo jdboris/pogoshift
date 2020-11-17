@@ -185,7 +185,8 @@
   padding: 0px 3px;
   background: #EEE;
   width: 100%;
-  text-align: center; }
+  text-align: center;
+  height: 18px; }
 
 .calendar .time-period-copy i,
 .calendar .time-period-delete i {
@@ -631,8 +632,13 @@
   display: none; }
 
 .calendar .month-day-list .time-period:not(.focused) .time-period-time {
-  text-shadow: 0px 0px 2px #FFFFFF;
-  width: 100%; }
+  background: #363636;
+  color: white;
+  border-radius: 9px;
+  padding: 2px;
+  line-height: 0.7;
+  display: block;
+  margin: auto; }
 
 .calendar .month-day-list .time-period:not(.focused) .time-period-copy {
   display: none; }
@@ -980,7 +986,8 @@
     -webkit-print-color-adjust: exact !important;
     /* Chrome, Safari */
     color-adjust: exact !important;
-    /*Firefox*/ }
+    /*Firefox*/
+    /*-webkit-filter: blur(0);*/ }
   .calendar-header > * > :not(.month-title) {
     display: none !important; }
   .print-button {

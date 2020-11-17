@@ -11919,3 +11919,894 @@ INFO  2020-11-17 13:58:11,197 [49   ] .Mvc.Infrastructure.ObjectResultExecutor -
 INFO  2020-11-17 13:58:11,199 [49   ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Availabilities.AvailabilityAppService.GetAllOfAllUsersByDate (pogoshift.Application) in 33.9728ms
 INFO  2020-11-17 13:58:11,201 [49   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Availabilities.AvailabilityAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
 INFO  2020-11-17 13:58:11,204 [49   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 48.8471ms 200 application/json; charset=utf-8
+DEBUG 2020-11-17 14:15:55,881 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-11-17 14:15:55,946 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2020-11-17 14:15:55,962 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.Web.Startup.pogoshiftWebMvcModule, pogoshift.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:15:55,964 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftWebCoreModule, pogoshift.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:15:55,964 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftApplicationModule, pogoshift.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:15:55,964 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftCoreModule, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:15:55,964 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:15:55,964 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:15:55,965 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:15:55,965 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:15:55,965 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.EntityFrameworkCore.pogoshiftEntityFrameworkModule, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:15:55,965 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:15:55,966 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:15:55,966 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:15:55,966 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:15:55,966 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:15:55,966 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:15:55,968 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2020-11-17 14:15:56,038 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-17 14:15:56,038 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-17 14:15:56,038 [1    ] o.Configuration.LanguageManagementConfig - Converted pogoshift (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-17 14:15:56,039 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-17 14:15:56,384 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: pogoshift.EntityFrameworkCore.pogoshiftDbContext, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:15:57,330 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-11-17 14:15:57,371 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-11-17 14:15:57,383 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-11-17 14:15:57,389 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: pogoshift
+DEBUG 2020-11-17 14:15:57,395 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-11-17 14:15:57,629 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-11-17 14:15:57,775 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[pogoshift.MultiTenancy.Tenant, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[pogoshift.Authorization.Users.User, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2020-11-17 14:15:57,845 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 16 classes define auto mapping attributes
+DEBUG 2020-11-17 14:15:57,845 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2020-11-17 14:15:57,851 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.CreateUserDto
+DEBUG 2020-11-17 14:15:57,852 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.UserDto
+DEBUG 2020-11-17 14:15:57,852 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Shifts.Dto.ShiftDto
+DEBUG 2020-11-17 14:15:57,852 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Shifts.Dto.UpdateShiftDto
+DEBUG 2020-11-17 14:15:57,852 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-11-17 14:15:57,852 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-11-17 14:15:57,853 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Roles.Dto.PermissionDto
+DEBUG 2020-11-17 14:15:57,853 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-11-17 14:15:57,853 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.TenantDto
+DEBUG 2020-11-17 14:15:57,853 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Breaks.Dto.BreakDto
+DEBUG 2020-11-17 14:15:57,853 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.AvailabilityDto
+DEBUG 2020-11-17 14:15:57,853 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.GetAllAvailabilityDto
+DEBUG 2020-11-17 14:15:57,853 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.UpdateAvailabilityDto
+DEBUG 2020-11-17 14:15:57,853 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2020-11-17 14:15:57,853 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Web.Models.Roles.EditRoleModalViewModel
+INFO  2020-11-17 14:16:01,512 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\Joe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2020-11-17 14:16:03,413 [1    ] tCore.Builder.RequestLocalizationOptions - Supported Request Localization Cultures: en,es-MX,fr,de,it,nl,pt-BR,tr,ru,ar,ja,zh-Hans
+INFO  2020-11-17 14:16:03,844 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/  
+INFO  2020-11-17 14:16:04,168 [4    ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2020-11-17 14:16:04,170 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Web.Controllers.HomeController.Index (pogoshift.Web.Mvc)'
+INFO  2020-11-17 14:16:04,395 [4    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Index() on controller pogoshift.Web.Controllers.HomeController (pogoshift.Web.Mvc).
+INFO  2020-11-17 14:16:04,608 [8    ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to Schedule.
+INFO  2020-11-17 14:16:04,615 [8    ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Web.Controllers.HomeController.Index (pogoshift.Web.Mvc) in 215.0502ms
+INFO  2020-11-17 14:16:04,619 [8    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Web.Controllers.HomeController.Index (pogoshift.Web.Mvc)'
+INFO  2020-11-17 14:16:04,633 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 790.7453ms 302 
+INFO  2020-11-17 14:16:04,636 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Schedule  
+INFO  2020-11-17 14:16:04,652 [4    ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2020-11-17 14:16:04,654 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Web.Controllers.ScheduleController.Index (pogoshift.Web.Mvc)'
+INFO  2020-11-17 14:16:04,661 [4    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Schedule", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller pogoshift.Web.Controllers.ScheduleController (pogoshift.Web.Mvc).
+INFO  2020-11-17 14:16:05,308 [4    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2020-11-17 14:16:06,394 [4    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 1114.7019ms.
+INFO  2020-11-17 14:16:06,397 [4    ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Web.Controllers.ScheduleController.Index (pogoshift.Web.Mvc) in 1733.5404ms
+INFO  2020-11-17 14:16:06,399 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Web.Controllers.ScheduleController.Index (pogoshift.Web.Mvc)'
+INFO  2020-11-17 14:16:06,403 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 1767.8584ms 200 text/html; charset=utf-8
+INFO  2020-11-17 14:16:06,437 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Shared/_Layout.css?v=pk1udUQR7bqKUWFxSnrnIl0MM8MH2Wu05p-zpysBQWI  
+INFO  2020-11-17 14:16:06,439 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/css/style.css?v=QMOKrDGneh5FpzfcvOz4TVosjF_VfxcNXC2ShbAX8_o  
+INFO  2020-11-17 14:16:06,441 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/css/calendar.css  
+INFO  2020-11-17 14:16:06,443 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Schedule/_Layout.css  
+INFO  2020-11-17 14:16:06,453 [8    ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/style.css was not modified
+INFO  2020-11-17 14:16:06,455 [4    ] NetCore.StaticFiles.StaticFileMiddleware - The file /view-resources/Views/Shared/_Layout.css was not modified
+INFO  2020-11-17 14:16:06,457 [9    ] NetCore.StaticFiles.StaticFileMiddleware - The file /view-resources/Views/Schedule/_Layout.css was not modified
+INFO  2020-11-17 14:16:06,459 [10   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/calendar.css was not modified
+INFO  2020-11-17 14:16:06,463 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 26.3989ms 304 text/css
+INFO  2020-11-17 14:16:06,465 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 27.3628ms 304 text/css
+INFO  2020-11-17 14:16:06,466 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 21.8213ms 304 text/css
+INFO  2020-11-17 14:16:06,468 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 21.5695ms 304 text/css
+INFO  2020-11-17 14:16:06,530 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/abp.dataTable.js?v=wCP3D6MKHBCcRasJY-omxmPooho9hBJO7huoq9j_j9A  
+INFO  2020-11-17 14:16:06,532 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=637412193577757119  
+INFO  2020-11-17 14:16:06,538 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/main.js?v=VbeQ5MoA-0GiZvZuHnCbZs7eAxguJrx729MnRyXEoBk  
+INFO  2020-11-17 14:16:06,540 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=637412193577757119  
+INFO  2020-11-17 14:16:06,542 [10   ] NetCore.StaticFiles.StaticFileMiddleware - The file /js/abp.dataTable.js was not modified
+INFO  2020-11-17 14:16:06,544 [8    ] NetCore.StaticFiles.StaticFileMiddleware - The file /js/main.js was not modified
+INFO  2020-11-17 14:16:06,547 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Schedule/Schedule.js?v=JBaq_x0_ye00ioPED4xkp76bslzygP7sl5V2Yvn-2SQ  
+INFO  2020-11-17 14:16:06,549 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 16.9851ms 304 application/javascript
+INFO  2020-11-17 14:16:06,551 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 16.0066ms 304 application/javascript
+INFO  2020-11-17 14:16:06,554 [11   ] NetCore.StaticFiles.StaticFileMiddleware - The file /view-resources/Views/Schedule/Schedule.js was not modified
+INFO  2020-11-17 14:16:06,556 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 11.7989ms 304 application/javascript
+INFO  2020-11-17 14:16:06,567 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2020-11-17 14:16:06,569 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2020-11-17 14:16:06,584 [9    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetScripts(System.String, Boolean) on controller Abp.AspNetCore.Mvc.Controllers.AbpScriptsController (Abp.AspNetCore).
+INFO  2020-11-17 14:16:06,588 [4    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ContentResult GetAll(Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) on controller Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController (Abp.AspNetCore).
+INFO  2020-11-17 14:16:06,696 [4    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2020-11-17 14:16:06,701 [4    ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 109.8807ms
+INFO  2020-11-17 14:16:06,703 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2020-11-17 14:16:06,706 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 176.2516ms 200 application/x-javascript
+INFO  2020-11-17 14:16:06,733 [10   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2020-11-17 14:16:06,736 [10   ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 150.0519ms
+INFO  2020-11-17 14:16:06,738 [10   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2020-11-17 14:16:06,740 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 207.5124ms 200 application/x-javascript; charset=utf-8
+INFO  2020-11-17 14:16:06,824 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2020-11-17 14:16:06,831 [10   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr/negotiate'
+INFO  2020-11-17 14:16:06,841 [10   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint '/signalr/negotiate'
+INFO  2020-11-17 14:16:06,843 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 19.3573ms 200 application/json
+INFO  2020-11-17 14:16:06,871 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=wG1r7ZRmE0wKAlR59pWMtg  
+INFO  2020-11-17 14:16:06,875 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/schedule-calendar.js  
+INFO  2020-11-17 14:16:06,877 [17   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/utilities.js  
+INFO  2020-11-17 14:16:06,879 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/models/Shift.js  
+INFO  2020-11-17 14:16:06,881 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/models/Availability.js  
+INFO  2020-11-17 14:16:06,883 [17   ] NetCore.StaticFiles.StaticFileMiddleware - The file /js/utilities.js was not modified
+INFO  2020-11-17 14:16:06,886 [17   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 9.1588ms 304 application/javascript
+INFO  2020-11-17 14:16:06,893 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr'
+INFO  2020-11-17 14:16:06,900 [11   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/models/Availability.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\models\Availability.js'
+INFO  2020-11-17 14:16:06,900 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/schedule-calendar.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\schedule-calendar.js'
+INFO  2020-11-17 14:16:06,900 [10   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/models/Shift.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\models\Shift.js'
+INFO  2020-11-17 14:16:06,902 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 25.1237ms 200 application/javascript
+INFO  2020-11-17 14:16:06,904 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 27.6877ms 200 application/javascript
+INFO  2020-11-17 14:16:06,910 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 25.2692ms 200 application/javascript
+INFO  2020-11-17 14:16:06,916 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/model.js  
+INFO  2020-11-17 14:16:06,918 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/calendar.js  
+INFO  2020-11-17 14:16:06,920 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/dom-elements.js  
+INFO  2020-11-17 14:16:06,921 [10   ] NetCore.StaticFiles.StaticFileMiddleware - The file /js/calendar.js was not modified
+INFO  2020-11-17 14:16:06,923 [8    ] NetCore.StaticFiles.StaticFileMiddleware - The file /js/model.js was not modified
+INFO  2020-11-17 14:16:06,926 [12   ] NetCore.StaticFiles.StaticFileMiddleware - The file /js/dom-elements.js was not modified
+INFO  2020-11-17 14:16:06,928 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 9.19ms 304 application/javascript
+INFO  2020-11-17 14:16:06,930 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 11.5348ms 304 application/javascript
+INFO  2020-11-17 14:16:06,931 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 13.5827ms 304 application/javascript
+INFO  2020-11-17 14:16:06,953 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/Shift/GetAllOfAllUsersByDate?month=11&year=2020 application/json 
+INFO  2020-11-17 14:16:06,961 [10   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Shifts.ShiftAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:16:06,966 [10   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetAllOfAllUsersByDate", controller = "Shift"}. Executing controller action with signature Abp.Application.Services.Dto.ListResultDto`1[pogoshift.Shifts.Dto.ShiftDto] GetAllOfAllUsersByDate(Int32, Int32) on controller pogoshift.Shifts.ShiftAppService (pogoshift.Application).
+DEBUG 2020-11-17 14:16:07,018 [8    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"wG1r7ZRmE0wKAlR59pWMtg","IpAddress":"::1","TenantId":4,"UserId":5,"ConnectTime":"2020-11-17T14:16:06.9991107-05:00","Properties":{}}
+DEBUG 2020-11-17 14:16:07,037 [8    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: wG1r7ZRmE0wKAlR59pWMtg
+INFO  2020-11-17 14:16:07,546 [9    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-11-17 14:16:07,575 [9    ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Shifts.ShiftAppService.GetAllOfAllUsersByDate (pogoshift.Application) in 606.4621ms
+INFO  2020-11-17 14:16:07,578 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Shifts.ShiftAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:16:07,580 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 627.3385ms 200 application/json; charset=utf-8
+INFO  2020-11-17 14:16:07,583 [8    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/Availability/GetAllOfAllUsersByDate?month=11&year=2020 application/json 
+INFO  2020-11-17 14:16:07,591 [8    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Availabilities.AvailabilityAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:16:07,595 [8    ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetAllOfAllUsersByDate", controller = "Availability"}. Executing controller action with signature Abp.Application.Services.Dto.ListResultDto`1[pogoshift.Availabilities.Dto.AvailabilityDto] GetAllOfAllUsersByDate(Int32, Int32) on controller pogoshift.Availabilities.AvailabilityAppService (pogoshift.Application).
+INFO  2020-11-17 14:16:08,067 [10   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-11-17 14:16:08,075 [10   ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Availabilities.AvailabilityAppService.GetAllOfAllUsersByDate (pogoshift.Application) in 477.3802ms
+INFO  2020-11-17 14:16:08,077 [10   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Availabilities.AvailabilityAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:16:08,080 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 496.434ms 200 application/json; charset=utf-8
+DEBUG 2020-11-17 14:31:58,234 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-11-17 14:31:58,327 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2020-11-17 14:31:58,343 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.Web.Startup.pogoshiftWebMvcModule, pogoshift.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:31:58,345 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftWebCoreModule, pogoshift.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:31:58,346 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftApplicationModule, pogoshift.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:31:58,346 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftCoreModule, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:31:58,346 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:31:58,346 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:31:58,347 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:31:58,347 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:31:58,347 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.EntityFrameworkCore.pogoshiftEntityFrameworkModule, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:31:58,347 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:31:58,347 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:31:58,348 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:31:58,348 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:31:58,348 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:31:58,348 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:31:58,350 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2020-11-17 14:31:58,442 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-17 14:31:58,442 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-17 14:31:58,442 [1    ] o.Configuration.LanguageManagementConfig - Converted pogoshift (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-17 14:31:58,442 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-17 14:31:58,801 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: pogoshift.EntityFrameworkCore.pogoshiftDbContext, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:31:59,820 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-11-17 14:31:59,861 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-11-17 14:31:59,873 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-11-17 14:31:59,880 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: pogoshift
+DEBUG 2020-11-17 14:31:59,886 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-11-17 14:32:00,092 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-11-17 14:32:00,221 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[pogoshift.MultiTenancy.Tenant, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[pogoshift.Authorization.Users.User, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2020-11-17 14:32:00,272 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 16 classes define auto mapping attributes
+DEBUG 2020-11-17 14:32:00,272 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2020-11-17 14:32:00,277 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.CreateUserDto
+DEBUG 2020-11-17 14:32:00,277 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.UserDto
+DEBUG 2020-11-17 14:32:00,277 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Shifts.Dto.ShiftDto
+DEBUG 2020-11-17 14:32:00,277 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Shifts.Dto.UpdateShiftDto
+DEBUG 2020-11-17 14:32:00,278 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-11-17 14:32:00,278 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-11-17 14:32:00,278 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Roles.Dto.PermissionDto
+DEBUG 2020-11-17 14:32:00,278 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-11-17 14:32:00,278 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.TenantDto
+DEBUG 2020-11-17 14:32:00,278 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Breaks.Dto.BreakDto
+DEBUG 2020-11-17 14:32:00,278 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.AvailabilityDto
+DEBUG 2020-11-17 14:32:00,278 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.GetAllAvailabilityDto
+DEBUG 2020-11-17 14:32:00,278 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.UpdateAvailabilityDto
+DEBUG 2020-11-17 14:32:00,278 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2020-11-17 14:32:00,279 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Web.Models.Roles.EditRoleModalViewModel
+INFO  2020-11-17 14:32:04,113 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\Joe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2020-11-17 14:32:06,008 [1    ] tCore.Builder.RequestLocalizationOptions - Supported Request Localization Cultures: en,es-MX,fr,de,it,nl,pt-BR,tr,ru,ar,ja,zh-Hans
+INFO  2020-11-17 14:32:06,448 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/  
+INFO  2020-11-17 14:32:07,018 [12   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2020-11-17 14:32:07,021 [12   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Web.Controllers.HomeController.Index (pogoshift.Web.Mvc)'
+INFO  2020-11-17 14:32:07,241 [12   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Index() on controller pogoshift.Web.Controllers.HomeController (pogoshift.Web.Mvc).
+INFO  2020-11-17 14:32:07,430 [7    ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to Schedule.
+INFO  2020-11-17 14:32:07,438 [7    ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Web.Controllers.HomeController.Index (pogoshift.Web.Mvc) in 190.6121ms
+INFO  2020-11-17 14:32:07,441 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Web.Controllers.HomeController.Index (pogoshift.Web.Mvc)'
+INFO  2020-11-17 14:32:07,461 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 1014.0648ms 302 
+INFO  2020-11-17 14:32:07,463 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Schedule  
+INFO  2020-11-17 14:32:07,480 [10   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2020-11-17 14:32:07,483 [10   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Web.Controllers.ScheduleController.Index (pogoshift.Web.Mvc)'
+INFO  2020-11-17 14:32:07,491 [10   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Schedule", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller pogoshift.Web.Controllers.ScheduleController (pogoshift.Web.Mvc).
+INFO  2020-11-17 14:32:08,122 [10   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2020-11-17 14:32:09,130 [9    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 1037.883ms.
+INFO  2020-11-17 14:32:09,133 [9    ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Web.Controllers.ScheduleController.Index (pogoshift.Web.Mvc) in 1640.3823ms
+INFO  2020-11-17 14:32:09,135 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Web.Controllers.ScheduleController.Index (pogoshift.Web.Mvc)'
+INFO  2020-11-17 14:32:09,140 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 1676.3786ms 200 text/html; charset=utf-8
+INFO  2020-11-17 14:32:09,172 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/css/style.css?v=QMOKrDGneh5FpzfcvOz4TVosjF_VfxcNXC2ShbAX8_o  
+INFO  2020-11-17 14:32:09,174 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Shared/_Layout.css?v=pk1udUQR7bqKUWFxSnrnIl0MM8MH2Wu05p-zpysBQWI  
+INFO  2020-11-17 14:32:09,176 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/css/calendar.css  
+INFO  2020-11-17 14:32:09,178 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Schedule/_Layout.css  
+INFO  2020-11-17 14:32:09,187 [9    ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/style.css was not modified
+INFO  2020-11-17 14:32:09,189 [4    ] NetCore.StaticFiles.StaticFileMiddleware - The file /view-resources/Views/Shared/_Layout.css was not modified
+INFO  2020-11-17 14:32:09,191 [10   ] NetCore.StaticFiles.StaticFileMiddleware - The file /css/calendar.css was not modified
+INFO  2020-11-17 14:32:09,193 [12   ] NetCore.StaticFiles.StaticFileMiddleware - The file /view-resources/Views/Schedule/_Layout.css was not modified
+INFO  2020-11-17 14:32:09,199 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 24.2435ms 304 text/css
+INFO  2020-11-17 14:32:09,201 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 27.1ms 304 text/css
+INFO  2020-11-17 14:32:09,204 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 27.1517ms 304 text/css
+INFO  2020-11-17 14:32:09,206 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 24.6472ms 304 text/css
+INFO  2020-11-17 14:32:09,290 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/abp.dataTable.js?v=wCP3D6MKHBCcRasJY-omxmPooho9hBJO7huoq9j_j9A  
+INFO  2020-11-17 14:32:09,292 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=637412203202223068  
+INFO  2020-11-17 14:32:09,296 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=637412203202223068  
+INFO  2020-11-17 14:32:09,298 [12   ] NetCore.StaticFiles.StaticFileMiddleware - The file /js/abp.dataTable.js was not modified
+INFO  2020-11-17 14:32:09,301 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/main.js?v=VbeQ5MoA-0GiZvZuHnCbZs7eAxguJrx729MnRyXEoBk  
+INFO  2020-11-17 14:32:09,303 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 13.691ms 304 application/javascript
+INFO  2020-11-17 14:32:09,307 [4    ] NetCore.StaticFiles.StaticFileMiddleware - The file /js/main.js was not modified
+INFO  2020-11-17 14:32:09,309 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Schedule/Schedule.js?v=JBaq_x0_ye00ioPED4xkp76bslzygP7sl5V2Yvn-2SQ  
+INFO  2020-11-17 14:32:09,312 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 15.319ms 304 application/javascript
+INFO  2020-11-17 14:32:09,314 [12   ] NetCore.StaticFiles.StaticFileMiddleware - The file /view-resources/Views/Schedule/Schedule.js was not modified
+INFO  2020-11-17 14:32:09,318 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 7.8565ms 304 application/javascript
+INFO  2020-11-17 14:32:09,333 [14   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2020-11-17 14:32:09,335 [10   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2020-11-17 14:32:09,351 [14   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetScripts(System.String, Boolean) on controller Abp.AspNetCore.Mvc.Controllers.AbpScriptsController (Abp.AspNetCore).
+INFO  2020-11-17 14:32:09,356 [10   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ContentResult GetAll(Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) on controller Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController (Abp.AspNetCore).
+INFO  2020-11-17 14:32:09,469 [10   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2020-11-17 14:32:09,473 [10   ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 115.0148ms
+INFO  2020-11-17 14:32:09,476 [10   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2020-11-17 14:32:09,479 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 186.5224ms 200 application/x-javascript
+INFO  2020-11-17 14:32:09,499 [7    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2020-11-17 14:32:09,503 [7    ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 148.9497ms
+INFO  2020-11-17 14:32:09,505 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2020-11-17 14:32:09,507 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 214.5258ms 200 application/x-javascript; charset=utf-8
+INFO  2020-11-17 14:32:09,522 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2020-11-17 14:32:09,528 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr/negotiate'
+INFO  2020-11-17 14:32:09,539 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint '/signalr/negotiate'
+INFO  2020-11-17 14:32:09,541 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 19.4622ms 200 application/json
+INFO  2020-11-17 14:32:09,548 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=FEnNYhUW9MoLzjnHGgDl7g  
+INFO  2020-11-17 14:32:09,555 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr'
+INFO  2020-11-17 14:32:09,565 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/schedule-calendar.js  
+INFO  2020-11-17 14:32:09,567 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/models/Shift.js  
+INFO  2020-11-17 14:32:09,570 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/models/Availability.js  
+INFO  2020-11-17 14:32:09,572 [12   ] NetCore.StaticFiles.StaticFileMiddleware - The file /js/schedule-calendar.js was not modified
+INFO  2020-11-17 14:32:09,574 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/utilities.js  
+INFO  2020-11-17 14:32:09,576 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 10.5536ms 304 application/javascript
+INFO  2020-11-17 14:32:09,578 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /js/utilities.js was not modified
+INFO  2020-11-17 14:32:09,581 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 13.037ms 304 application/javascript
+INFO  2020-11-17 14:32:09,584 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/dom-elements.js  
+INFO  2020-11-17 14:32:09,586 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/calendar.js  
+INFO  2020-11-17 14:32:09,588 [14   ] NetCore.StaticFiles.StaticFileMiddleware - The file /js/dom-elements.js was not modified
+INFO  2020-11-17 14:32:09,590 [12   ] NetCore.StaticFiles.StaticFileMiddleware - The file /js/calendar.js was not modified
+INFO  2020-11-17 14:32:09,592 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 8.1361ms 304 application/javascript
+INFO  2020-11-17 14:32:09,594 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 10.3718ms 304 application/javascript
+INFO  2020-11-17 14:32:09,602 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/models/Availability.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\models\Availability.js'
+INFO  2020-11-17 14:32:09,602 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/models/Shift.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\models\Shift.js'
+INFO  2020-11-17 14:32:09,604 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 36.5293ms 200 application/javascript
+INFO  2020-11-17 14:32:09,606 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 36.5611ms 200 application/javascript
+INFO  2020-11-17 14:32:09,612 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/model.js  
+INFO  2020-11-17 14:32:09,614 [4    ] NetCore.StaticFiles.StaticFileMiddleware - The file /js/model.js was not modified
+INFO  2020-11-17 14:32:09,616 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 4.8365ms 304 application/javascript
+INFO  2020-11-17 14:32:09,632 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/Shift/GetAllOfAllUsersByDate?month=11&year=2020 application/json 
+INFO  2020-11-17 14:32:09,642 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Shifts.ShiftAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:32:09,647 [7    ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetAllOfAllUsersByDate", controller = "Shift"}. Executing controller action with signature Abp.Application.Services.Dto.ListResultDto`1[pogoshift.Shifts.Dto.ShiftDto] GetAllOfAllUsersByDate(Int32, Int32) on controller pogoshift.Shifts.ShiftAppService (pogoshift.Application).
+DEBUG 2020-11-17 14:32:09,671 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"FEnNYhUW9MoLzjnHGgDl7g","IpAddress":"::1","TenantId":4,"UserId":5,"ConnectTime":"2020-11-17T14:32:09.6507786-05:00","Properties":{}}
+DEBUG 2020-11-17 14:32:09,690 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: FEnNYhUW9MoLzjnHGgDl7g
+INFO  2020-11-17 14:32:10,233 [4    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-11-17 14:32:10,265 [4    ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Shifts.ShiftAppService.GetAllOfAllUsersByDate (pogoshift.Application) in 615.6053ms
+INFO  2020-11-17 14:32:10,267 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Shifts.ShiftAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:32:10,269 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 638.5915ms 200 application/json; charset=utf-8
+INFO  2020-11-17 14:32:10,273 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/Availability/GetAllOfAllUsersByDate?month=11&year=2020 application/json 
+INFO  2020-11-17 14:32:10,282 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Availabilities.AvailabilityAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:32:10,286 [4    ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetAllOfAllUsersByDate", controller = "Availability"}. Executing controller action with signature Abp.Application.Services.Dto.ListResultDto`1[pogoshift.Availabilities.Dto.AvailabilityDto] GetAllOfAllUsersByDate(Int32, Int32) on controller pogoshift.Availabilities.AvailabilityAppService (pogoshift.Application).
+INFO  2020-11-17 14:32:10,788 [11   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-11-17 14:32:10,794 [11   ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Availabilities.AvailabilityAppService.GetAllOfAllUsersByDate (pogoshift.Application) in 505.4263ms
+INFO  2020-11-17 14:32:10,796 [11   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Availabilities.AvailabilityAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:32:10,798 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 525.4883ms 200 application/json; charset=utf-8
+DEBUG 2020-11-17 14:34:26,363 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-11-17 14:34:26,432 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2020-11-17 14:34:26,447 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.Web.Startup.pogoshiftWebMvcModule, pogoshift.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:34:26,448 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftWebCoreModule, pogoshift.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:34:26,449 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftApplicationModule, pogoshift.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:34:26,449 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftCoreModule, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:34:26,449 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:34:26,449 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:34:26,450 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:34:26,450 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:34:26,450 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.EntityFrameworkCore.pogoshiftEntityFrameworkModule, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:34:26,450 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:34:26,450 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:34:26,451 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:34:26,451 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:34:26,451 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:34:26,451 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:34:26,453 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2020-11-17 14:34:26,529 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-17 14:34:26,529 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-17 14:34:26,529 [1    ] o.Configuration.LanguageManagementConfig - Converted pogoshift (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-17 14:34:26,529 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-17 14:34:26,907 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: pogoshift.EntityFrameworkCore.pogoshiftDbContext, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-17 14:34:27,927 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-11-17 14:34:27,969 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-11-17 14:34:27,982 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-11-17 14:34:27,989 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: pogoshift
+DEBUG 2020-11-17 14:34:27,995 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-11-17 14:34:28,219 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-11-17 14:34:28,345 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[pogoshift.MultiTenancy.Tenant, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[pogoshift.Authorization.Users.User, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2020-11-17 14:34:28,396 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 16 classes define auto mapping attributes
+DEBUG 2020-11-17 14:34:28,396 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2020-11-17 14:34:28,406 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.CreateUserDto
+DEBUG 2020-11-17 14:34:28,407 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.UserDto
+DEBUG 2020-11-17 14:34:28,407 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Shifts.Dto.ShiftDto
+DEBUG 2020-11-17 14:34:28,407 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Shifts.Dto.UpdateShiftDto
+DEBUG 2020-11-17 14:34:28,407 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-11-17 14:34:28,408 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-11-17 14:34:28,408 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Roles.Dto.PermissionDto
+DEBUG 2020-11-17 14:34:28,408 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-11-17 14:34:28,408 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.TenantDto
+DEBUG 2020-11-17 14:34:28,408 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Breaks.Dto.BreakDto
+DEBUG 2020-11-17 14:34:28,408 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.AvailabilityDto
+DEBUG 2020-11-17 14:34:28,409 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.GetAllAvailabilityDto
+DEBUG 2020-11-17 14:34:28,409 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.UpdateAvailabilityDto
+DEBUG 2020-11-17 14:34:28,409 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2020-11-17 14:34:28,409 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Web.Models.Roles.EditRoleModalViewModel
+INFO  2020-11-17 14:34:32,457 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\Joe\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2020-11-17 14:34:34,349 [1    ] tCore.Builder.RequestLocalizationOptions - Supported Request Localization Cultures: en,es-MX,fr,de,it,nl,pt-BR,tr,ru,ar,ja,zh-Hans
+INFO  2020-11-17 14:34:34,787 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/  
+INFO  2020-11-17 14:34:35,099 [7    ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2020-11-17 14:34:35,101 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Web.Controllers.HomeController.Index (pogoshift.Web.Mvc)'
+INFO  2020-11-17 14:34:35,326 [7    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Index() on controller pogoshift.Web.Controllers.HomeController (pogoshift.Web.Mvc).
+INFO  2020-11-17 14:34:35,544 [9    ] vc.Infrastructure.RedirectResultExecutor - Executing RedirectResult, redirecting to Schedule.
+INFO  2020-11-17 14:34:35,551 [9    ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Web.Controllers.HomeController.Index (pogoshift.Web.Mvc) in 219.0139ms
+INFO  2020-11-17 14:34:35,554 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Web.Controllers.HomeController.Index (pogoshift.Web.Mvc)'
+INFO  2020-11-17 14:34:35,569 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 783.6572ms 302 
+INFO  2020-11-17 14:34:35,571 [13   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Schedule  
+INFO  2020-11-17 14:34:35,588 [13   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2020-11-17 14:34:35,590 [13   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Web.Controllers.ScheduleController.Index (pogoshift.Web.Mvc)'
+INFO  2020-11-17 14:34:35,597 [13   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Schedule", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller pogoshift.Web.Controllers.ScheduleController (pogoshift.Web.Mvc).
+INFO  2020-11-17 14:34:36,276 [7    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2020-11-17 14:34:37,356 [7    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 1112.5744ms.
+INFO  2020-11-17 14:34:37,361 [7    ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Web.Controllers.ScheduleController.Index (pogoshift.Web.Mvc) in 1762.0536ms
+INFO  2020-11-17 14:34:37,363 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Web.Controllers.ScheduleController.Index (pogoshift.Web.Mvc)'
+INFO  2020-11-17 14:34:37,367 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 1797.8544ms 200 text/html; charset=utf-8
+INFO  2020-11-17 14:34:37,515 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=637412204683464052  
+INFO  2020-11-17 14:34:37,517 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=637412204683464052  
+INFO  2020-11-17 14:34:37,545 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2020-11-17 14:34:37,547 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2020-11-17 14:34:37,565 [9    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetScripts(System.String, Boolean) on controller Abp.AspNetCore.Mvc.Controllers.AbpScriptsController (Abp.AspNetCore).
+INFO  2020-11-17 14:34:37,571 [7    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ContentResult GetAll(Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) on controller Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController (Abp.AspNetCore).
+INFO  2020-11-17 14:34:37,692 [7    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2020-11-17 14:34:37,697 [7    ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 123.9283ms
+INFO  2020-11-17 14:34:37,699 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2020-11-17 14:34:37,701 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 187.6946ms 200 application/x-javascript
+INFO  2020-11-17 14:34:37,724 [4    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2020-11-17 14:34:37,727 [4    ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 160.6121ms
+INFO  2020-11-17 14:34:37,729 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2020-11-17 14:34:37,732 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 217.5245ms 200 application/x-javascript; charset=utf-8
+INFO  2020-11-17 14:34:37,817 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2020-11-17 14:34:37,823 [14   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr/negotiate'
+INFO  2020-11-17 14:34:37,835 [14   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint '/signalr/negotiate'
+INFO  2020-11-17 14:34:37,837 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 20.6093ms 200 application/json
+INFO  2020-11-17 14:34:37,862 [11   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=FXo88QdnWegUhFyA1_PUXA  
+INFO  2020-11-17 14:34:37,868 [11   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr'
+DEBUG 2020-11-17 14:34:37,922 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"FXo88QdnWegUhFyA1_PUXA","IpAddress":"::1","TenantId":4,"UserId":5,"ConnectTime":"2020-11-17T14:34:37.9154326-05:00","Properties":{}}
+DEBUG 2020-11-17 14:34:37,928 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: FXo88QdnWegUhFyA1_PUXA
+INFO  2020-11-17 14:34:37,961 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/Shift/GetAllOfAllUsersByDate?month=11&year=2020 application/json 
+INFO  2020-11-17 14:34:37,969 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Shifts.ShiftAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:34:37,974 [7    ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetAllOfAllUsersByDate", controller = "Shift"}. Executing controller action with signature Abp.Application.Services.Dto.ListResultDto`1[pogoshift.Shifts.Dto.ShiftDto] GetAllOfAllUsersByDate(Int32, Int32) on controller pogoshift.Shifts.ShiftAppService (pogoshift.Application).
+INFO  2020-11-17 14:34:38,006 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/favicon.ico  
+INFO  2020-11-17 14:34:38,045 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\favicon.ico'
+INFO  2020-11-17 14:34:38,050 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 42.9033ms 200 image/x-icon
+INFO  2020-11-17 14:34:38,583 [4    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-11-17 14:34:38,615 [4    ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Shifts.ShiftAppService.GetAllOfAllUsersByDate (pogoshift.Application) in 638.3201ms
+INFO  2020-11-17 14:34:38,617 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Shifts.ShiftAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:34:38,620 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 659.3115ms 200 application/json; charset=utf-8
+INFO  2020-11-17 14:34:38,624 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/Availability/GetAllOfAllUsersByDate?month=11&year=2020 application/json 
+INFO  2020-11-17 14:34:38,633 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Availabilities.AvailabilityAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:34:38,637 [7    ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetAllOfAllUsersByDate", controller = "Availability"}. Executing controller action with signature Abp.Application.Services.Dto.ListResultDto`1[pogoshift.Availabilities.Dto.AvailabilityDto] GetAllOfAllUsersByDate(Int32, Int32) on controller pogoshift.Availabilities.AvailabilityAppService (pogoshift.Application).
+INFO  2020-11-17 14:34:39,114 [4    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-11-17 14:34:39,120 [4    ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Availabilities.AvailabilityAppService.GetAllOfAllUsersByDate (pogoshift.Application) in 481.2973ms
+INFO  2020-11-17 14:34:39,123 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Availabilities.AvailabilityAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:34:39,125 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 501.8341ms 200 application/json; charset=utf-8
+INFO  2020-11-17 14:36:24,580 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/Tenant/Get application/json 
+INFO  2020-11-17 14:36:24,588 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.MultiTenancy.TenantAppService.GetAsync (pogoshift.Application)'
+INFO  2020-11-17 14:36:24,596 [4    ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "Get", controller = "Tenant"}. Executing controller action with signature System.Threading.Tasks.Task`1[pogoshift.MultiTenancy.Dto.TenantDto] GetAsync(Abp.Application.Services.Dto.EntityDto`1[System.Int32]) on controller pogoshift.MultiTenancy.TenantAppService (pogoshift.Application).
+WARN  2020-11-17 14:36:24,844 [7    ] Mvc.ExceptionHandling.AbpExceptionFilter - Required permissions are not granted. At least one of these permissions must be granted: Tenants
+Abp.Authorization.AbpAuthorizationException: Required permissions are not granted. At least one of these permissions must be granted: Tenants
+   at Abp.Authorization.PermissionCheckerExtensions.AuthorizeAsync(IPermissionChecker permissionChecker, Boolean requireAll, String[] permissionNames)
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(IEnumerable`1 authorizeAttributes)
+   at Abp.Authorization.AuthorizationHelper.CheckPermissionsAsync(MethodInfo methodInfo, Type type)
+   at Abp.Authorization.AuthorizationHelper.AuthorizeAsync(MethodInfo methodInfo, Type type)
+   at Abp.Authorization.AuthorizationInterceptor.InternalInterceptAsynchronous[TResult](IInvocation invocation)
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.InternalInterceptAsynchronous[TResult](IInvocation invocation)
+   at Abp.Auditing.AuditingInterceptor.InternalInterceptAsynchronous[TResult](IInvocation invocation)
+   at Abp.Runtime.Validation.Interception.ValidationInterceptor.InternalInterceptAsynchronous[TResult](IInvocation invocation)
+   at lambda_method(Closure , Object )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutorAwaitable.Awaiter.GetResult()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+INFO  2020-11-17 14:36:24,851 [7    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-11-17 14:36:24,855 [7    ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.MultiTenancy.TenantAppService.GetAsync (pogoshift.Application) in 256.9709ms
+INFO  2020-11-17 14:36:24,856 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.MultiTenancy.TenantAppService.GetAsync (pogoshift.Application)'
+INFO  2020-11-17 14:36:24,859 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 278.65ms 403 application/json; charset=utf-8
+INFO  2020-11-17 14:37:42,739 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/Session/GetCurrentLoginInformations application/json 
+INFO  2020-11-17 14:37:42,749 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Sessions.SessionAppService.GetCurrentLoginInformations (pogoshift.Application)'
+INFO  2020-11-17 14:37:42,757 [4    ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetCurrentLoginInformations", controller = "Session"}. Executing controller action with signature System.Threading.Tasks.Task`1[pogoshift.Sessions.Dto.GetCurrentLoginInformationsOutput] GetCurrentLoginInformations() on controller pogoshift.Sessions.SessionAppService (pogoshift.Application).
+INFO  2020-11-17 14:37:42,792 [24   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-11-17 14:37:42,805 [24   ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Sessions.SessionAppService.GetCurrentLoginInformations (pogoshift.Application) in 45.468ms
+INFO  2020-11-17 14:37:42,807 [24   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Sessions.SessionAppService.GetCurrentLoginInformations (pogoshift.Application)'
+INFO  2020-11-17 14:37:42,809 [24   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 70.8283ms 200 application/json; charset=utf-8
+INFO  2020-11-17 14:38:15,256 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/Session/GetCurrentLoginInformations application/json 
+INFO  2020-11-17 14:38:15,262 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Sessions.SessionAppService.GetCurrentLoginInformations (pogoshift.Application)'
+INFO  2020-11-17 14:38:15,266 [7    ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetCurrentLoginInformations", controller = "Session"}. Executing controller action with signature System.Threading.Tasks.Task`1[pogoshift.Sessions.Dto.GetCurrentLoginInformationsOutput] GetCurrentLoginInformations() on controller pogoshift.Sessions.SessionAppService (pogoshift.Application).
+INFO  2020-11-17 14:38:15,288 [24   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-11-17 14:38:15,290 [24   ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Sessions.SessionAppService.GetCurrentLoginInformations (pogoshift.Application) in 22.2997ms
+INFO  2020-11-17 14:38:15,292 [24   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Sessions.SessionAppService.GetCurrentLoginInformations (pogoshift.Application)'
+INFO  2020-11-17 14:38:15,295 [24   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 38.9553ms 200 application/json; charset=utf-8
+INFO  2020-11-17 14:43:37,263 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Schedule?m=11&y=2020&f=5  
+INFO  2020-11-17 14:43:37,273 [4    ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2020-11-17 14:43:37,276 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Web.Controllers.ScheduleController.Index (pogoshift.Web.Mvc)'
+INFO  2020-11-17 14:43:37,279 [4    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Schedule", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller pogoshift.Web.Controllers.ScheduleController (pogoshift.Web.Mvc).
+INFO  2020-11-17 14:43:37,328 [4    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2020-11-17 14:43:37,384 [4    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 56.2301ms.
+INFO  2020-11-17 14:43:37,386 [4    ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Web.Controllers.ScheduleController.Index (pogoshift.Web.Mvc) in 104.4455ms
+INFO  2020-11-17 14:43:37,388 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Web.Controllers.ScheduleController.Index (pogoshift.Web.Mvc)'
+INFO  2020-11-17 14:43:37,391 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 128.6901ms 200 text/html; charset=utf-8
+DEBUG 2020-11-17 14:43:37,408 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: FXo88QdnWegUhFyA1_PUXA
+INFO  2020-11-17 14:43:37,412 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/fonts/Prompt-Bold.ttf  
+INFO  2020-11-17 14:43:37,415 [37   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/fonts/Prompt-Light.ttf  
+INFO  2020-11-17 14:43:37,435 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/icheck-bootstrap/icheck-bootstrap.css?v=nGN1DgpDTrAS3DS7E5J0cL-gblWBKAMSoU_LSuY8gu8  
+INFO  2020-11-17 14:43:37,439 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/font-awesome/css/all.min.css?v=-N4_V_SbAFiW1MPBCXnfnP9QSN3-Keu-NlB-0ev_YKQ  
+INFO  2020-11-17 14:43:37,493 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/datatables/css/dataTables.bootstrap4.min.css?v=F-DaKAClQut87heMIC6oThARMuWne8-WzxIDT7jXuPA  
+INFO  2020-11-17 14:43:37,496 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint '/signalr'
+INFO  2020-11-17 14:43:37,499 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/datatables/css/responsive.bootstrap4.min.css?v=QrpUliTHPwNNlphA-wNV-zRWVltgDT6Eg0cXVAB04hI  
+INFO  2020-11-17 14:43:37,531 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 539639.8698ms 101 
+INFO  2020-11-17 14:43:37,534 [40   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/icheck-bootstrap/icheck-bootstrap.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\icheck-bootstrap\icheck-bootstrap.css'
+INFO  2020-11-17 14:43:37,537 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/datatables/css/responsive.bootstrap4.min.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\datatables\css\responsive.bootstrap4.min.css'
+INFO  2020-11-17 14:43:37,539 [37   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/font-awesome/css/all.min.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\font-awesome\css\all.min.css'
+INFO  2020-11-17 14:43:37,542 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 100.553ms 200 text/css
+INFO  2020-11-17 14:43:37,544 [37   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 104.733ms 200 text/css
+INFO  2020-11-17 14:43:37,547 [38   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/datatables/css/dataTables.bootstrap4.min.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\datatables\css\dataTables.bootstrap4.min.css'
+INFO  2020-11-17 14:43:37,550 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 109.783ms 200 text/css
+INFO  2020-11-17 14:43:37,553 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 112.9805ms 200 text/css
+INFO  2020-11-17 14:43:37,556 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs-ext/famfamfam-flags/dist/sprite/famfamfam-flags.min.css?v=D9O-28vCF-qJh2qZSFIXxXc30hTED8RmnKeZRyvVEpA  
+INFO  2020-11-17 14:43:37,563 [41   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/Prompt-Light.ttf'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\fonts\Prompt-Light.ttf'
+INFO  2020-11-17 14:43:37,566 [44   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/Prompt-Bold.ttf'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\fonts\Prompt-Bold.ttf'
+INFO  2020-11-17 14:43:37,573 [41   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 151.4072ms 200 application/x-font-ttf
+INFO  2020-11-17 14:43:37,575 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/datatables/css/buttons.bootstrap4.min.css?v=1O-iXoRdSUgNTj7NzmW-C3dpRaxiGn1afSX-qfRCV4Q  
+INFO  2020-11-17 14:43:37,578 [44   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 156.8723ms 200 application/x-font-ttf
+INFO  2020-11-17 14:43:37,581 [50   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/toastr/toastr.css?v=He3QEBKoL_nMXlVsoM7S2C2kjFQqS5L-mgA-F8LpG-U  
+INFO  2020-11-17 14:43:37,585 [44   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs-ext/famfamfam-flags/dist/sprite/famfamfam-flags.min.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs-ext\famfamfam-flags\dist\sprite\famfamfam-flags.min.css'
+INFO  2020-11-17 14:43:37,588 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/animate.css/animate.css?v=gVCm5mRCmW9kVgsSjQ7_5TLtXqvfCoxhdsjE6O1QLm8  
+INFO  2020-11-17 14:43:37,595 [44   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 34.6256ms 200 text/css
+INFO  2020-11-17 14:43:37,598 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Shared/_Layout.css?v=pk1udUQR7bqKUWFxSnrnIl0MM8MH2Wu05p-zpysBQWI  
+INFO  2020-11-17 14:43:37,601 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/datatables/css/buttons.bootstrap4.min.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\datatables\css\buttons.bootstrap4.min.css'
+INFO  2020-11-17 14:43:37,604 [50   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/toastr/toastr.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\toastr\toastr.css'
+INFO  2020-11-17 14:43:37,607 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 38.1928ms 200 text/css
+INFO  2020-11-17 14:43:37,612 [38   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Shared/_Layout.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\view-resources\Views\Shared\_Layout.css'
+INFO  2020-11-17 14:43:37,615 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/css/calendar.css  
+INFO  2020-11-17 14:43:37,618 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 23.0112ms 200 text/css
+INFO  2020-11-17 14:43:37,621 [50   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 40.172ms 200 text/css
+INFO  2020-11-17 14:43:37,624 [53   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/admin-lte/dist/css/adminlte.min.css?v=tDEOZyJ9BuKWB-BOSc6dE4cI0uNznodJMx11eWZ7jJ4  
+INFO  2020-11-17 14:43:37,627 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Schedule/_Layout.css  
+INFO  2020-11-17 14:43:37,630 [37   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/jquery/jquery.js?v=WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU  
+INFO  2020-11-17 14:43:37,634 [41   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/animate.css/animate.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\animate.css\animate.css'
+INFO  2020-11-17 14:43:37,637 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/css/style.css?v=QMOKrDGneh5FpzfcvOz4TVosjF_VfxcNXC2ShbAX8_o  
+INFO  2020-11-17 14:43:37,640 [41   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 51.4821ms 200 text/css
+INFO  2020-11-17 14:43:37,646 [38   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/calendar.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\css\calendar.css'
+INFO  2020-11-17 14:43:37,649 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Schedule/_Layout.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\view-resources\Views\Schedule\_Layout.css'
+INFO  2020-11-17 14:43:37,654 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 45.0171ms 200 text/css
+INFO  2020-11-17 14:43:37,657 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/style.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\css\style.css'
+INFO  2020-11-17 14:43:37,660 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 29.0936ms 200 text/css
+INFO  2020-11-17 14:43:37,663 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 27.7482ms 200 text/css
+INFO  2020-11-17 14:43:37,666 [37   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/datatables/js/jquery.dataTables.min.js?v=LXQzPhL1IRyKkA7HpCOBi8I-OC8HqzHUYkjK8S-LKTs  
+INFO  2020-11-17 14:43:37,669 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/datatables/js/dataTables.responsive.min.js?v=7Tbik5KSODuGiOLIOFfhP47p5UK6h1wzw8CFSI_TKhc  
+INFO  2020-11-17 14:43:37,672 [45   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/admin-lte/dist/css/adminlte.min.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\admin-lte\dist\css\adminlte.min.css'
+INFO  2020-11-17 14:43:37,675 [46   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/jquery/jquery.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\jquery\jquery.js'
+INFO  2020-11-17 14:43:37,679 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 121.2795ms 200 text/css
+INFO  2020-11-17 14:43:37,683 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/datatables/js/dataTables.bootstrap4.min.js?v=hJ44ymhBmRPJKIaKRf3DSX5uiFEZ9xB_qx8cNbJvIMU  
+INFO  2020-11-17 14:43:37,686 [39   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/datatables/js/dataTables.responsive.min.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\datatables\js\dataTables.responsive.min.js'
+INFO  2020-11-17 14:43:37,689 [42   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/bootstrap/dist/js/bootstrap.bundle.js?v=pVreZ67fRaATygHF6T-gQtF1NI700W9kzeAivu6au9U  
+INFO  2020-11-17 14:43:37,692 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 22.7749ms 200 application/javascript
+INFO  2020-11-17 14:43:37,695 [43   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/datatables/js/jquery.dataTables.min.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\datatables\js\jquery.dataTables.min.js'
+INFO  2020-11-17 14:43:37,699 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/datatables/js/dataTables.bootstrap4.min.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\datatables\js\dataTables.bootstrap4.min.js'
+INFO  2020-11-17 14:43:37,702 [43   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 41.7545ms 200 application/javascript
+INFO  2020-11-17 14:43:37,706 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 23.9289ms 200 application/javascript
+INFO  2020-11-17 14:43:37,709 [37   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/datatables/js/dataTables.buttons.js?v=5QXxQoJP_O_KTBOFw8kshfIczGGlmZRcR_WjhFKbiZY  
+INFO  2020-11-17 14:43:37,712 [46   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 49.7634ms 200 application/javascript
+INFO  2020-11-17 14:43:37,715 [49   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/datatables/js/responsive.bootstrap4.min.js?v=aXVO47Rb7s58FhMTCwbM39en_1XcmzGkClRzBe5txKs  
+INFO  2020-11-17 14:43:37,719 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/admin-lte/dist/js/adminlte.js?v=qXsDMEfG3xYx1TO9SCGpLfvQPdpKIo0nXVYYfcneIRk  
+INFO  2020-11-17 14:43:37,722 [38   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\bootstrap\dist\js\bootstrap.bundle.js'
+INFO  2020-11-17 14:43:37,725 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/datatables/js/buttons.bootstrap4.js?v=7tPJL63hI4QnZbV489_5KEpe7k6W5RzPTZkP8m6kzEE  
+INFO  2020-11-17 14:43:37,729 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 40.7756ms 200 application/javascript
+INFO  2020-11-17 14:43:37,732 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/block-ui/jquery.blockUI.js?v=oQaw-JJuUcJQ9QVYMcFnPxICDT-hv8-kuxT2FNzTGhc  
+INFO  2020-11-17 14:43:37,735 [41   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/datatables/js/dataTables.buttons.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\datatables\js\dataTables.buttons.js'
+INFO  2020-11-17 14:43:37,739 [49   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/datatables/js/responsive.bootstrap4.min.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\datatables\js\responsive.bootstrap4.min.js'
+INFO  2020-11-17 14:43:37,742 [41   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 35.0498ms 200 application/javascript
+INFO  2020-11-17 14:43:37,745 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/datatables/js/buttons.bootstrap4.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\datatables\js\buttons.bootstrap4.js'
+INFO  2020-11-17 14:43:37,749 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs-ext/spin/jquery.spin.js?v=EG38bUU5b2M64hy9cNAzu_cQBEsiBYsDifOcoHqNd2k  
+INFO  2020-11-17 14:43:37,752 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 27.056ms 200 application/javascript
+INFO  2020-11-17 14:43:37,755 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/block-ui/jquery.blockUI.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\block-ui\jquery.blockUI.js'
+INFO  2020-11-17 14:43:37,758 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/toastr/toastr.min.js?v=yNbKY1y6h2rbVcQtf0b8lq4a-xpktyFc3pSYoGAY1qQ  
+INFO  2020-11-17 14:43:37,761 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 31.907ms 200 application/javascript
+INFO  2020-11-17 14:43:37,764 [37   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/sweetalert/sweetalert.min.js?v=KsRuvuRtUVvobe66OFtOQfjP8WA2SzYsmm4VPfMnxms  
+INFO  2020-11-17 14:43:37,767 [39   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs-ext/spin/jquery.spin.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs-ext\spin\jquery.spin.js'
+INFO  2020-11-17 14:43:37,770 [45   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/admin-lte/dist/js/adminlte.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\admin-lte\dist\js\adminlte.js'
+INFO  2020-11-17 14:43:37,773 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/font-awesome/webfonts/fa-solid-900.woff2  
+INFO  2020-11-17 14:43:37,777 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/toastr/toastr.min.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\toastr\toastr.min.js'
+INFO  2020-11-17 14:43:37,780 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 28.3274ms 200 application/javascript
+INFO  2020-11-17 14:43:37,783 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 27.1273ms 200 application/javascript
+INFO  2020-11-17 14:43:37,787 [38   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/sweetalert/sweetalert.min.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\sweetalert\sweetalert.min.js'
+INFO  2020-11-17 14:43:37,790 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 57.2849ms 200 application/javascript
+INFO  2020-11-17 14:43:37,793 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/moment/moment-with-locales.js?v=dgFbqbQVzjkZPQxWd8PBtzGiRBhChc4I2wO_q_s-Xeo  
+INFO  2020-11-17 14:43:37,798 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 29.3998ms 200 application/javascript
+INFO  2020-11-17 14:43:37,800 [49   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 31.9932ms 200 application/javascript
+INFO  2020-11-17 14:43:37,803 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/font-awesome/webfonts/fa-regular-400.woff2  
+INFO  2020-11-17 14:43:37,806 [37   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/img/logo-plain.svg  
+INFO  2020-11-17 14:43:37,811 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/font-awesome/webfonts/fa-solid-900.woff2'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\font-awesome\webfonts\fa-solid-900.woff2'
+INFO  2020-11-17 14:43:37,816 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/admin-lte/dist/img/avatar5.png  
+INFO  2020-11-17 14:43:37,819 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 45.1157ms 200 font/woff2
+INFO  2020-11-17 14:43:37,823 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/spin/spin.js?v=GySbz3oZXNlwoawo5PpYy0iM38B-q3jyi_HLw00uxy0  
+INFO  2020-11-17 14:43:37,826 [40   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/font-awesome/webfonts/fa-regular-400.woff2'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\font-awesome\webfonts\fa-regular-400.woff2'
+INFO  2020-11-17 14:43:37,832 [38   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/img/logo-plain.svg'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\img\logo-plain.svg'
+INFO  2020-11-17 14:43:37,834 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 31.167ms 200 font/woff2
+INFO  2020-11-17 14:43:37,838 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 34.0487ms 200 image/svg+xml
+INFO  2020-11-17 14:43:37,844 [39   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/spin/spin.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\spin\spin.js'
+INFO  2020-11-17 14:43:37,847 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/abp-web-resources/Abp/Framework/scripts/abp.js?v=3lLIPNQoGBxv9DWxtKwnvHr7Wlov-D0jo-NtjAdTenA  
+INFO  2020-11-17 14:43:37,850 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 26.7702ms 200 application/javascript
+INFO  2020-11-17 14:43:37,854 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/admin-lte/dist/img/avatar5.png'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\admin-lte\dist\img\avatar5.png'
+INFO  2020-11-17 14:43:37,857 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js?v=MEOC0fqxBbFCeeJ6VHFuw8-2C710gCRqjbvYcHoBdHU  
+INFO  2020-11-17 14:43:37,860 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 42.3424ms 200 image/png
+INFO  2020-11-17 14:43:37,864 [44   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/signalr/dist/browser/signalr.js?v=s5ortbhB2C3h17nHMtXwbCSN9YncRIZH6XrFTSO9vmk  
+INFO  2020-11-17 14:43:37,869 [37   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js?v=i3fsIGh0z3DXDbSa7f6TwsWonuZ8-OwELSrtH1jHbDA  
+INFO  2020-11-17 14:43:37,872 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/moment/moment-with-locales.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\moment\moment-with-locales.js'
+INFO  2020-11-17 14:43:37,876 [38   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.jquery.js'
+INFO  2020-11-17 14:43:37,879 [42   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/abp-web-resources/Abp/Framework/scripts/abp.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\abp-web-resources\Abp\Framework\scripts\abp.js'
+INFO  2020-11-17 14:43:37,883 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js?v=vMuHbqHh635SKL2RG2qsGGCDyHg1yFeGqhPKpS34g4k  
+INFO  2020-11-17 14:43:37,886 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 87.0016ms 200 application/javascript
+INFO  2020-11-17 14:43:37,890 [37   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.toastr.js'
+INFO  2020-11-17 14:43:37,893 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 23.7237ms 200 application/javascript
+INFO  2020-11-17 14:43:37,897 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/signalr/dist/browser/signalr.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\signalr\dist\browser\signalr.js'
+INFO  2020-11-17 14:43:37,900 [37   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 26.4809ms 200 application/javascript
+INFO  2020-11-17 14:43:37,903 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 51.4896ms 200 application/javascript
+INFO  2020-11-17 14:43:37,907 [42   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 41.1735ms 200 application/javascript
+INFO  2020-11-17 14:43:37,911 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.blockUI.js'
+INFO  2020-11-17 14:43:37,914 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js?v=djoKib6ssm5DDzbXLe5pD7ayfFg3siaoEk-BFYzQlvI  
+INFO  2020-11-17 14:43:37,917 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 36.0594ms 200 application/javascript
+INFO  2020-11-17 14:43:37,920 [43   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/jquery-validate/jquery.validate.js?v=xLhce0FUawd11QSwrvXSwST0oHhOolNoH9cUXAcsIAg  
+INFO  2020-11-17 14:43:37,924 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/jquery-validate/jquery.validate.unobtrusive.js?v=XNNC8ESw29iopRLukVRazlP44TxnjGmEQanHJ5kHmtk  
+INFO  2020-11-17 14:43:37,928 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js?v=Ta7OYgm62iNXMvVrH3f4y3WqUbGsHGBNvt0Zu0eIKtk  
+INFO  2020-11-17 14:43:37,933 [39   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.spin.js'
+INFO  2020-11-17 14:43:37,942 [45   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.sweet-alert.js'
+INFO  2020-11-17 14:43:37,946 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 30.0518ms 200 application/javascript
+INFO  2020-11-17 14:43:37,949 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/push.js/push.js?v=p73-snCYhrDo9U6USD9P19LnY1EwAe4-VzQxj_kNyBE  
+INFO  2020-11-17 14:43:37,953 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/jquery-validate/jquery.validate.unobtrusive.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\jquery-validate\jquery.validate.unobtrusive.js'
+INFO  2020-11-17 14:43:37,955 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 28.236ms 200 application/javascript
+INFO  2020-11-17 14:43:37,959 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 35.4171ms 200 application/javascript
+INFO  2020-11-17 14:43:37,962 [60   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.signalr-client.js?v=7OzpM5utNWYP8ne_218zbUCD3Xj_R1GqM6AzwpgQktg  
+INFO  2020-11-17 14:43:37,966 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/abp.dataTable.js?v=wCP3D6MKHBCcRasJY-omxmPooho9hBJO7huoq9j_j9A  
+INFO  2020-11-17 14:43:37,970 [61   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/jquery-validate/jquery.validate.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\jquery-validate\jquery.validate.js'
+INFO  2020-11-17 14:43:37,974 [63   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/push.js/push.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\push.js\push.js'
+INFO  2020-11-17 14:43:37,977 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/main.js?v=VbeQ5MoA-0GiZvZuHnCbZs7eAxguJrx729MnRyXEoBk  
+INFO  2020-11-17 14:43:37,981 [39   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/abp.dataTable.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\abp.dataTable.js'
+INFO  2020-11-17 14:43:37,984 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=637412204683464052  
+INFO  2020-11-17 14:43:37,987 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 21.3532ms 200 application/javascript
+INFO  2020-11-17 14:43:37,990 [60   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.signalr-client.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.signalr-client.js'
+INFO  2020-11-17 14:43:37,993 [61   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 54.9768ms 200 application/javascript
+INFO  2020-11-17 14:43:37,997 [60   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 54.4104ms 200 application/javascript
+INFO  2020-11-17 14:43:38,000 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/main.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\main.js'
+INFO  2020-11-17 14:43:38,003 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Schedule/Schedule.js?v=EJ0a_cEuaYIGHcBqO4SZ81Mt3Pp-5P0GVBhkmMGbzA8  
+INFO  2020-11-17 14:43:38,006 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 28.8843ms 200 application/javascript
+INFO  2020-11-17 14:43:38,009 [43   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/img/logo.svg  
+INFO  2020-11-17 14:43:38,013 [63   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 32.2219ms 200 application/javascript
+INFO  2020-11-17 14:43:38,018 [39   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Schedule/Schedule.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\view-resources\Views\Schedule\Schedule.js'
+INFO  2020-11-17 14:43:38,022 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 20.4124ms 200 application/javascript
+INFO  2020-11-17 14:43:38,025 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=637412204683464052  
+INFO  2020-11-17 14:43:38,029 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs-ext/famfamfam-flags/dist/sprite/famfamfam-flags.png  
+INFO  2020-11-17 14:43:38,032 [64   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/img/logo.svg'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\img\logo.svg'
+INFO  2020-11-17 14:43:38,036 [64   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 31.0949ms 200 image/svg+xml
+INFO  2020-11-17 14:43:38,040 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2020-11-17 14:43:38,044 [39   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs-ext/famfamfam-flags/dist/sprite/famfamfam-flags.png'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs-ext\famfamfam-flags\dist\sprite\famfamfam-flags.png'
+INFO  2020-11-17 14:43:38,047 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 24.779ms 200 image/png
+INFO  2020-11-17 14:43:38,053 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2020-11-17 14:43:38,056 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2020-11-17 14:43:38,061 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr/negotiate'
+INFO  2020-11-17 14:43:38,065 [4    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ContentResult GetAll(Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) on controller Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController (Abp.AspNetCore).
+INFO  2020-11-17 14:43:38,068 [9    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetScripts(System.String, Boolean) on controller Abp.AspNetCore.Mvc.Controllers.AbpScriptsController (Abp.AspNetCore).
+INFO  2020-11-17 14:43:38,071 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint '/signalr/negotiate'
+INFO  2020-11-17 14:43:38,075 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 39.2513ms 200 application/json
+INFO  2020-11-17 14:43:38,078 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=J4iCn7kmHeNGKX7tNBHP2g  
+INFO  2020-11-17 14:43:38,084 [4    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2020-11-17 14:43:38,088 [4    ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 18.5726ms
+INFO  2020-11-17 14:43:38,091 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2020-11-17 14:43:38,095 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 114.1325ms 200 application/x-javascript
+INFO  2020-11-17 14:43:38,097 [45   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr'
+DEBUG 2020-11-17 14:43:38,110 [7    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"J4iCn7kmHeNGKX7tNBHP2g","IpAddress":"::1","TenantId":4,"UserId":5,"ConnectTime":"2020-11-17T14:43:38.1103327-05:00","Properties":{}}
+DEBUG 2020-11-17 14:43:38,111 [7    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: J4iCn7kmHeNGKX7tNBHP2g
+INFO  2020-11-17 14:43:38,121 [9    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2020-11-17 14:43:38,125 [9    ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 50.2607ms
+INFO  2020-11-17 14:43:38,128 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2020-11-17 14:43:38,131 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 108.6745ms 200 application/x-javascript; charset=utf-8
+INFO  2020-11-17 14:43:38,138 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/schedule-calendar.js  
+INFO  2020-11-17 14:43:38,141 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/models/Shift.js  
+INFO  2020-11-17 14:43:38,144 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/models/Availability.js  
+INFO  2020-11-17 14:43:38,147 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/utilities.js  
+INFO  2020-11-17 14:43:38,151 [39   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/models/Shift.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\models\Shift.js'
+INFO  2020-11-17 14:43:38,155 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/schedule-calendar.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\schedule-calendar.js'
+INFO  2020-11-17 14:43:38,158 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 12.9727ms 200 application/javascript
+INFO  2020-11-17 14:43:38,161 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 19.7028ms 200 application/javascript
+INFO  2020-11-17 14:43:38,164 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/models/Availability.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\models\Availability.js'
+INFO  2020-11-17 14:43:38,167 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/utilities.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\utilities.js'
+INFO  2020-11-17 14:43:38,171 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 27.2194ms 200 application/javascript
+INFO  2020-11-17 14:43:38,173 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 29.4931ms 200 application/javascript
+INFO  2020-11-17 14:43:38,187 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/model.js  
+INFO  2020-11-17 14:43:38,192 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/model.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\model.js'
+INFO  2020-11-17 14:43:38,195 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 7.5215ms 200 application/javascript
+INFO  2020-11-17 14:43:38,203 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/dom-elements.js  
+INFO  2020-11-17 14:43:38,206 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/calendar.js  
+INFO  2020-11-17 14:43:38,212 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/dom-elements.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\dom-elements.js'
+INFO  2020-11-17 14:43:38,215 [39   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/calendar.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\calendar.js'
+INFO  2020-11-17 14:43:38,218 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 14.0408ms 200 application/javascript
+INFO  2020-11-17 14:43:38,221 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 13.7928ms 200 application/javascript
+INFO  2020-11-17 14:43:38,237 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/Shift/GetAllOfAllUsersByDate?month=11&year=2020 application/json 
+INFO  2020-11-17 14:43:38,246 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Shifts.ShiftAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:43:38,251 [7    ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetAllOfAllUsersByDate", controller = "Shift"}. Executing controller action with signature Abp.Application.Services.Dto.ListResultDto`1[pogoshift.Shifts.Dto.ShiftDto] GetAllOfAllUsersByDate(Int32, Int32) on controller pogoshift.Shifts.ShiftAppService (pogoshift.Application).
+INFO  2020-11-17 14:43:38,284 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/favicon.ico  
+INFO  2020-11-17 14:43:38,290 [45   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\favicon.ico'
+INFO  2020-11-17 14:43:38,295 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 10.1636ms 200 image/x-icon
+INFO  2020-11-17 14:43:38,343 [45   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-11-17 14:43:38,350 [45   ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Shifts.ShiftAppService.GetAllOfAllUsersByDate (pogoshift.Application) in 95.2883ms
+INFO  2020-11-17 14:43:38,353 [45   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Shifts.ShiftAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:43:38,357 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 119.8185ms 200 application/json; charset=utf-8
+INFO  2020-11-17 14:43:38,364 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/Availability/GetAllOfAllUsersByDate?month=11&year=2020 application/json 
+INFO  2020-11-17 14:43:38,373 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Availabilities.AvailabilityAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:43:38,378 [7    ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetAllOfAllUsersByDate", controller = "Availability"}. Executing controller action with signature Abp.Application.Services.Dto.ListResultDto`1[pogoshift.Availabilities.Dto.AvailabilityDto] GetAllOfAllUsersByDate(Int32, Int32) on controller pogoshift.Availabilities.AvailabilityAppService (pogoshift.Application).
+INFO  2020-11-17 14:43:38,424 [43   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-11-17 14:43:38,428 [43   ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Availabilities.AvailabilityAppService.GetAllOfAllUsersByDate (pogoshift.Application) in 47.4634ms
+INFO  2020-11-17 14:43:38,431 [43   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Availabilities.AvailabilityAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:43:38,435 [43   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 70.0555ms 200 application/json; charset=utf-8
+INFO  2020-11-17 14:43:38,439 [43   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/Session/GetCurrentLoginInformations application/json 
+INFO  2020-11-17 14:43:38,446 [43   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Sessions.SessionAppService.GetCurrentLoginInformations (pogoshift.Application)'
+INFO  2020-11-17 14:43:38,451 [43   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetCurrentLoginInformations", controller = "Session"}. Executing controller action with signature System.Threading.Tasks.Task`1[pogoshift.Sessions.Dto.GetCurrentLoginInformationsOutput] GetCurrentLoginInformations() on controller pogoshift.Sessions.SessionAppService (pogoshift.Application).
+INFO  2020-11-17 14:43:38,475 [39   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-11-17 14:43:38,479 [39   ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Sessions.SessionAppService.GetCurrentLoginInformations (pogoshift.Application) in 25.198ms
+INFO  2020-11-17 14:43:38,482 [39   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Sessions.SessionAppService.GetCurrentLoginInformations (pogoshift.Application)'
+INFO  2020-11-17 14:43:38,485 [39   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 46.011ms 200 application/json; charset=utf-8
+INFO  2020-11-17 14:44:15,797 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Schedule?m=11&y=2020&f=5  
+INFO  2020-11-17 14:44:15,804 [4    ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2020-11-17 14:44:15,806 [4    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Web.Controllers.ScheduleController.Index (pogoshift.Web.Mvc)'
+INFO  2020-11-17 14:44:15,808 [4    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Schedule", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index() on controller pogoshift.Web.Controllers.ScheduleController (pogoshift.Web.Mvc).
+INFO  2020-11-17 14:44:15,837 [7    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2020-11-17 14:44:15,888 [7    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 50.9113ms.
+INFO  2020-11-17 14:44:15,890 [7    ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Web.Controllers.ScheduleController.Index (pogoshift.Web.Mvc) in 79.9182ms
+INFO  2020-11-17 14:44:15,892 [7    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Web.Controllers.ScheduleController.Index (pogoshift.Web.Mvc)'
+INFO  2020-11-17 14:44:15,895 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 97.9804ms 200 text/html; charset=utf-8
+DEBUG 2020-11-17 14:44:15,905 [75   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: J4iCn7kmHeNGKX7tNBHP2g
+INFO  2020-11-17 14:44:15,908 [75   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint '/signalr'
+INFO  2020-11-17 14:44:15,912 [75   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 37833.4303ms 101 
+INFO  2020-11-17 14:44:15,919 [75   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/fonts/Prompt-Bold.ttf  
+INFO  2020-11-17 14:44:15,929 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/fonts/Prompt-Light.ttf  
+INFO  2020-11-17 14:44:15,931 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/icheck-bootstrap/icheck-bootstrap.css?v=nGN1DgpDTrAS3DS7E5J0cL-gblWBKAMSoU_LSuY8gu8  
+INFO  2020-11-17 14:44:15,936 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/font-awesome/css/all.min.css?v=-N4_V_SbAFiW1MPBCXnfnP9QSN3-Keu-NlB-0ev_YKQ  
+INFO  2020-11-17 14:44:15,938 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/datatables/css/responsive.bootstrap4.min.css?v=QrpUliTHPwNNlphA-wNV-zRWVltgDT6Eg0cXVAB04hI  
+INFO  2020-11-17 14:44:15,943 [67   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/datatables/css/dataTables.bootstrap4.min.css?v=F-DaKAClQut87heMIC6oThARMuWne8-WzxIDT7jXuPA  
+INFO  2020-11-17 14:44:15,952 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/icheck-bootstrap/icheck-bootstrap.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\icheck-bootstrap\icheck-bootstrap.css'
+INFO  2020-11-17 14:44:15,969 [68   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/datatables/css/responsive.bootstrap4.min.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\datatables\css\responsive.bootstrap4.min.css'
+INFO  2020-11-17 14:44:15,982 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 25.4616ms 200 text/css
+INFO  2020-11-17 14:44:15,999 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 41.1705ms 200 text/css
+INFO  2020-11-17 14:44:16,006 [67   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/datatables/css/dataTables.bootstrap4.min.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\datatables\css\dataTables.bootstrap4.min.css'
+INFO  2020-11-17 14:44:16,009 [75   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/Prompt-Bold.ttf'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\fonts\Prompt-Bold.ttf'
+INFO  2020-11-17 14:44:16,013 [67   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 79.4798ms 200 text/css
+INFO  2020-11-17 14:44:16,018 [75   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 93.3614ms 200 application/x-font-ttf
+INFO  2020-11-17 14:44:16,028 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/toastr/toastr.css?v=He3QEBKoL_nMXlVsoM7S2C2kjFQqS5L-mgA-F8LpG-U  
+INFO  2020-11-17 14:44:16,031 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/admin-lte/dist/css/adminlte.min.css?v=tDEOZyJ9BuKWB-BOSc6dE4cI0uNznodJMx11eWZ7jJ4  
+INFO  2020-11-17 14:44:16,034 [76   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs-ext/famfamfam-flags/dist/sprite/famfamfam-flags.min.css?v=D9O-28vCF-qJh2qZSFIXxXc30hTED8RmnKeZRyvVEpA  
+INFO  2020-11-17 14:44:16,038 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/datatables/css/buttons.bootstrap4.min.css?v=1O-iXoRdSUgNTj7NzmW-C3dpRaxiGn1afSX-qfRCV4Q  
+INFO  2020-11-17 14:44:16,041 [84   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/fonts/Prompt-Light.ttf'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\fonts\Prompt-Light.ttf'
+INFO  2020-11-17 14:44:16,044 [91   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/font-awesome/css/all.min.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\font-awesome\css\all.min.css'
+INFO  2020-11-17 14:44:16,048 [84   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 118.9847ms 200 application/x-font-ttf
+INFO  2020-11-17 14:44:16,052 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/toastr/toastr.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\toastr\toastr.css'
+INFO  2020-11-17 14:44:16,056 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/datatables/css/buttons.bootstrap4.min.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\datatables\css\buttons.bootstrap4.min.css'
+INFO  2020-11-17 14:44:16,059 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 39.8875ms 200 text/css
+INFO  2020-11-17 14:44:16,062 [75   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs-ext/famfamfam-flags/dist/sprite/famfamfam-flags.min.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs-ext\famfamfam-flags\dist\sprite\famfamfam-flags.min.css'
+INFO  2020-11-17 14:44:16,064 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 24.9493ms 200 text/css
+INFO  2020-11-17 14:44:16,067 [75   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 33.5822ms 200 text/css
+INFO  2020-11-17 14:44:16,071 [91   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 117.0901ms 200 text/css
+INFO  2020-11-17 14:44:16,075 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/animate.css/animate.css?v=gVCm5mRCmW9kVgsSjQ7_5TLtXqvfCoxhdsjE6O1QLm8  
+INFO  2020-11-17 14:44:16,078 [90   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Shared/_Layout.css?v=pk1udUQR7bqKUWFxSnrnIl0MM8MH2Wu05p-zpysBQWI  
+INFO  2020-11-17 14:44:16,082 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/css/style.css?v=QMOKrDGneh5FpzfcvOz4TVosjF_VfxcNXC2ShbAX8_o  
+INFO  2020-11-17 14:44:16,086 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Schedule/_Layout.css  
+INFO  2020-11-17 14:44:16,089 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/css/calendar.css  
+INFO  2020-11-17 14:44:16,092 [85   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/admin-lte/dist/css/adminlte.min.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\admin-lte\dist\css\adminlte.min.css'
+INFO  2020-11-17 14:44:16,099 [75   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/animate.css/animate.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\animate.css\animate.css'
+INFO  2020-11-17 14:44:16,103 [85   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 80.0367ms 200 text/css
+INFO  2020-11-17 14:44:16,112 [75   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 33.1669ms 200 text/css
+INFO  2020-11-17 14:44:16,122 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/style.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\css\style.css'
+INFO  2020-11-17 14:44:16,130 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Schedule/_Layout.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\view-resources\Views\Schedule\_Layout.css'
+INFO  2020-11-17 14:44:16,134 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 48.4663ms 200 text/css
+INFO  2020-11-17 14:44:16,137 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 52.8728ms 200 text/css
+INFO  2020-11-17 14:44:16,141 [68   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/css/calendar.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\css\calendar.css'
+INFO  2020-11-17 14:44:16,144 [76   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/datatables/js/dataTables.bootstrap4.min.js?v=hJ44ymhBmRPJKIaKRf3DSX5uiFEZ9xB_qx8cNbJvIMU  
+INFO  2020-11-17 14:44:16,148 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 65.0181ms 200 text/css
+INFO  2020-11-17 14:44:16,151 [95   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/datatables/js/dataTables.responsive.min.js?v=7Tbik5KSODuGiOLIOFfhP47p5UK6h1wzw8CFSI_TKhc  
+INFO  2020-11-17 14:44:16,154 [90   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Shared/_Layout.css'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\view-resources\Views\Shared\_Layout.css'
+INFO  2020-11-17 14:44:16,164 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/bootstrap/dist/js/bootstrap.bundle.js?v=pVreZ67fRaATygHF6T-gQtF1NI700W9kzeAivu6au9U  
+INFO  2020-11-17 14:44:16,168 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/datatables/js/responsive.bootstrap4.min.js?v=aXVO47Rb7s58FhMTCwbM39en_1XcmzGkClRzBe5txKs  
+INFO  2020-11-17 14:44:16,171 [76   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/datatables/js/dataTables.bootstrap4.min.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\datatables\js\dataTables.bootstrap4.min.js'
+INFO  2020-11-17 14:44:16,175 [81   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/datatables/js/jquery.dataTables.min.js?v=LXQzPhL1IRyKkA7HpCOBi8I-OC8HqzHUYkjK8S-LKTs  
+INFO  2020-11-17 14:44:16,178 [76   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 54.0486ms 200 application/javascript
+INFO  2020-11-17 14:44:16,181 [95   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/datatables/js/dataTables.responsive.min.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\datatables\js\dataTables.responsive.min.js'
+INFO  2020-11-17 14:44:16,184 [68   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/datatables/js/responsive.bootstrap4.min.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\datatables\js\responsive.bootstrap4.min.js'
+INFO  2020-11-17 14:44:16,188 [95   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 60.1292ms 200 application/javascript
+INFO  2020-11-17 14:44:16,192 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 28.2213ms 200 application/javascript
+INFO  2020-11-17 14:44:16,196 [90   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 96.957ms 200 text/css
+INFO  2020-11-17 14:44:16,200 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/datatables/js/buttons.bootstrap4.js?v=7tPJL63hI4QnZbV489_5KEpe7k6W5RzPTZkP8m6kzEE  
+INFO  2020-11-17 14:44:16,203 [76   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/bootstrap/dist/js/bootstrap.bundle.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\bootstrap\dist\js\bootstrap.bundle.js'
+INFO  2020-11-17 14:44:16,207 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/datatables/js/dataTables.buttons.js?v=5QXxQoJP_O_KTBOFw8kshfIczGGlmZRcR_WjhFKbiZY  
+INFO  2020-11-17 14:44:16,211 [67   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/datatables/js/jquery.dataTables.min.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\datatables\js\jquery.dataTables.min.js'
+INFO  2020-11-17 14:44:16,214 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/jquery/jquery.js?v=WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU  
+INFO  2020-11-17 14:44:16,217 [67   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 60.6505ms 200 application/javascript
+INFO  2020-11-17 14:44:16,220 [75   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/admin-lte/dist/js/adminlte.js?v=qXsDMEfG3xYx1TO9SCGpLfvQPdpKIo0nXVYYfcneIRk  
+INFO  2020-11-17 14:44:16,223 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/datatables/js/buttons.bootstrap4.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\datatables\js\buttons.bootstrap4.js'
+INFO  2020-11-17 14:44:16,227 [76   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 52.235ms 200 application/javascript
+INFO  2020-11-17 14:44:16,231 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 31.3276ms 200 application/javascript
+INFO  2020-11-17 14:44:16,235 [67   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/font-awesome/webfonts/fa-regular-400.woff2  
+INFO  2020-11-17 14:44:16,239 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/img/logo-plain.svg  
+INFO  2020-11-17 14:44:16,244 [77   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/datatables/js/dataTables.buttons.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\datatables\js\dataTables.buttons.js'
+INFO  2020-11-17 14:44:16,247 [67   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/font-awesome/webfonts/fa-regular-400.woff2'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\font-awesome\webfonts\fa-regular-400.woff2'
+INFO  2020-11-17 14:44:16,250 [76   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/font-awesome/webfonts/fa-solid-900.woff2  
+INFO  2020-11-17 14:44:16,252 [67   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 24.2408ms 200 font/woff2
+INFO  2020-11-17 14:44:16,255 [77   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 41.5984ms 200 application/javascript
+INFO  2020-11-17 14:44:16,259 [81   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/admin-lte/dist/js/adminlte.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\admin-lte\dist\js\adminlte.js'
+INFO  2020-11-17 14:44:16,268 [81   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 50.9488ms 200 application/javascript
+INFO  2020-11-17 14:44:16,271 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/jquery/jquery.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\jquery\jquery.js'
+INFO  2020-11-17 14:44:16,275 [7    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/img/logo-plain.svg'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\img\logo-plain.svg'
+INFO  2020-11-17 14:44:16,277 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 63.0251ms 200 application/javascript
+INFO  2020-11-17 14:44:16,281 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/spin/spin.js?v=GySbz3oZXNlwoawo5PpYy0iM38B-q3jyi_HLw00uxy0  
+INFO  2020-11-17 14:44:16,285 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 40.3753ms 200 image/svg+xml
+INFO  2020-11-17 14:44:16,289 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/block-ui/jquery.blockUI.js?v=oQaw-JJuUcJQ9QVYMcFnPxICDT-hv8-kuxT2FNzTGhc  
+INFO  2020-11-17 14:44:16,292 [67   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/admin-lte/dist/img/avatar5.png  
+INFO  2020-11-17 14:44:16,296 [77   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/font-awesome/webfonts/fa-solid-900.woff2'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\font-awesome\webfonts\fa-solid-900.woff2'
+INFO  2020-11-17 14:44:16,299 [85   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs-ext/spin/jquery.spin.js?v=EG38bUU5b2M64hy9cNAzu_cQBEsiBYsDifOcoHqNd2k  
+INFO  2020-11-17 14:44:16,302 [68   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/block-ui/jquery.blockUI.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\block-ui\jquery.blockUI.js'
+INFO  2020-11-17 14:44:16,306 [76   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/sweetalert/sweetalert.min.js?v=KsRuvuRtUVvobe66OFtOQfjP8WA2SzYsmm4VPfMnxms  
+INFO  2020-11-17 14:44:16,309 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/spin/spin.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\spin\spin.js'
+INFO  2020-11-17 14:44:16,312 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 37.9138ms 200 application/javascript
+INFO  2020-11-17 14:44:16,315 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 34.7358ms 200 application/javascript
+INFO  2020-11-17 14:44:16,318 [67   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/admin-lte/dist/img/avatar5.png'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\admin-lte\dist\img\avatar5.png'
+INFO  2020-11-17 14:44:16,321 [77   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 57.3313ms 200 font/woff2
+INFO  2020-11-17 14:44:16,325 [67   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 53.1515ms 200 image/png
+INFO  2020-11-17 14:44:16,328 [85   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs-ext/spin/jquery.spin.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs-ext\spin\jquery.spin.js'
+INFO  2020-11-17 14:44:16,331 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/toastr/toastr.min.js?v=yNbKY1y6h2rbVcQtf0b8lq4a-xpktyFc3pSYoGAY1qQ  
+INFO  2020-11-17 14:44:16,334 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/sweetalert/sweetalert.min.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\sweetalert\sweetalert.min.js'
+INFO  2020-11-17 14:44:16,336 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/abp-web-resources/Abp/Framework/scripts/abp.js?v=3lLIPNQoGBxv9DWxtKwnvHr7Wlov-D0jo-NtjAdTenA  
+INFO  2020-11-17 14:44:16,339 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 38.8194ms 200 application/javascript
+INFO  2020-11-17 14:44:16,342 [7    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/moment/moment-with-locales.js?v=dgFbqbQVzjkZPQxWd8PBtzGiRBhChc4I2wO_q_s-Xeo  
+INFO  2020-11-17 14:44:16,345 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/toastr/toastr.min.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\toastr\toastr.min.js'
+INFO  2020-11-17 14:44:16,348 [67   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js?v=MEOC0fqxBbFCeeJ6VHFuw8-2C710gCRqjbvYcHoBdHU  
+INFO  2020-11-17 14:44:16,351 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 19.2949ms 200 application/javascript
+INFO  2020-11-17 14:44:16,355 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js?v=i3fsIGh0z3DXDbSa7f6TwsWonuZ8-OwELSrtH1jHbDA  
+INFO  2020-11-17 14:44:16,358 [85   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 37.9591ms 200 application/javascript
+INFO  2020-11-17 14:44:16,361 [67   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.jquery.js'
+INFO  2020-11-17 14:44:16,364 [77   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/abp-web-resources/Abp/Framework/scripts/abp.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\abp-web-resources\Abp\Framework\scripts\abp.js'
+INFO  2020-11-17 14:44:16,368 [67   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 28.2892ms 200 application/javascript
+INFO  2020-11-17 14:44:16,371 [4    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.toastr.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.toastr.js'
+INFO  2020-11-17 14:44:16,374 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 32.9186ms 200 application/javascript
+INFO  2020-11-17 14:44:16,377 [4    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 23.5519ms 200 application/javascript
+INFO  2020-11-17 14:44:16,380 [82   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js?v=vMuHbqHh635SKL2RG2qsGGCDyHg1yFeGqhPKpS34g4k  
+INFO  2020-11-17 14:44:16,383 [85   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/signalr/dist/browser/signalr.js?v=s5ortbhB2C3h17nHMtXwbCSN9YncRIZH6XrFTSO9vmk  
+INFO  2020-11-17 14:44:16,386 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js?v=djoKib6ssm5DDzbXLe5pD7ayfFg3siaoEk-BFYzQlvI  
+INFO  2020-11-17 14:44:16,390 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.signalr-client.js?v=7OzpM5utNWYP8ne_218zbUCD3Xj_R1GqM6AzwpgQktg  
+INFO  2020-11-17 14:44:16,402 [77   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/moment/moment-with-locales.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\moment\moment-with-locales.js'
+INFO  2020-11-17 14:44:16,414 [82   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.blockUI.js'
+INFO  2020-11-17 14:44:16,417 [77   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 69.0818ms 200 application/javascript
+INFO  2020-11-17 14:44:16,420 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.spin.js'
+INFO  2020-11-17 14:44:16,423 [68   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.signalr-client.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.signalr-client.js'
+INFO  2020-11-17 14:44:16,426 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 37.3527ms 200 application/javascript
+INFO  2020-11-17 14:44:16,429 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 41.0861ms 200 application/javascript
+INFO  2020-11-17 14:44:16,431 [82   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 51.8006ms 200 application/javascript
+INFO  2020-11-17 14:44:16,434 [75   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/abp.dataTable.js?v=wCP3D6MKHBCcRasJY-omxmPooho9hBJO7huoq9j_j9A  
+INFO  2020-11-17 14:44:16,437 [99   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js?v=Ta7OYgm62iNXMvVrH3f4y3WqUbGsHGBNvt0Zu0eIKtk  
+INFO  2020-11-17 14:44:16,440 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/push.js/push.js?v=p73-snCYhrDo9U6USD9P19LnY1EwAe4-VzQxj_kNyBE  
+INFO  2020-11-17 14:44:16,442 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/jquery-validate/jquery.validate.unobtrusive.js?v=XNNC8ESw29iopRLukVRazlP44TxnjGmEQanHJ5kHmtk  
+INFO  2020-11-17 14:44:16,445 [77   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs/jquery-validate/jquery.validate.js?v=xLhce0FUawd11QSwrvXSwST0oHhOolNoH9cUXAcsIAg  
+INFO  2020-11-17 14:44:16,449 [99   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\abp-web-resources\Abp\Framework\scripts\libs\abp.sweet-alert.js'
+INFO  2020-11-17 14:44:16,451 [75   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/abp.dataTable.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\abp.dataTable.js'
+INFO  2020-11-17 14:44:16,454 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/push.js/push.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\push.js\push.js'
+INFO  2020-11-17 14:44:16,456 [75   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 24.1388ms 200 application/javascript
+INFO  2020-11-17 14:44:16,459 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 20.4278ms 200 application/javascript
+INFO  2020-11-17 14:44:16,462 [68   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/jquery-validate/jquery.validate.unobtrusive.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\jquery-validate\jquery.validate.unobtrusive.js'
+INFO  2020-11-17 14:44:16,466 [99   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 58.0414ms 200 application/javascript
+INFO  2020-11-17 14:44:16,469 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 25.2706ms 200 application/javascript
+INFO  2020-11-17 14:44:16,472 [85   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/jquery-validate/jquery.validate.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\jquery-validate\jquery.validate.js'
+INFO  2020-11-17 14:44:16,475 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=637412204683464052  
+INFO  2020-11-17 14:44:16,477 [75   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=637412204683464052  
+INFO  2020-11-17 14:44:16,480 [77   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/main.js?v=VbeQ5MoA-0GiZvZuHnCbZs7eAxguJrx729MnRyXEoBk  
+INFO  2020-11-17 14:44:16,482 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/view-resources/Views/Schedule/Schedule.js?v=EJ0a_cEuaYIGHcBqO4SZ81Mt3Pp-5P0GVBhkmMGbzA8  
+INFO  2020-11-17 14:44:16,485 [85   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 35.1455ms 200 application/javascript
+INFO  2020-11-17 14:44:16,488 [96   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs/signalr/dist/browser/signalr.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs\signalr\dist\browser\signalr.js'
+INFO  2020-11-17 14:44:16,491 [77   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/main.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\main.js'
+INFO  2020-11-17 14:44:16,494 [96   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 119.5232ms 200 application/javascript
+INFO  2020-11-17 14:44:16,497 [68   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/view-resources/Views/Schedule/Schedule.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\view-resources\Views\Schedule\Schedule.js'
+INFO  2020-11-17 14:44:16,500 [77   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 19.0812ms 200 application/javascript
+INFO  2020-11-17 14:44:16,503 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 20.5791ms 200 application/javascript
+INFO  2020-11-17 14:44:16,506 [85   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/img/logo.svg  
+INFO  2020-11-17 14:44:16,510 [82   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/img/logo.svg'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\img\logo.svg'
+INFO  2020-11-17 14:44:16,513 [75   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2020-11-17 14:44:16,515 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/libs-ext/famfamfam-flags/dist/sprite/famfamfam-flags.png  
+INFO  2020-11-17 14:44:16,518 [82   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 17.0653ms 200 image/svg+xml
+INFO  2020-11-17 14:44:16,523 [75   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetScripts(System.String, Boolean) on controller Abp.AspNetCore.Mvc.Controllers.AbpScriptsController (Abp.AspNetCore).
+INFO  2020-11-17 14:44:16,526 [68   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/libs-ext/famfamfam-flags/dist/sprite/famfamfam-flags.png'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\libs-ext\famfamfam-flags\dist\sprite\famfamfam-flags.png'
+INFO  2020-11-17 14:44:16,528 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 15.0881ms 200 image/png
+INFO  2020-11-17 14:44:16,533 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2020-11-17 14:44:16,535 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2020-11-17 14:44:16,539 [9    ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ContentResult GetAll(Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) on controller Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController (Abp.AspNetCore).
+INFO  2020-11-17 14:44:16,544 [9    ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2020-11-17 14:44:16,548 [9    ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 5.4179ms
+INFO  2020-11-17 14:44:16,550 [68   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr/negotiate'
+INFO  2020-11-17 14:44:16,553 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2020-11-17 14:44:16,556 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 83.9542ms 200 application/x-javascript
+INFO  2020-11-17 14:44:16,559 [68   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint '/signalr/negotiate'
+INFO  2020-11-17 14:44:16,562 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 26.5362ms 200 application/json
+INFO  2020-11-17 14:44:16,567 [77   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=ORYABGfmTUWykLxUSytAWQ  
+INFO  2020-11-17 14:44:16,571 [75   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2020-11-17 14:44:16,575 [75   ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 48.7484ms
+INFO  2020-11-17 14:44:16,578 [75   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2020-11-17 14:44:16,580 [75   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 108.5877ms 200 application/x-javascript; charset=utf-8
+INFO  2020-11-17 14:44:16,585 [77   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr'
+INFO  2020-11-17 14:44:16,593 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/schedule-calendar.js  
+INFO  2020-11-17 14:44:16,595 [75   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/utilities.js  
+DEBUG 2020-11-17 14:44:16,596 [82   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"ORYABGfmTUWykLxUSytAWQ","IpAddress":"::1","TenantId":4,"UserId":5,"ConnectTime":"2020-11-17T14:44:16.5959763-05:00","Properties":{}}
+INFO  2020-11-17 14:44:16,598 [85   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/models/Shift.js  
+INFO  2020-11-17 14:44:16,602 [99   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/models/Availability.js  
+INFO  2020-11-17 14:44:16,605 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/schedule-calendar.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\schedule-calendar.js'
+DEBUG 2020-11-17 14:44:16,607 [68   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: ORYABGfmTUWykLxUSytAWQ
+INFO  2020-11-17 14:44:16,609 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 16.2016ms 200 application/javascript
+INFO  2020-11-17 14:44:16,612 [75   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/utilities.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\utilities.js'
+INFO  2020-11-17 14:44:16,615 [85   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/models/Shift.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\models\Shift.js'
+INFO  2020-11-17 14:44:16,618 [75   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 21.3079ms 200 application/javascript
+INFO  2020-11-17 14:44:16,620 [85   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 23.2479ms 200 application/javascript
+INFO  2020-11-17 14:44:16,623 [99   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/models/Availability.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\models\Availability.js'
+INFO  2020-11-17 14:44:16,626 [99   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 30.3266ms 200 application/javascript
+INFO  2020-11-17 14:44:16,653 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/dom-elements.js  
+INFO  2020-11-17 14:44:16,655 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/calendar.js  
+INFO  2020-11-17 14:44:16,658 [77   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/js/model.js  
+INFO  2020-11-17 14:44:16,665 [82   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/dom-elements.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\dom-elements.js'
+INFO  2020-11-17 14:44:16,668 [75   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/calendar.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\calendar.js'
+INFO  2020-11-17 14:44:16,671 [82   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 15.4778ms 200 application/javascript
+INFO  2020-11-17 14:44:16,673 [75   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 17.7519ms 200 application/javascript
+INFO  2020-11-17 14:44:16,676 [77   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/js/model.js'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\js\model.js'
+INFO  2020-11-17 14:44:16,679 [77   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 23.5902ms 200 application/javascript
+INFO  2020-11-17 14:44:16,687 [68   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/Shift/GetAllOfAllUsersByDate?month=11&year=2020 application/json 
+INFO  2020-11-17 14:44:16,694 [68   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Shifts.ShiftAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:44:16,698 [68   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetAllOfAllUsersByDate", controller = "Shift"}. Executing controller action with signature Abp.Application.Services.Dto.ListResultDto`1[pogoshift.Shifts.Dto.ShiftDto] GetAllOfAllUsersByDate(Int32, Int32) on controller pogoshift.Shifts.ShiftAppService (pogoshift.Application).
+INFO  2020-11-17 14:44:16,723 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/favicon.ico  
+INFO  2020-11-17 14:44:16,726 [9    ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Joe\Source\Repos\pogoshift\aspnet-core\src\pogoshift.Web.Mvc\wwwroot\favicon.ico'
+INFO  2020-11-17 14:44:16,729 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 6.5428ms 200 image/x-icon
+INFO  2020-11-17 14:44:16,753 [9    ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-11-17 14:44:16,756 [9    ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Shifts.ShiftAppService.GetAllOfAllUsersByDate (pogoshift.Application) in 55.4275ms
+INFO  2020-11-17 14:44:16,759 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Shifts.ShiftAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:44:16,762 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 74.836ms 200 application/json; charset=utf-8
+INFO  2020-11-17 14:44:16,770 [9    ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/Availability/GetAllOfAllUsersByDate?month=11&year=2020 application/json 
+INFO  2020-11-17 14:44:16,776 [9    ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Availabilities.AvailabilityAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:44:16,779 [9    ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetAllOfAllUsersByDate", controller = "Availability"}. Executing controller action with signature Abp.Application.Services.Dto.ListResultDto`1[pogoshift.Availabilities.Dto.AvailabilityDto] GetAllOfAllUsersByDate(Int32, Int32) on controller pogoshift.Availabilities.AvailabilityAppService (pogoshift.Application).
+INFO  2020-11-17 14:44:16,816 [75   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-11-17 14:44:16,819 [75   ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Availabilities.AvailabilityAppService.GetAllOfAllUsersByDate (pogoshift.Application) in 37.3221ms
+INFO  2020-11-17 14:44:16,822 [75   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Availabilities.AvailabilityAppService.GetAllOfAllUsersByDate (pogoshift.Application)'
+INFO  2020-11-17 14:44:16,825 [75   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 55.0569ms 200 application/json; charset=utf-8
+INFO  2020-11-17 14:44:16,832 [75   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/Session/GetCurrentLoginInformations application/json 
+INFO  2020-11-17 14:44:16,838 [75   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'pogoshift.Sessions.SessionAppService.GetCurrentLoginInformations (pogoshift.Application)'
+INFO  2020-11-17 14:44:16,842 [75   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetCurrentLoginInformations", controller = "Session"}. Executing controller action with signature System.Threading.Tasks.Task`1[pogoshift.Sessions.Dto.GetCurrentLoginInformationsOutput] GetCurrentLoginInformations() on controller pogoshift.Sessions.SessionAppService (pogoshift.Application).
+INFO  2020-11-17 14:44:16,866 [77   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2020-11-17 14:44:16,869 [77   ] c.Infrastructure.ControllerActionInvoker - Executed action pogoshift.Sessions.SessionAppService.GetCurrentLoginInformations (pogoshift.Application) in 24.263ms
+INFO  2020-11-17 14:44:16,872 [77   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'pogoshift.Sessions.SessionAppService.GetCurrentLoginInformations (pogoshift.Application)'
+INFO  2020-11-17 14:44:16,875 [77   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 43.3341ms 200 application/json; charset=utf-8

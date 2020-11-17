@@ -48,9 +48,17 @@ export class ScheduleCalendar extends Calendar {
         this.header.append(E(`
             <button class="btn btn-link print-button">Print&nbsp;<i class="fas fa-print"></i></button>
         `, {
-            onclick: () => {
-                print();
-            }
+                onclick: () => {
+
+                    const monthNames = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"
+                    ];
+                    // Temporarily change the document title and print, for the printed/downloaded file name
+                    let oldTitle = document.title;
+                    document.title = `${abp.custom.tenant.name}-Schedule-${monthNames[this.date.getMonth()]}-${this.date.getFullYear()}`;
+                    print();
+                    document.title = oldTitle;
+                }
         }));
 
         this.addUserFilter(abp.session.userId);

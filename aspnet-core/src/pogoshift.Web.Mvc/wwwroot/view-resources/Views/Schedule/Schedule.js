@@ -21,6 +21,11 @@ Shift.getAllOfAllUsersByDate(date.getMonth() + 1, date.getFullYear()).then(async
         availabilities = await Availability.getAllOfAllUsersByDate(date.getMonth() + 1, date.getFullYear());
     }
 
+    // Get the current login information for later use
+    abp.services.app.session.getCurrentLoginInformations().then((data) => {
+        Object.assign(abp.custom, data);
+    });
+
     let workingHoursStart = "8:00";
     let workingHoursEnd = "24:00";
     let closedWeekdays = [];

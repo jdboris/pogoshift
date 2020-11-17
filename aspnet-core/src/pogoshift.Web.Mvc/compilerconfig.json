@@ -14,5 +14,9 @@
   {
     "outputFile": "wwwroot/css/style.css",
     "inputFile": "wwwroot/scss/style.scss"
+  },
+  {
+    "outputFile": "wwwroot/css/calendar.css",
+    "inputFile": "wwwroot/css/calendar.scss"
   }
 ]

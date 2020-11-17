@@ -1,13 +1,11 @@
 ﻿
 Short-Term:
--add a download/print button
+-fix the bug that's adding copies of a shift on the same day
 -add notes for availabilities and shifts
--allow clicking on an associate name on the list to show only their schedule/availabilities
 -make the colors more unique somehow
 -fix the authorization loop when trying to update account/password
--make filtered out shifts un-editable on large screens
 
 
 Long-Term:
 -allow multiple availabilities/shifts per day
--fix the bug that's adding copies of a shift on the same day
+-make filtered-out shifts un-editable on large screens

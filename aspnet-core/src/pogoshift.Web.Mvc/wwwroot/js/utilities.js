@@ -38,7 +38,7 @@ export function formatTime(datetime) {
     if (datetime.getHours() == 23 && hours == 0)
         hours = 24;
 
-    return hours + ":" + timeBuffer.getMinutes().toString().padStart(2, "0");
+    return hours.toString().padStart(2, "0") + ":" + timeBuffer.getMinutes().toString().padStart(2, "0");
 }
 
 // Expected formats:

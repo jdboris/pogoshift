@@ -351,17 +351,16 @@ export class Calendar {
     }
 
     addAvailability(availability) {
+        // TODO: Make the back-end return the whole User object when you create a Shift, then remove this work-around
+        if (!availability.user) {
+            availability.user = this.associates[availability.userId];
+        }
 
         let timePeriod = new AvailabilityPeriod(this, this.editModeDefault, availability);
         let bar = timePeriod.element.getElementsByClassName("time-period-bar")[0];
         bar.addEventListener("click", () => { this.availabilityClick(this, timePeriod) });
 
         timePeriod.availabilityId = availability.id;
-
-        // TODO: Make the back-end return the whole User object when you create a Shift, then remove this work-around
-        if (!availability.user) {
-            availability.user = this.associates[availability.userId];
-        }
 
         let monthDay = this.monthDays[stringToDate(availability.beginning).getDate()];
         let element = monthDay.element;

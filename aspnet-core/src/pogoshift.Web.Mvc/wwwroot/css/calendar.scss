@@ -339,6 +339,7 @@
     /* NOTE: required instead of white-space: nowrap to prevent wrapping, but not mess up printing styles */
     display: inline-block;
     cursor: pointer;
+    font-size: 14px;
 }
 
 .calendar .highlighted-list-item {

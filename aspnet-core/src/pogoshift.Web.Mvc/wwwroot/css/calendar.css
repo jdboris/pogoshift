@@ -277,7 +277,8 @@
   margin-right: 10px;
   /* NOTE: required instead of white-space: nowrap to prevent wrapping, but not mess up printing styles */
   display: inline-block;
-  cursor: pointer; }
+  cursor: pointer;
+  font-size: 14px; }
 
 .calendar .highlighted-list-item {
   text-shadow: 0px 0px 3px black; }

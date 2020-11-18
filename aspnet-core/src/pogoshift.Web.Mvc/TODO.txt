@@ -16,3 +16,4 @@ Short-Term:
 Long-Term:
 -allow multiple availabilities/shifts per day
 -make filtered-out shifts un-editable on large screens
+-add a mouseover indicator on a day to see if there are any

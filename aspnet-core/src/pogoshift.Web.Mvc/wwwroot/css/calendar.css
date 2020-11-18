@@ -127,7 +127,7 @@
   font-size: 12px; }
 
 .calendar .month-day {
-  padding-bottom: 5px; }
+  padding-top: 5px; }
 
 .calendar .day-number {
   display: flex;

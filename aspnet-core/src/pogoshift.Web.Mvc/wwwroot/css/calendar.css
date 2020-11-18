@@ -216,7 +216,7 @@
 .calendar .time-period-time {
   overflow: hidden;
   white-space: nowrap;
-  font-family: 'Courier Prime', monospace; }
+  font-family: 'Inconsolata', monospace; }
 
 .calendar .time-period-user {
   width: 100%;
@@ -652,8 +652,6 @@
   color: white;
   border-radius: 9px;
   padding: 2px;
-  padding-top: 3px;
-  padding-bottom: 1px;
   line-height: 0.7;
   display: block;
   margin: auto; }

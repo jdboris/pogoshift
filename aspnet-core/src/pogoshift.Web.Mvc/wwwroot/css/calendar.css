@@ -90,7 +90,8 @@
 
 .calendar .month-day:nth-of-type(7n+1) .day-number,
 .calendar .month-day:nth-of-type(7n) .day-number {
-  color: red; }
+  /* NOTE: To fix a bug in Chrome printing */
+  color: red !important; }
 
 .calendar .warning-icon {
   display: none; }

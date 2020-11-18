@@ -36,6 +36,27 @@ export class ScheduleCalendar extends Calendar {
 
         this.element.append(card);
 
+        let sundays = this.element.querySelectorAll(".month-day:nth-of-type(7n+1)");
+
+        for (let sunday of sundays) {
+            if (sunday.dataset.thisWeekUserCount > 0) {
+                let i = 0;
+                for (let id in this.associates) {
+                    let associate = this.associates[id];
+                    let associateElement = E(`
+                    <span class="associate-aside-item associate-${i}" data-associate-id="${id}"><span>${associate.surname}</span> <i class="fas fa-circle" style="color: ${getUserColor(associate)}"></i></span>
+                `);
+                    let handler = new Event.PointerHandler((event) => {
+                        this.toggleUserFilter(id);
+                    });
+
+                    associateElement.onclick = handler;
+                    sunday.prepend(associateElement);
+                    i++;
+                }
+            }
+        }
+
         for (let dayNumber in this.monthDays) {
             this.checkSchedulingErrors(this.monthDays[dayNumber]);
         }
@@ -128,9 +149,9 @@ export class ScheduleCalendar extends Calendar {
         for (let timePeriod of timePeriods) {
             timePeriod.classList.remove("highlighted-period");
         }
-        let listItems = this.element.querySelectorAll(`.associate-list-item.highlighted-list-item`);
+        let listItems = this.element.querySelectorAll(`.highlighted-associate`);
         for (let listItem of listItems) {
-            listItem.classList.remove("highlighted-list-item");
+            listItem.classList.remove("highlighted-associate");
         }
 
         if (userIds.length > 0) {
@@ -142,9 +163,9 @@ export class ScheduleCalendar extends Calendar {
                     for (let timePeriod of timePeriods) {
                         timePeriod.classList.add("highlighted-period");
                     }
-                    let listItems = this.element.querySelectorAll(`.associate-list-item[data-associate-id="${id}"]`);
+                    let listItems = this.element.querySelectorAll(`.associate-list-item[data-associate-id="${id}"],.associate-aside-item[data-associate-id="${id}"]`);
                     for (let listItem of listItems) {
-                        listItem.classList.add("highlighted-list-item");
+                        listItem.classList.add("highlighted-associate");
                     }
                 }
             }

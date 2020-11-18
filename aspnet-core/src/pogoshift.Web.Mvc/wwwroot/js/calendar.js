@@ -310,11 +310,17 @@ export class Calendar {
     addMonthDays(count, classes) {
 
         let monthDays = {};
+        let totalCount = this.dayListElement.children.length;
 
         for (let i = 1; i <= count; i++) {
 
             monthDays[i] = new MonthDay(this, i);
             monthDays[i].element.className += " " + classes;
+            let week = Math.floor((totalCount + i - 1) / 7);
+            console.log(totalCount);
+            console.log(i);
+            console.log((totalCount + i) / 7);
+            monthDays[i].element.dataset.week = week;
             this.dayListElement.appendChild(monthDays[i].element);
         }
 
@@ -346,7 +352,10 @@ export class Calendar {
             element.dataset.managerCount = parseInt(element.dataset.managerCount) + 1;
         }
 
-        element.dataset.thisWeekUserCount = monthDay.getThisWeekUserCount();
+        let daysOfWeek = this.element.querySelectorAll(`[data-week="${monthDay.element.dataset.week}"]`);
+        for (let day of daysOfWeek) {
+            day.dataset.thisWeekUserCount = monthDay.getThisWeekUserCount();
+        }
         this.checkSchedulingErrors(monthDay);
     }
 
@@ -372,7 +381,10 @@ export class Calendar {
         monthDay.users[availability.user.id] = availability.user;
         element.dataset.userCount = Object.keys(monthDay.users).length;
 
-        element.dataset.thisWeekUserCount = monthDay.getThisWeekUserCount();
+        let daysOfWeek = this.element.querySelectorAll(`[data-week="${monthDay.element.dataset.week}"]`);
+        for (let day of daysOfWeek) {
+            day.dataset.thisWeekUserCount = monthDay.getThisWeekUserCount();
+        }
     }
 
     removeShift(shift) {
@@ -390,7 +402,10 @@ export class Calendar {
 
         delete monthDay.users[shift.userId];
 
-        element.dataset.thisWeekUserCount = monthDay.getThisWeekUserCount();
+        let daysOfWeek = this.element.querySelectorAll(`[data-week="${monthDay.element.dataset.week}"]`);
+        for (let day of daysOfWeek) {
+            day.dataset.thisWeekUserCount = monthDay.getThisWeekUserCount();
+        }
         this.checkSchedulingErrors(monthDay);
     }
 
@@ -405,7 +420,10 @@ export class Calendar {
 
         delete monthDay.users[availability.userId];
 
-        element.dataset.thisWeekUserCount = monthDay.getThisWeekUserCount();
+        let daysOfWeek = this.element.querySelectorAll(`[data-week="${monthDay.element.dataset.week}"]`);
+        for (let day of daysOfWeek) {
+            day.dataset.thisWeekUserCount = monthDay.getThisWeekUserCount();
+        }
     }
 
 

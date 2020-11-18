@@ -102,6 +102,10 @@ body:not(.sidebar-collapse) .main-sidebar .brand-image[src$="logo.svg"] {
 body.sidebar-collapse .main-sidebar .brand-image[src$="logo-plain.svg"] {
   display: none; }
 
+@media (max-width: 768px) {
+  .content-header {
+    text-align: center; } }
+
 @media (min-width: 992px) {
   .sidebar-mini.sidebar-collapse .main-sidebar.sidebar-focused .brand-image[src$="logo.svg"],
   .sidebar-mini.sidebar-collapse .main-sidebar:hover .brand-image[src$="logo.svg"] {

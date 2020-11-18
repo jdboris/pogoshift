@@ -342,8 +342,21 @@
     font-size: 14px;
 }
 
-.calendar .highlighted-list-item {
+.calendar .highlighted-associate {
     text-shadow: 0px 0px 3px black;
+}
+
+.calendar .associate-aside-item {
+    /* NOTE: required instead of white-space: nowrap to prevent wrapping, but not mess up printing styles */
+    display: inline-block;
+    cursor: pointer;
+    font-size: 14px;
+    transform: translateX(-100%);
+    position: absolute;
+    left: auto !important;
+    width: 100%;
+    text-align: right;
+    padding-right: 5px;
 }
 
 /* **************************************************************************************************************** */
@@ -533,15 +546,22 @@
     display: initial;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     /* NOTE: Space for names */
-    /*.scheduling-calendar {
+    .scheduling-calendar {
         margin-left: 100px;
-    }*/
+    }
 }
 
 @media (max-width: 768px) {
 
+    .calendar .month-title {
+        font-size: 15px;
+    }
+
+    .calendar .associate-aside-item {
+        display: none;
+    }
 
     .calendar .month-day {
         padding: 0px;

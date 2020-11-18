@@ -139,7 +139,9 @@ export class Calendar {
             // Convert the array into an object with the IDs as keys
             this.availabilities = availabilities.reduce((object, timePeriod) => {
                 // Only add the availability and its associate if the date is in the future
-                if (new Date(timePeriod.beginning) >= new Date()) {
+                let midnight = new Date();
+                midnight.setHours(0, 0, 0, 0);
+                if (new Date(timePeriod.beginning) >= midnight) {
                     if ("user" in timePeriod && !(timePeriod.user.id in this.associates)) {
                         this.associates[timePeriod.user.id] = timePeriod.user;
                     }

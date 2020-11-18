@@ -1,10 +1,12 @@
 ﻿
 Short-Term:
--add associate names to the left of calendar days to show which shifts are theirs
+-stop hiding shifts in the past on the same day
+-refactor to component function pattern
 -change to cheaper hosting service
+-add notes for availabilities and shifts
+-allow shifts to span multiple days
 -handle updating the highlights when adding a new shift
 -fix the bug that's adding copies of a shift on the same day
--add notes for availabilities and shifts
 -automatically popup with the shift editor when creating a shift, and communicate that a new shift was created,
  to help avoid accidentally creating a shift.
 -confirm that a new shift was created after it's created, and communicate which one was created, to facilitate

@@ -232,14 +232,11 @@
     text-align: center;
 }
 
-    .calendar .time-period-copy i,
-    .calendar .time-period-delete i {
-        cursor: pointer;
-    }
-
 .calendar .time-period-copy i,
 .calendar .time-period-delete i {
+    cursor: pointer;
     display: none;
+    font-size: 0.8em;
 }
 
 .calendar .time-period.edit-mode .time-period-copy i,
@@ -271,6 +268,26 @@
 .calendar .time-period-user {
     width: 100%;
     display: none;
+}
+
+.calendar .time-period:not(.focused) .time-period-footer {
+    display: none;
+}
+
+.calendar .time-period-footer {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
+.calendar .time-period-note {
+    width: 100%;
+    display: flex;
+}
+
+.calendar .time-period-note textarea {
+    width: 100%;
+    font-size: 1rem;
+    resize: none;
 }
 
 /*.calendar.highlighted .time-period:not(.highlighted-period) .left-handle,

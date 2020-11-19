@@ -273,7 +273,7 @@ function createShiftFromAvailability(calendar, availabilityPeriod) {
             if (!(shift.userId in calendar.associates)) {
                 console.error("Error: Shift User is not listed on this Calendar.");
             } else {
-                calendar.addShift(shift);
+                this.focusTimePeriod(this.addShift(shift).element);
 
                 //availabilityPeriod.element.parentNode.insertBefore(shiftPeriod.element, availabilityPeriod.element.nextSibling);
             }

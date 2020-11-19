@@ -1542,6 +1542,9 @@ namespace pogoshift.Migrations
                     b.Property<DateTime>("Ending")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("TenantId")
                         .HasColumnType("int");
 
@@ -1680,6 +1683,9 @@ namespace pogoshift.Migrations
 
                     b.Property<DateTime>("Ending")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Note")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("TenantId")
                         .HasColumnType("int");

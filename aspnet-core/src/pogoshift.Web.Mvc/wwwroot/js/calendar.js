@@ -268,7 +268,7 @@ export class Calendar {
         let timeStart = new Date(this.dayStartTime.getTime());
         timeStart.setMinutes(timeStart.getMinutes() + (column * this.minutesPerColumn));
         let time = formatTime(timeStart);
-        if (time == "0:00" && column > 1) {
+        if (time == "00:00" && column > 1) {
             time = "24:00";
         }
         return time;
@@ -321,14 +321,22 @@ export class Calendar {
             monthDays[i] = new MonthDay(this, i);
             monthDays[i].element.className += " " + classes;
             let week = Math.floor((totalCount + i - 1) / 7);
-            console.log(totalCount);
-            console.log(i);
-            console.log((totalCount + i) / 7);
             monthDays[i].element.dataset.week = week;
             this.dayListElement.appendChild(monthDays[i].element);
         }
 
         return monthDays;
+    }
+
+    focusTimePeriod(timePeriod) {
+        if (timePeriod.classList.contains("time-period-template") == false &&
+            timePeriod.classList.contains("edit-mode") == true) {
+            if (this.focusedTimePeriod != null) this.focusedTimePeriod.classList.remove("focused");
+            this.focusedTimePeriod = timePeriod;
+            timePeriod.classList.add("focused");
+            timePeriod.prepend(this.mobileOverlay);
+            this.mobileOverlay.classList.remove("hidden");
+        }
     }
 
     addShift(shift) {
@@ -361,6 +369,8 @@ export class Calendar {
             day.dataset.thisWeekUserCount = monthDay.getThisWeekUserCount();
         }
         this.checkSchedulingErrors(monthDay);
+
+        return timePeriod;
     }
 
     addAvailability(availability) {
@@ -389,6 +399,8 @@ export class Calendar {
         for (let day of daysOfWeek) {
             day.dataset.thisWeekUserCount = monthDay.getThisWeekUserCount();
         }
+
+        return timePeriod;
     }
 
     removeShift(shift) {

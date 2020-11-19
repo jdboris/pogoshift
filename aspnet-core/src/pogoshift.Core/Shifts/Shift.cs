@@ -21,5 +21,7 @@ namespace pogoshift.Shifts
         public long UserId { get; set; }
 
         public List<Break> Breaks { get; set; }
+
+        public String Note { get; set; }
     }
 }

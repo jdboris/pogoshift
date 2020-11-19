@@ -10,5 +10,7 @@ namespace pogoshift.Availabilities.Dto
     {
         public DateTime Beginning { get; set; }
         public DateTime Ending { get; set; }
+
+        public String Note { get; set; }
     }
 }

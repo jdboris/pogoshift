@@ -230,12 +230,13 @@ export function Input(html, properties = {}, data = {}) {
 
 class TimePeriod {
 
-    constructor(calendar, isInEditMode = true, time = { beginning: null, ending: null, user: null }) {
+    constructor(calendar, isInEditMode = true, time = { beginning: null, ending: null, user: null, note: null }) {
 
         this.user = time.user;
         this.calendar = calendar;
         if (time.beginning != null && time.ending == null) throw "Error: you must provide a start AND end time to create a TimePeriod.";
-        time = { start: stringToDate(time.beginning), end: stringToDate( time.ending ) };
+        // NOTE: Must copy the properties rather than re-assigning the variable, to preserve references
+        Object.assign( time, { start: stringToDate(time.beginning), end: stringToDate( time.ending ), note: time.note || "" } );
 
         let columnStart = 1;
         let columnEnd = calendar.columnsPerDay + 1;
@@ -266,7 +267,7 @@ class TimePeriod {
         <div class="time-period" data-associate-id="${this.user.id}">
             <div class="time-period-inner" style="grid-template-columns: repeat( ${calendar.columnsPerDay}, 1fr );">
                 <div class="time-period-heading">
-                    
+
                     <div class="time-period-user">
                         ${this.user.surname} ${this.user.name}
                     </div>
@@ -289,6 +290,12 @@ class TimePeriod {
                     <i class="fas fa-grip-lines-vertical left-handle"></i>
                     <i class="fas fa-grip-lines-vertical right-handle"></i>
                 </div>
+
+                <div class="time-period-footer">
+
+                    <div class="time-period-note"></div>
+
+                </div>
             </div>
         </div>
         `);
@@ -306,6 +313,15 @@ class TimePeriod {
         let copyButton = element.querySelector(".time-period-copy i");
         let deleteButton = element.querySelector(".time-period-delete i");
         let bar = element.getElementsByClassName("time-period-bar")[0];
+        let note = element.querySelector(".time-period-note");
+
+        let noteInput = E(`<textarea placeholder="Notes..."></textarea>`);
+        noteInput.value = time.note;
+        noteInput.onchange = () => {
+            time.note = noteInput.value;
+            this.save();
+        }
+        note.append(noteInput);
 
 
         // To prevent adding a new time period when clicking this time period
@@ -355,14 +371,7 @@ class TimePeriod {
 
         handler = new Event.PointerHandler((event) => {
 
-            if (element.classList.contains("time-period-template") == false &&
-                element.classList.contains("edit-mode") == true) {
-                if (calendar.focusedTimePeriod != null) calendar.focusedTimePeriod.classList.remove("focused");
-                calendar.focusedTimePeriod = element;
-                element.classList.add("focused");
-                element.prepend(calendar.mobileOverlay);
-                calendar.mobileOverlay.classList.remove("hidden");
-            }
+            calendar.focusTimePeriod(element);
         });
 
         bar.onclick = handler;
@@ -390,7 +399,7 @@ class TimePeriod {
 }
 
 export class AvailabilityPeriod extends TimePeriod {
-    constructor(calendar, isInEditMode = true, availability = { beginning: null, ending: null, user: null }) {
+    constructor(calendar, isInEditMode = true, availability = { beginning: null, ending: null, user: null, note: null }) {
         super(calendar, isInEditMode, availability);
         this.availability = availability;
 
@@ -414,6 +423,7 @@ export class AvailabilityPeriod extends TimePeriod {
             id: this.availabilityId,
             beginning: this.getStartTime(),
             ending: this.getEndTime(),
+            note: this.availability.note
         }).save();
     }
 
@@ -427,7 +437,7 @@ export class AvailabilityPeriod extends TimePeriod {
 }
 
 export class ShiftPeriod extends TimePeriod {
-    constructor(calendar, isInEditMode = true, shift = { beginning: null, ending: null, user: null }) {
+    constructor(calendar, isInEditMode = true, shift = { beginning: null, ending: null, user: null, note: null }) {
         super(calendar, isInEditMode, shift );
         this.shift = shift;
 
@@ -449,6 +459,7 @@ export class ShiftPeriod extends TimePeriod {
             id: this.shiftId,
             beginning: this.getStartTime(),
             ending: this.getEndTime(),
+            note: this.shift.note
         }).save();
     }
 

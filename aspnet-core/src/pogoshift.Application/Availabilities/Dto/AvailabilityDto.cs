@@ -16,5 +16,7 @@ namespace pogoshift.Availabilities.Dto
         [ForeignKey(nameof(UserId))]
         public UserDto User { get; set; }
         public long UserId { get; set; }
+
+        public String Note { get; set; }
     }
 }

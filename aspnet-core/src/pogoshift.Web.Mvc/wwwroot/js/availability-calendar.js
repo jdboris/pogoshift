@@ -51,7 +51,7 @@ export class AvailabilityCalendar extends Calendar {
                         beginning: startTime,
                         ending: endTime,
                     }).save().then((availability) => {
-                        this.addAvailability(availability);
+                        this.focusTimePeriod(this.addAvailability(availability).element);
                     });
                 }
             });

@@ -1,31 +1,29 @@
 ﻿
-
-.calendar input[type=number]::-webkit-inner-spin-button,
-.calendar input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-
-.calendar input[type=number] {
-    font-family: monospace;
-    font-weight: bold;
-    width: 50px;
-    text-align: center;
-}
-
 .calendar {
     user-select: none;
-}
 
-    .calendar * {
+    * {
         box-sizing: border-box;
     }
 
-    .calendar .calendar-mobile-overlay {
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    input[type=number] {
+        font-family: monospace;
+        font-weight: bold;
+        width: 50px;
+        text-align: center;
+    }
+
+    .calendar-mobile-overlay {
         display: none;
     }
 
-    .calendar .time-period-template-card {
+    .time-period-template-card {
         position: sticky;
         left: 15px;
         right: 15px;
@@ -35,37 +33,37 @@
         bottom: 15px;
     }
 
-        .calendar .time-period-template-card .card-body {
-            padding: 10px;
-        }
+    .time-period-template-card .card-body {
+        padding: 10px;
+    }
 
-.calendar-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+    .calendar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
 
-.calendar-header > * {
-    display: flex;
-    align-items: center;
-}
+    .calendar-header > * {
+        display: flex;
+        align-items: center;
+    }
 
     .calendar-header a {
         text-decoration: none;
     }
 
-.calendar-month-previous,
-.calendar-month-next {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50% 50%;
-}
+    .calendar-month-previous,
+    .calendar-month-next {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50% 50%;
+    }
 
     .calendar-month-previous:hover,
     .calendar-month-next:hover {
@@ -73,26 +71,26 @@
         cursor: pointer;
     }
 
-.calendar .month-title {
-    margin: 10px;
-}
+    .month-title {
+        margin: 10px;
+    }
 
-.calendar .month-day-list {
-    grid-column-gap: 1px;
-    grid-row-gap: 1px;
-    background-color: rgb(204, 204, 204);
-    border: 1px solid rgb(204, 204, 204);
-    margin-bottom: 15px;
-}
+    .month-day-list {
+        grid-column-gap: 1px;
+        grid-row-gap: 1px;
+        background-color: rgb(204, 204, 204);
+        border: 1px solid rgb(204, 204, 204);
+        margin-bottom: 15px;
+    }
 
-.calendar .month-day-list,
-.calendar .weekday-headers {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-}
+    .month-day-list,
+    .weekday-headers {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
 
-    .calendar .month-day-list > div,
-    .calendar .weekday-headers > div {
+    .month-day-list > div,
+    .weekday-headers > div {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -100,351 +98,358 @@
     }
 
 
-.calendar .month-day {
-    /* Required for error icon positioning */
-    position: relative;
-    flex-direction: column;
-    background-color: #FFFFFF;
-    min-height: 15vh;
-}
+    .month-day {
+        /* Required for error icon positioning */
+        position: relative;
+        flex-direction: column;
+        background-color: #FFFFFF;
+        min-height: 15vh;
+    }
 
-.calendar .month-day:nth-of-type(7n+1) .day-number,
-.calendar .month-day:nth-of-type(7n) .day-number {
-    /* NOTE: To fix a bug in Chrome printing */
-    color: red !important;
-}
+    .month-day:nth-of-type(7n+1) .day-number,
+    .month-day:nth-of-type(7n) .day-number {
+        /* NOTE: To fix a bug in Chrome printing */
+        color: red !important;
+    }
 
-.calendar .warning-icon {
-    display: none;
-}
-
-.calendar .error-icon {
-    display: none;
-}
-
-.calendar .month-day .warning-icon {
-    color: #cab900;
-}
-
-.calendar .month-day .error-icon {
-    color: red;
-}
-
-.calendar .month-day .error-icons {
-    position: absolute;
-    top: 4px;
-    right: 5px;
-    font-size: 15px;
-}
-
-
-.calendar .day-list .weekday-headers > div {
-    min-height: 30px;
-}
-
-.calendar .day-list .weekday-headers > div:first-child,
-.calendar .day-list .weekday-headers > div:last-child {
-    color: red;
-}
-
-.calendar .day-list .weekday-headers > div {
-    display: flex;
-    font-size: 20px;
-    align-items: flex-end;
-}
-
-.calendar .month-day-list {
-    font-size: 12px;
-}
-
-
-.calendar .month-day {
-    padding-top: 5px;
-}
-
-.calendar .day-number {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50% 50%;
-    width: 20px;
-    height: 20px;
-    cursor: pointer;
-}
-
-.calendar .day-number-wrapper {
-    /* NOTE: To align this item at the top of its flex parent */
-    margin-bottom: auto;
-}
-
-.calendar .time-period-section {
-    width: 100%;
-}
-/*
-.calendar .time-period {
-    min-height: 30px;
-}
-*/
-
-.calendar .closed-month .month-day {
-    background-color: rgb(228, 228, 228);
-}
-
-.calendar .closed-month .time-period {
-    display: none;
-}
-
-.calendar .closed-day {
-    background-color: rgb(228, 228, 228);
-}
-
-    .calendar .closed-day .time-period {
+    .warning-icon {
         display: none;
     }
 
-.calendar .month-day-filler {
-    background-color: rgb(218, 218, 218);
-}
-
-    .calendar .month-day-filler .day-number {
+    .error-icon {
         display: none;
     }
 
-.calendar .time-period-inner {
-    /* NOTE: This compensates for a bug in Chrome that puts mystery space after the time period */
-    justify-content: center;
-    display: grid;
-    /* NOTE: Default to 5 minutes per column */
-    grid-template-columns: repeat( 288, 1fr );
-}
+    .month-day .warning-icon {
+        color: #cab900;
+    }
 
-.calendar .time-period-heading {
-    /* Hidden unless in edit mode */
-    display: flex;
-    flex-wrap: wrap;
-    grid-column: 1 / -1;
-    grid-row: 1;
-    font-weight: bold;
-    justify-content: space-between;
-    padding: 0px 3px;
-    background: #EEE;
-    width: 100%;
-    text-align: center;
-}
+    .month-day .error-icon {
+        color: red;
+    }
 
-.calendar .time-period-copy i,
-.calendar .time-period-delete i {
-    cursor: pointer;
-    display: none;
-    font-size: 0.8em;
-}
+    .month-day .error-icons {
+        position: absolute;
+        top: 4px;
+        right: 5px;
+        font-size: 15px;
+    }
 
-.calendar .time-period.edit-mode .time-period-copy i,
-.calendar .time-period.edit-mode .time-period-delete i {
-    display: initial;
-}
 
-.calendar .time-period-bar {
-    grid-row: 2;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    overflow: hidden;
-    min-height: 18px;
-}
+    .day-list .weekday-headers > div {
+        min-height: 30px;
+    }
 
-    .calendar .time-period-bar i {
+    .day-list .weekday-headers > div:first-child,
+    .day-list .weekday-headers > div:last-child {
+        color: red;
+    }
+
+    .day-list .weekday-headers > div {
+        display: flex;
+        font-size: 20px;
+        align-items: flex-end;
+    }
+
+    .month-day-list {
+        font-size: 12px;
+    }
+
+
+    .month-day {
+        padding-top: 5px;
+    }
+
+    .day-number {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50% 50%;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .day-number-wrapper {
+        /* NOTE: To align this item at the top of its flex parent */
+        margin-bottom: auto;
+    }
+
+    .time-period-section {
+        width: 100%;
+    }
+    /*
+    .time-period {
+        min-height: 30px;
+    }
+    */
+    .closed-day,
+    &:not(.show-past) .past-month .month-day,
+    &:not(.show-past) .past-day {
+        background-color: rgb(228, 228, 228);
+    }
+
+    .closed-day .time-period,
+    &:not(.show-past) .past-month .time-period,
+    &:not(.show-past) .past-day .time-period {
+        display: none;
+    }
+
+    .month-day-filler {
+        background-color: rgb(218, 218, 218);
+    }
+
+    .month-day-filler .day-number {
+        display: none;
+    }
+
+    .time-period-inner {
+        /* NOTE: This compensates for a bug in Chrome that puts mystery space after the time period */
+        justify-content: center;
+        display: grid;
+        /* NOTE: Default to 5 minutes per column */
+        grid-template-columns: repeat( 288, 1fr );
+    }
+
+    .time-period-heading {
+        /* Hidden unless in edit mode */
+        display: flex;
+        flex-wrap: wrap;
+        grid-column: 1 / -1;
+        grid-row: 1;
+        font-weight: bold;
+        justify-content: space-between;
+        padding: 0px 3px;
+        background: #EEE;
+        width: 100%;
+        text-align: center;
+    }
+
+    .time-period-copy i,
+    .time-period-delete i {
+        cursor: pointer;
+        display: none;
+        font-size: 0.8em;
+    }
+
+    .time-period.edit-mode .time-period-copy i,
+    .time-period.edit-mode .time-period-delete i {
+        display: initial;
+    }
+
+    .time-period-bar {
+        grid-row: 2;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow: hidden;
+        min-height: 18px;
+    }
+
+    .time-period-bar i {
         padding: 4px;
         cursor: ew-resize;
     }
 
-.calendar .time-period-time {
-    overflow: hidden;
-    white-space: nowrap;
-    font-family: 'Inconsolata', monospace;
-}
+    .time-period-time {
+        overflow: hidden;
+        white-space: nowrap;
+        font-family: 'Inconsolata', monospace;
+    }
 
-.calendar .time-period-user {
-    width: 100%;
-    display: none;
-}
+    .time-period-template .time-period-time,
+    .focused .time-period-time {
+        font-family: "Prompt";
+    }
 
-.calendar .time-period:not(.focused) .time-period-footer {
-    display: none;
-}
+    .time-period-user {
+        width: 100%;
+        display: none;
+    }
 
-.calendar .time-period-footer {
-    grid-column: 1 / -1;
-    width: 100%;
-}
+    .time-period:not(.focused) .time-period-footer {
+        display: none;
+    }
 
-.calendar .time-period-note {
-    width: 100%;
-    display: flex;
-}
+    .time-period-footer {
+        grid-column: 1 / -1;
+        width: 100%;
+    }
 
-.calendar .time-period-note textarea {
-    width: 100%;
-    font-size: 1rem;
-    resize: none;
-}
+    .time-period-note {
+        width: 100%;
+        display: flex;
+    }
 
-/*.calendar.highlighted .time-period:not(.highlighted-period) .left-handle,
-.calendar.highlighted .time-period:not(.highlighted-period) .right-handle,
-.calendar.highlighted .time-period:not(.highlighted-period) .time-period-heading {
-    display: none;
-}*/
-.calendar.highlighted .time-period:not(.highlighted-period)[data-availability-id] {
-    opacity: 0;
-}
-.calendar.highlighted .time-period:not(.highlighted-period) {
-    opacity: 0.5;
-}
+    .time-period-note textarea {
+        width: 100%;
+        font-size: 1rem;
+        resize: none;
+    }
+    /*&.highlighted .time-period:not(.highlighted-period) .left-handle,
+    &.highlighted .time-period:not(.highlighted-period) .right-handle,
+    &.highlighted .time-period:not(.highlighted-period) .time-period-heading {
+        display: none;
+    }*/
+    &.highlighted .time-period:not(.highlighted-period)[data-availability-id] {
+        opacity: 0;
+    }
 
-.calendar .left-handle {
-    /* Hidden unless in edit mode */
-    display: none;
-    padding-right: 0px;
-}
+    &.highlighted .time-period:not(.highlighted-period) {
+        opacity: 0.5;
+    }
 
-.calendar .right-handle {
-    /* Hidden unless in edit mode */
-    display: none;
-    padding-left: 0px;
-}
+    .left-handle {
+        /* Hidden unless in edit mode */
+        display: none;
+        padding-right: 0px;
+    }
 
-.calendar .time-period.edit-mode .left-handle,
-.calendar .time-period.edit-mode .right-handle {
-    display: initial;
-}
+    .right-handle {
+        /* Hidden unless in edit mode */
+        display: none;
+        padding-left: 0px;
+    }
 
-.calendar .time-period-template .time-period-copy,
-.calendar .time-period-template .time-period-delete {
-    display: none;
-}
+    .time-period.edit-mode .left-handle,
+    .time-period.edit-mode .right-handle {
+        display: initial;
+    }
 
-.calendar .time-period-template .time-period-heading {
-    font-size: 30px;
-    justify-content: center;
-}
+    .time-period-template .time-period-copy,
+    .time-period-template .time-period-delete {
+        display: none;
+    }
 
-.calendar .time-period-template .time-period-bar {
-    min-height: 30px;
-}
+    .time-period-template .time-period-heading {
+        font-size: 30px;
+        justify-content: center;
+    }
 
-.calendar .time-period-template i {
-    font-size: 30px;
-    padding: 8px;
-    color: white;
-}
+    .time-period-template .time-period-bar {
+        min-height: 30px;
+    }
 
-.calendar .associate-list-card {
-    position: sticky;
-    left: 15px;
-    right: 15px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    bottom: 15px;
-}
+    .time-period-template i {
+        font-size: 30px;
+        padding: 8px;
+        color: white;
+    }
 
-    .calendar .associate-list-card .card-body i {
+    .associate-list-card {
+        position: sticky;
+        left: 15px;
+        right: 15px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        bottom: 15px;
+    }
+
+    .associate-list-card .card-body i {
         padding: 10px;
     }
 
-.calendar .associate-list-item {
-    margin-right: 10px;
-    /* NOTE: required instead of white-space: nowrap to prevent wrapping, but not mess up printing styles */
-    display: inline-block;
-    cursor: pointer;
-    font-size: 14px;
-}
-
-.calendar .highlighted-associate {
-    text-shadow: 0px 0px 3px black;
-}
-
-.calendar .associate-aside-item {
-    /* NOTE: required instead of white-space: nowrap to prevent wrapping, but not mess up printing styles */
-    display: inline-block;
-    cursor: pointer;
-    font-size: 14px;
-    transform: translateX(-100%);
-    position: absolute;
-    left: auto !important;
-    width: 100%;
-    text-align: right;
-    padding-right: 5px;
-    line-height: 1;
-}
-
-/* **************************************************************************************************************** */
-/* Availability                                                                                                     */
-/* **************************************************************************************************************** */
-/* **************************************************************************************************************** */
-/* Scheduling                                                                                                       */
-/* **************************************************************************************************************** */
-.scheduling-calendar .break-controls select {
-    width: 160px;
-}
-
-.scheduling-calendar .time-period-section {
-    position: relative;
-}
-
-@for $i from 0 through 30 {
-    .scheduling-calendar [data-this-week-user-count="#{$i}"] .time-period-section {
-        min-height: calc((18px + 3px) * #{$i} );
+    .associate-list-item {
+        margin-right: 10px;
+        /* NOTE: required instead of white-space: nowrap to prevent wrapping, but not mess up printing styles */
+        display: inline-block;
+        cursor: pointer;
+        font-size: 14px;
     }
 
-    .scheduling-calendar .associate-#{$i} {
+    .highlighted-associate {
+        text-shadow: 0px 0px 3px black;
+    }
+
+    .associate-aside-item {
+        /* NOTE: required instead of white-space: nowrap to prevent wrapping, but not mess up printing styles */
+        display: inline-block;
+        cursor: pointer;
+        font-size: 14px;
+        transform: translateX(-100%);
         position: absolute;
-        left: 0px;
-        right: 0px;
-        bottom: calc((18px + 3px) * #{$i});
+        left: auto !important;
+        width: 100%;
+        text-align: right;
+        padding-right: 5px;
+        line-height: 1;
     }
-}
+    /* **************************************************************************************************************** */
+    /* Availability                                                                                                     */
+    /* **************************************************************************************************************** */
+    /* **************************************************************************************************************** */
+    /* Scheduling                                                                                                       */
+    /* **************************************************************************************************************** */
+    &.scheduling-calendar .break-controls select {
+        width: 160px;
+    }
 
-.scheduling-calendar .time-period-copy,
-.scheduling-calendar .time-period-delete {
-    width: 1em;
-}
+    &.scheduling-calendar .time-period-section {
+        position: relative;
+    }
 
-    .scheduling-calendar .time-period-copy i {
+    @for $i from 0 through 30 {
+        &.scheduling-calendar [data-this-week-user-count="#{$i}"] .time-period-section {
+            min-height: calc((18px + 3px) * #{$i} );
+        }
+
+        &.scheduling-calendar .associate-#{$i} {
+            position: absolute;
+            left: 0px;
+            right: 0px;
+            bottom: calc((18px + 3px) * #{$i});
+        }
+    }
+
+    &.scheduling-calendar .time-period-copy,
+    &.scheduling-calendar .time-period-delete {
+        width: 1em;
+    }
+
+    &.scheduling-calendar .time-period-copy i {
         display: none !important;
     }
 
-.scheduling-calendar .time-period {
-    opacity: 0.4;
-    background-color: #FFFFFF;
-}
-
-    .scheduling-calendar .time-period.shift,
-    .scheduling-calendar .time-period.scheduled {
-        opacity: 1;
+    &.scheduling-calendar .time-period {
+        opacity: 0.4;
+        background-color: #FFFFFF;
     }
 
-.scheduling-calendar .month-day-list:not(.closed-month) .month-day:not(.closed-day).manager-minimum-error .warning-icon {
-    display: initial;
-}
+    .time-period.shift,
+    .time-period.scheduled {
+        opacity: 1;
+    }
+    /* Show the manager minimum error */
+    &.scheduling-calendar .month-day-list .month-day.manager-minimum-error .warning-icon {
+        display: initial;
+    }
+    /* Hide the manager minimum error to show the associate miniumum error instead */
+    &.scheduling-calendar .month-day-list .month-day.associate-minimum-error .warning-icon {
+        display: none;
+    }
 
-.scheduling-calendar .month-day-list:not(.closed-month) .month-day:not(.closed-day).associate-minimum-error .warning-icon {
-    display: none;
-}
+    &.scheduling-calendar .month-day-list .month-day.associate-minimum-error .error-icon {
+        display: initial;
+    }
 
-.scheduling-calendar .month-day-list:not(.closed-month) .month-day:not(.closed-day).associate-minimum-error .error-icon {
-    display: initial;
-}
+    &.scheduling-calendar .month-day-list .month-day.closed-day,
+    &.scheduling-calendar:not(.show-past) .month-day-list.past-month,
+    &.scheduling-calendar:not(.show-past) .month-day-list .month-day.past-day {
+        .warning-icon,
+        .error-icon {
+            display: none;
+        }
+    }
 
+    &.scheduling-calendar .error-icons {
+        margin-bottom: auto;
+    }
 
-.scheduling-calendar .error-icons {
-    margin-bottom: auto;
-}
-
-[data-tooltip] {
-    position: relative;
-}
+    [data-tooltip] {
+        position: relative;
+    }
 
     [data-tooltip]:hover::after {
         content: attr(data-tooltip);
@@ -466,258 +471,268 @@
     }
 
 
-.calendar .month-day-list .time-period:not(.focused) .time-period-heading {
-    position: absolute;
-    background: rgba(0,0,0,0);
-    pointer-events: none;
-    padding: 0px;
-    height: 18px;
-}
-
-.calendar.highlighted .month-day-list .time-period:not(.focused):not(.highlighted-period) .time-period-heading {
-    display: none;
-}
-
-.calendar .month-day-list .time-period:not(.focused) .time-period-time {
-    background: #363636;
-    color: white;
-    border-radius: 9px;
-    padding: 2px;
-    line-height: 0.7;
-    display: block;
-    margin: auto;
-}
-
-.calendar .month-day-list .time-period:not(.focused) .time-period-copy {
-    display: none;
-}
-
-.calendar .month-day-list .time-period:not(.focused) .time-period-delete {
-    display: none;
-}
-
-.calendar .month-day-list .edit-mode .left-handle,
-.calendar .month-day-list .edit-mode .right-handle {
-    display: none;
-}
-
-.calendar .month-day-list .time-period .time-period-inner {
-    /* Used to animated the height of the element */
-    transition: all 0.2s;
-    z-index: 100;
-}
-
-.calendar .month-day-list .shift.focused, .availability-calendar .month-day-list .availability.focused {
-    background-color: #dbdbdb;
-    min-height: 18px;
-    /*box-shadow: 0px 0px 1px 1px #CCC;*/
-    /* NOTE: This must not be moved to another selector or it'll look weird when it transitions back to white */
-    transition: background-color 0.3s;
-    opacity: 1;
-}
-
-.calendar .month-day-list .shift.focused .time-period-inner, .availability-calendar .month-day-list .availability.focused .time-period-inner {
-    position: fixed;
-    left: 0px;
-    bottom: 50px;
-    font-size: 30px;
-    width: 800px;
-    background-color: #FFFFFF;
-    padding: 10px;
-    border-radius: 0.25rem;
-    border: 1px solid rgba(0, 0, 0, 0.125);
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.calendar .month-day-list .shift.focused .left-handle, .availability-calendar .month-day-list .availability.focused .left-handle {
-    display: inline-block;
-}
-
-.calendar .month-day-list .shift.focused .right-handle, .availability-calendar .month-day-list .availability.focused .right-handle {
-    display: inline-block;
-}
-
-.calendar .month-day-list .shift.focused .time-period-time, .availability-calendar .month-day-list .availability.focused .time-period-time {
-    display: initial;
-}
-
-.calendar .month-day-list .shift.focused .time-period-heading, .availability-calendar .month-day-list .availability.focused .time-period-heading {
-    display: flex;
-}
-
-.calendar .calendar-mobile-overlay {
-    position: fixed;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-    opacity: 0.5;
-    background-color: #000000;
-    z-index: 1;
-}
-
-.calendar .shift .calendar-mobile-overlay:not(.hidden),
-.availability-calendar .availability .calendar-mobile-overlay:not(.hidden) {
-    display: initial;
-}
-
-.calendar .month-day-list .time-period.focused .time-period-user {
-    display: initial;
-}
-
-@media (min-width: 768px) {
-    /* NOTE: Space for names */
-    .scheduling-calendar {
-        margin-left: 100px;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .calendar .month-title {
-        font-size: 15px;
+    .month-day-list .time-period:not(.focused) .time-period-heading {
+        position: absolute;
+        background: rgba(0,0,0,0);
+        pointer-events: none;
+        padding: 0px;
+        height: 18px;
     }
 
-    .calendar .associate-aside-item {
+    &.highlighted .month-day-list .time-period:not(.focused):not(.highlighted-period) .time-period-heading {
         display: none;
     }
 
-    .calendar .month-day {
-        padding: 0px;
-        padding-bottom: 10px;
+    .month-day-list .time-period:not(.focused) .time-period-time {
+        background: #363636;
+        color: white;
+        border-radius: 9px;
+        padding: 2px;
+        line-height: 0.7;
+        display: block;
+        margin: auto;
     }
 
-    .calendar .month-day-list .shift.focused .time-period-inner,
-    .availability-calendar .month-day-list .availability.focused .time-period-inner {
-        left: 0px;
-        bottom: 155px;
-        margin-left: 15px;
-        margin-right: 15px;
-        width: calc(100% - 30px);
-        transform: none;
+    .month-day-list .time-period:not(.focused) .time-period-copy {
+        display: none;
     }
 
-    .calendar .month-day-list .shift.focused, .availability-calendar .month-day-list .availability.focused {
-        min-height: 12px;
+    .month-day-list .time-period:not(.focused) .time-period-delete {
+        display: none;
     }
 
-    .calendar .month-day-list .time-period .time-period-inner {
-        /* NOTE: Used to animated the height of the element */
-        font-size: 8px;
+    .month-day-list .edit-mode .left-handle,
+    .month-day-list .edit-mode .right-handle {
+        display: none;
     }
 
-    .calendar .month-day-list .time-period {
-        margin-top: 3px;
-        background-color: #FFFFFF;
+    .month-day-list .time-period .time-period-inner {
+        /* Used to animated the height of the element */
+        transition: all 0.2s;
+        z-index: 100;
     }
 
-    .calendar .month-day-list .time-period .time-period-bar {
-        min-height: 12px;
+    .month-day-list .time-period.focused {
+        background-color: #dbdbdb;
+        min-height: 18px;
+        /*box-shadow: 0px 0px 1px 1px #CCC;*/
+        /* NOTE: This must not be moved to another selector or it'll look weird when it transitions back to white */
+        transition: background-color 0.3s;
+        opacity: 1;
     }
 
-     .calendar .time-period-template .left-handle {
-        padding-right: 0px;
-    } .calendar .time-period-template .right-handle {
-        padding-left: 0px;
-    } 
-    /*
-    .calendar .month-day-list .time-period.focused .time-period-heading {
-        position: absolute;
-        width: 100%;
-        left: 0px;
-        margin-top: -40px;
+    .month-day-list .time-period.focused .time-period-inner {
+        position: fixed;
+        bottom: 50px;
         font-size: 30px;
+        width: 800px;
+        background-color: #FFFFFF;
+        padding: 10px;
+        border-radius: 0.25rem;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        left: 50%;
+        transform: translateX(-50%);
     }
 
-    .calendar .month-day-list .time-period.focused .time-period {
+    .month-day-list .time-period.focused .left-handle {
+        display: inline-block;
+    }
+
+    .month-day-list .time-period.focused .right-handle {
+        display: inline-block;
+    }
+
+    .month-day-list .time-period.focused .time-period-time {
+        display: initial;
+    }
+
+    .month-day-list .time-period.focused .time-period-heading {
         display: flex;
-        position: absolute;
-        left: 0px;
     }
-    */
-    
 
-    @for $i from 0 through 30 {
-        .scheduling-calendar [data-this-week-user-count='#{$i}'] .time-period-section {
-            min-height: calc((13px + 2px) * #{$i});
-        }
-
-        .scheduling-calendar .associate-#{$i} {
-            position: absolute;
-            left: 0px;
-            right: 0px;
-            bottom: calc((13px + 2px) * #{$i});
-        }
-    }
-    .scheduling-calendar .month-day .error-icons {
-        position: initial;
-        margin-bottom: auto;
-    } 
-    .scheduling-calendar .month-day-list:not(.closed-month) .month-day:not(.closed-day).associate-minimum-error .day-number-wrapper, .scheduling-calendar .month-day-list:not(.closed-month) .month-day:not(.closed-day).manager-minimum-error .day-number-wrapper {
-        margin-bottom: initial;
-    } 
-    [data-tooltip]:hover::after {
+    .calendar-mobile-overlay {
         position: fixed;
         left: 0px;
         right: 0px;
-        margin-left: auto;
-        margin-right: auto;
-        top: 15vh;
-        bottom: auto;
-    }
-}
-
-@media only print {
-    /*@page {
-        size: landscape;
-    }*/
-
-    /* Prevent browser from hiding background colors when printing */
-    .calendar * {
-        -webkit-print-color-adjust: exact !important; /* Chrome, Safari */
-        color-adjust: exact !important; /*Firefox*/
-        /*-webkit-filter: blur(0);*/
+        top: 0px;
+        bottom: 0px;
+        opacity: 0.5;
+        background-color: #000000;
+        z-index: 1;
     }
 
-    .calendar-header > * > :not(.month-title) {
-        display: none !important;
+    .time-period .calendar-mobile-overlay:not(.hidden) {
+        display: initial;
     }
 
-    .print-button {
-        display: none !important;
-    }
-    /* To fix Chrome not showing the gaps */
-    .month-day-list {
-        grid-column-gap: 2px !important;
-        grid-row-gap: 2px !important;
-        border-bottom: 2px solid rgb(204, 204, 204) !important;
+    .month-day-list .time-period.focused .time-period-user {
+        display: initial;
     }
 
-    .left-handle,
-    .right-handle,
-    .time-period-copy,
-    .time-period-delete,
-    [data-availability-id] {
-        opacity: 0 !important;
+    @media (min-width: 768px) {
+        /* NOTE: Space for names */
+        &.scheduling-calendar {
+            margin-left: 100px;
+        }
     }
 
-    .day-number {
-        color: inherit !important;
-        background-color: initial !important;
+    @media (max-width: 768px) {
+
+        .month-title {
+            font-size: 15px;
+        }
+
+        .associate-aside-item {
+            display: none;
+        }
+
+        .month-day {
+            padding: 0px;
+            padding-bottom: 10px;
+        }
+
+        .month-day-list .time-period.focused .time-period-inner {
+            left: 0px;
+            bottom: 155px;
+            margin-left: 15px;
+            margin-right: 15px;
+            width: calc(100% - 30px);
+            transform: none;
+        }
+
+        .month-day-list .time-period.focused {
+            min-height: 12px;
+        }
+
+        .month-day-list .time-period .time-period-inner {
+            /* NOTE: Used to animated the height of the element */
+            font-size: 8px;
+        }
+
+        .month-day-list .time-period {
+            margin-top: 3px;
+            background-color: #FFFFFF;
+        }
+
+        .month-day-list .time-period .time-period-bar {
+            min-height: 12px;
+        }
+
+        .time-period-template .left-handle {
+            padding-right: 0px;
+        }
+
+        .time-period-template .right-handle {
+            padding-left: 0px;
+        }
+        /*
+        .month-day-list .time-period.focused .time-period-heading {
+            position: absolute;
+            width: 100%;
+            left: 0px;
+            margin-top: -40px;
+            font-size: 30px;
+        }
+
+        .month-day-list .time-period.focused .time-period {
+            display: flex;
+            position: absolute;
+            left: 0px;
+        }
+        */
+        @for $i from 0 through 30 {
+            &.scheduling-calendar [data-this-week-user-count='#{$i}'] .time-period-section {
+                min-height: calc((13px + 2px) * #{$i});
+            }
+
+            &.scheduling-calendar .associate-#{$i} {
+                position: absolute;
+                left: 0px;
+                right: 0px;
+                bottom: calc((13px + 2px) * #{$i});
+            }
+        }
+
+        &.scheduling-calendar .month-day .error-icons {
+            position: initial;
+            margin-bottom: auto;
+        }
+
+        .associate-minimum-error .day-number-wrapper,
+        .manager-minimum-error .day-number-wrapper {
+            margin-bottom: initial;
+        }
+
+        .closed-day,
+        .calendar:not(.show-past) .past-month,
+        .calendar:not(.show-past) .past-day {
+            .associate-minimum-error .day-number-wrapper,
+            .manager-minimum-error .day-number-wrapper {
+                margin-bottom: auto;
+            }
+        }
+
+        [data-tooltip]:hover::after {
+            position: fixed;
+            left: 0px;
+            right: 0px;
+            margin-left: auto;
+            margin-right: auto;
+            top: 15vh;
+            bottom: auto;
+        }
     }
 
-    .associate-list-card {
-        border-width: 2px !important;
-        position: initial !important;
-        max-width: initial !important;
-    }
+    @media only print {
+        /*@page {
+            size: landscape;
+        }*/
+        /* Prevent browser from hiding background colors when printing */
+        * {
+            -webkit-print-color-adjust: exact !important; /* Chrome, Safari */
+            color-adjust: exact !important; /*Firefox*/
+            /*-webkit-filter: blur(0);*/
+        }
 
-    .month-day {
-        min-height: initial !important;
-    }
+        .calendar-header > * > :not(.month-title) {
+            display: none !important;
+        }
 
-    .main-footer {
-        display: none !important;
+        .print-button {
+            display: none !important;
+        }
+        /* To fix Chrome not showing the gaps */
+        .month-day-list {
+            grid-column-gap: 2px !important;
+            grid-row-gap: 2px !important;
+            border-bottom: 2px solid rgb(204, 204, 204) !important;
+        }
+
+        .left-handle,
+        .right-handle,
+        .time-period-copy,
+        .time-period-delete,
+        [data-availability-id] {
+            opacity: 0 !important;
+        }
+
+        .day-number {
+            color: inherit !important;
+            background-color: initial !important;
+        }
+
+        .associate-list-card {
+            border-width: 2px !important;
+            position: initial !important;
+            max-width: initial !important;
+        }
+
+        .month-day {
+            min-height: initial !important;
+        }
+
+        .main-footer {
+            display: none !important;
+        }
     }
 }

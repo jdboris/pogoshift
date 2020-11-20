@@ -57,8 +57,25 @@ export class Calendar {
                 <div>
             </div>
         `);
-        this.element.append(this.header);
 
+        this.headerButtons = E(`<div></div>`);
+        this.header.append(this.headerButtons);
+
+        this.togglePastButton = 
+        this.headerButtons.append(E(`
+            <button class="btn btn-outline-secondary print-button">Past&nbsp;<i class="fas fa-eye-slash"></i></button>
+        `, {
+            onclick: (event) => {
+
+                this.element.classList.toggle("show-past");
+                event.currentTarget.classList.toggle("btn-outline-primary");
+                event.currentTarget.classList.toggle("btn-outline-secondary");
+                event.currentTarget.querySelector("i").classList.toggle("fa-eye");
+                event.currentTarget.querySelector("i").classList.toggle("fa-eye-slash");
+            }
+        }));
+
+        this.element.append(this.header);
 
         this.element.append(E(`
             <div class="day-list">
@@ -118,18 +135,16 @@ export class Calendar {
             }
         }
 
-
-        // Mark past days as "closed"
+        // Mark past days as past days
         if (this.date.getFullYear() < this.currentDate.getFullYear() ||
             (this.date.getFullYear() == this.currentDate.getFullYear() && this.date.getMonth() < this.currentDate.getMonth())) {
-            this.dayListElement.classList.add("closed-month");
+            this.dayListElement.classList.add("past-month");
         } else if (this.date.getMonth() == this.currentDate.getMonth() && this.date.getFullYear() == this.currentDate.getFullYear()) {
 
             for (let i = 1; i < this.currentDate.getDate(); i++) {
-                this.monthDays[i].element.classList.add("closed-day");
+                this.monthDays[i].element.classList.add("past-day");
             }
         }
-
 
         this.associates = {};
         this.availabilities = [];
@@ -141,13 +156,13 @@ export class Calendar {
                 // Only add the availability and its associate if the date is in the future
                 let midnight = new Date();
                 midnight.setHours(0, 0, 0, 0);
-                if (new Date(timePeriod.beginning) >= midnight) {
+                //if (new Date(timePeriod.beginning) >= midnight) {
                     if ("user" in timePeriod && !(timePeriod.user.id in this.associates)) {
                         this.associates[timePeriod.user.id] = timePeriod.user;
                     }
 
                     object[timePeriod.id] = timePeriod;
-                }
+                //}
                 return object;
 
                 // Start as empty object

@@ -1,14 +1,15 @@
 ﻿
 Short-Term:
--change to cheaper hosting service
+-add a button to show past days on a calendar
 -refactor/optimize patterns and performance
 -allow shifts to span multiple days
--handle updating the highlights when adding a new shift
 -fix the bug that's adding copies of a shift on the same day
+-make past shifts read-only
 -confirm that a new shift was created after it's created, and communicate which one was created, to facilitate
  correcting mistakes.
--make the colors more unique somehow
 -fix the authorization loop when trying to update account/password
+-make the colors more unique somehow
+-change to cheaper hosting service
 
 
 Long-Term:

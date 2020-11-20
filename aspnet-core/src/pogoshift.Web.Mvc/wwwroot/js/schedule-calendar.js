@@ -66,7 +66,7 @@ export class ScheduleCalendar extends Calendar {
             //this.header.append(BreakControls());
         }
         
-        this.header.append(E(`
+        this.headerButtons.append(E(`
             <button class="btn btn-link print-button">Print&nbsp;<i class="fas fa-print"></i></button>
         `, {
                 onclick: () => {
@@ -274,6 +274,7 @@ function createShiftFromAvailability(calendar, availabilityPeriod) {
                 console.error("Error: Shift User is not listed on this Calendar.");
             } else {
                 this.focusTimePeriod(this.addShift(shift).element);
+                this.highlightAllFromFilter();
 
                 //availabilityPeriod.element.parentNode.insertBefore(shiftPeriod.element, availabilityPeriod.element.nextSibling);
             }

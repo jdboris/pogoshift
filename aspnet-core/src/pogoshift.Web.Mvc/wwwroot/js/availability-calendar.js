@@ -52,6 +52,7 @@ export class AvailabilityCalendar extends Calendar {
                         ending: endTime,
                     }).save().then((availability) => {
                         this.focusTimePeriod(this.addAvailability(availability).element);
+                        this.highlightAllFromFilter();
                     });
                 }
             });

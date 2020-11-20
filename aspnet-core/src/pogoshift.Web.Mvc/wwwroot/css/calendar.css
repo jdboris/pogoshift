@@ -43,6 +43,7 @@
     padding: 10px; }
   .calendar .calendar-header {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     margin-top: 20px;
@@ -616,6 +617,10 @@
         */ }
       .calendar .month-title {
         font-size: 15px; }
+      .calendar .calendar-header > *:not(:first-of-type) {
+        margin-top: 8px;
+        width: 100%;
+        justify-content: flex-end; }
       .calendar .associate-aside-item {
         display: none; }
       .calendar .month-day {

@@ -39,6 +39,7 @@
 
     .calendar-header {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         justify-content: space-between;
         margin-top: 20px;
@@ -580,6 +581,12 @@
 
         .month-title {
             font-size: 15px;
+        }
+
+        .calendar-header > *:not(:first-of-type) {
+            margin-top: 8px;
+            width: 100%;
+            justify-content: flex-end;
         }
 
         .associate-aside-item {

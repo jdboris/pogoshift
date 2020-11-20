@@ -377,6 +377,10 @@
         padding-right: 5px;
         line-height: 1;
     }
+
+    .past-week .associate-aside-item {
+        display: none;
+    }
     /* **************************************************************************************************************** */
     /* Availability                                                                                                     */
     /* **************************************************************************************************************** */
@@ -392,16 +396,20 @@
     }
 
     @for $i from 0 through 30 {
-        &.scheduling-calendar [data-this-week-user-count="#{$i}"] .time-period-section {
+        [data-this-week-user-count="#{$i}"] .time-period-section {
             min-height: calc((18px + 3px) * #{$i} );
         }
 
-        &.scheduling-calendar .associate-#{$i} {
+        .associate-#{$i} {
             position: absolute;
             left: 0px;
             right: 0px;
             bottom: calc((18px + 3px) * #{$i});
         }
+    }
+
+    .month-day.past-week .time-period-section {
+        min-height: initial;
     }
 
     &.scheduling-calendar .time-period-copy,

@@ -261,227 +261,231 @@
     text-align: right;
     padding-right: 5px;
     line-height: 1; }
+  .calendar .past-week .associate-aside-item {
+    display: none; }
   .calendar.scheduling-calendar .break-controls select {
     width: 160px; }
   .calendar.scheduling-calendar .time-period-section {
     position: relative; }
-  .calendar.scheduling-calendar [data-this-week-user-count="0"] .time-period-section {
+  .calendar [data-this-week-user-count="0"] .time-period-section {
     min-height: calc((18px + 3px) * 0); }
-  .calendar.scheduling-calendar .associate-0 {
+  .calendar .associate-0 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 0); }
-  .calendar.scheduling-calendar [data-this-week-user-count="1"] .time-period-section {
+  .calendar [data-this-week-user-count="1"] .time-period-section {
     min-height: calc((18px + 3px) * 1); }
-  .calendar.scheduling-calendar .associate-1 {
+  .calendar .associate-1 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 1); }
-  .calendar.scheduling-calendar [data-this-week-user-count="2"] .time-period-section {
+  .calendar [data-this-week-user-count="2"] .time-period-section {
     min-height: calc((18px + 3px) * 2); }
-  .calendar.scheduling-calendar .associate-2 {
+  .calendar .associate-2 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 2); }
-  .calendar.scheduling-calendar [data-this-week-user-count="3"] .time-period-section {
+  .calendar [data-this-week-user-count="3"] .time-period-section {
     min-height: calc((18px + 3px) * 3); }
-  .calendar.scheduling-calendar .associate-3 {
+  .calendar .associate-3 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 3); }
-  .calendar.scheduling-calendar [data-this-week-user-count="4"] .time-period-section {
+  .calendar [data-this-week-user-count="4"] .time-period-section {
     min-height: calc((18px + 3px) * 4); }
-  .calendar.scheduling-calendar .associate-4 {
+  .calendar .associate-4 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 4); }
-  .calendar.scheduling-calendar [data-this-week-user-count="5"] .time-period-section {
+  .calendar [data-this-week-user-count="5"] .time-period-section {
     min-height: calc((18px + 3px) * 5); }
-  .calendar.scheduling-calendar .associate-5 {
+  .calendar .associate-5 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 5); }
-  .calendar.scheduling-calendar [data-this-week-user-count="6"] .time-period-section {
+  .calendar [data-this-week-user-count="6"] .time-period-section {
     min-height: calc((18px + 3px) * 6); }
-  .calendar.scheduling-calendar .associate-6 {
+  .calendar .associate-6 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 6); }
-  .calendar.scheduling-calendar [data-this-week-user-count="7"] .time-period-section {
+  .calendar [data-this-week-user-count="7"] .time-period-section {
     min-height: calc((18px + 3px) * 7); }
-  .calendar.scheduling-calendar .associate-7 {
+  .calendar .associate-7 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 7); }
-  .calendar.scheduling-calendar [data-this-week-user-count="8"] .time-period-section {
+  .calendar [data-this-week-user-count="8"] .time-period-section {
     min-height: calc((18px + 3px) * 8); }
-  .calendar.scheduling-calendar .associate-8 {
+  .calendar .associate-8 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 8); }
-  .calendar.scheduling-calendar [data-this-week-user-count="9"] .time-period-section {
+  .calendar [data-this-week-user-count="9"] .time-period-section {
     min-height: calc((18px + 3px) * 9); }
-  .calendar.scheduling-calendar .associate-9 {
+  .calendar .associate-9 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 9); }
-  .calendar.scheduling-calendar [data-this-week-user-count="10"] .time-period-section {
+  .calendar [data-this-week-user-count="10"] .time-period-section {
     min-height: calc((18px + 3px) * 10); }
-  .calendar.scheduling-calendar .associate-10 {
+  .calendar .associate-10 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 10); }
-  .calendar.scheduling-calendar [data-this-week-user-count="11"] .time-period-section {
+  .calendar [data-this-week-user-count="11"] .time-period-section {
     min-height: calc((18px + 3px) * 11); }
-  .calendar.scheduling-calendar .associate-11 {
+  .calendar .associate-11 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 11); }
-  .calendar.scheduling-calendar [data-this-week-user-count="12"] .time-period-section {
+  .calendar [data-this-week-user-count="12"] .time-period-section {
     min-height: calc((18px + 3px) * 12); }
-  .calendar.scheduling-calendar .associate-12 {
+  .calendar .associate-12 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 12); }
-  .calendar.scheduling-calendar [data-this-week-user-count="13"] .time-period-section {
+  .calendar [data-this-week-user-count="13"] .time-period-section {
     min-height: calc((18px + 3px) * 13); }
-  .calendar.scheduling-calendar .associate-13 {
+  .calendar .associate-13 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 13); }
-  .calendar.scheduling-calendar [data-this-week-user-count="14"] .time-period-section {
+  .calendar [data-this-week-user-count="14"] .time-period-section {
     min-height: calc((18px + 3px) * 14); }
-  .calendar.scheduling-calendar .associate-14 {
+  .calendar .associate-14 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 14); }
-  .calendar.scheduling-calendar [data-this-week-user-count="15"] .time-period-section {
+  .calendar [data-this-week-user-count="15"] .time-period-section {
     min-height: calc((18px + 3px) * 15); }
-  .calendar.scheduling-calendar .associate-15 {
+  .calendar .associate-15 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 15); }
-  .calendar.scheduling-calendar [data-this-week-user-count="16"] .time-period-section {
+  .calendar [data-this-week-user-count="16"] .time-period-section {
     min-height: calc((18px + 3px) * 16); }
-  .calendar.scheduling-calendar .associate-16 {
+  .calendar .associate-16 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 16); }
-  .calendar.scheduling-calendar [data-this-week-user-count="17"] .time-period-section {
+  .calendar [data-this-week-user-count="17"] .time-period-section {
     min-height: calc((18px + 3px) * 17); }
-  .calendar.scheduling-calendar .associate-17 {
+  .calendar .associate-17 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 17); }
-  .calendar.scheduling-calendar [data-this-week-user-count="18"] .time-period-section {
+  .calendar [data-this-week-user-count="18"] .time-period-section {
     min-height: calc((18px + 3px) * 18); }
-  .calendar.scheduling-calendar .associate-18 {
+  .calendar .associate-18 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 18); }
-  .calendar.scheduling-calendar [data-this-week-user-count="19"] .time-period-section {
+  .calendar [data-this-week-user-count="19"] .time-period-section {
     min-height: calc((18px + 3px) * 19); }
-  .calendar.scheduling-calendar .associate-19 {
+  .calendar .associate-19 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 19); }
-  .calendar.scheduling-calendar [data-this-week-user-count="20"] .time-period-section {
+  .calendar [data-this-week-user-count="20"] .time-period-section {
     min-height: calc((18px + 3px) * 20); }
-  .calendar.scheduling-calendar .associate-20 {
+  .calendar .associate-20 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 20); }
-  .calendar.scheduling-calendar [data-this-week-user-count="21"] .time-period-section {
+  .calendar [data-this-week-user-count="21"] .time-period-section {
     min-height: calc((18px + 3px) * 21); }
-  .calendar.scheduling-calendar .associate-21 {
+  .calendar .associate-21 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 21); }
-  .calendar.scheduling-calendar [data-this-week-user-count="22"] .time-period-section {
+  .calendar [data-this-week-user-count="22"] .time-period-section {
     min-height: calc((18px + 3px) * 22); }
-  .calendar.scheduling-calendar .associate-22 {
+  .calendar .associate-22 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 22); }
-  .calendar.scheduling-calendar [data-this-week-user-count="23"] .time-period-section {
+  .calendar [data-this-week-user-count="23"] .time-period-section {
     min-height: calc((18px + 3px) * 23); }
-  .calendar.scheduling-calendar .associate-23 {
+  .calendar .associate-23 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 23); }
-  .calendar.scheduling-calendar [data-this-week-user-count="24"] .time-period-section {
+  .calendar [data-this-week-user-count="24"] .time-period-section {
     min-height: calc((18px + 3px) * 24); }
-  .calendar.scheduling-calendar .associate-24 {
+  .calendar .associate-24 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 24); }
-  .calendar.scheduling-calendar [data-this-week-user-count="25"] .time-period-section {
+  .calendar [data-this-week-user-count="25"] .time-period-section {
     min-height: calc((18px + 3px) * 25); }
-  .calendar.scheduling-calendar .associate-25 {
+  .calendar .associate-25 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 25); }
-  .calendar.scheduling-calendar [data-this-week-user-count="26"] .time-period-section {
+  .calendar [data-this-week-user-count="26"] .time-period-section {
     min-height: calc((18px + 3px) * 26); }
-  .calendar.scheduling-calendar .associate-26 {
+  .calendar .associate-26 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 26); }
-  .calendar.scheduling-calendar [data-this-week-user-count="27"] .time-period-section {
+  .calendar [data-this-week-user-count="27"] .time-period-section {
     min-height: calc((18px + 3px) * 27); }
-  .calendar.scheduling-calendar .associate-27 {
+  .calendar .associate-27 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 27); }
-  .calendar.scheduling-calendar [data-this-week-user-count="28"] .time-period-section {
+  .calendar [data-this-week-user-count="28"] .time-period-section {
     min-height: calc((18px + 3px) * 28); }
-  .calendar.scheduling-calendar .associate-28 {
+  .calendar .associate-28 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 28); }
-  .calendar.scheduling-calendar [data-this-week-user-count="29"] .time-period-section {
+  .calendar [data-this-week-user-count="29"] .time-period-section {
     min-height: calc((18px + 3px) * 29); }
-  .calendar.scheduling-calendar .associate-29 {
+  .calendar .associate-29 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 29); }
-  .calendar.scheduling-calendar [data-this-week-user-count="30"] .time-period-section {
+  .calendar [data-this-week-user-count="30"] .time-period-section {
     min-height: calc((18px + 3px) * 30); }
-  .calendar.scheduling-calendar .associate-30 {
+  .calendar .associate-30 {
     position: absolute;
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 30); }
+  .calendar .month-day.past-week .time-period-section {
+    min-height: initial; }
   .calendar.scheduling-calendar .time-period-copy,
   .calendar.scheduling-calendar .time-period-delete {
     width: 1em; }

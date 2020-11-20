@@ -146,6 +146,37 @@ export class Calendar {
             }
         }
 
+        // Mark the closed days as closed
+        for (let weekday of closedWeekdays) {
+            let offset = 1 + WEEKDAY_INDEXES[weekday];
+            let days = this.element.querySelectorAll(`.month-day-list > :nth-child(7n+${offset})`);
+
+            for (let day of days) {
+                day.classList.add("closed-day");
+            }
+        }
+
+        // Mark weeks as past weeks
+        {
+            let firstDayOfWeek = 1;
+            let days = null;
+
+            do {
+                // Get all the days that are past in each week
+                days = this.element.querySelectorAll(`.month-day:nth-child(n+${firstDayOfWeek}):nth-child(-n+${firstDayOfWeek + 6}).past-day`);
+                console.log(days.length);
+                console.log("firstDayOfWeek: ", firstDayOfWeek);
+                // If all 7 days are past or closed
+                if (days.length + closedWeekdays.length == 7) {
+                    for (let day of days) {
+                        day.classList.add("past-week");
+                    }
+                }
+
+                firstDayOfWeek += 7;
+            } while (days.length);
+        }
+
         this.associates = {};
         this.availabilities = [];
         this.shifts = [];

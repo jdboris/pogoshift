@@ -408,7 +408,8 @@
         }
     }
 
-    .month-day.past-week .time-period-section {
+    /* NOTE: Must be specific to take priority */
+    & .month-day.past-week .time-period-section {
         min-height: initial;
     }
 
@@ -656,11 +657,11 @@
         }
         */
         @for $i from 0 through 30 {
-            &.scheduling-calendar [data-this-week-user-count='#{$i}'] .time-period-section {
+            [data-this-week-user-count='#{$i}'] .time-period-section {
                 min-height: calc((13px + 2px) * #{$i});
             }
 
-            &.scheduling-calendar .associate-#{$i} {
+            .associate-#{$i} {
                 position: absolute;
                 left: 0px;
                 right: 0px;

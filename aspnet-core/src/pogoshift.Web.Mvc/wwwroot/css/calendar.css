@@ -262,7 +262,7 @@
     text-align: right;
     padding-right: 5px;
     line-height: 1; }
-  .calendar .past-week .associate-aside-item {
+  .calendar:not(.show-past) .past-week .associate-aside-item {
     display: none; }
   .calendar.scheduling-calendar .break-controls select {
     width: 160px; }
@@ -485,7 +485,7 @@
     left: 0px;
     right: 0px;
     bottom: calc((18px + 3px) * 30); }
-  .calendar .month-day.past-week .time-period-section {
+  .calendar:not(.show-past) .month-day.past-week .time-period-section {
     min-height: initial; }
   .calendar.scheduling-calendar .time-period-copy,
   .calendar.scheduling-calendar .time-period-delete {

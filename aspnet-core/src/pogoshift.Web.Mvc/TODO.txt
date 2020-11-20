@@ -1,6 +1,5 @@
 ﻿
 Short-Term:
--add a button to show past days on a calendar
 -refactor/optimize patterns and performance
 -allow shifts to span multiple days
 -fix the bug that's adding copies of a shift on the same day

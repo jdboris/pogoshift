@@ -378,7 +378,7 @@
         line-height: 1;
     }
 
-    .past-week .associate-aside-item {
+    &:not(.show-past) .past-week .associate-aside-item {
         display: none;
     }
     /* **************************************************************************************************************** */
@@ -407,9 +407,8 @@
             bottom: calc((18px + 3px) * #{$i});
         }
     }
-
     /* NOTE: Must be specific to take priority */
-    & .month-day.past-week .time-period-section {
+    &:not(.show-past) .month-day.past-week .time-period-section {
         min-height: initial;
     }
 

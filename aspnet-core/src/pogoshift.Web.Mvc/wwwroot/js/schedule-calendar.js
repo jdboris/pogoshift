@@ -265,6 +265,8 @@ function BreakControls() {
 function createShiftFromAvailability(calendar, availabilityPeriod) {
     if ("HasUser.CrudAll" in abp.auth.grantedPermissions) {
 
+        let monthDay = this.monthDays[availabilityPeriod.availability.beginning.getDate()];
+
         if (monthDay.timePeriodCrudPromise == null) {
             monthDay.timePeriodCrudPromise = new Shift({
                 userId: availabilityPeriod.user.id,

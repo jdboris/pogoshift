@@ -3595,3 +3595,58 @@ DEBUG 2020-11-22 02:28:18,234 [14   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub -
 DEBUG 2020-11-22 02:28:18,812 [6    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"qWhzlo8OBBnwyY3sz1TxyA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-22T02:28:18.8126187-05:00","Properties":{}}
 DEBUG 2020-11-22 02:28:18,813 [6    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: qWhzlo8OBBnwyY3sz1TxyA
 DEBUG 2020-11-22 02:28:44,202 [6    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: qWhzlo8OBBnwyY3sz1TxyA
+DEBUG 2020-11-22 09:36:12,169 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-11-22 09:36:12,310 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2020-11-22 09:36:12,325 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.Web.Startup.pogoshiftWebMvcModule, pogoshift.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 09:36:12,327 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftWebCoreModule, pogoshift.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 09:36:12,328 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftApplicationModule, pogoshift.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 09:36:12,328 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftCoreModule, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 09:36:12,328 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 09:36:12,328 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 09:36:12,328 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 09:36:12,329 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 09:36:12,329 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.EntityFrameworkCore.pogoshiftEntityFrameworkModule, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 09:36:12,329 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 09:36:12,329 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 09:36:12,330 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 09:36:12,330 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 09:36:12,330 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 09:36:12,330 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 09:36:12,333 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2020-11-22 09:36:12,447 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-22 09:36:12,447 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-22 09:36:12,447 [1    ] o.Configuration.LanguageManagementConfig - Converted pogoshift (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-22 09:36:12,447 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-22 09:36:12,818 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: pogoshift.EntityFrameworkCore.pogoshiftDbContext, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 09:36:13,785 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-11-22 09:36:13,821 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-11-22 09:36:13,833 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-11-22 09:36:13,839 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: pogoshift
+DEBUG 2020-11-22 09:36:13,844 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-11-22 09:36:14,078 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-11-22 09:36:14,222 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[pogoshift.MultiTenancy.Tenant, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[pogoshift.Authorization.Users.User, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2020-11-22 09:36:14,269 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 16 classes define auto mapping attributes
+DEBUG 2020-11-22 09:36:14,269 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2020-11-22 09:36:14,274 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.CreateUserDto
+DEBUG 2020-11-22 09:36:14,274 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.UserDto
+DEBUG 2020-11-22 09:36:14,274 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Shifts.Dto.ShiftDto
+DEBUG 2020-11-22 09:36:14,274 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Shifts.Dto.UpdateShiftDto
+DEBUG 2020-11-22 09:36:14,275 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-11-22 09:36:14,275 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-11-22 09:36:14,275 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Roles.Dto.PermissionDto
+DEBUG 2020-11-22 09:36:14,275 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-11-22 09:36:14,275 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.TenantDto
+DEBUG 2020-11-22 09:36:14,275 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Breaks.Dto.BreakDto
+DEBUG 2020-11-22 09:36:14,275 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.AvailabilityDto
+DEBUG 2020-11-22 09:36:14,275 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.GetAllAvailabilityDto
+DEBUG 2020-11-22 09:36:14,275 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.UpdateAvailabilityDto
+DEBUG 2020-11-22 09:36:14,275 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2020-11-22 09:36:14,275 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Web.Models.Roles.EditRoleModalViewModel
+DEBUG 2020-11-22 09:36:24,113 [10   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"cR6Tstwe85LguFV9Zi3hAQ","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-22T09:36:24.0925444-05:00","Properties":{}}
+DEBUG 2020-11-22 09:36:24,135 [10   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: cR6Tstwe85LguFV9Zi3hAQ
+DEBUG 2020-11-22 09:38:17,550 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: cR6Tstwe85LguFV9Zi3hAQ
+DEBUG 2020-11-22 09:38:18,011 [43   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"Ltgn-qnINi_f8kjBe7cVhA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-22T09:38:18.0100193-05:00","Properties":{}}
+DEBUG 2020-11-22 09:38:18,013 [43   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: Ltgn-qnINi_f8kjBe7cVhA
+DEBUG 2020-11-22 09:43:34,220 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: Ltgn-qnINi_f8kjBe7cVhA
+DEBUG 2020-11-22 09:43:34,714 [69   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"l3BBqGhIiIwR3k0e1nUA6w","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-22T09:43:34.7139085-05:00","Properties":{}}
+DEBUG 2020-11-22 09:43:34,714 [69   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: l3BBqGhIiIwR3k0e1nUA6w

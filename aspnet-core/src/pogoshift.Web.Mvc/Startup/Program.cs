@@ -2,7 +2,10 @@
 using Microsoft.AspNetCore.Hosting;
 using pogoshift.Authorization.Users;
 using pogoshift.Availabilities;
+using pogoshift.Availabilities.Dto;
 using pogoshift.Shifts;
+using pogoshift.Shifts.Dto;
+using pogoshift.Users.Dto;
 using System;
 using System.IO;
 using System.Text.Json;
@@ -17,10 +20,13 @@ namespace pogoshift.Web.Startup
             BuildWebHost(args).Run();
         }
 
-        public static void BuildJavaScriptModel<ModelType>(ModelType defaultObject)
+        public static void BuildJavaScriptModel<ModelType, DtoType>() where DtoType : new()
         {
-            Type type = typeof(ModelType);
-            var props = type.GetProperties();
+            Type modelType = typeof(ModelType);
+            Type dtoType = typeof(DtoType);
+            DtoType defaultObject = new DtoType();
+
+            var props = dtoType.GetProperties();
             var serialized = JsonSerializer.Serialize(defaultObject, new JsonSerializerOptions
             {
                 PropertyNamingPolicy = JsonNamingPolicy.CamelCase,
@@ -29,7 +35,7 @@ namespace pogoshift.Web.Startup
             var fileText = $"// NOTE: This code is auto-generated. Do not modify.{Environment.NewLine}{Environment.NewLine}";
             fileText += $"import {{ Model }} from '../model.js';{Environment.NewLine}";
             fileText += $"import {{ stringToDate, dateToString }} from '../utilities.js';{Environment.NewLine}{Environment.NewLine}";
-            fileText += $"export class {type.Name} extends Model {{{Environment.NewLine}{Environment.NewLine}";
+            fileText += $"export class {modelType.Name} extends Model {{{Environment.NewLine}{Environment.NewLine}";
 
             fileText += $"\tconstructor( options = {serialized} ){{{Environment.NewLine}";
             fileText += $"\t\tsuper( options );{Environment.NewLine}";
@@ -64,7 +70,7 @@ namespace pogoshift.Web.Startup
             fileText += $"}}";
 
 
-            string path = @$"{Environment.CurrentDirectory}\wwwroot\js\models\{type.Name}.js";
+            string path = @$"{Environment.CurrentDirectory}\wwwroot\js\models\{modelType.Name}.js";
 
             File.WriteAllText(path, fileText);
         }
@@ -80,9 +86,9 @@ namespace pogoshift.Web.Startup
             }
 
             // Generate new JavaScript Models
-            BuildJavaScriptModel(new User());
-            BuildJavaScriptModel(new Availability());
-            BuildJavaScriptModel(new Shift());
+            BuildJavaScriptModel<User, UserDto>();
+            BuildJavaScriptModel<Availability, AvailabilityDto>();
+            BuildJavaScriptModel<Shift, ShiftDto>();
 
 
             return WebHost.CreateDefaultBuilder(args)

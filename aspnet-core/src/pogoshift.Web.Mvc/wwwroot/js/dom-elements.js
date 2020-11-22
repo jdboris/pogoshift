@@ -317,6 +317,12 @@ class TimePeriod {
         let note = element.querySelector(".time-period-note");
 
         let noteInput = E(`<textarea placeholder="Notes..."></textarea>`);
+        if (!element.classList.contains("edit-mode")) {
+            noteInput.disabled = true;
+            if (!time.note) {
+                noteInput.hidden = true;
+            }
+        }
         noteInput.value = time.note;
         noteInput.onchange = () => {
             time.note = noteInput.value;

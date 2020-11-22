@@ -270,7 +270,7 @@ function createShiftFromAvailability(calendar, availabilityPeriod) {
             date: availabilityPeriod.availability.beginning,
             beginning: availabilityPeriod.availability.beginning,
             ending: availabilityPeriod.availability.ending,
-            note: ""
+            note: availabilityPeriod.availability.note ? `Associate Note:\n${availabilityPeriod.availability.note}\n` : ""
         }).save().then((shift) => {
             if (!(shift.userId in calendar.associates)) {
                 console.error("Error: Shift User is not listed on this Calendar.");

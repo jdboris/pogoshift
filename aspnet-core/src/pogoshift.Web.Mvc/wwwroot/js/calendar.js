@@ -372,8 +372,8 @@ export class Calendar {
     }
 
     focusTimePeriod(timePeriod) {
-        if (timePeriod.classList.contains("time-period-template") == false &&
-            timePeriod.classList.contains("edit-mode") == true) {
+        if (timePeriod.classList.contains("time-period-template") == false) {
+            // timePeriod.classList.contains("edit-mode") == true
             if (this.focusedTimePeriod != null) this.focusedTimePeriod.classList.remove("focused");
             this.focusedTimePeriod = timePeriod;
             timePeriod.classList.add("focused");

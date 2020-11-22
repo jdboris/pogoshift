@@ -3290,3 +3290,191 @@ DEBUG 2020-11-22 00:31:25,713 [110  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub -
 DEBUG 2020-11-22 00:34:23,284 [78   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: 5Uuz58QUDLCfpT0KCvDINQ
 DEBUG 2020-11-22 00:34:23,645 [92   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"Tk1_9AWj38tjIZ1P2RURXw","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-22T00:34:23.6452178-05:00","Properties":{}}
 DEBUG 2020-11-22 00:34:23,645 [92   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: Tk1_9AWj38tjIZ1P2RURXw
+DEBUG 2020-11-22 00:39:02,397 [110  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: Tk1_9AWj38tjIZ1P2RURXw
+DEBUG 2020-11-22 00:39:02,929 [117  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"sDQSLePtGdIVy2XSwku09w","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-22T00:39:02.9298441-05:00","Properties":{}}
+DEBUG 2020-11-22 00:39:02,930 [117  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: sDQSLePtGdIVy2XSwku09w
+DEBUG 2020-11-22 00:39:08,120 [111  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: sDQSLePtGdIVy2XSwku09w
+DEBUG 2020-11-22 00:39:13,846 [111  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"hx8PHTb91W87hLAsPS9ihg","IpAddress":"::1","TenantId":4,"UserId":10008,"ConnectTime":"2020-11-22T00:39:13.8459535-05:00","Properties":{}}
+DEBUG 2020-11-22 00:39:13,846 [111  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: hx8PHTb91W87hLAsPS9ihg
+WARN  2020-11-22 00:39:22,977 [134  ] Mvc.ExceptionHandling.AbpExceptionFilter - Required permissions are not granted. At least one of these permissions must be granted: CRUD All Shifts
+Abp.Authorization.AbpAuthorizationException: Required permissions are not granted. At least one of these permissions must be granted: CRUD All Shifts
+   at Abp.Authorization.PermissionCheckerExtensions.Authorize(IPermissionChecker permissionChecker, Boolean requireAll, String[] permissionNames)
+   at Abp.Authorization.AuthorizationHelper.Authorize(IEnumerable`1 authorizeAttributes)
+   at Abp.Authorization.AuthorizationInterceptor.InterceptSynchronous(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.InterceptSynchronous(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Auditing.AuditingInterceptor.InterceptSynchronous(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.ShiftAppServiceProxy.Update(UpdateShiftDto input)
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+WARN  2020-11-22 00:39:29,415 [58   ] Mvc.ExceptionHandling.AbpExceptionFilter - Required permissions are not granted. At least one of these permissions must be granted: CRUD All Shifts
+Abp.Authorization.AbpAuthorizationException: Required permissions are not granted. At least one of these permissions must be granted: CRUD All Shifts
+   at Abp.Authorization.PermissionCheckerExtensions.Authorize(IPermissionChecker permissionChecker, Boolean requireAll, String[] permissionNames)
+   at Abp.Authorization.AuthorizationHelper.Authorize(IEnumerable`1 authorizeAttributes)
+   at Abp.Authorization.AuthorizationInterceptor.InterceptSynchronous(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.InterceptSynchronous(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Auditing.AuditingInterceptor.InterceptSynchronous(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.ShiftAppServiceProxy.Update(UpdateShiftDto input)
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+WARN  2020-11-22 00:39:33,811 [117  ] Mvc.ExceptionHandling.AbpExceptionFilter - Required permissions are not granted. At least one of these permissions must be granted: CRUD All Shifts
+Abp.Authorization.AbpAuthorizationException: Required permissions are not granted. At least one of these permissions must be granted: CRUD All Shifts
+   at Abp.Authorization.PermissionCheckerExtensions.Authorize(IPermissionChecker permissionChecker, Boolean requireAll, String[] permissionNames)
+   at Abp.Authorization.AuthorizationHelper.Authorize(IEnumerable`1 authorizeAttributes)
+   at Abp.Authorization.AuthorizationInterceptor.InterceptSynchronous(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.InterceptSynchronous(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Auditing.AuditingInterceptor.InterceptSynchronous(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.ShiftAppServiceProxy.Update(UpdateShiftDto input)
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+WARN  2020-11-22 00:41:23,626 [126  ] Mvc.ExceptionHandling.AbpExceptionFilter - Required permissions are not granted. At least one of these permissions must be granted: CRUD All Shifts
+Abp.Authorization.AbpAuthorizationException: Required permissions are not granted. At least one of these permissions must be granted: CRUD All Shifts
+   at Abp.Authorization.PermissionCheckerExtensions.Authorize(IPermissionChecker permissionChecker, Boolean requireAll, String[] permissionNames)
+   at Abp.Authorization.AuthorizationHelper.Authorize(IEnumerable`1 authorizeAttributes)
+   at Abp.Authorization.AuthorizationInterceptor.InterceptSynchronous(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Domain.Uow.UnitOfWorkInterceptor.InterceptSynchronous(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Abp.Auditing.AuditingInterceptor.InterceptSynchronous(IInvocation invocation)
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.DynamicProxy.AbstractInvocation.Proceed()
+   at Castle.Proxies.ShiftAppServiceProxy.Update(UpdateShiftDto input)
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.SyncObjectResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeNextActionFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextExceptionFilterAsync>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+DEBUG 2020-11-22 00:42:29,499 [118  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: hx8PHTb91W87hLAsPS9ihg
+DEBUG 2020-11-22 00:42:30,139 [118  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"k_HnPIRHTT_WsQSbILkQBw","IpAddress":"::1","TenantId":4,"UserId":10008,"ConnectTime":"2020-11-22T00:42:30.1397775-05:00","Properties":{}}
+DEBUG 2020-11-22 00:42:30,140 [118  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: k_HnPIRHTT_WsQSbILkQBw
+DEBUG 2020-11-22 00:43:56,053 [59   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: k_HnPIRHTT_WsQSbILkQBw
+DEBUG 2020-11-22 00:43:56,671 [125  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"r7RIt8RoJJef5cGSizPPlQ","IpAddress":"::1","TenantId":4,"UserId":10008,"ConnectTime":"2020-11-22T00:43:56.6715408-05:00","Properties":{}}
+DEBUG 2020-11-22 00:43:56,672 [125  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: r7RIt8RoJJef5cGSizPPlQ
+DEBUG 2020-11-22 00:44:02,635 [127  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: r7RIt8RoJJef5cGSizPPlQ
+DEBUG 2020-11-22 00:44:03,229 [128  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"KG-vy39FWC_l4EsYeVfKWQ","IpAddress":"::1","TenantId":4,"UserId":10008,"ConnectTime":"2020-11-22T00:44:03.2298097-05:00","Properties":{}}
+DEBUG 2020-11-22 00:44:03,230 [128  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: KG-vy39FWC_l4EsYeVfKWQ
+DEBUG 2020-11-22 00:52:02,940 [124  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: KG-vy39FWC_l4EsYeVfKWQ
+DEBUG 2020-11-22 00:52:03,519 [115  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"fEDyhCfQtvoA0w-PSSvddQ","IpAddress":"::1","TenantId":4,"UserId":10008,"ConnectTime":"2020-11-22T00:52:03.5196861-05:00","Properties":{}}
+DEBUG 2020-11-22 00:52:03,522 [115  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: fEDyhCfQtvoA0w-PSSvddQ
+DEBUG 2020-11-22 00:52:42,842 [97   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: fEDyhCfQtvoA0w-PSSvddQ
+DEBUG 2020-11-22 00:52:43,415 [97   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"eOZ-Ig6rD0WY3OQwqbkGDA","IpAddress":"::1","TenantId":4,"UserId":10008,"ConnectTime":"2020-11-22T00:52:43.4158081-05:00","Properties":{}}
+DEBUG 2020-11-22 00:52:43,417 [97   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: eOZ-Ig6rD0WY3OQwqbkGDA
+DEBUG 2020-11-22 00:52:49,769 [101  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: eOZ-Ig6rD0WY3OQwqbkGDA
+DEBUG 2020-11-22 00:52:50,345 [106  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"6ECeRKHSCzERv90bvAqegA","IpAddress":"::1","TenantId":4,"UserId":10008,"ConnectTime":"2020-11-22T00:52:50.3450755-05:00","Properties":{}}
+DEBUG 2020-11-22 00:52:50,345 [106  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: 6ECeRKHSCzERv90bvAqegA
+DEBUG 2020-11-22 00:52:58,256 [128  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: 6ECeRKHSCzERv90bvAqegA
+DEBUG 2020-11-22 00:53:02,579 [125  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"G2rhSmU56BlN9M9vUI64SA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-22T00:53:02.5798021-05:00","Properties":{}}
+DEBUG 2020-11-22 00:53:02,581 [125  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: G2rhSmU56BlN9M9vUI64SA
+DEBUG 2020-11-22 00:53:19,725 [125  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: G2rhSmU56BlN9M9vUI64SA
+DEBUG 2020-11-22 00:53:20,318 [125  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"03OEA55D6ACe0ptF2jHhIg","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-22T00:53:20.3185062-05:00","Properties":{}}
+DEBUG 2020-11-22 00:53:20,319 [125  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: 03OEA55D6ACe0ptF2jHhIg
+DEBUG 2020-11-22 00:53:27,462 [125  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: 03OEA55D6ACe0ptF2jHhIg
+DEBUG 2020-11-22 00:53:31,261 [106  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"o8tBRSPmwAagupJmAxhpMA","IpAddress":"::1","TenantId":4,"UserId":10008,"ConnectTime":"2020-11-22T00:53:31.2615626-05:00","Properties":{}}
+DEBUG 2020-11-22 00:53:31,261 [106  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: o8tBRSPmwAagupJmAxhpMA
+DEBUG 2020-11-22 01:23:57,079 [97   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: o8tBRSPmwAagupJmAxhpMA
+DEBUG 2020-11-22 01:23:57,533 [128  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"T097hjLBXkErSSJx9FuVYA","IpAddress":"::1","TenantId":4,"UserId":10008,"ConnectTime":"2020-11-22T01:23:57.533645-05:00","Properties":{}}
+DEBUG 2020-11-22 01:23:57,534 [128  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: T097hjLBXkErSSJx9FuVYA
+DEBUG 2020-11-22 01:23:59,783 [101  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: T097hjLBXkErSSJx9FuVYA
+DEBUG 2020-11-22 01:24:00,147 [97   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"rrIERxxodeBfUXlNALfwGw","IpAddress":"::1","TenantId":4,"UserId":10008,"ConnectTime":"2020-11-22T01:24:00.1471764-05:00","Properties":{}}
+DEBUG 2020-11-22 01:24:00,147 [97   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: rrIERxxodeBfUXlNALfwGw
+DEBUG 2020-11-22 01:24:22,493 [128  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: rrIERxxodeBfUXlNALfwGw
+DEBUG 2020-11-22 01:24:22,884 [136  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"bMTKzxK-opCHDM_o0Ltd5A","IpAddress":"::1","TenantId":4,"UserId":10008,"ConnectTime":"2020-11-22T01:24:22.8845531-05:00","Properties":{}}
+DEBUG 2020-11-22 01:24:22,885 [136  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: bMTKzxK-opCHDM_o0Ltd5A
+DEBUG 2020-11-22 01:24:27,500 [94   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: bMTKzxK-opCHDM_o0Ltd5A
+DEBUG 2020-11-22 01:24:31,680 [128  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"x5-vV2UalbcV9P8N6EzmBA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-22T01:24:31.6802116-05:00","Properties":{}}
+DEBUG 2020-11-22 01:24:31,680 [128  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: x5-vV2UalbcV9P8N6EzmBA
+DEBUG 2020-11-22 01:26:47,548 [128  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: x5-vV2UalbcV9P8N6EzmBA
+DEBUG 2020-11-22 01:26:48,130 [97   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"-Nx777TKQWNGH1Jli0Jngg","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-22T01:26:48.1304729-05:00","Properties":{}}
+DEBUG 2020-11-22 01:26:48,130 [97   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: -Nx777TKQWNGH1Jli0Jngg
+DEBUG 2020-11-22 01:28:56,928 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-11-22 01:28:57,000 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2020-11-22 01:28:57,016 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.Web.Startup.pogoshiftWebMvcModule, pogoshift.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 01:28:57,018 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftWebCoreModule, pogoshift.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 01:28:57,018 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftApplicationModule, pogoshift.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 01:28:57,018 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftCoreModule, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 01:28:57,019 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 01:28:57,019 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 01:28:57,019 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 01:28:57,020 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 01:28:57,020 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.EntityFrameworkCore.pogoshiftEntityFrameworkModule, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 01:28:57,020 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 01:28:57,020 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 01:28:57,020 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 01:28:57,021 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 01:28:57,021 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 01:28:57,021 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 01:28:57,023 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2020-11-22 01:28:57,099 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-22 01:28:57,100 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-22 01:28:57,100 [1    ] o.Configuration.LanguageManagementConfig - Converted pogoshift (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-22 01:28:57,100 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-22 01:28:57,453 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: pogoshift.EntityFrameworkCore.pogoshiftDbContext, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 01:28:58,363 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-11-22 01:28:58,403 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-11-22 01:28:58,415 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-11-22 01:28:58,422 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: pogoshift
+DEBUG 2020-11-22 01:28:58,428 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-11-22 01:28:58,653 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-11-22 01:28:58,785 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[pogoshift.MultiTenancy.Tenant, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[pogoshift.Authorization.Users.User, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2020-11-22 01:28:58,835 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 16 classes define auto mapping attributes
+DEBUG 2020-11-22 01:28:58,835 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2020-11-22 01:28:58,840 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.CreateUserDto
+DEBUG 2020-11-22 01:28:58,841 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.UserDto
+DEBUG 2020-11-22 01:28:58,841 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Shifts.Dto.ShiftDto
+DEBUG 2020-11-22 01:28:58,841 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Shifts.Dto.UpdateShiftDto
+DEBUG 2020-11-22 01:28:58,841 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-11-22 01:28:58,841 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-11-22 01:28:58,842 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Roles.Dto.PermissionDto
+DEBUG 2020-11-22 01:28:58,842 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-11-22 01:28:58,842 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.TenantDto
+DEBUG 2020-11-22 01:28:58,842 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Breaks.Dto.BreakDto
+DEBUG 2020-11-22 01:28:58,842 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.AvailabilityDto
+DEBUG 2020-11-22 01:28:58,842 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.GetAllAvailabilityDto
+DEBUG 2020-11-22 01:28:58,842 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.UpdateAvailabilityDto
+DEBUG 2020-11-22 01:28:58,842 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2020-11-22 01:28:58,842 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Web.Models.Roles.EditRoleModalViewModel
+DEBUG 2020-11-22 01:29:08,163 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"nQwjEMYCExBUp-rG4gIAOg","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-22T01:29:08.1374185-05:00","Properties":{}}
+DEBUG 2020-11-22 01:29:08,191 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: nQwjEMYCExBUp-rG4gIAOg
+DEBUG 2020-11-22 01:29:49,416 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: nQwjEMYCExBUp-rG4gIAOg
+DEBUG 2020-11-22 01:29:49,758 [35   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"apJbMEa8cN_sqVZ9XNcGzw","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-22T01:29:49.7585903-05:00","Properties":{}}
+DEBUG 2020-11-22 01:29:49,759 [35   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: apJbMEa8cN_sqVZ9XNcGzw

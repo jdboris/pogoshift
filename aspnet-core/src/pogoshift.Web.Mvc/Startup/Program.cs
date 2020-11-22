@@ -27,21 +27,41 @@ namespace pogoshift.Web.Startup
             });
 
             var fileText = $"// NOTE: This code is auto-generated. Do not modify.{Environment.NewLine}{Environment.NewLine}";
-            fileText += $"import {{ Model }} from '../model.js';{Environment.NewLine}{Environment.NewLine}";
+            fileText += $"import {{ Model }} from '../model.js';{Environment.NewLine}";
+            fileText += $"import {{ stringToDate, dateToString }} from '../utilities.js';{Environment.NewLine}{Environment.NewLine}";
             fileText += $"export class {type.Name} extends Model {{{Environment.NewLine}{Environment.NewLine}";
 
             fileText += $"\tconstructor( options = {serialized} ){{{Environment.NewLine}";
             fileText += $"\t\tsuper( options );{Environment.NewLine}";
+            fileText += $"\t}}{Environment.NewLine}";
 
-            /*
+            fileText += $"\tbackToFront(){{{Environment.NewLine}";
+
             foreach (var prop in props)
             {
                 var camelCased = char.ToLower(prop.Name[0]) + prop.Name.Substring(1);
-                fileText += $"\t\tthis.{camelCased} = options.{camelCased};{Environment.NewLine}";
+                if (prop.PropertyType == typeof(DateTime) || prop.PropertyType == typeof(DateTimeOffset))
+                {
+                    fileText += $"\t\tthis.{camelCased} = '{camelCased}' in this ? stringToDate(this.{camelCased}) : null;{Environment.NewLine}";
+                }
             }
-            */
 
-            fileText += $"\t}}{Environment.NewLine}}}";
+            fileText += $"\t}}{Environment.NewLine}";
+
+            fileText += $"\tfrontToBack(){{{Environment.NewLine}";
+
+            foreach (var prop in props)
+            {
+                var camelCased = char.ToLower(prop.Name[0]) + prop.Name.Substring(1);
+                if (prop.PropertyType == typeof(DateTime) || prop.PropertyType == typeof(DateTimeOffset))
+                {
+                    fileText += $"\t\tthis.{camelCased} = '{camelCased}' in this ? dateToString(this.{camelCased}) : null;{Environment.NewLine}";
+                }
+            }
+
+            fileText += $"\t}}{Environment.NewLine}";
+
+            fileText += $"}}";
 
 
             string path = @$"{Environment.CurrentDirectory}\wwwroot\js\models\{type.Name}.js";

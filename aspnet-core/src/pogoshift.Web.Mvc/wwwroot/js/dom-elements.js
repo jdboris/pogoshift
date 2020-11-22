@@ -1,4 +1,4 @@
-﻿import { formatTime, Event, stringToDate, getUserColor, restartAnimations } from "./utilities.js";
+﻿import { formatTime, Event, getUserColor, restartAnimations } from "./utilities.js";
 import { Availability } from "./models/Availability.js";
 import { Shift } from "./models/Shift.js";
 
@@ -235,28 +235,29 @@ class TimePeriod {
         this.user = time.user;
         this.calendar = calendar;
         if (time.beginning != null && time.ending == null) throw "Error: you must provide a start AND end time to create a TimePeriod.";
-        // NOTE: Must copy the properties rather than re-assigning the variable, to preserve references
-        Object.assign( time, { start: stringToDate(time.beginning), end: stringToDate( time.ending ), note: time.note || "" } );
+        time.note = time.note || "";
 
         let columnStart = 1;
         let columnEnd = calendar.columnsPerDay + 1;
+        let startString = null;
+        let endString = null;
 
-        if (time.start == null && time.end == null) {
+        if (time.beginning == null && time.ending == null) {
             // If there's no time period template
             if (calendar.timePeriodTemplate == null) {
-                time.start = formatTime(calendar.dayStartTime);
-                time.end = formatTime(calendar.dayEndTime);
+                startString = formatTime(calendar.dayStartTime);
+                endString = formatTime(calendar.dayEndTime);
             } else {
                 columnStart = calendar.timePeriodTemplate.getElementsByClassName("time-period-bar")[0].style.gridColumnStart;
                 columnEnd = calendar.timePeriodTemplate.getElementsByClassName("time-period-bar")[0].style.gridColumnEnd;
-                time.start = calendar.timePeriodTemplate.getElementsByClassName("time-start")[0].innerHTML;
-                time.end = calendar.timePeriodTemplate.getElementsByClassName("time-end")[0].innerHTML;
+                startString = calendar.timePeriodTemplate.getElementsByClassName("time-start")[0].innerHTML;
+                endString = calendar.timePeriodTemplate.getElementsByClassName("time-end")[0].innerHTML;
             }
         } else {
-            columnStart = calendar.timeToColumns(time.start);
-            columnEnd = calendar.timeToColumns(time.end);
-            time.start = formatTime(time.start);
-            time.end = formatTime(time.end);
+            columnStart = calendar.timeToColumns(time.beginning);
+            columnEnd = calendar.timeToColumns(time.ending);
+            startString = formatTime(time.beginning);
+            endString = formatTime(time.ending);
         }
 
 
@@ -277,7 +278,7 @@ class TimePeriod {
                     </span>
 
                     <span class="time-period-time">
-                        <span class="time-start">${time.start}</span>-<span class="time-end">${time.end}</span>
+                        <span class="time-start">${startString}</span>-<span class="time-end">${endString}</span>
                     </span>
 
                     <span class="time-period-delete">

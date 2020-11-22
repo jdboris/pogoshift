@@ -1,5 +1,5 @@
 ﻿import { AvailabilityPeriod, ShiftPeriod, MonthDay } from "./dom-elements.js";
-import { MONTH_NAMES, formatTime, stringToDate, Event } from "./utilities.js";
+import { MONTH_NAMES, formatTime, Event } from "./utilities.js";
 import { E } from "./dom-elements.js";
 
 const WEEKDAY_INDEXES = { Sunday: 0, Monday: 1, Tuesday: 2, Wednesday: 3, Thursday: 4, Friday: 5, Saturday: 6 };
@@ -18,8 +18,8 @@ export class Calendar {
         this.minutesPerColumn = minutesPerColumn;
         this.editModeDefault = editModeDefault;
 
-        this.dayStartTime = new Date();
-        this.dayEndTime = new Date();
+        this.dayStartTime = new Date(date);
+        this.dayEndTime = new Date(date);
         this.hoursPerDay = 24;
         this.setDayStartTime(dayStartTime);
         this.setDayEndTime(dayEndTime);
@@ -164,8 +164,6 @@ export class Calendar {
             do {
                 // Get all the days that are past in each week
                 days = this.element.querySelectorAll(`.month-day:nth-child(n+${firstDayOfWeek}):nth-child(-n+${firstDayOfWeek + 6}).past-day`);
-                console.log(days.length);
-                console.log("firstDayOfWeek: ", firstDayOfWeek);
                 // If all 7 days are past or closed
                 if (days.length + closedWeekdays.length == 7) {
                     for (let day of days) {
@@ -187,7 +185,7 @@ export class Calendar {
                 // Only add the availability and its associate if the date is in the future
                 let midnight = new Date();
                 midnight.setHours(0, 0, 0, 0);
-                //if (new Date(timePeriod.beginning) >= midnight) {
+                //if (timePeriod.beginning >= midnight) {
                     if ("user" in timePeriod && !(timePeriod.user.id in this.associates)) {
                         this.associates[timePeriod.user.id] = timePeriod.user;
                     }
@@ -206,14 +204,14 @@ export class Calendar {
                 // Only add the shift and its associate if the date is in the future
                 let midnight = new Date();
                 midnight.setHours(0, 0, 0, 0);
-                if (new Date(timePeriod.beginning) >= midnight) {
+                //if (timePeriod.beginning >= midnight) {
                     // If this timePeriod has a user and the user is not in the list of associates yet
                     if ("user" in timePeriod && !(timePeriod.user.id in this.associates)) {
                         this.associates[timePeriod.user.id] = timePeriod.user;
                     }
 
                     object[timePeriod.id] = timePeriod;
-                }
+                //}
                 return object;
 
                 // Start as empty object
@@ -231,7 +229,6 @@ export class Calendar {
         for (let id in this.availabilities) {
             this.addAvailability(this.availabilities[id]);
         }
-
 
         let handler = new Event.PointerHandler((event) => {
             this.mobileOverlay.classList.add("hidden");
@@ -387,7 +384,7 @@ export class Calendar {
 
     addShift(shift) {
 
-        let monthDay = this.monthDays[stringToDate(shift.beginning).getDate()];
+        let monthDay = this.monthDays[shift.beginning.getDate()];
         let element = monthDay.element;
 
         // TODO: Make the back-end return the whole User object when you create a Shift, then remove this work-around
@@ -431,7 +428,7 @@ export class Calendar {
 
         timePeriod.availabilityId = availability.id;
 
-        let monthDay = this.monthDays[stringToDate(availability.beginning).getDate()];
+        let monthDay = this.monthDays[availability.beginning.getDate()];
         let element = monthDay.element;
 
         element.querySelector(`.time-period-section`).prepend(timePeriod.element);
@@ -450,7 +447,7 @@ export class Calendar {
     }
 
     removeShift(shift) {
-        let monthDay = this.monthDays[stringToDate(shift.beginning).getDate()];
+        let monthDay = this.monthDays[shift.beginning.getDate()];
         let element = monthDay.element;
 
         let timePeriod = element.querySelector(`[data-shift-id='${shift.id}']`);
@@ -472,7 +469,7 @@ export class Calendar {
     }
 
     removeAvailability(availability) {
-        let monthDay = this.monthDays[stringToDate(availability.beginning).getDate()];
+        let monthDay = this.monthDays[availability.beginning.getDate()];
         let element = monthDay.element;
 
         let timePeriod = element.querySelector(`[data-availability-id='${availability.id}']`);

@@ -5,6 +5,7 @@
         min-height: 30px;
     }
     */
+  /* NOTE: Need specificity */
   /*&.highlighted .time-period:not(.highlighted-period) .left-handle,
     &.highlighted .time-period:not(.highlighted-period) .right-handle,
     &.highlighted .time-period:not(.highlighted-period) .time-period-heading {
@@ -187,6 +188,8 @@
     overflow: hidden;
     white-space: nowrap;
     font-family: 'Inconsolata', monospace; }
+  .calendar .time-period.time-period-template {
+    position: initial; }
   .calendar .time-period-template .time-period-time,
   .calendar .focused .time-period-time {
     font-family: "Prompt"; }

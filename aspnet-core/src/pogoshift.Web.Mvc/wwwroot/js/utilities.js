@@ -28,24 +28,26 @@ export function getUserColor(user) {
     return color;
 }
 
-// Expects Date object
-// Returns format "HH:MM"
+// Expects: Date object
+// Returns: "HH:MM"
 export function formatTime(datetime) {
-    let coefficient = 1000 * 60 * 1;
-    let timeBuffer = new Date(Math.ceil(datetime.getTime() / coefficient) * coefficient);
+
+    let millisecondsPerMinute = 1000 * 60 * 1;
+    let timeBuffer = new Date(Math.ceil(datetime.getTime() / millisecondsPerMinute) * millisecondsPerMinute);
     let hours = timeBuffer.getHours();
 
     if (datetime.getHours() == 23 && hours == 0)
         hours = 24;
 
-    return hours.toString().padStart(2, "0") + ":" + timeBuffer.getMinutes().toString().padStart(2, "0");
+    return String(hours).padStart(2, "0") + ":" + String(timeBuffer.getMinutes()).padStart(2, "0");
 }
 
-// Expected formats:
+// Expects:
 // "YYYY-MM-DDTHH:MM:SS"
 // "HH:MM"
+// Returns: Date object
 export function stringToDate(string) {
-    let buffer = string.split("Z")[0].split("T");
+    let buffer = String(string).split("Z")[0].split("T");
 
     if (buffer.length == 1) {
         let timeParts = buffer[0].split(":");
@@ -63,6 +65,14 @@ export function stringToDate(string) {
     let dateParts = buffer[0].split("-");
 
     return new Date(dateParts[0], dateParts[1], dateParts[2], timeParts[0], timeParts[1], timeParts[2]);
+}
+
+// Expects: Date object
+// Returns: "YYYY-MM-DDTHH:MM:SS"
+export function dateToString(d) {
+    let string = `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}T`;
+    string += `${String(d.getHours()).padStart(2, "0")}:${String(d.getMinutes()).padStart(2, "0")}:${String(d.getSeconds()).padStart(2, "0")}`;
+    return string;
 }
 
 export function getDateFromQueryString() {

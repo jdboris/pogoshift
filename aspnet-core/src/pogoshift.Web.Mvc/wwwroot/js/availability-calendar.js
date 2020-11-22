@@ -1,5 +1,5 @@
 ﻿import { E, AvailabilityPeriod } from "./dom-elements.js";
-import { Event } from "./utilities.js";
+import { Event, stringToDate } from "./utilities.js";
 import { Availability } from "./models/Availability.js";
 import { Calendar } from "./calendar.js";
 
@@ -16,7 +16,7 @@ export class AvailabilityCalendar extends Calendar {
         let card = new E(`<div class="card time-period-template-card"><div class="card-body"></div></div>`);
         let cardBody = card.getElementsByClassName("card-body")[0];
 
-        this.timePeriodTemplate = new AvailabilityPeriod(this, true, { beginning: dayStartTime, ending: dayEndTime, user: abp.session.user });
+        this.timePeriodTemplate = new AvailabilityPeriod(this, true, { beginning: this.dayStartTime, ending: this.dayEndTime, user: abp.session.user });
         this.timePeriodTemplate.element.classList.add("time-period-template");
 
         cardBody.appendChild(this.timePeriodTemplate.element);
@@ -32,30 +32,23 @@ export class AvailabilityCalendar extends Calendar {
                 if ((this.timePeriodResizal == null && this.timePeriodMovement == null) &&
                     element.dataset.availabilityCount == 0) {
 
-                    let day = element.getElementsByClassName("day-number")[0].innerHTML.padStart(2, "0");
-                    let month = `${this.date.getMonth() + 1}`.padStart(2, "0");
-                    let year = this.date.getFullYear();
-
-                    let templateStartTime = this.timePeriodTemplate.element.getElementsByClassName("time-start")[0].innerHTML.padStart(5, "0");
-                    let startTime = templateStartTime + ":00";
-                    startTime = `${year}-${month}-${day}T${startTime}Z`;
-
-                    let templateEndTime = this.timePeriodTemplate.element.getElementsByClassName("time-end")[0].innerHTML.padStart(5, "0");
-                    let endTime = templateEndTime + ":00";
-                    // NOTE: 24:00 is not a valid time
-                    if (endTime.split(":")[0] == 24) endTime = "23:59:59";
-                    endTime = `${year}-${month}-${day}T${endTime}Z`;
+                    let day = element.getElementsByClassName("day-number")[0].innerHTML;
+                    let start = stringToDate(this.timePeriodTemplate.element.querySelector(".time-start").innerHTML);
+                    start.setFullYear(this.date.getFullYear(), this.date.getMonth(), day);
+                    let end = stringToDate(this.timePeriodTemplate.element.querySelector(".time-end").innerHTML);
+                    end.setFullYear(this.date.getFullYear(), this.date.getMonth(), day);
 
                     new Availability({
                         userId: abp.session.userId,
-                        beginning: startTime,
-                        ending: endTime,
+                        beginning: start,
+                        ending: end,
+                        note: ""
                     }).save().then((availability) => {
                         this.focusTimePeriod(this.addAvailability(availability).element);
-                        this.highlightAllFromFilter();
                     });
                 }
             });
+
 
             // NOTE: onclick will be simulated on mobile browsers
             element.onclick = handler;

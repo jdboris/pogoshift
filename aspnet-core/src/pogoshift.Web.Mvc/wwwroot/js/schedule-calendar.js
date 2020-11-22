@@ -264,11 +264,13 @@ function BreakControls() {
 
 function createShiftFromAvailability(calendar, availabilityPeriod) {
     if ("HasUser.CrudAll" in abp.auth.grantedPermissions) {
+
         new Shift({
             userId: availabilityPeriod.user.id,
-            date: availabilityPeriod.getStartTime(),
-            beginning: availabilityPeriod.getStartTime(),
-            ending: availabilityPeriod.getEndTime(),
+            date: availabilityPeriod.availability.beginning,
+            beginning: availabilityPeriod.availability.beginning,
+            ending: availabilityPeriod.availability.ending,
+            note: ""
         }).save().then((shift) => {
             if (!(shift.userId in calendar.associates)) {
                 console.error("Error: Shift User is not listed on this Calendar.");

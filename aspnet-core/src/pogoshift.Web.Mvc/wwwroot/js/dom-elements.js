@@ -1,4 +1,4 @@
-﻿import { formatTime, Event, getUserColor, restartAnimations } from "./utilities.js";
+﻿import { formatTime, Event, getUserColor, stringToDate, restartAnimations } from "./utilities.js";
 import { Availability } from "./models/Availability.js";
 import { Shift } from "./models/Shift.js";
 
@@ -422,8 +422,9 @@ export class AvailabilityPeriod extends TimePeriod {
     save() {
         new Availability({
             id: this.availabilityId,
-            beginning: this.getStartTime(),
-            ending: this.getEndTime(),
+            date: stringToDate(this.getStartTime()),
+            beginning: stringToDate(this.getStartTime()),
+            ending: stringToDate(this.getEndTime()),
             note: this.availability.note
         }).save();
     }
@@ -458,8 +459,9 @@ export class ShiftPeriod extends TimePeriod {
     save() {
         new Shift({
             id: this.shiftId,
-            beginning: this.getStartTime(),
-            ending: this.getEndTime(),
+            date: stringToDate(this.getStartTime()),
+            beginning: stringToDate(this.getStartTime()),
+            ending: stringToDate(this.getEndTime()),
             note: this.shift.note
         }).save();
     }

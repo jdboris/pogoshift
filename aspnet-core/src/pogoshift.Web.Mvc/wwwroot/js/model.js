@@ -60,7 +60,7 @@ export class Model {
         } else {
             return myFetch(`/api/services/app/${this.constructor.name}/Update`, "PUT", this).then((result) => {
                 result = new this.constructor(result);
-                result.convertToFrontEnd();
+                result.backToFront();
                 return result;
             });
         }

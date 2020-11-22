@@ -64,7 +64,7 @@ export function stringToDate(string) {
     let timeParts = buffer[1].split(":");
     let dateParts = buffer[0].split("-");
 
-    return new Date(dateParts[0], dateParts[1], dateParts[2], timeParts[0], timeParts[1], timeParts[2]);
+    return new Date(dateParts[0], dateParts[1]-1, dateParts[2], timeParts[0], timeParts[1], timeParts[2]);
 }
 
 // Expects: Date object

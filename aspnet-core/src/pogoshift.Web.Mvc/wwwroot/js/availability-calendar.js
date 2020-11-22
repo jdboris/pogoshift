@@ -28,24 +28,29 @@ export class AvailabilityCalendar extends Calendar {
 
             let handler = new Event.PointerHandler((event) => {
 
-                // If the click originated directly on this element
-                if ((this.timePeriodResizal == null && this.timePeriodMovement == null) &&
-                    element.dataset.availabilityCount == 0) {
+                if (monthDay.timePeriodCrudPromise == null) {
+                    // If the click originated directly on this element
+                    if ((this.timePeriodResizal == null && this.timePeriodMovement == null) &&
+                        element.dataset.availabilityCount == 0) {
 
-                    let day = element.getElementsByClassName("day-number")[0].innerHTML;
-                    let start = stringToDate(this.timePeriodTemplate.element.querySelector(".time-start").innerHTML);
-                    start.setFullYear(this.date.getFullYear(), this.date.getMonth(), day);
-                    let end = stringToDate(this.timePeriodTemplate.element.querySelector(".time-end").innerHTML);
-                    end.setFullYear(this.date.getFullYear(), this.date.getMonth(), day);
+                        let day = element.getElementsByClassName("day-number")[0].innerHTML;
+                        let start = stringToDate(this.timePeriodTemplate.element.querySelector(".time-start").innerHTML);
+                        start.setFullYear(this.date.getFullYear(), this.date.getMonth(), day);
+                        let end = stringToDate(this.timePeriodTemplate.element.querySelector(".time-end").innerHTML);
+                        end.setFullYear(this.date.getFullYear(), this.date.getMonth(), day);
 
-                    new Availability({
-                        userId: abp.session.userId,
-                        beginning: start,
-                        ending: end,
-                        note: ""
-                    }).save().then((availability) => {
-                        this.focusTimePeriod(this.addAvailability(availability).element);
-                    });
+                        monthDay.timePeriodCrudPromise = new Availability({
+                            userId: abp.session.userId,
+                            beginning: start,
+                            ending: end,
+                            note: ""
+                        }).save().then((availability) => {
+                            this.focusTimePeriod(this.addAvailability(availability).element);
+                            
+                        }).finally(() => {
+                            monthDay.timePeriodCrudPromise = null;
+                        });
+                    }
                 }
             });
 

@@ -265,21 +265,23 @@ function BreakControls() {
 function createShiftFromAvailability(calendar, availabilityPeriod) {
     if ("HasUser.CrudAll" in abp.auth.grantedPermissions) {
 
-        new Shift({
-            userId: availabilityPeriod.user.id,
-            date: availabilityPeriod.availability.beginning,
-            beginning: availabilityPeriod.availability.beginning,
-            ending: availabilityPeriod.availability.ending,
-            note: availabilityPeriod.availability.note ? `Associate Note:\n${availabilityPeriod.availability.note}\n` : ""
-        }).save().then((shift) => {
-            if (!(shift.userId in calendar.associates)) {
-                console.error("Error: Shift User is not listed on this Calendar.");
-            } else {
-                this.focusTimePeriod(this.addShift(shift).element);
-                this.highlightAllFromFilter();
-
-                //availabilityPeriod.element.parentNode.insertBefore(shiftPeriod.element, availabilityPeriod.element.nextSibling);
-            }
-        });
+        if (monthDay.timePeriodCrudPromise == null) {
+            monthDay.timePeriodCrudPromise = new Shift({
+                userId: availabilityPeriod.user.id,
+                date: availabilityPeriod.availability.beginning,
+                beginning: availabilityPeriod.availability.beginning,
+                ending: availabilityPeriod.availability.ending,
+                note: availabilityPeriod.availability.note ? `Associate Note:\n${availabilityPeriod.availability.note}\n` : ""
+            }).save().then((shift) => {
+                if (!(shift.userId in calendar.associates)) {
+                    console.error("Error: Shift User is not listed on this Calendar.");
+                } else {
+                    this.focusTimePeriod(this.addShift(shift).element);
+                    this.highlightAllFromFilter();
+                }
+            }).finally(() => {
+                monthDay.timePeriodCrudPromise = null;
+            });
+        }
     }
 }

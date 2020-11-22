@@ -2,13 +2,11 @@
 Short-Term:
 -refactor/optimize patterns and performance
 -allow shifts to span multiple days
--fix the bug that's adding copies of a shift on the same day
 -make past shifts read-only
 -confirm that a new shift was created after it's created, and communicate which one was created, to facilitate
  correcting mistakes.
 -fix the authorization loop when trying to update account/password
 -make the colors more unique somehow
--change to cheaper hosting service
 
 
 Long-Term:

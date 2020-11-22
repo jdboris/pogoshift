@@ -492,6 +492,8 @@ export class MonthDay {
         this.calendar = calendar;
         this.users = {};
         this.day = day;
+        // The promise returned by a fetch that is performing CRUD on an availability/shift on this day
+        this.timePeriodCrudPromise = null;
         
         let element = new E(`
         <div class="month-day" data-month-day="${day}" data-user-count="0"

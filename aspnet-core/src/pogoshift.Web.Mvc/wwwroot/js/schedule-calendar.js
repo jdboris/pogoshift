@@ -67,7 +67,7 @@ export class ScheduleCalendar extends Calendar {
         }
         
         this.headerButtons.append(E(`
-            <button class="btn btn-link print-button">Print&nbsp;<i class="fas fa-print"></i></button>
+            <button class="btn btn-link">Print&nbsp;<i class="fas fa-print"></i></button>
         `, {
                 onclick: () => {
 

@@ -3846,3 +3846,305 @@ DEBUG 2020-11-22 11:08:00,192 [1    ] Abp.AutoMapper.AbpAutoMapperModule       -
 DEBUG 2020-11-22 11:08:00,192 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Web.Models.Roles.EditRoleModalViewModel
 DEBUG 2020-11-22 11:08:09,016 [8    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"KEdVMhyPXbO5c8putkTNJg","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-22T11:08:08.9974298-05:00","Properties":{}}
 DEBUG 2020-11-22 11:08:09,040 [8    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: KEdVMhyPXbO5c8putkTNJg
+DEBUG 2020-11-22 23:27:30,142 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-11-22 23:27:30,295 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2020-11-22 23:27:30,311 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.Web.Startup.pogoshiftWebMvcModule, pogoshift.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 23:27:30,313 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftWebCoreModule, pogoshift.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 23:27:30,313 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftApplicationModule, pogoshift.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 23:27:30,313 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftCoreModule, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 23:27:30,314 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 23:27:30,314 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 23:27:30,314 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 23:27:30,314 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 23:27:30,315 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.EntityFrameworkCore.pogoshiftEntityFrameworkModule, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 23:27:30,315 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 23:27:30,315 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 23:27:30,315 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 23:27:30,315 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 23:27:30,316 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 23:27:30,316 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 23:27:30,318 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2020-11-22 23:27:30,407 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-22 23:27:30,407 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-22 23:27:30,407 [1    ] o.Configuration.LanguageManagementConfig - Converted pogoshift (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-22 23:27:30,407 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-22 23:27:30,773 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: pogoshift.EntityFrameworkCore.pogoshiftDbContext, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-22 23:27:31,876 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-11-22 23:27:31,917 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-11-22 23:27:31,931 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-11-22 23:27:31,938 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: pogoshift
+DEBUG 2020-11-22 23:27:31,944 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-11-22 23:27:32,203 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-11-22 23:27:32,349 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[pogoshift.MultiTenancy.Tenant, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[pogoshift.Authorization.Users.User, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2020-11-22 23:27:32,400 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 16 classes define auto mapping attributes
+DEBUG 2020-11-22 23:27:32,400 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2020-11-22 23:27:32,405 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.CreateUserDto
+DEBUG 2020-11-22 23:27:32,405 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.UserDto
+DEBUG 2020-11-22 23:27:32,405 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Shifts.Dto.ShiftDto
+DEBUG 2020-11-22 23:27:32,406 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Shifts.Dto.UpdateShiftDto
+DEBUG 2020-11-22 23:27:32,406 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-11-22 23:27:32,406 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-11-22 23:27:32,406 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Roles.Dto.PermissionDto
+DEBUG 2020-11-22 23:27:32,406 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-11-22 23:27:32,406 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.TenantDto
+DEBUG 2020-11-22 23:27:32,406 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Breaks.Dto.BreakDto
+DEBUG 2020-11-22 23:27:32,406 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.AvailabilityDto
+DEBUG 2020-11-22 23:27:32,406 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.GetAllAvailabilityDto
+DEBUG 2020-11-22 23:27:32,407 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.UpdateAvailabilityDto
+DEBUG 2020-11-22 23:27:32,407 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2020-11-22 23:27:32,407 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Web.Models.Roles.EditRoleModalViewModel
+DEBUG 2020-11-22 23:27:42,251 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"2LkasIJ3MvJIOyCbXT4PbQ","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-22T23:27:42.2356369-05:00","Properties":{}}
+DEBUG 2020-11-22 23:27:42,275 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: 2LkasIJ3MvJIOyCbXT4PbQ
+DEBUG 2020-11-22 23:39:11,203 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: 2LkasIJ3MvJIOyCbXT4PbQ
+DEBUG 2020-11-23 11:52:27,664 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-11-23 11:52:27,738 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2020-11-23 11:52:27,754 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.Web.Startup.pogoshiftWebMvcModule, pogoshift.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-23 11:52:27,755 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftWebCoreModule, pogoshift.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-23 11:52:27,756 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftApplicationModule, pogoshift.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-23 11:52:27,756 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftCoreModule, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-23 11:52:27,756 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-23 11:52:27,756 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-23 11:52:27,756 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-23 11:52:27,757 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-23 11:52:27,757 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.EntityFrameworkCore.pogoshiftEntityFrameworkModule, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-23 11:52:27,758 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-23 11:52:27,758 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-23 11:52:27,758 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-23 11:52:27,758 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-23 11:52:27,759 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-23 11:52:27,759 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-23 11:52:27,761 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2020-11-23 11:52:27,839 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-23 11:52:27,839 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-23 11:52:27,839 [1    ] o.Configuration.LanguageManagementConfig - Converted pogoshift (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-23 11:52:27,839 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-23 11:52:28,236 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: pogoshift.EntityFrameworkCore.pogoshiftDbContext, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-23 11:52:29,371 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-11-23 11:52:29,415 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-11-23 11:52:29,427 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-11-23 11:52:29,435 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: pogoshift
+DEBUG 2020-11-23 11:52:29,443 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-11-23 11:52:29,682 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-11-23 11:52:29,845 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[pogoshift.MultiTenancy.Tenant, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[pogoshift.Authorization.Users.User, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2020-11-23 11:52:29,920 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 16 classes define auto mapping attributes
+DEBUG 2020-11-23 11:52:29,921 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2020-11-23 11:52:29,928 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.CreateUserDto
+DEBUG 2020-11-23 11:52:29,929 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.UserDto
+DEBUG 2020-11-23 11:52:29,929 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Shifts.Dto.ShiftDto
+DEBUG 2020-11-23 11:52:29,929 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Shifts.Dto.UpdateShiftDto
+DEBUG 2020-11-23 11:52:29,930 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-11-23 11:52:29,930 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-11-23 11:52:29,930 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Roles.Dto.PermissionDto
+DEBUG 2020-11-23 11:52:29,930 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-11-23 11:52:29,930 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.TenantDto
+DEBUG 2020-11-23 11:52:29,930 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Breaks.Dto.BreakDto
+DEBUG 2020-11-23 11:52:29,930 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.AvailabilityDto
+DEBUG 2020-11-23 11:52:29,931 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.GetAllAvailabilityDto
+DEBUG 2020-11-23 11:52:29,931 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.UpdateAvailabilityDto
+DEBUG 2020-11-23 11:52:29,931 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2020-11-23 11:52:29,931 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Web.Models.Roles.EditRoleModalViewModel
+DEBUG 2020-11-23 11:52:39,527 [11   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"xM1wvwxDyRlLzTmj4mufAA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-23T11:52:39.5192307-05:00","Properties":{}}
+DEBUG 2020-11-23 11:52:39,534 [11   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: xM1wvwxDyRlLzTmj4mufAA
+DEBUG 2020-11-23 11:53:20,618 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: xM1wvwxDyRlLzTmj4mufAA
+DEBUG 2020-11-23 11:53:20,920 [25   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"NcPTdkG9CHgIQ1MYrEPGZw","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-23T11:53:20.9205519-05:00","Properties":{}}
+DEBUG 2020-11-23 11:53:20,921 [25   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: NcPTdkG9CHgIQ1MYrEPGZw
+DEBUG 2020-11-23 11:54:06,217 [7    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: NcPTdkG9CHgIQ1MYrEPGZw
+DEBUG 2020-11-23 11:54:06,813 [66   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"Awtv1ddkBjSHQt4cWPBfbg","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-23T11:54:06.8079021-05:00","Properties":{}}
+DEBUG 2020-11-23 11:54:06,818 [66   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: Awtv1ddkBjSHQt4cWPBfbg
+DEBUG 2020-11-23 11:54:17,221 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: Awtv1ddkBjSHQt4cWPBfbg
+DEBUG 2020-11-23 11:54:17,748 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"S210PoT34ueUsJ5o11YugQ","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-23T11:54:17.7477775-05:00","Properties":{}}
+DEBUG 2020-11-23 11:54:17,748 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: S210PoT34ueUsJ5o11YugQ
+DEBUG 2020-11-23 11:54:44,833 [52   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: S210PoT34ueUsJ5o11YugQ
+DEBUG 2020-11-23 11:54:45,379 [57   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"0obe89I1NuMuyqK_jsQrLA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-23T11:54:45.3791249-05:00","Properties":{}}
+DEBUG 2020-11-23 11:54:45,381 [57   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: 0obe89I1NuMuyqK_jsQrLA
+DEBUG 2020-11-23 11:55:05,113 [66   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: 0obe89I1NuMuyqK_jsQrLA
+DEBUG 2020-11-23 11:55:05,640 [81   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"IsTOEQhlx135Ika63RiVUA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-23T11:55:05.6402878-05:00","Properties":{}}
+DEBUG 2020-11-23 11:55:05,641 [81   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: IsTOEQhlx135Ika63RiVUA
+DEBUG 2020-11-23 11:55:45,201 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: IsTOEQhlx135Ika63RiVUA
+DEBUG 2020-11-23 11:55:45,737 [102  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"MdRL2OJU7Exm4V3956zITA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-23T11:55:45.7369641-05:00","Properties":{}}
+DEBUG 2020-11-23 11:55:45,738 [102  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: MdRL2OJU7Exm4V3956zITA
+DEBUG 2020-11-23 11:56:05,969 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: MdRL2OJU7Exm4V3956zITA
+DEBUG 2020-11-23 11:56:06,499 [104  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"opRYpX0VxRYLPhIc8rc-UQ","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-23T11:56:06.4952693-05:00","Properties":{}}
+DEBUG 2020-11-23 11:56:06,501 [104  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: opRYpX0VxRYLPhIc8rc-UQ
+DEBUG 2020-11-23 11:56:12,967 [9    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: opRYpX0VxRYLPhIc8rc-UQ
+DEBUG 2020-11-23 11:56:13,509 [117  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"oQIWLLCnTFCGxEvDaONobg","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-23T11:56:13.5092171-05:00","Properties":{}}
+DEBUG 2020-11-23 11:56:13,509 [117  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: oQIWLLCnTFCGxEvDaONobg
+DEBUG 2020-11-23 13:31:54,670 [117  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: oQIWLLCnTFCGxEvDaONobg
+DEBUG 2020-11-23 13:31:55,198 [116  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"okf205kjUxFzJXmRW9eEWQ","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-23T13:31:55.198059-05:00","Properties":{}}
+DEBUG 2020-11-23 13:31:55,199 [116  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: okf205kjUxFzJXmRW9eEWQ
+DEBUG 2020-11-23 14:13:55,053 [117  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: okf205kjUxFzJXmRW9eEWQ
+DEBUG 2020-11-23 14:13:55,588 [103  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"xCyDHsRK7zvurDjvd4nrkA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-23T14:13:55.5882099-05:00","Properties":{}}
+DEBUG 2020-11-23 14:13:55,589 [103  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: xCyDHsRK7zvurDjvd4nrkA
+DEBUG 2020-11-23 14:14:08,072 [127  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: xCyDHsRK7zvurDjvd4nrkA
+DEBUG 2020-11-23 14:14:08,572 [117  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"w9khW3Bb9BHlruYjyy5f7g","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-23T14:14:08.5720727-05:00","Properties":{}}
+DEBUG 2020-11-23 14:14:08,572 [117  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: w9khW3Bb9BHlruYjyy5f7g
+DEBUG 2020-11-23 14:15:44,117 [117  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: w9khW3Bb9BHlruYjyy5f7g
+DEBUG 2020-11-23 14:15:44,615 [105  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"VxYzb0THU1SPP0MoZ9aZcA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-23T14:15:44.6154871-05:00","Properties":{}}
+DEBUG 2020-11-23 14:15:44,615 [105  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: VxYzb0THU1SPP0MoZ9aZcA
+DEBUG 2020-11-23 14:17:16,217 [43   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: VxYzb0THU1SPP0MoZ9aZcA
+DEBUG 2020-11-23 14:17:16,723 [121  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"NftGgWQV1WpGpGD0bLslVQ","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-23T14:17:16.7237232-05:00","Properties":{}}
+DEBUG 2020-11-23 14:17:16,725 [121  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: NftGgWQV1WpGpGD0bLslVQ
+DEBUG 2020-11-24 18:10:57,988 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2020-11-24 18:10:58,095 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2020-11-24 18:10:58,110 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.Web.Startup.pogoshiftWebMvcModule, pogoshift.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-24 18:10:58,111 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftWebCoreModule, pogoshift.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-24 18:10:58,112 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftApplicationModule, pogoshift.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-24 18:10:58,112 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.pogoshiftCoreModule, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-24 18:10:58,112 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-24 18:10:58,112 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-24 18:10:58,113 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-24 18:10:58,113 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-24 18:10:58,113 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: pogoshift.EntityFrameworkCore.pogoshiftEntityFrameworkModule, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-24 18:10:58,113 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-24 18:10:58,113 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-24 18:10:58,114 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-24 18:10:58,114 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-24 18:10:58,114 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-24 18:10:58,114 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.4.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-24 18:10:58,116 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2020-11-24 18:10:58,190 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-24 18:10:58,190 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-24 18:10:58,190 [1    ] o.Configuration.LanguageManagementConfig - Converted pogoshift (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-24 18:10:58,190 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2020-11-24 18:10:58,586 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: pogoshift.EntityFrameworkCore.pogoshiftDbContext, pogoshift.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2020-11-24 18:10:59,650 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2020-11-24 18:10:59,690 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2020-11-24 18:10:59,702 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2020-11-24 18:10:59,709 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: pogoshift
+DEBUG 2020-11-24 18:10:59,715 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2020-11-24 18:10:59,945 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2020-11-24 18:11:00,093 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[pogoshift.MultiTenancy.Tenant, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[pogoshift.Authorization.Users.User, pogoshift.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2020-11-24 18:11:00,148 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 16 classes define auto mapping attributes
+DEBUG 2020-11-24 18:11:00,148 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2020-11-24 18:11:00,154 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.CreateUserDto
+DEBUG 2020-11-24 18:11:00,154 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Users.Dto.UserDto
+DEBUG 2020-11-24 18:11:00,154 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Shifts.Dto.ShiftDto
+DEBUG 2020-11-24 18:11:00,155 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Shifts.Dto.UpdateShiftDto
+DEBUG 2020-11-24 18:11:00,155 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2020-11-24 18:11:00,155 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Sessions.Dto.UserLoginInfoDto
+DEBUG 2020-11-24 18:11:00,155 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Roles.Dto.PermissionDto
+DEBUG 2020-11-24 18:11:00,155 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2020-11-24 18:11:00,155 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.MultiTenancy.Dto.TenantDto
+DEBUG 2020-11-24 18:11:00,155 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Breaks.Dto.BreakDto
+DEBUG 2020-11-24 18:11:00,155 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.AvailabilityDto
+DEBUG 2020-11-24 18:11:00,155 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.GetAllAvailabilityDto
+DEBUG 2020-11-24 18:11:00,155 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Availabilities.Dto.UpdateAvailabilityDto
+DEBUG 2020-11-24 18:11:00,156 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Web.Views.Shared.Components.TenantChange.TenantChangeViewModel
+DEBUG 2020-11-24 18:11:00,156 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - pogoshift.Web.Models.Roles.EditRoleModalViewModel
+DEBUG 2020-11-24 18:11:18,782 [15   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"5g8mJeeLqueKOmLDv5yyrg","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T18:11:18.7742189-05:00","Properties":{}}
+DEBUG 2020-11-24 18:11:18,803 [15   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: 5g8mJeeLqueKOmLDv5yyrg
+DEBUG 2020-11-24 18:11:33,451 [11   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: 5g8mJeeLqueKOmLDv5yyrg
+DEBUG 2020-11-24 18:11:33,867 [15   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"H1DWRYhpR9VFPNY9cxppIQ","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T18:11:33.8670658-05:00","Properties":{}}
+DEBUG 2020-11-24 18:11:33,868 [15   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: H1DWRYhpR9VFPNY9cxppIQ
+DEBUG 2020-11-24 18:11:39,861 [10   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: H1DWRYhpR9VFPNY9cxppIQ
+DEBUG 2020-11-24 18:11:40,122 [12   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"_ULiqDi9dqbii26QghnaJg","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T18:11:40.1227045-05:00","Properties":{}}
+DEBUG 2020-11-24 18:11:40,123 [12   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: _ULiqDi9dqbii26QghnaJg
+DEBUG 2020-11-24 18:12:19,255 [8    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: _ULiqDi9dqbii26QghnaJg
+DEBUG 2020-11-24 18:12:19,858 [12   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"r0c-yv0_-CoiU2h23K2jVQ","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T18:12:19.8580591-05:00","Properties":{}}
+DEBUG 2020-11-24 18:12:19,860 [12   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: r0c-yv0_-CoiU2h23K2jVQ
+DEBUG 2020-11-24 18:39:08,554 [65   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: r0c-yv0_-CoiU2h23K2jVQ
+DEBUG 2020-11-24 18:39:09,214 [24   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"hBJ9Bay8R5RVdyJsigx-jg","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T18:39:09.213628-05:00","Properties":{}}
+DEBUG 2020-11-24 18:39:09,215 [24   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: hBJ9Bay8R5RVdyJsigx-jg
+DEBUG 2020-11-24 18:39:29,044 [8    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: hBJ9Bay8R5RVdyJsigx-jg
+DEBUG 2020-11-24 18:39:29,622 [23   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"kU1QtRDKERSEnSM0w1ee_w","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T18:39:29.6188444-05:00","Properties":{}}
+DEBUG 2020-11-24 18:39:29,629 [23   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: kU1QtRDKERSEnSM0w1ee_w
+DEBUG 2020-11-24 18:40:03,637 [8    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: kU1QtRDKERSEnSM0w1ee_w
+DEBUG 2020-11-24 18:40:04,233 [75   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"zmwP3LTz7LeWBy0YrBdedA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T18:40:04.2335508-05:00","Properties":{}}
+DEBUG 2020-11-24 18:40:04,234 [75   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: zmwP3LTz7LeWBy0YrBdedA
+DEBUG 2020-11-24 18:56:21,064 [8    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: zmwP3LTz7LeWBy0YrBdedA
+DEBUG 2020-11-24 18:56:21,576 [8    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"sgfaeAoKv-S_sbTKCpuwag","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T18:56:21.5766804-05:00","Properties":{}}
+DEBUG 2020-11-24 18:56:21,578 [8    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: sgfaeAoKv-S_sbTKCpuwag
+DEBUG 2020-11-24 19:01:53,570 [75   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: sgfaeAoKv-S_sbTKCpuwag
+DEBUG 2020-11-24 19:01:54,125 [5    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"iaALBh1ekkb2w_RH3urokw","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:01:54.1255833-05:00","Properties":{}}
+DEBUG 2020-11-24 19:01:54,126 [5    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: iaALBh1ekkb2w_RH3urokw
+DEBUG 2020-11-24 19:03:15,251 [8    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: iaALBh1ekkb2w_RH3urokw
+DEBUG 2020-11-24 19:03:15,869 [15   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"SmOhH9LsicOh5qliNRA5IA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:03:15.8689588-05:00","Properties":{}}
+DEBUG 2020-11-24 19:03:15,869 [15   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: SmOhH9LsicOh5qliNRA5IA
+DEBUG 2020-11-24 19:04:34,897 [118  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: SmOhH9LsicOh5qliNRA5IA
+DEBUG 2020-11-24 19:04:35,454 [83   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"hBzyjxrn8UMuAJ52g4b5Bw","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:04:35.4544944-05:00","Properties":{}}
+DEBUG 2020-11-24 19:04:35,455 [83   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: hBzyjxrn8UMuAJ52g4b5Bw
+DEBUG 2020-11-24 19:05:00,494 [14   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: hBzyjxrn8UMuAJ52g4b5Bw
+DEBUG 2020-11-24 19:05:01,045 [6    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"nVqBs5SyEPHQ0lQAqXp-Zg","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:05:01.0454381-05:00","Properties":{}}
+DEBUG 2020-11-24 19:05:01,046 [6    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: nVqBs5SyEPHQ0lQAqXp-Zg
+DEBUG 2020-11-24 19:07:10,657 [14   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: nVqBs5SyEPHQ0lQAqXp-Zg
+DEBUG 2020-11-24 19:07:11,273 [134  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"oMPkdeuEAJawx1WgxfcSCA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:07:11.2732613-05:00","Properties":{}}
+DEBUG 2020-11-24 19:07:11,274 [134  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: oMPkdeuEAJawx1WgxfcSCA
+DEBUG 2020-11-24 19:12:35,594 [6    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: oMPkdeuEAJawx1WgxfcSCA
+DEBUG 2020-11-24 19:12:36,113 [123  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"t7mZsCAhKxpQxDaf1WaCMw","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:12:36.1135452-05:00","Properties":{}}
+DEBUG 2020-11-24 19:12:36,114 [123  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: t7mZsCAhKxpQxDaf1WaCMw
+DEBUG 2020-11-24 19:12:45,723 [6    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: t7mZsCAhKxpQxDaf1WaCMw
+DEBUG 2020-11-24 19:12:46,283 [103  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"pK-ujdlhFRjr0WmB5y4kHA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:12:46.2836399-05:00","Properties":{}}
+DEBUG 2020-11-24 19:12:46,284 [103  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: pK-ujdlhFRjr0WmB5y4kHA
+DEBUG 2020-11-24 19:12:52,745 [6    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: pK-ujdlhFRjr0WmB5y4kHA
+DEBUG 2020-11-24 19:12:53,266 [119  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"1yxkkDa9Ty1JJ59A2SLzRQ","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:12:53.2666346-05:00","Properties":{}}
+DEBUG 2020-11-24 19:12:53,267 [119  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: 1yxkkDa9Ty1JJ59A2SLzRQ
+DEBUG 2020-11-24 19:13:24,257 [123  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: 1yxkkDa9Ty1JJ59A2SLzRQ
+DEBUG 2020-11-24 19:13:24,838 [16   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"hgwPXxUm4uwgJoqkzuCEUw","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:13:24.8385928-05:00","Properties":{}}
+DEBUG 2020-11-24 19:13:24,843 [108  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: hgwPXxUm4uwgJoqkzuCEUw
+DEBUG 2020-11-24 19:16:42,180 [131  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: hgwPXxUm4uwgJoqkzuCEUw
+DEBUG 2020-11-24 19:16:42,721 [64   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"yN5Qfs1CmhIN4UT6X19GwQ","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:16:42.7217304-05:00","Properties":{}}
+DEBUG 2020-11-24 19:16:42,722 [64   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: yN5Qfs1CmhIN4UT6X19GwQ
+DEBUG 2020-11-24 19:20:35,701 [131  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: yN5Qfs1CmhIN4UT6X19GwQ
+DEBUG 2020-11-24 19:20:36,238 [131  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"qNBj0etkRG4hMgYWvybwZg","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:20:36.238458-05:00","Properties":{}}
+DEBUG 2020-11-24 19:20:36,238 [131  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: qNBj0etkRG4hMgYWvybwZg
+DEBUG 2020-11-24 19:20:46,295 [123  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: qNBj0etkRG4hMgYWvybwZg
+DEBUG 2020-11-24 19:20:46,820 [16   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"4YzT3PHY8OE7dtig2htcRQ","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:20:46.8201935-05:00","Properties":{}}
+DEBUG 2020-11-24 19:20:46,825 [108  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: 4YzT3PHY8OE7dtig2htcRQ
+DEBUG 2020-11-24 19:21:12,918 [64   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: 4YzT3PHY8OE7dtig2htcRQ
+DEBUG 2020-11-24 19:21:13,425 [123  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"cd5xInd-j7neOzqt2xV0Zg","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:21:13.4258603-05:00","Properties":{}}
+DEBUG 2020-11-24 19:21:13,426 [123  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: cd5xInd-j7neOzqt2xV0Zg
+DEBUG 2020-11-24 19:22:02,369 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: cd5xInd-j7neOzqt2xV0Zg
+DEBUG 2020-11-24 19:22:02,875 [123  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"K9vqr9pceydvq2x5iqkYuA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:22:02.8750293-05:00","Properties":{}}
+DEBUG 2020-11-24 19:22:02,875 [123  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: K9vqr9pceydvq2x5iqkYuA
+DEBUG 2020-11-24 19:52:55,419 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: K9vqr9pceydvq2x5iqkYuA
+DEBUG 2020-11-24 19:52:55,962 [132  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"-w5cDXYvDXBpufiWorvhuw","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:52:55.9620677-05:00","Properties":{}}
+DEBUG 2020-11-24 19:52:55,962 [132  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: -w5cDXYvDXBpufiWorvhuw
+DEBUG 2020-11-24 19:56:25,669 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: -w5cDXYvDXBpufiWorvhuw
+DEBUG 2020-11-24 19:56:26,154 [70   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"ed57YW6CjlU-ylKNkUh-sQ","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:56:26.1540984-05:00","Properties":{}}
+DEBUG 2020-11-24 19:56:26,155 [70   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: ed57YW6CjlU-ylKNkUh-sQ
+DEBUG 2020-11-24 19:56:28,494 [133  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: ed57YW6CjlU-ylKNkUh-sQ
+DEBUG 2020-11-24 19:56:29,090 [60   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"IEWk9NmFz8PUgBzszd0jiA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:56:29.0906386-05:00","Properties":{}}
+DEBUG 2020-11-24 19:56:29,091 [60   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: IEWk9NmFz8PUgBzszd0jiA
+DEBUG 2020-11-24 19:56:47,325 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: IEWk9NmFz8PUgBzszd0jiA
+DEBUG 2020-11-24 19:56:47,870 [114  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"OoG_uOm3SY8sZZaWkf06Jw","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:56:47.8707116-05:00","Properties":{}}
+DEBUG 2020-11-24 19:56:47,871 [114  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: OoG_uOm3SY8sZZaWkf06Jw
+DEBUG 2020-11-24 19:57:16,225 [147  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: OoG_uOm3SY8sZZaWkf06Jw
+DEBUG 2020-11-24 19:57:16,800 [132  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"ZpPAvuMuL9H6dZaWvx82BQ","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:57:16.7999292-05:00","Properties":{}}
+DEBUG 2020-11-24 19:57:16,801 [132  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: ZpPAvuMuL9H6dZaWvx82BQ
+DEBUG 2020-11-24 19:58:48,686 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: ZpPAvuMuL9H6dZaWvx82BQ
+DEBUG 2020-11-24 19:58:49,302 [150  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"Yz0T1wwIWBLiPoMuZAvEmA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T19:58:49.3023778-05:00","Properties":{}}
+DEBUG 2020-11-24 19:58:49,302 [150  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: Yz0T1wwIWBLiPoMuZAvEmA
+DEBUG 2020-11-24 20:17:10,155 [168  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: Yz0T1wwIWBLiPoMuZAvEmA
+DEBUG 2020-11-24 20:17:10,727 [130  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"zRmPCb5Qw9VtoW19h92ahQ","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T20:17:10.7270343-05:00","Properties":{}}
+DEBUG 2020-11-24 20:17:10,734 [134  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: zRmPCb5Qw9VtoW19h92ahQ
+DEBUG 2020-11-24 20:17:58,120 [4    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: zRmPCb5Qw9VtoW19h92ahQ
+DEBUG 2020-11-24 20:17:58,628 [127  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"2ym4e1BtgrIVi5LsIlDfFg","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T20:17:58.6285581-05:00","Properties":{}}
+DEBUG 2020-11-24 20:17:58,629 [127  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: 2ym4e1BtgrIVi5LsIlDfFg
+DEBUG 2020-11-24 20:18:15,324 [49   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: 2ym4e1BtgrIVi5LsIlDfFg
+DEBUG 2020-11-24 20:18:16,065 [102  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"jbWyoMaJ7d92vCroPVp3hg","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T20:18:16.0657953-05:00","Properties":{}}
+DEBUG 2020-11-24 20:18:16,066 [102  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: jbWyoMaJ7d92vCroPVp3hg
+DEBUG 2020-11-24 20:18:54,782 [120  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: jbWyoMaJ7d92vCroPVp3hg
+DEBUG 2020-11-24 20:18:55,308 [107  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"fOtFqYmyCQsy8FgVkDvnUA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T20:18:55.3084064-05:00","Properties":{}}
+DEBUG 2020-11-24 20:18:55,309 [107  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: fOtFqYmyCQsy8FgVkDvnUA
+DEBUG 2020-11-24 20:19:04,088 [107  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: fOtFqYmyCQsy8FgVkDvnUA
+DEBUG 2020-11-24 20:19:04,602 [26   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"YZ0xoaptQ-WASRUzweIrZg","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T20:19:04.6020048-05:00","Properties":{}}
+DEBUG 2020-11-24 20:19:04,602 [26   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: YZ0xoaptQ-WASRUzweIrZg
+DEBUG 2020-11-24 20:19:13,063 [126  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: YZ0xoaptQ-WASRUzweIrZg
+DEBUG 2020-11-24 20:19:13,560 [107  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"zUqhNm29sZ4FwCAG3-Y51g","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T20:19:13.5599647-05:00","Properties":{}}
+DEBUG 2020-11-24 20:19:13,560 [107  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: zUqhNm29sZ4FwCAG3-Y51g
+DEBUG 2020-11-24 20:22:27,343 [124  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: zUqhNm29sZ4FwCAG3-Y51g
+DEBUG 2020-11-24 20:22:27,945 [110  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"r6Wjlvsz6lFbCt2Fw1X2aw","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T20:22:27.9454762-05:00","Properties":{}}
+DEBUG 2020-11-24 20:22:27,945 [110  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: r6Wjlvsz6lFbCt2Fw1X2aw
+DEBUG 2020-11-24 20:22:54,789 [100  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: r6Wjlvsz6lFbCt2Fw1X2aw
+DEBUG 2020-11-24 20:22:55,354 [126  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"CQ2MucthqBsTxyK3Y3eu3A","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T20:22:55.3542107-05:00","Properties":{}}
+DEBUG 2020-11-24 20:22:55,355 [126  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: CQ2MucthqBsTxyK3Y3eu3A
+DEBUG 2020-11-24 22:49:37,495 [5    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: CQ2MucthqBsTxyK3Y3eu3A
+DEBUG 2020-11-24 22:49:38,123 [65   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"Rm73UuKvL6y-8GBvlaRRNA","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T22:49:38.1237058-05:00","Properties":{}}
+DEBUG 2020-11-24 22:49:38,124 [65   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: Rm73UuKvL6y-8GBvlaRRNA
+DEBUG 2020-11-24 22:51:29,155 [101  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: Rm73UuKvL6y-8GBvlaRRNA
+DEBUG 2020-11-24 22:51:29,614 [101  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"HEuwV-qq5TaaQ1WrXDtZ4Q","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T22:51:29.6140957-05:00","Properties":{}}
+DEBUG 2020-11-24 22:51:29,614 [101  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: HEuwV-qq5TaaQ1WrXDtZ4Q
+DEBUG 2020-11-24 22:51:32,310 [5    ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: HEuwV-qq5TaaQ1WrXDtZ4Q
+DEBUG 2020-11-24 22:51:32,671 [101  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"ApvMAN7DAlv0O9MBs_uCgg","IpAddress":"::1","TenantId":4,"UserId":7,"ConnectTime":"2020-11-24T22:51:32.6710007-05:00","Properties":{}}
+DEBUG 2020-11-24 22:51:32,671 [101  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: ApvMAN7DAlv0O9MBs_uCgg
+DEBUG 2020-11-24 22:51:35,105 [102  ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: ApvMAN7DAlv0O9MBs_uCgg

@@ -1,4 +1,4 @@
-﻿import { AvailabilityCalendar } from "/js/availability-calendar.js";
+﻿import { Calendar } from "/js/calendar-custom-element.js";
 import { Availability } from "/js/models/Availability.js";
 import { getDateFromQueryString } from "/js/utilities.js";
 
@@ -21,12 +21,16 @@ Availability.getAllByDate(date.getMonth() + 1, date.getFullYear()).then(async (a
         ...loginInfo
     };
 
-    let workingHoursStart = "8:00";
-    let workingHoursEnd = "24:00";
-    let closedWeekdays = [];
-
-    let container = document.getElementById("availability-calendar");
-    let calendar = new AvailabilityCalendar(date, availabilities, closedWeekdays, workingHoursStart, workingHoursEnd, 15);
-    calendar.appendTo(container);
+    document.querySelector("#availability-calendar").append(
+        new Calendar({
+            mode: Calendar.Modes.AVAILABILITY,
+            date: date,
+            availabilities: availabilities,
+            closedWeekdays: [],
+            dayStartTime: "08:00",
+            dayEndTime: "24:00",
+            minutesPerColumn: 15
+        })
+    );
 
 });

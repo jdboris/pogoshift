@@ -63,7 +63,7 @@ export class Calendar {
 
         this.togglePastButton = 
         this.headerButtons.append(E(`
-            <button class="btn btn-outline-secondary print-button">Past&nbsp;<i class="fas fa-eye-slash"></i></button>
+            <button class="btn btn-outline-secondary">Past&nbsp;<i class="fas fa-eye-slash"></i></button>
         `, {
             onclick: (event) => {
 

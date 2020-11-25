@@ -1,6 +1,9 @@
 ﻿
 .calendar {
     user-select: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 
     * {
         box-sizing: border-box;
@@ -27,7 +30,7 @@
         position: sticky;
         left: 15px;
         right: 15px;
-        max-width: 800px;
+        width: 800px;
         margin-left: auto;
         margin-right: auto;
         bottom: 15px;
@@ -49,6 +52,12 @@
     .calendar-header > * {
         display: flex;
         align-items: center;
+    }
+
+    .date-controls {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
     }
 
     .calendar-header a {
@@ -77,17 +86,19 @@
     }
 
     .month-day-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
         grid-column-gap: 1px;
         grid-row-gap: 1px;
         background-color: rgb(204, 204, 204);
         border: 1px solid rgb(204, 204, 204);
         margin-bottom: 15px;
+        width: 100%;
     }
 
-    .month-day-list,
     .weekday-headers {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        display: flex;
+        width: 100%;
     }
 
     .month-day-list > div,
@@ -96,6 +107,7 @@
         justify-content: center;
         align-items: center;
         width: auto;
+        flex-grow: 1;
     }
 
 
@@ -137,16 +149,16 @@
     }
 
 
-    .day-list .weekday-headers > div {
+    .weekday-headers > div {
         min-height: 30px;
     }
 
-    .day-list .weekday-headers > div:first-child,
-    .day-list .weekday-headers > div:last-child {
+    .weekday-headers > div:first-child,
+    .weekday-headers > div:last-child {
         color: red;
     }
 
-    .day-list .weekday-headers > div {
+    .weekday-headers > div {
         display: flex;
         font-size: 20px;
         align-items: flex-end;
@@ -347,7 +359,7 @@
         position: sticky;
         left: 15px;
         right: 15px;
-        max-width: 800px;
+        width: 800px;
         margin-left: auto;
         margin-right: auto;
         bottom: 15px;
@@ -596,10 +608,16 @@
             font-size: 15px;
         }
 
-        .calendar-header > *:not(:first-of-type) {
-            margin-top: 8px;
+        .date-controls {
             width: 100%;
-            justify-content: flex-end;
+        }
+
+        & > * {
+            margin-top: 8px;
+        }
+
+        & > *:first-of-type {
+            margin-top: auto;
         }
 
         .associate-aside-item {
@@ -718,7 +736,7 @@
             display: none !important;
         }
 
-        .print-button {
+        button {
             display: none !important;
         }
         /* To fix Chrome not showing the gaps */

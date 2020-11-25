@@ -125,6 +125,15 @@ class TimePeriodMovement {
     }
 }
 
+// Override the default append method to return the parent element.
+// This allows for chaining appends, which can make JavaScript code look
+// more like HTML.
+let oldAppend = HTMLElement.prototype.append;
+HTMLElement.prototype.append = function () {
+    oldAppend.apply(this, arguments);
+    return this;
+}
+
 export function E(html, properties = {}) {
     let template = document.createElement("template");
     // Prevent returning a text node of whitespace as the result

@@ -11,7 +11,7 @@ az group create -l $location -n $resourceGroup
 # Create database
 $sqlServerName = "pogoshiftdb"
 $username = "joe"
-$password = "MT86!siCZ85U"
+$password = "PASSWORD"
 az sql server create -l $location -g $resourceGroup -n $sqlServerName -u $username -p $password
 
 $sqlDbName = "pogoshiftdb"

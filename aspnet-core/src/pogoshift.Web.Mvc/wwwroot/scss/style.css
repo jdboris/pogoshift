@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap");
+@font-face {
+  font-family: "Prompt";
+  src: url(../fonts/Prompt-Bold.ttf);
+  font-weight: 700;
+}
+@font-face {
+  font-family: "Prompt";
+  src: url(../fonts/Prompt-Black.ttf);
+  font-weight: 900;
+}
+@font-face {
+  font-family: "Prompt";
+  src: url(../fonts/Prompt-Light.ttf);
+  font-weight: 300;
+}
+/* prevent the drop down icon going onto a new line for the top bar language link */
+.top-bar-language-nav-link {
+  min-width: 65px;
+}
+
+/* bootstrap model showing two scroll bars */
+html {
+  overflow: visible;
+}
+
+body {
+  font-family: "Prompt";
+}
+
+.invalid-flash {
+  -webkit-animation: invalid-flash;
+          animation: invalid-flash;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.input-combinator {
+  margin-left: -0.75ch;
+  margin-right: -0.75ch;
+  width: 1ch;
+  pointer-events: none;
+  text-align: center;
+  z-index: 1;
+}
+
+.input-combinator + input {
+  border-left: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* main sidebar not under model */
+.modal {
+  z-index: 1110;
+}
+
+.form-group.required .col-form-label:after {
+  color: #d00;
+  content: "*";
+  position: absolute;
+  margin-left: 3px;
+}
+
+.nav-user-menu .user-image {
+  width: 20px;
+  margin-right: 4px;
+  margin-top: -4px;
+}
+
+.svg-elevation-3 {
+  filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.4));
+}
+
+.brand-text {
+  font-family: "Prompt";
+  font-weight: bold;
+}
+
+[class*=sidebar-dark] .brand-link {
+  color: rgb(249, 249, 249);
+}
+
+[class*=sidebar-dark] .brand-link .brand-text {
+  font-size: 33px;
+  vertical-align: middle;
+}
+
+.brand-link .brand-image {
+  float: initial;
+  margin-top: -4px;
+}
+
+body:not(.sidebar-collapse) .main-sidebar .brand-image[src$="logo.svg"] {
+  display: none;
+}
+
+body.sidebar-collapse .main-sidebar .brand-image[src$="logo-plain.svg"] {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .content-header {
+    text-align: center;
+  }
+}
+@media (min-width: 992px) {
+  .sidebar-mini.sidebar-collapse .main-sidebar.sidebar-focused .brand-image[src$="logo.svg"],
+.sidebar-mini.sidebar-collapse .main-sidebar:hover .brand-image[src$="logo.svg"] {
+    display: none;
+  }
+  .sidebar-mini.sidebar-collapse .main-sidebar.sidebar-focused .brand-image[src$="logo-plain.svg"],
+.sidebar-mini.sidebar-collapse .main-sidebar:hover .brand-image[src$="logo-plain.svg"] {
+    display: initial;
+  }
+}
+@-webkit-keyframes invalid-flash {
+  1% {
+    color: rgb(255, 126, 126);
+  }
+  2% {
+    color: red;
+  }
+}
+@keyframes invalid-flash {
+  1% {
+    color: rgb(255, 126, 126);
+  }
+  2% {
+    color: red;
+  }
+}/*# sourceMappingURL=style.css.map */

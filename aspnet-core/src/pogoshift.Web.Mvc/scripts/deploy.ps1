@@ -1,6 +1,6 @@
 ﻿# NOTE: Run the following in VS Code
 
-$connectionString = "Server=tcp:pogoshiftdb.database.windows.net,1433;Initial Catalog=pogoshiftdb;Persist Security Info=False;User ID=joe;Password=MT86!siCZ85U;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
+$connectionString = "Server=tcp:pogoshiftdb.database.windows.net,1433;Initial Catalog=pogoshiftdb;Persist Security Info=False;User ID=joe;Password=PASSWORD;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
 
 # Build Migrator
 dotnet publish -c Release -o ".\dist\Migrator" -r "win-x64" /p:PublishSingleFile=true "aspnet-core\src\pogoshift.Migrator"
